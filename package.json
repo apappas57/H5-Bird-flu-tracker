@@ -1,0 +1,15 @@
+{
+  "name": "h5-bird-flu-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Public tracker for H5 (H5N1) avian influenza detections — global map + list, auto-updated from official agency data.",
+  "scripts": {
+    "build": "node pipeline/build.mjs",
+    "serve": "node pipeline/serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

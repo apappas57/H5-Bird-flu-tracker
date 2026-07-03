@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-07-03T09:49:45.610Z",
+  "latest_event": "2025-02-08",
+  "mode": "seed",
+  "totals": {
+    "total_events": 13,
+    "human_cases": 9,
+    "poultry_events": 2,
+    "poultry_birds_affected": 0,
+    "dairy_events": 0,
+    "wild_bird_events": 1,
+    "mammal_events": 1,
+    "countries_affected": 7,
+    "us_states_affected": 4,
+    "au_states_affected": 2
+  },
+  "by_category": {
+    "poultry": 2,
+    "human": 9,
+    "mammal": 1,
+    "wild_bird": 1
+  },
+  "by_country": {
+    "Australia": 3,
+    "Cambodia": 1,
+    "United States": 5,
+    "China": 1,
+    "Mexico": 1,
+    "Vietnam": 1,
+    "Antarctica": 1
+  },
+  "regions": {
+    "Global": 13,
+    "United States": 5,
+    "Australia": 3
+  },
+  "sources": [
+    {
+      "key": "us-poultry",
+      "name": "CDC/USDA — Poultry (commercial & backyard)",
+      "region": "United States",
+      "homepage": "https://www.cdc.gov/bird-flu/situation-summary/data-map-commercial.html",
+      "status": "error",
+      "records": 0,
+      "note": "HTTP 403 for https://www.cdc.gov/bird-flu/situation-summary/data-map-commercial.html"
+    },
+    {
+      "key": "us-wild-birds",
+      "name": "CDC/USDA — Wild birds",
+      "region": "United States",
+      "homepage": "https://www.cdc.gov/bird-flu/situation-summary/data-map-wild-birds.html",
+      "status": "error",
+      "records": 0,
+      "note": "HTTP 403 for https://www.cdc.gov/bird-flu/situation-summary/data-map-wild-birds.html"
+    },
+    {
+      "key": "us-dairy",
+      "name": "USDA APHIS — Dairy cattle / livestock",
+      "region": "United States",
+      "homepage": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/hpai-confirmed-cases-livestock",
+      "status": "error",
+      "records": 0,
+      "note": "HTTP 403 for https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/hpai-confirmed-cases-livestock"
+    },
+    {
+      "key": "us-mammals",
+      "name": "USDA APHIS — Mammals",
+      "region": "United States",
+      "homepage": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/mammals",
+      "status": "error",
+      "records": 0,
+      "note": "HTTP 403 for https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/mammals"
+    },
+    {
+      "key": "au-avian-influenza",
+      "name": "Agriculture Victoria / DAFF — Australia avian influenza",
+      "region": "Australia",
+      "homepage": "https://www.agriculture.gov.au/biosecurity-trade/pests-diseases-weeds/animal/avian-influenza",
+      "status": "error",
+      "records": 0,
+      "note": "HTTP 403 for https://www.agriculture.gov.au/biosecurity-trade/pests-diseases-weeds/animal/avian-influenza"
+    }
+  ],
+  "references": [
+    {
+      "name": "WHO — Cumulative human cases of avian influenza A(H5N1)",
+      "url": "https://www.who.int/publications/m/item/cumulative-number-of-confirmed-human-cases-for-avian-influenza-a(h5n1)-reported-to-who"
+    },
+    {
+      "name": "WOAH/WAHIS — World Animal Health Information System",
+      "url": "https://wahis.woah.org/"
+    },
+    {
+      "name": "CDC — Global H5N1 human case summary",
+      "url": "https://www.cdc.gov/bird-flu/spotlights/"
+    },
+    {
+      "name": "Wildlife Health Australia — Avian influenza",
+      "url": "https://wildlifehealthaustralia.com.au/Our-Work/Avian-Influenza"
+    }
+  ]
+}

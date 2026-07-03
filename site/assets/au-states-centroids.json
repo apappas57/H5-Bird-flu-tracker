@@ -1,0 +1,10 @@
+{
+  "New South Wales":              {"code":"NSW","lat":-32.00,"lng":147.00},
+  "Victoria":                     {"code":"VIC","lat":-36.85,"lng":144.30},
+  "Queensland":                   {"code":"QLD","lat":-22.50,"lng":144.00},
+  "South Australia":              {"code":"SA","lat":-30.05,"lng":135.50},
+  "Western Australia":            {"code":"WA","lat":-25.50,"lng":122.30},
+  "Tasmania":                     {"code":"TAS","lat":-42.00,"lng":146.60},
+  "Northern Territory":           {"code":"NT","lat":-19.40,"lng":133.40},
+  "Australian Capital Territory": {"code":"ACT","lat":-35.50,"lng":149.00}
+}
