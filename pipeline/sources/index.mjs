@@ -22,7 +22,13 @@ export const SOURCES = [
     category: 'poultry',
     country: 'United States',
     homepage: 'https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/commercial-backyard-flocks',
+    // Poultry data sits behind a Tableau dashboard (no embedded CSV on the page),
+    // so try the likely direct-CSV names that match the other APHIS feeds.
     dataUrls: [
+      'https://www.aphis.usda.gov/sites/default/files/hpai-commercial-backyard.csv',
+      'https://www.aphis.usda.gov/sites/default/files/hpai-poultry.csv',
+      'https://www.aphis.usda.gov/sites/default/files/hpai-commercial-and-backyard-flocks.csv',
+      'https://www.aphis.usda.gov/sites/default/files/hpai-flocks.csv',
       'https://www.aphis.usda.gov/sites/default/files/hpai-commercial-backyard-flocks.csv',
     ],
     fields: {
@@ -82,7 +88,10 @@ export const SOURCES = [
     category: 'poultry',
     country: 'Australia',
     homepage: 'https://www.agriculture.gov.au/biosecurity-trade/pests-diseases-weeds/animal/avian-influenza',
-    timeoutMs: 45000,
+    // This page blocks automated fetches; fail fast and let the curated overlay
+    // (WHO/agency bulletins) carry Australian events rather than slow every run.
+    timeoutMs: 15000,
+    retries: 0,
     fields: { admin1: ['state', 'region'], locality: ['location', 'property'], date: ['date'] },
   }),
 ];

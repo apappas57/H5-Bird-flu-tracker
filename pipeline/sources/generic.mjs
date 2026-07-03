@@ -37,7 +37,9 @@ export function tabularSource(cfg) {
     category: cfg.category,
     homepage: cfg.homepage,
     async collect() {
-      const opts = cfg.timeoutMs ? { timeoutMs: cfg.timeoutMs } : {};
+      const opts = {};
+      if (cfg.timeoutMs != null) opts.timeoutMs = cfg.timeoutMs;
+      if (cfg.retries != null) opts.retries = cfg.retries;
       let rows = [];
       let note = '';
       // 1. try direct data-file candidates (fastest, most robust)
