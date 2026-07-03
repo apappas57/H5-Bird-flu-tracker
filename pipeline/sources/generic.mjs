@@ -37,15 +37,26 @@ export function tabularSource(cfg) {
     category: cfg.category,
     homepage: cfg.homepage,
     async collect() {
-      const html = await getText(cfg.homepage);
-      const links = findDataLinks(html, cfg.homepage);
+      const opts = cfg.timeoutMs ? { timeoutMs: cfg.timeoutMs } : {};
       let rows = [];
-      let note = 'html-table';
-      const jsonLink = links.find((l) => /\.json/i.test(l));
-      const csvLink = links.find((l) => /\.csv/i.test(l));
-      if (jsonLink) { rows = arrayify(await getJson(jsonLink)); note = `json:${jsonLink}`; }
-      else if (csvLink) { rows = parseCsv(await getText(csvLink)); note = `csv:${csvLink}`; }
-      else { rows = htmlTable(html, cfg.tableHeaders || []); }
+      let note = '';
+      // 1. try direct data-file candidates (fastest, most robust)
+      for (const u of cfg.dataUrls || []) {
+        try {
+          rows = /\.json/i.test(u) ? arrayify(await getJson(u, opts)) : parseCsv(await getText(u, opts));
+          if (rows.length) { note = `direct:${u}`; break; }
+        } catch { /* try next candidate */ }
+      }
+      // 2. otherwise scrape the landing page for an embedded data file or table
+      if (!rows.length) {
+        const html = await getText(cfg.homepage, opts);
+        const links = findDataLinks(html, cfg.homepage);
+        const jsonLink = links.find((l) => /\.json/i.test(l));
+        const csvLink = links.find((l) => /\.csv/i.test(l));
+        if (jsonLink) { rows = arrayify(await getJson(jsonLink, opts)); note = `json:${jsonLink}`; }
+        else if (csvLink) { rows = parseCsv(await getText(csvLink, opts)); note = `csv:${csvLink}`; }
+        else { rows = htmlTable(html, cfg.tableHeaders || []); note = 'html-table'; }
+      }
 
       const records = [];
       for (const row of rows) {

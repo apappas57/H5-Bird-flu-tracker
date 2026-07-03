@@ -13,13 +13,18 @@
 import { tabularSource } from './generic.mjs';
 
 export const SOURCES = [
+  // USDA APHIS is the authoritative US source (CDC merely republishes it) and
+  // hosts direct CSVs at /sites/default/files/hpai-*.csv — confirmed live in CI.
   tabularSource({
     key: 'us-poultry',
-    name: 'CDC/USDA — Poultry (commercial & backyard)',
+    name: 'USDA APHIS — Poultry (commercial & backyard)',
     region: 'United States',
     category: 'poultry',
     country: 'United States',
-    homepage: 'https://www.cdc.gov/bird-flu/situation-summary/data-map-commercial.html',
+    homepage: 'https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/commercial-backyard-flocks',
+    dataUrls: [
+      'https://www.aphis.usda.gov/sites/default/files/hpai-commercial-backyard-flocks.csv',
+    ],
     fields: {
       admin1: ['state'], locality: ['county'],
       date: ['outbreak date', 'confirmed', 'date'],
@@ -29,11 +34,14 @@ export const SOURCES = [
   }),
   tabularSource({
     key: 'us-wild-birds',
-    name: 'CDC/USDA — Wild birds',
+    name: 'USDA APHIS — Wild birds',
     region: 'United States',
     category: 'wild_bird',
     country: 'United States',
-    homepage: 'https://www.cdc.gov/bird-flu/situation-summary/data-map-wild-birds.html',
+    homepage: 'https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/wild-birds',
+    dataUrls: [
+      'https://www.aphis.usda.gov/sites/default/files/hpai-wild-birds.csv',
+    ],
     fields: {
       admin1: ['state'], locality: ['county'],
       date: ['collection', 'date'], species: ['species', 'bird'],
@@ -45,7 +53,11 @@ export const SOURCES = [
     region: 'United States',
     category: 'dairy',
     country: 'United States',
-    homepage: 'https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/hpai-confirmed-cases-livestock',
+    homepage: 'https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/livestock',
+    dataUrls: [
+      'https://www.aphis.usda.gov/sites/default/files/hpai-dairy-herds.csv',
+      'https://www.aphis.usda.gov/sites/default/files/hpai-livestock.csv',
+    ],
     fields: { admin1: ['state'], locality: ['county'], date: ['confirmed', 'date'] },
   }),
   tabularSource({
@@ -55,6 +67,9 @@ export const SOURCES = [
     category: 'mammal',
     country: 'United States',
     homepage: 'https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/mammals',
+    dataUrls: [
+      'https://www.aphis.usda.gov/sites/default/files/hpai-mammals.csv', // confirmed live
+    ],
     fields: {
       admin1: ['state'], locality: ['county'],
       date: ['collection', 'date'], species: ['species'],
@@ -67,6 +82,7 @@ export const SOURCES = [
     category: 'poultry',
     country: 'Australia',
     homepage: 'https://www.agriculture.gov.au/biosecurity-trade/pests-diseases-weeds/animal/avian-influenza',
+    timeoutMs: 45000,
     fields: { admin1: ['state', 'region'], locality: ['location', 'property'], date: ['date'] },
   }),
 ];
