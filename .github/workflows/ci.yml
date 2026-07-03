@@ -1,0 +1,44 @@
+name: CI
+
+# Validates the site + data pipeline on every PR and on pushes to main.
+# (Deployment lives in deploy.yml; this job never deploys.)
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "site/data/**"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Syntax-check front-end
+        run: node --check site/app.js
+
+      - name: Run data pipeline (exercises live source fetch)
+        run: node pipeline/build.mjs
+
+      - name: Validate generated data
+        run: |
+          node -e '
+            const d = require("./site/data/detections.json");
+            const s = require("./site/data/summary.json");
+            if (!Array.isArray(d) || d.length === 0) throw new Error("detections.json is empty");
+            if (!s.totals || typeof s.totals.total_events !== "number") throw new Error("summary.json invalid");
+            for (const r of d) {
+              if (!r.id || !r.category || typeof r.lat !== "number" || typeof r.lng !== "number" || !/^\d{4}-\d{2}-\d{2}$/.test(r.date))
+                throw new Error("bad record: " + JSON.stringify(r));
+            }
+            console.log("OK:", d.length, "records, mode=" + s.mode);
+            console.log("Source health:", (s.sources || []).map(x => x.key + "=" + x.status).join(", "));
+          '

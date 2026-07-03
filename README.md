@@ -79,11 +79,25 @@ No dependencies to install — the pipeline uses Node's built-in `fetch` (Node 2
    `main`, once a day on a schedule, and on manual dispatch. Your site appears at
    `https://apappas57.github.io/h5-bird-flu-tracker/`.
 
-### Custom domain (when you buy one)
+### Custom domain — birdflutracker.org
 
-- Add the domain under **Settings → Pages → Custom domain** (creates a `CNAME` file).
-- Point DNS: an `ALIAS`/`A` record to GitHub Pages IPs, or a `CNAME` to `apappas57.github.io`.
-- No code changes needed.
+The `site/CNAME` file is already set to `birdflutracker.org`. To finish, add these DNS records at
+your registrar and set the domain under **Settings → Pages → Custom domain**:
+
+| Type | Host / name | Value |
+| --- | --- | --- |
+| A | `@` (apex) | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| AAAA | `@` | `2606:50c0:8000::153` |
+| AAAA | `@` | `2606:50c0:8001::153` |
+| AAAA | `@` | `2606:50c0:8002::153` |
+| AAAA | `@` | `2606:50c0:8003::153` |
+| CNAME | `www` | `apappas57.github.io.` |
+
+After DNS propagates (minutes to a few hours), tick **Enforce HTTPS** in Settings → Pages. That's it —
+no code changes; the site serves at both `https://birdflutracker.org` and `https://www.birdflutracker.org`.
 
 ## Disclaimer
 
