@@ -71,33 +71,37 @@ npm run serve             # preview at http://localhost:8080
 
 No dependencies to install — the pipeline uses Node's built-in `fetch` (Node 20+).
 
-## Deploy (one-time setup)
+## Deploy (Vercel)
 
-1. Push this repo to GitHub (`apappas57/h5-bird-flu-tracker`).
-2. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
-3. The [`Refresh data & deploy`](.github/workflows/deploy.yml) workflow then runs on every push to
-   `main`, once a day on a schedule, and on manual dispatch. Your site appears at
-   `https://apappas57.github.io/h5-bird-flu-tracker/`.
+The site is hosted on **Vercel** (config in [`vercel.json`](vercel.json)).
+
+1. At **[vercel.com/new](https://vercel.com/new)**, *Import Git Repository* → `apappas57/H5-Bird-flu-tracker` → **Deploy**.
+   Vercel reads `vercel.json` (build `node pipeline/build.mjs`, output `site/`) and pulls fresh USDA
+   data at build time — no other configuration needed.
 
 ### Custom domain — birdflutracker.org
 
-The `site/CNAME` file is already set to `birdflutracker.org`. To finish, add these DNS records at
-your registrar and set the domain under **Settings → Pages → Custom domain**:
+In the Vercel dashboard: **Project → Settings → Domains → Add `birdflutracker.org`**, then point DNS
+at Vercel (Vercel shows the exact records; these are the defaults):
 
 | Type | Host / name | Value |
 | --- | --- | --- |
-| A | `@` (apex) | `185.199.108.153` |
-| A | `@` | `185.199.109.153` |
-| A | `@` | `185.199.110.153` |
-| A | `@` | `185.199.111.153` |
-| AAAA | `@` | `2606:50c0:8000::153` |
-| AAAA | `@` | `2606:50c0:8001::153` |
-| AAAA | `@` | `2606:50c0:8002::153` |
-| AAAA | `@` | `2606:50c0:8003::153` |
-| CNAME | `www` | `apappas57.github.io.` |
+| A | `@` (apex) | `76.76.21.21` |
+| CNAME | `www` | `cname.vercel-dns.com.` |
 
-After DNS propagates (minutes to a few hours), tick **Enforce HTTPS** in Settings → Pages. That's it —
-no code changes; the site serves at both `https://birdflutracker.org` and `https://www.birdflutracker.org`.
+Vercel issues and renews HTTPS automatically once DNS resolves. The site then serves at
+`https://birdflutracker.org` and `https://www.birdflutracker.org`.
+
+### Daily data refresh
+
+Vercel rebuilds (re-pulling the latest USDA data) whenever its **Deploy Hook** is pinged:
+
+1. Vercel → Project → **Settings → Git → Deploy Hooks** → create one (branch `main`), copy the URL.
+2. Add it as a GitHub Actions secret **`VERCEL_DEPLOY_HOOK_URL`**
+   (repo → Settings → Secrets and variables → Actions).
+
+The [`refresh.yml`](.github/workflows/refresh.yml) workflow then pings it daily. CI
+([`ci.yml`](.github/workflows/ci.yml)) still validates the pipeline on every PR.
 
 ## Disclaimer
 

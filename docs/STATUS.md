@@ -6,8 +6,9 @@ _Snapshot for picking the project back up. Delete once merged & deployed._
 
 - **Branch:** `claude/h5-flu-tracker-website-joihfc` — all work committed & pushed.
 - **PR:** [#1](https://github.com/apappas57/H5-Bird-flu-tracker/pull/1) (→ `main`), CI green.
-- **Domain:** `birdflutracker.org` bought; DNS A/CNAME records added; `site/CNAME` committed.
-  (Resolves once the site is deployed and Pages is enabled.)
+- **Hosting:** **Vercel** (config in `vercel.json`). GitHub Pages workflow removed.
+- **Domain:** `birdflutracker.org` bought. Re-point DNS at Vercel (A `@` → 76.76.21.21,
+  CNAME `www` → cname.vercel-dns.com) and add the domain in the Vercel dashboard.
 
 ## What works (verified in CI against live sources)
 
@@ -30,8 +31,10 @@ The pipeline pulls **real USDA APHIS data** — ~9,000 live records, `mode=live`
    check the latest CI "build" log to see if one hit. If not, open the
    [commercial-backyard-flocks page](https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/commercial-backyard-flocks),
    inspect the Tableau/network requests for the data file, and add its URL.
-2. **Merge PR #1**, then **Settings → Pages → Source: GitHub Actions** to publish.
-3. After deploy, set the custom domain in **Settings → Pages** and tick **Enforce HTTPS**.
+2. **Merge PR #1**, then import the repo at **vercel.com/new** → Deploy (reads `vercel.json`).
+3. Add the custom domain in Vercel (Settings → Domains) and re-point DNS at Vercel.
+4. Create a Vercel Deploy Hook and add its URL as the GitHub secret `VERCEL_DEPLOY_HOOK_URL`
+   so `refresh.yml` can trigger the daily rebuild.
 
 ## Run it locally (on the laptop)
 
