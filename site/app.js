@@ -1,12 +1,14 @@
 /* H5 Bird Flu Tracker — front-end logic (vanilla JS + Leaflet). */
 'use strict';
 
+// Hand-tinted "Flyway" palette — kept hue- & lightness-distinct.
+// Must stay in sync with the --c-* custom properties in styles.css.
 const CATEGORY = {
-  human:     { label: 'People',      color: '#d55e00' },
-  poultry:   { label: 'Poultry',     color: '#e69f00' },
-  dairy:     { label: 'Dairy cattle', color: '#0072b2' },
-  wild_bird: { label: 'Wild birds',  color: '#009e73' },
-  mammal:    { label: 'Mammals',     color: '#cc79a7' },
+  human:     { label: 'People',       color: '#A8322A' }, // carmine
+  poultry:   { label: 'Poultry',      color: '#C6891F' }, // ochre
+  dairy:     { label: 'Dairy cattle', color: '#3F6B82' }, // slate
+  wild_bird: { label: 'Wild birds',   color: '#5E7A3A' }, // verdant
+  mammal:    { label: 'Mammals',      color: '#7E579B' }, // amethyst
 };
 // geojson country name -> our canonical name (only where they differ)
 const GEO_NAME_FIX = { 'United States of America': 'United States' };
@@ -108,8 +110,15 @@ function renderMarkers(recs) {
   for (const r of ordered) {
     const [dy, dx] = jitter(r.id, r.level === 'country' ? 3.2 : 0.7);
     const col = (CATEGORY[r.category] || {}).color || '#888';
-    L.circleMarker([r.lat + dy, r.lng + dx], {
-      radius: markerRadius(r), color: '#fff', weight: 1, fillColor: col, fillOpacity: 0.85,
+    const rad = markerRadius(r);
+    const at = [r.lat + dy, r.lng + dx];
+    // Engraved specimen marker: a translucent watercolour halo (sized by count)
+    // beneath a solid core with a fine bistre ink ring — as on the plate map.
+    if (rad > 8) {
+      L.circleMarker(at, { radius: rad + 6, color: col, weight: 0, fillColor: col, fillOpacity: 0.13 }).addTo(markerLayer);
+    }
+    L.circleMarker(at, {
+      radius: rad, color: '#241C12', weight: 1, fillColor: col, fillOpacity: 0.88,
     }).bindPopup(popupHtml(r)).addTo(markerLayer);
   }
 }
@@ -137,7 +146,8 @@ function choroStyle(feature) {
   const name = GEO_NAME_FIX[feature.properties.name] || feature.properties.name;
   const n = countsByCountry[name] || 0;
   const op = n === 0 ? 0 : Math.min(0.5, 0.12 + Math.log10(n + 1) * 0.16);
-  return { fillColor: '#0b6bcb', fillOpacity: op, color: '#0b6bcb', weight: n ? 0.6 : 0, opacity: n ? 0.35 : 0 };
+  // sepia ink wash — impacted areas read like a stain spreading across the map
+  return { fillColor: '#6B4E2E', fillOpacity: op, color: '#6B4E2E', weight: n ? 0.6 : 0, opacity: n ? 0.4 : 0 };
 }
 function choroFeature(feature, layer) {
   const name = GEO_NAME_FIX[feature.properties.name] || feature.properties.name;
