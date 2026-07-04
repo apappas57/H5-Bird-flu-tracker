@@ -1,0 +1,31 @@
+name: Trigger daily Vercel rebuild
+
+# The site is hosted on Vercel, which rebuilds (and re-pulls fresh USDA data)
+# whenever its deploy hook is pinged. This job pings it daily so the data stays
+# current without any manual redeploy.
+#
+# One-time setup:
+#   1. Vercel → Project → Settings → Git → Deploy Hooks → create one (branch: main).
+#   2. Copy its URL into a GitHub Actions secret named VERCEL_DEPLOY_HOOK_URL
+#      (repo → Settings → Secrets and variables → Actions).
+on:
+  schedule:
+    - cron: "17 6 * * *"   # daily, 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Vercel deploy hook
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::warning::VERCEL_DEPLOY_HOOK_URL not set — add it in repo Settings → Secrets → Actions. Skipping."
+            exit 0
+          fi
+          curl -fsS -X POST "$HOOK" && echo "Triggered Vercel rebuild."

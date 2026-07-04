@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>H5 Bird Flu Tracker — global H5N1 cases &amp; impacted areas</title>
+  <meta name="description" content="A plain-language tracker for H5 (H5N1) bird flu detections in poultry, wild birds, mammals, dairy cattle and people — on a map and in a list. Data from CDC, USDA APHIS, WHO, WOAH and national agencies." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%A0%3C/text%3E%3C/svg%3E" />
+  <link rel="canonical" href="https://birdflutracker.org/" />
+  <meta property="og:url" content="https://birdflutracker.org/" />
+  <meta property="og:title" content="H5 Bird Flu Tracker" />
+  <meta property="og:description" content="Global H5N1 bird flu cases and impacted areas, on a map and in a list." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="assets/leaflet/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#map">Skip to map</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">🦠</span>
+        <div>
+          <h1>H5 Bird Flu Tracker</h1>
+          <p class="tagline">Where H5N1 avian influenza is being detected — worldwide, with a focus on the United States and Australia.</p>
+        </div>
+      </div>
+      <div class="status" id="status">
+        <span class="mode-badge" id="modeBadge" hidden></span>
+        <span class="updated" id="updated">Loading data…</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <main class="wrap">
+    <!-- Controls -->
+    <section class="controls" aria-label="Filters">
+      <div class="control-group" role="group" aria-label="Region focus">
+        <span class="control-label">Region</span>
+        <div class="btn-row" id="regionBtns">
+          <button class="chip is-active" data-region="global" aria-pressed="true">🌍 Global</button>
+          <button class="chip" data-region="us" aria-pressed="false">🇺🇸 United States</button>
+          <button class="chip" data-region="au" aria-pressed="false">🇦🇺 Australia</button>
+        </div>
+      </div>
+
+      <div class="control-group" role="group" aria-label="Category filter">
+        <span class="control-label">Show</span>
+        <div class="btn-row" id="categoryBtns">
+          <button class="chip is-active" data-cat="all" aria-pressed="true">All</button>
+          <button class="chip" data-cat="human" aria-pressed="false"><span class="dot" data-catdot="human"></span>People</button>
+          <button class="chip" data-cat="poultry" aria-pressed="false"><span class="dot" data-catdot="poultry"></span>Poultry</button>
+          <button class="chip" data-cat="dairy" aria-pressed="false"><span class="dot" data-catdot="dairy"></span>Dairy cattle</button>
+          <button class="chip" data-cat="wild_bird" aria-pressed="false"><span class="dot" data-catdot="wild_bird"></span>Wild birds</button>
+          <button class="chip" data-cat="mammal" aria-pressed="false"><span class="dot" data-catdot="mammal"></span>Mammals</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="timeframe">Timeframe</label>
+        <select id="timeframe">
+          <option value="30">Last 30 days</option>
+          <option value="90">Last 90 days</option>
+          <option value="365" selected>Last 12 months</option>
+          <option value="0">All time</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Stat cards -->
+    <section class="stats" id="stats" aria-label="Summary statistics"></section>
+
+    <!-- Map -->
+    <section class="map-section">
+      <div id="map" role="application" aria-label="Map of H5N1 detections"></div>
+      <div class="legend" id="legend" aria-hidden="true"></div>
+    </section>
+
+    <!-- List -->
+    <section class="list-section" aria-label="Detection list">
+      <div class="list-head">
+        <h2>Recent detections <span class="muted" id="listCount"></span></h2>
+        <input type="search" id="search" placeholder="Search country, state, county, species…" aria-label="Search detections" />
+      </div>
+      <div class="table-scroll">
+        <table id="table">
+          <thead>
+            <tr>
+              <th data-sort="date" aria-sort="descending">Date ▾</th>
+              <th data-sort="category">Type</th>
+              <th data-sort="country">Country</th>
+              <th data-sort="admin1">State / region</th>
+              <th data-sort="locality">Locality</th>
+              <th data-sort="count" class="num">Affected</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <button id="showMore" class="show-more" hidden>Show more</button>
+    </section>
+
+    <!-- About / sources -->
+    <section class="about" id="about">
+      <h2>About this tracker</h2>
+      <p>
+        This is an independent, public-interest tracker of <strong>H5 avian influenza (H5N1 "bird flu")</strong>.
+        It brings official detections from several agencies into one map and list so anyone can see
+        where the virus is being found — in poultry, wild birds, wild mammals, dairy cattle, and people.
+      </p>
+      <div class="source-status" id="sourceStatus"></div>
+      <h3>Data sources</h3>
+      <ul id="sourceList" class="source-list"></ul>
+      <p class="disclaimer">
+        <strong>Not medical advice.</strong> Figures are aggregated from public reports and may lag or be
+        revised by the source agencies. Current human health risk to the general public is assessed by
+        public-health authorities. For guidance, consult the
+        <a href="https://www.cdc.gov/bird-flu/" rel="noopener">CDC</a>,
+        <a href="https://www.who.int/health-topics/influenza-avian-and-other-zoonotic" rel="noopener">WHO</a>,
+        or your national/state health department. If you keep birds or work with livestock, report sick or
+        dead animals to your local agriculture authority.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>
+        Open data · Auto-updated daily · <span id="footUpdated"></span> ·
+        <a id="repoLink" href="https://github.com/apappas57/h5-bird-flu-tracker" rel="noopener">Source &amp; methodology on GitHub</a>
+      </p>
+      <p class="muted small">Built for the public. Map © OpenStreetMap contributors.</p>
+    </div>
+  </footer>
+
+  <script src="assets/leaflet/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
