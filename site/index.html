@@ -6,8 +6,11 @@
   <title>H5 Bird Flu Tracker — global H5N1 cases &amp; impacted areas</title>
   <meta name="description" content="A plain-language tracker for H5 (H5N1) bird flu detections in poultry, wild birds, mammals, dairy cattle and people — on a map and in a list. Data from CDC, USDA APHIS, WHO, WOAH and national agencies." />
   <meta name="color-scheme" content="light dark" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%A0%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23F5ECD6'/%3E%3Crect x='1.5' y='1.5' width='29' height='29' rx='3' fill='none' stroke='%23C9A24B'/%3E%3Cg fill='none' stroke='%23241C12' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 21C11 15 13 11 20 9 23 8 25 8 27 9'/%3E%3Cpath d='M6 21C3 17 6 13 12 12 17 11 21 14 23 18'/%3E%3Cpath d='M7 22C8 26 14 28 20 26'/%3E%3C/g%3E%3Cpath d='M27 9l3.4-1.1-2.3 1.9z' fill='%23241C12'/%3E%3Ccircle cx='15' cy='27' r='2.4' fill='%23A8322A'/%3E%3C/svg%3E" />
   <link rel="canonical" href="https://birdflutracker.org/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
   <meta property="og:url" content="https://birdflutracker.org/" />
   <meta property="og:title" content="H5 Bird Flu Tracker" />
   <meta property="og:description" content="Global H5N1 bird flu cases and impacted areas, on a map and in a list." />
@@ -22,7 +25,17 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <div class="brand">
-        <span class="logo" aria-hidden="true">🦠</span>
+        <span class="logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 21 C 11 15, 13 11, 20 9 C 23 8, 25 8, 27 9"/>
+              <path d="M6 21 C 3 17, 6 13, 12 12 C 17 11, 21 14, 23 18"/>
+              <path d="M7 22 C 8 26, 14 28, 20 26"/>
+            </g>
+            <path d="M27 9 l 3.4 -1.1 l -2.3 1.9 z" fill="currentColor"/>
+            <circle cx="15" cy="27" r="2.4" fill="#A8322A"/>
+          </svg>
+        </span>
         <div>
           <h1>H5 Bird Flu Tracker</h1>
           <p class="tagline">Where H5N1 avian influenza is being detected — worldwide, with a focus on the United States and Australia.</p>
