@@ -102,6 +102,33 @@ export const SOURCES = [
     retries: 0,
     fields: { admin1: ['state', 'region'], locality: ['location', 'property'], date: ['date'] },
   }),
+
+  // ---- Phase 3: global deterministic coverage (multi-country, multi-host) ----
+  // FAO EMPRES-i is the best global animal-disease event source. It carries a host
+  // column, so `categoryFrom` maps each row to our host category. The exact
+  // machine-readable export URL must be confirmed from a CI runner (the dev sandbox
+  // can't reach FAO); until then this fails safe and the curated overlay carries
+  // global events. WOAH/WAHIS needs a dedicated API client (its query API is POST-based)
+  // — tracked as Phase 3b; see docs/DATA_SOURCES.md.
+  tabularSource({
+    key: 'fao-empres-global',
+    name: 'FAO EMPRES-i — global avian influenza (all strains)',
+    region: 'Global',
+    category: 'wild_bird',            // fallback when a host column is absent
+    categoryFrom: ['species type', 'host', 'animal type', 'species'],
+    homepage: 'https://empres-i.apps.fao.org/',
+    dataUrls: [
+      'https://empres-i.apps.fao.org/api/v1/events?disease=Influenza%20-%20Avian&format=csv',
+    ],
+    fields: {
+      country: ['country'], admin1: ['admin', 'region', 'province', 'state'],
+      locality: ['locality', 'location'], date: ['observation date', 'reporting date', 'date'],
+      subtype: ['serotype', 'subtype'], species: ['species'], count: ['cases', 'deaths', 'affected'],
+    },
+    defaultPathogenicity: 'HPAI',
+    timeoutMs: 30000,
+    retries: 1,
+  }),
 ];
 
 // Authoritative references for the curated overlay (see pipeline/curated.json).

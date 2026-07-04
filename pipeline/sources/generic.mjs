@@ -15,6 +15,19 @@ const pick = (row, names) => {
   return null;
 };
 
+// Map a source's free-text host/species descriptor to our host category enum.
+// Used by multi-category global feeds (WOAH/WAHIS, FAO EMPRES-i) that carry a host column.
+function normCategory(v) {
+  if (!v) return null;
+  const s = String(v).toLowerCase();
+  if (/human|person|patient/.test(s)) return 'human';
+  if (/dairy|cattle|bovine|cow|livestock/.test(s)) return 'dairy';
+  if (/wild.?bird|wild.?avian|wild.?fowl|migratory/.test(s)) return 'wild_bird';
+  if (/mammal|pinniped|sea.?lion|seal|fox|cat|mink|marine mammal|dog/.test(s)) return 'mammal';
+  if (/poultry|domestic|backyard|commercial|captive|chicken|duck|turkey|layer|broiler/.test(s)) return 'poultry';
+  return null;
+}
+
 // Turn an arbitrary JSON payload into an array of flat row objects.
 function arrayify(json) {
   if (Array.isArray(json)) return json.map(flatten);
@@ -62,8 +75,12 @@ export function tabularSource(cfg) {
 
       const records = [];
       for (const row of rows) {
+        // Multi-category feeds: derive host category from a column; else use the fixed cfg.category.
+        const rowCategory = cfg.categoryFrom
+          ? (normCategory(pick(row, cfg.categoryFrom)) || cfg.category)
+          : cfg.category;
         const rec = makeRecord({
-          category: cfg.category,
+          category: rowCategory,
           country: cfg.country || pick(row, f.country || ['country']) || cfg.defaultCountry,
           admin1: pick(row, f.admin1 || ['state', 'province', 'region']),
           locality: pick(row, f.locality || ['county', 'city', 'location']),

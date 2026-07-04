@@ -72,6 +72,23 @@ the references listed in `CURATED_REFERENCES` (`pipeline/sources/index.mjs`):
 - CDC — global H5N1 human case summaries
 - Wildlife Health Australia — avian influenza
 
+## Phase 3 — global deterministic coverage (in progress)
+
+Goal: fill non-US animal events deterministically (all strains, all countries).
+
+- **FAO EMPRES-i** (`fao-empres-global` in `sources/index.mjs`) — best global animal-disease
+  source. It carries a host column, so the collector's `categoryFrom` maps each row to our host
+  category. The exact machine-readable export endpoint must be **confirmed from a CI runner** (the
+  dev sandbox can't reach FAO). Until it returns data, the run fails safe and the curated overlay
+  carries global events. Verification = same checklist above: check the CI "build" log for
+  `OK fao-empres-global`, adjust `dataUrls`/`fields` if it's `empty`/`error`.
+- **WOAH / WAHIS** — the authoritative global animal-health source, but its query API is POST-based
+  (not a GET-able CSV), so it needs a **dedicated client** rather than the generic tabular
+  collector. Tracked as Phase 3b.
+- **Interim coverage = the curation overlay.** The assisted-curation agent (subscription, no API
+  key) already adds sourced global events (Europe, South America, Asia). This is the pragmatic
+  bridge until the deterministic feeds are wired and CI-verified.
+
 ## Adding a source
 
 1. Add a `tabularSource({...})` entry to `SOURCES` in `pipeline/sources/index.mjs` (or write a custom

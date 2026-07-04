@@ -1,51 +1,61 @@
 {
-  "generated_at": "2026-07-04T13:12:52.805Z",
+  "generated_at": "2026-07-04T13:23:37.209Z",
   "latest_event": "2026-07-03",
   "mode": "seed",
   "totals": {
-    "total_events": 20,
-    "human_cases": 9,
-    "poultry_events": 4,
+    "total_events": 30,
+    "human_cases": 12,
+    "poultry_events": 10,
     "poultry_birds_affected": 0,
     "dairy_events": 0,
-    "wild_bird_events": 6,
+    "wild_bird_events": 7,
     "mammal_events": 1,
-    "countries_affected": 7,
+    "countries_affected": 14,
     "us_states_affected": 4,
     "au_states_affected": 5
   },
   "by_category": {
-    "wild_bird": 6,
-    "poultry": 4,
-    "human": 9,
+    "wild_bird": 7,
+    "poultry": 10,
+    "human": 12,
     "mammal": 1
   },
   "by_country": {
     "Australia": 10,
-    "Cambodia": 1,
-    "United States": 5,
-    "China": 1,
+    "Italy": 1,
+    "France": 1,
+    "Germany": 1,
+    "Poland": 1,
+    "United Kingdom": 1,
+    "Cambodia": 2,
+    "China": 2,
+    "United States": 6,
+    "Brazil": 1,
+    "Argentina": 1,
     "Mexico": 1,
     "Vietnam": 1,
     "Antarctica": 1
   },
   "by_disease": {
-    "Avian influenza": 20
+    "Avian influenza": 30
   },
   "by_strain": {
-    "H5": 16,
+    "H5": 25,
+    "H9": 1,
     "H7": 4
   },
   "by_subtype": {
-    "H5N1": 14,
+    "H5N1": 22,
+    "H9N2": 1,
+    "H5N5": 1,
     "H7N8": 3,
     "H5N6": 1,
     "H5N2": 1,
     "H7N3": 1
   },
   "regions": {
-    "Global": 20,
-    "United States": 5,
+    "Global": 30,
+    "United States": 6,
     "Australia": 10
   },
   "sources": [
@@ -93,6 +103,15 @@
       "status": "error",
       "records": 0,
       "note": "HTTP 403 for https://www.agriculture.gov.au/biosecurity-trade/pests-diseases-weeds/animal/avian-influenza"
+    },
+    {
+      "key": "fao-empres-global",
+      "name": "FAO EMPRES-i — global avian influenza (all strains)",
+      "region": "Global",
+      "homepage": "https://empres-i.apps.fao.org/",
+      "status": "error",
+      "records": 0,
+      "note": "HTTP 403 for https://empres-i.apps.fao.org/"
     }
   ],
   "references": [
