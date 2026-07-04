@@ -3,8 +3,8 @@
 > Status: living document. Supersedes the six exploratory specs (data-model, platform-os, agentic-os, frontend-ia, coverage, phase1). Where a spec disagreed with the code that actually ships, **the shipped code wins** — several specs were written against a stale mental model and would re-do or regress committed work. This blueprint keeps only what adds user-visible value at low cost.
 
 ## Progress & decisions (2026-07-04)
-**Owner decisions:** (1) Coverage = **all avian influenza, go deep** (global WOAH/FAO coverage, all strains, research cards) — not a broad multi-disease platform yet. (2) Agentic OS = **start now, small: assisted curation** (human-gated PRs).
-**Done:** Phase 0 (disease normalization + `by_disease`/`by_strain`/`by_subtype` summary) ✓ · Phase 1 (multi-strain: schema fields, Strain filter + column, subtype in popups, "Bird Flu Tracker" rename, Australia H7 restored) ✓ · Agentic v0 shipped (`agents/curate.mjs` + `curate.yml`) — activates when `ANTHROPIC_API_KEY` secret is added.
+**Owner decisions:** (1) Coverage = **all avian influenza, go deep** (global WOAH/FAO coverage, all strains, research cards) — not a broad multi-disease platform yet. (2) Agentic OS = **start now, small: assisted curation** (human-gated PRs). (3) **No metered API key** — the agentic layer runs on the existing Claude Code subscription, not a per-token `ANTHROPIC_API_KEY`.
+**Done:** Phase 0 (disease normalization + `by_disease`/`by_strain`/`by_subtype` summary) ✓ · Phase 1 (multi-strain: schema fields, Strain filter + column, subtype in popups, "Bird Flu Tracker" rename, Australia H7 restored) ✓ · Agentic v0 shipped, **subscription-based, zero marginal cost**: a Claude Code session (scheduled Routine or on-demand) follows `agents/curation-task.md`, and `agents/curate.mjs` deterministically validates/dedupes/appends + opens a review PR. No API key/secret.
 **Next:** Phase 3 global deterministic coverage (WOAH/WAHIS + FAO EMPRES-i, verify from CI) and Phase 2 research cards + URL-param deep-links.
 
 ---

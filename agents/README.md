@@ -3,39 +3,39 @@
 The automated data-operations layer for Bird Flu Tracker. Design & phasing live in
 [`../docs/BLUEPRINT.md`](../docs/BLUEPRINT.md) §3.
 
-**Core rule:** agents *propose* via pull requests; they never publish. The deterministic
-`pipeline/build.mjs` stays the single publisher, and a human merges every agent PR.
+**Two rules:**
+1. Agents *propose* via pull requests; they never publish. The deterministic
+   `pipeline/build.mjs` stays the single publisher, and a human merges every agent PR.
+2. **No paid API key / no metered billing.** Two tiers, both effectively free:
+   - **Structured feeds → deterministic parsers** (`pipeline/sources/*`). No LLM, no cost.
+   - **Unstructured bulletins → Claude Code on your existing subscription** — a scheduled
+     Claude Code session does the research, not a per-token API key.
 
-## v0 — Assisted curation (`curate.mjs`)
+## v0 — Assisted curation (no API key)
 
-The first agent. It reads official public bulletins (WHO Disease Outbreak News, WOAH/WAHIS,
-CDC), asks the model to extract discrete avian-influenza events **grounded in the page text**
-(each must carry a verbatim evidence quote), validates every candidate against the record
-schema, drops duplicates, caps the batch, and appends the survivors to
-`pipeline/curated.json`. The [`curate.yml`](../.github/workflows/curate.yml) workflow then
-opens a **PR for you to review and merge**.
+The "intelligence" is a **Claude Code session** (scheduled as a Routine, or you just ask in a
+session) that follows [`curation-task.md`](curation-task.md): it researches newly reported
+avian-flu events with WebSearch, writes candidate rows to `agents/proposals.json`, and runs the
+**deterministic guardrail script**:
 
-### Guardrails
-- Only text-grounded events; the model must quote its evidence, and is told never to invent
-  dates/subtypes/counts.
-- `source_url` is forced to the bulletin page — never model-generated.
-- Every record passes `makeRecord()` (geo + date + category validation) or is dropped.
-- De-duplicated against existing curated + published records.
-- Hard cap (`CURATE_MAX_NEW`, default 25) per run.
-- Opens a PR only; **no auto-merge**, no writes to `site/data/*`.
-- No API key → clean no-op (never fails the build).
+```
+node agents/curate.mjs agents/proposals.json
+```
 
-### Enable it
-1. Create an Anthropic API key.
-2. Repo → **Settings → Secrets and variables → Actions** → add `ANTHROPIC_API_KEY`.
-3. Repo → **Actions → "Assisted curation" → Run workflow** (or wait for the weekly run).
-4. Review the opened PR — check each event against its source link and evidence quote — then
-   merge. Vercel redeploys with the new records.
+`curate.mjs` schema-validates every row, **forces a real `source_url`**, de-duplicates against
+existing data, caps the batch (`CURATE_MAX_NEW`, default 25), and appends survivors to
+`pipeline/curated.json` + writes `agents/out/summary.md`. The session then opens a **PR for you to
+review and merge**. Vercel redeploys on merge.
 
-### Config (env)
-- `ANTHROPIC_API_KEY` — required to run.
-- `CURATE_MODEL` — default `claude-sonnet-5` (use `claude-haiku-4-5-20251001` to cut cost).
-- `CURATE_MAX_NEW` — max new records per run (default 25).
+### Why this is cheaper than an API key
+The extraction runs on the Claude subscription you already pay a flat rate for — there's no
+per-token Anthropic API bill and no `ANTHROPIC_API_KEY` secret to manage. The guardrails
+(validation, provenance, dedupe, cap, PR-only) live in `curate.mjs`, so they hold no matter what
+drove the proposals.
+
+### Scheduling it
+Set up a recurring Claude Code Routine whose prompt says *"follow agents/curation-task.md and open
+a curation PR."* Manage/pause it like any Routine. Or just run it on demand by asking in a session.
 
 ### Roadmap (see blueprint)
 - v1: source-discovery allowlist + normalization for new official feeds; geo-cache; anomaly issues.

@@ -3,3 +3,5 @@ node_modules/
 *.log
 scratchpad/
 .env
+agents/out/
+agents/proposals.json
