@@ -11,10 +11,10 @@
   /* Category colours — hand-tinted, kept hue- & lightness-distinct.
      Must stay in sync with CATEGORY colours in app.js. */
   --c-human:     #A8322A;  /* carmine  — people (most severe) */
-  --c-poultry:   #C08A2E;  /* ochre    — poultry */
-  --c-dairy:     #47606E;  /* slate    — dairy cattle */
-  --c-wild_bird: #6E7F4E;  /* verdant  — wild birds */
-  --c-mammal:    #7A5E96;  /* amethyst — mammals */
+  --c-poultry:   #C6891F;  /* ochre    — poultry */
+  --c-dairy:     #3F6B82;  /* slate    — dairy cattle */
+  --c-wild_bird: #5E7A3A;  /* verdant  — wild birds */
+  --c-mammal:    #7E579B;  /* amethyst — mammals */
 
   /* Paper & ink */
   --bg:       #F5ECD6;   /* aged Whatman ground */
@@ -103,6 +103,18 @@ a:hover { color: var(--accent); }
 .mode-badge.stale { color: #8A6326; }
 .mode-badge.live  { color: #3E4A28; }
 @media (prefers-color-scheme: dark){ .mode-badge.seed,.mode-badge.stale{ color:#D6A758; } .mode-badge.live{ color:#9DAE6E; } }
+
+/* ---------- Hero (specimen plate) ---------- */
+.hero { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: clamp(18px, 4vw, 44px); align-items: center; padding: clamp(22px, 4vw, 40px) 0 clamp(6px, 2vw, 14px); }
+.hero__eyebrow { font-family: var(--serif); font-size: .72rem; letter-spacing: .26em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 12px; display: flex; align-items: center; gap: 12px; }
+.hero__eyebrow::before { content: ""; width: 34px; height: 1px; background: var(--gilt); }
+.hero h2 { font-size: clamp(1.9rem, 4.5vw, 3rem); margin: 0 0 .3em; letter-spacing: .01em; line-height: 1.02; }
+.hero h2 .script { font-family: var(--script); color: var(--accent); font-size: 1.15em; display: inline-block; }
+.hero p { color: var(--ink-soft); max-width: 54ch; font-size: 1.05rem; margin: 0; }
+.hero__plate { position: relative; background: #FBF6E9; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-lift); padding: 12px; }
+.hero__plate::after { content: ""; position: absolute; inset: 7px; border: 1px solid color-mix(in srgb, var(--gilt) 55%, transparent); border-radius: 3px; pointer-events: none; }
+.hero__plate svg { display: block; width: 100%; height: auto; }
+@media (max-width: 760px) { .hero { grid-template-columns: 1fr; } .hero__plate { max-width: 300px; margin: 4px auto 0; order: -1; } }
 
 /* ---------- Banner ---------- */
 .banner {

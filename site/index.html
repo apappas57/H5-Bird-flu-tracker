@@ -51,6 +51,65 @@
   <div id="banner" class="banner" hidden></div>
 
   <main class="wrap">
+    <!-- Hero -->
+    <section class="hero" aria-label="Introduction">
+      <div>
+        <p class="hero__eyebrow">H5N1 · Highly Pathogenic Avian Influenza</p>
+        <h2>Tracking bird flu <span class="script">down the flyway.</span></h2>
+        <p>Official detections in poultry, wild birds, wild mammals, dairy cattle and people — mapped along the migratory routes the virus travels, and listed as they are reported.</p>
+      </div>
+      <figure class="hero__plate" aria-hidden="true">
+        <svg id="heroBird" viewBox="0 0 600 780" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Engraved sentinel heron plate">
+          <defs>
+            <linearGradient id="hb_body" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EFE3C7"/><stop offset=".55" stop-color="#D8C39A"/><stop offset="1" stop-color="#B79A66"/></linearGradient>
+            <linearGradient id="hb_wing" x1="0" y1="0" x2=".4" y2="1"><stop offset="0" stop-color="#6E5A3C"/><stop offset="1" stop-color="#33291B"/></linearGradient>
+            <linearGradient id="hb_water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E8695" stop-opacity=".5"/><stop offset="1" stop-color="#47606E" stop-opacity=".15"/></linearGradient>
+            <radialGradient id="hb_fox" cx=".5" cy=".4" r=".75"><stop offset="0" stop-color="#FBF6E9"/><stop offset=".7" stop-color="#F5ECD6"/><stop offset="1" stop-color="#E6D6B2"/></radialGradient>
+            <style>
+              #heroBird .ink{fill:none;stroke:#241C12;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+              #heroBird .fine{fill:none;stroke:#33291B;stroke-width:.6;stroke-linecap:round}
+              #heroBird .rl{fill:none;stroke:#241C12}
+              #heroBird .gl{fill:none;stroke:#C9A24B}
+              #heroBird .lbl{font-family:"Cormorant Garamond","Iowan Old Style",Georgia,serif;fill:#33291B}
+              #heroBird .scr{font-family:"Pinyon Script","Snell Roundhand",cursive;fill:#241C12}
+            </style>
+          </defs>
+          <rect width="600" height="780" fill="url(#hb_fox)"/>
+          <path d="M60 612 H540 V690 H60 Z" fill="url(#hb_water)"/>
+          <g class="fine" opacity=".5"><path d="M80 628 q40 -6 80 0 t80 0 t80 0 t80 0 t80 0"/><path d="M90 648 q40 -6 80 0 t80 0 t80 0 t80 0 t70 0"/><path d="M80 668 q40 -6 80 0 t80 0 t80 0 t80 0 t80 0"/></g>
+          <g class="ink" opacity=".85"><path d="M108 640 C 112 560, 118 500, 132 452"/><path d="M132 452 C 126 470, 132 476, 140 470"/><path d="M120 640 C 126 580, 134 540, 150 506"/><path d="M492 640 C 486 560, 480 512, 470 470"/><path d="M470 470 C 476 486, 470 492, 462 486"/></g>
+          <g transform="translate(0 -6)">
+            <path d="M250 470 C 210 470, 188 440, 196 402 C 202 372, 232 356, 268 356 C 320 356, 360 372, 384 402 C 372 430, 342 452, 300 466 C 284 471, 266 472, 250 470 Z" fill="url(#hb_body)"/>
+            <path d="M300 372 C 356 372, 396 400, 402 448 C 380 470, 330 476, 292 462 C 300 430, 302 398, 300 372 Z" fill="url(#hb_wing)" opacity=".9"/>
+            <path class="ink" d="M262 468 C 260 520, 256 566, 250 612 M250 612 l -14 20 M250 612 l 6 22 M250 612 l 16 16"/>
+            <path class="ink" d="M292 470 C 296 522, 300 568, 306 614 M306 614 l -14 18 M306 614 l 4 22 M306 614 l 18 14"/>
+            <path class="ink" d="M250 470 C 210 470, 188 440, 196 402 C 202 372, 232 356, 268 356 C 320 356, 360 372, 384 402"/>
+            <path class="ink" d="M384 402 C 372 430, 342 452, 300 466 C 284 471, 266 472, 250 470"/>
+            <path class="ink" d="M256 372 C 244 336, 250 300, 276 280 C 300 262, 306 236, 296 212"/>
+            <path class="ink" d="M284 366 C 276 332, 284 302, 306 284 C 326 268, 330 244, 322 220"/>
+            <path class="ink" d="M296 212 C 292 198, 300 188, 314 186 C 330 184, 342 192, 344 206 C 345 214, 340 220, 332 222 C 322 224, 322 220, 322 220"/>
+            <path class="ink" d="M344 204 L 402 190 L 346 214 Z" fill="#B8893B"/>
+            <path class="fine" d="M344 200 L 400 190"/>
+            <circle cx="328" cy="203" r="3.4" fill="#241C12"/><circle cx="329" cy="202" r="1" fill="#F5ECD6"/>
+            <path class="ink" d="M312 186 C 300 176, 288 172, 274 174 M316 187 C 306 179, 296 176, 286 178"/>
+            <g class="fine"><path d="M300 384 c 14 2 22 10 22 22"/><path d="M296 400 c 16 2 26 10 27 24"/><path d="M292 418 c 18 2 30 12 31 27"/><path d="M288 436 c 20 3 33 14 34 30"/><path d="M300 380 c 20 2 34 8 44 18"/><path d="M300 396 c 24 2 40 10 52 22"/><path d="M298 414 c 26 3 44 13 58 27"/></g>
+            <g class="ink" opacity=".9"><path d="M362 452 C 356 470, 350 484, 342 496"/><path d="M376 448 C 372 468, 366 484, 358 498"/><path d="M390 442 C 388 464, 382 482, 374 496"/></g>
+            <g class="fine" opacity=".65"><path d="M214 410 q10 6 8 18 M224 402 q10 6 8 18 M234 396 q10 6 8 18 M210 428 q10 6 8 18 M222 424 q10 6 8 18 M234 420 q10 6 8 18"/></g>
+            <g class="fine" opacity=".5"><path d="M258 340 q8 4 6 12 M266 320 q8 4 6 12 M276 302 q8 4 6 12 M288 286 q8 4 6 12"/></g>
+          </g>
+          <path d="M250 618 C 248 650, 250 672, 258 688" class="fine" opacity=".4"/>
+          <path d="M306 620 C 308 652, 306 674, 300 688" class="fine" opacity=".4"/>
+          <rect x="20" y="20" width="560" height="740" class="rl" stroke-width="1"/>
+          <rect x="27" y="27" width="546" height="726" class="gl" stroke-width=".8"/>
+          <g class="gl" stroke-width="1"><path d="M27 55 Q 27 27 55 27 M573 55 Q 573 27 545 27 M27 725 Q 27 753 55 753 M573 725 Q 573 753 545 753"/></g>
+          <text class="lbl" x="556" y="52" text-anchor="end" font-size="17" letter-spacing="0.12em">PLATE CCXXI</text>
+          <text class="lbl" x="44" y="52" font-size="13" letter-spacing="0.18em" opacity=".7">ORDER · PELECANIFORMES</text>
+          <text class="scr" x="300" y="712" text-anchor="middle" font-size="40">Ardea sentinella</text>
+          <text class="lbl" x="300" y="736" text-anchor="middle" font-size="15" letter-spacing="0.28em">THE SENTINEL HERON</text>
+        </svg>
+      </figure>
+    </section>
+
     <!-- Controls -->
     <section class="controls" aria-label="Filters">
       <div class="control-group" role="group" aria-label="Region focus">

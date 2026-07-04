@@ -5,10 +5,10 @@
 // Must stay in sync with the --c-* custom properties in styles.css.
 const CATEGORY = {
   human:     { label: 'People',       color: '#A8322A' }, // carmine
-  poultry:   { label: 'Poultry',      color: '#C08A2E' }, // ochre
-  dairy:     { label: 'Dairy cattle', color: '#47606E' }, // slate
-  wild_bird: { label: 'Wild birds',   color: '#6E7F4E' }, // verdant
-  mammal:    { label: 'Mammals',      color: '#7A5E96' }, // amethyst
+  poultry:   { label: 'Poultry',      color: '#C6891F' }, // ochre
+  dairy:     { label: 'Dairy cattle', color: '#3F6B82' }, // slate
+  wild_bird: { label: 'Wild birds',   color: '#5E7A3A' }, // verdant
+  mammal:    { label: 'Mammals',      color: '#7E579B' }, // amethyst
 };
 // geojson country name -> our canonical name (only where they differ)
 const GEO_NAME_FIX = { 'United States of America': 'United States' };
@@ -110,8 +110,15 @@ function renderMarkers(recs) {
   for (const r of ordered) {
     const [dy, dx] = jitter(r.id, r.level === 'country' ? 3.2 : 0.7);
     const col = (CATEGORY[r.category] || {}).color || '#888';
-    L.circleMarker([r.lat + dy, r.lng + dx], {
-      radius: markerRadius(r), color: '#fff', weight: 1, fillColor: col, fillOpacity: 0.85,
+    const rad = markerRadius(r);
+    const at = [r.lat + dy, r.lng + dx];
+    // Engraved specimen marker: a translucent watercolour halo (sized by count)
+    // beneath a solid core with a fine bistre ink ring — as on the plate map.
+    if (rad > 8) {
+      L.circleMarker(at, { radius: rad + 6, color: col, weight: 0, fillColor: col, fillOpacity: 0.13 }).addTo(markerLayer);
+    }
+    L.circleMarker(at, {
+      radius: rad, color: '#241C12', weight: 1, fillColor: col, fillOpacity: 0.88,
     }).bindPopup(popupHtml(r)).addTo(markerLayer);
   }
 }
