@@ -81,14 +81,17 @@ The site is hosted on **Vercel** (config in [`vercel.json`](vercel.json)).
 
 ### Custom domain — birdflutracker.org
 
-In the Vercel dashboard: **Project → Settings → Domains → Add `birdflutracker.org`**, then point DNS
-at Vercel (Vercel shows the exact records; these are the defaults):
+In the Vercel dashboard: **Project → Settings → Domains → Add `birdflutracker.org`**. Vercel then
+shows the exact records to create — **use the values shown in your dashboard**, since Vercel assigns
+a per-domain `www` target and periodically updates its apex IP. As of this writing:
 
 | Type | Host / name | Value |
 | --- | --- | --- |
-| A | `@` (apex) | `76.76.21.21` |
-| CNAME | `www` | `cname.vercel-dns.com.` |
+| A | `@` (apex) | `216.150.1.1` (older `76.76.21.21` also works) |
+| CNAME | `www` | the per-domain target Vercel shows, e.g. `<hash>.vercel-dns-###.com` (generic `cname.vercel-dns.com` also works) |
 
+If `www` reads "Invalid Configuration", its CNAME doesn't match the value Vercel shows — copy the exact
+target from the dashboard, or drop the `www` record if you only want the apex.
 Vercel issues and renews HTTPS automatically once DNS resolves. The site then serves at
 `https://birdflutracker.org` and `https://www.birdflutracker.org`.
 
