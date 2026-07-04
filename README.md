@@ -1,8 +1,11 @@
-# H5 Bird Flu Tracker
+# Bird Flu Tracker
 
-A simple, public-interest website that shows where **H5 avian influenza (H5N1, "bird flu")**
-is being detected — worldwide, with a focus on the **United States** and **Australia** — on a
-map and in a plain-language list. Built for the general public: no jargon, no login, fast to load.
+A simple, public-interest website that shows where **avian influenza ("bird flu")** — all strains,
+including **H5N1, H7 and H9** — is being detected worldwide, with a focus on the **United States**
+and **Australia**, on a map and in a plain-language list. Built for the general public: no jargon,
+no login, fast to load. Records carry their **subtype** (e.g. H5N1, H7N8) and **pathogenicity**
+(HPAI/LPAI), and the site has a strain filter. See [`docs/BLUEPRINT.md`](docs/BLUEPRINT.md) for the
+platform roadmap (multi-disease + agentic data operations).
 
 > **Function over fanciness.** It's a static website (no server to run or pay for) whose data is
 > refreshed automatically once a day by a small Node.js pipeline running in GitHub Actions.

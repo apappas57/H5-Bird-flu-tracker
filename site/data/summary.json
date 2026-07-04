@@ -1,26 +1,27 @@
 {
-  "generated_at": "2026-07-04T12:40:26.323Z",
+  "generated_at": "2026-07-04T12:54:51.585Z",
   "latest_event": "2026-07-03",
   "mode": "seed",
   "totals": {
-    "total_events": 16,
+    "total_events": 20,
     "human_cases": 9,
-    "poultry_events": 0,
+    "poultry_events": 4,
     "poultry_birds_affected": 0,
     "dairy_events": 0,
     "wild_bird_events": 6,
     "mammal_events": 1,
     "countries_affected": 7,
     "us_states_affected": 4,
-    "au_states_affected": 3
+    "au_states_affected": 5
   },
   "by_category": {
     "wild_bird": 6,
+    "poultry": 4,
     "human": 9,
     "mammal": 1
   },
   "by_country": {
-    "Australia": 6,
+    "Australia": 10,
     "Cambodia": 1,
     "United States": 5,
     "China": 1,
@@ -29,9 +30,9 @@
     "Antarctica": 1
   },
   "regions": {
-    "Global": 16,
+    "Global": 20,
     "United States": 5,
-    "Australia": 6
+    "Australia": 10
   },
   "sources": [
     {

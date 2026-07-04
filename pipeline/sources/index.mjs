@@ -21,6 +21,8 @@ export const SOURCES = [
     region: 'United States',
     category: 'poultry',
     country: 'United States',
+    defaultSubtype: 'H5N1',       // current US HPAI panzootic; overridden if the feed has a subtype column
+    defaultPathogenicity: 'HPAI',
     homepage: 'https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/commercial-backyard-flocks',
     // Poultry data sits behind a Tableau dashboard (no embedded CSV on the page),
     // so try the likely direct-CSV names that match the other APHIS feeds.
@@ -44,6 +46,8 @@ export const SOURCES = [
     region: 'United States',
     category: 'wild_bird',
     country: 'United States',
+    defaultSubtype: 'H5N1',
+    defaultPathogenicity: 'HPAI',
     homepage: 'https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/wild-birds',
     dataUrls: [
       'https://www.aphis.usda.gov/sites/default/files/hpai-wild-birds.csv',
@@ -59,6 +63,8 @@ export const SOURCES = [
     region: 'United States',
     category: 'dairy',
     country: 'United States',
+    defaultSubtype: 'H5N1',
+    defaultPathogenicity: 'HPAI',
     homepage: 'https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/livestock',
     dataUrls: [
       'https://www.aphis.usda.gov/sites/default/files/hpai-dairy-herds.csv',
@@ -72,6 +78,8 @@ export const SOURCES = [
     region: 'United States',
     category: 'mammal',
     country: 'United States',
+    defaultSubtype: 'H5N1',
+    defaultPathogenicity: 'HPAI',
     homepage: 'https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/mammals',
     dataUrls: [
       'https://www.aphis.usda.gov/sites/default/files/hpai-mammals.csv', // confirmed live

@@ -71,6 +71,9 @@ export function tabularSource(cfg) {
           count: toCount(pick(row, f.count || ['size', 'affected', 'number', 'birds', 'count'])),
           flock_type: pick(row, f.flock_type || ['production', 'flock type', 'type']),
           species: pick(row, f.species || ['species', 'bird species']),
+          subtype: pick(row, f.subtype || ['subtype', 'serotype', 'strain']) || cfg.defaultSubtype,
+          pathogenicity: pick(row, f.pathogenicity || ['pathogenicity']) || cfg.defaultPathogenicity,
+          disease: cfg.disease || 'Avian influenza',
           source: cfg.name,
           source_url: cfg.homepage,
         });

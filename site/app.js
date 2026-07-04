@@ -19,7 +19,7 @@ const REGION_VIEW = {
 
 const state = {
   all: [], summary: null,
-  region: 'global', category: 'all', timeframe: 365, search: '',
+  region: 'global', category: 'all', strain: 'all', timeframe: 365, search: '',
   sortKey: 'date', sortDir: -1, shown: 50,
 };
 
@@ -53,9 +53,10 @@ function filtered() {
     if (state.region === 'us' && r.country !== 'United States') return false;
     if (state.region === 'au' && r.country !== 'Australia') return false;
     if (state.category !== 'all' && r.category !== state.category) return false;
+    if (state.strain !== 'all' && r.strain !== state.strain) return false;
     if (r.date < cut) return false;
     if (q) {
-      const hay = `${r.country} ${r.admin1 || ''} ${r.locality || ''} ${r.species || ''} ${r.source}`.toLowerCase();
+      const hay = `${r.country} ${r.admin1 || ''} ${r.locality || ''} ${r.species || ''} ${r.subtype || ''} ${r.source}`.toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
@@ -119,6 +120,7 @@ function popupHtml(r) {
   const rows = [
     `<div class="popup-row"><strong>${where}</strong></div>`,
     `<div class="popup-row">${niceDate(r.date)}</div>`,
+    r.subtype ? `<div class="popup-row"><strong>${escapeHtml(r.subtype)}</strong>${r.pathogenicity ? ' · ' + escapeHtml(r.pathogenicity) : ''}</div>` : '',
     r.species ? `<div class="popup-row">${escapeHtml(r.species)}</div>` : '',
     r.flock_type ? `<div class="popup-row">${escapeHtml(r.flock_type)}</div>` : '',
     r.count ? `<div class="popup-row">${fmt(r.count)} affected</div>` : '',
@@ -164,7 +166,7 @@ function renderList(recs) {
   });
   const slice = sorted.slice(0, state.shown);
   $('#tbody').innerHTML = slice.map(rowHtml).join('') ||
-    `<tr><td colspan="7" class="muted" style="padding:22px;text-align:center">No detections match these filters.</td></tr>`;
+    `<tr><td colspan="8" class="muted" style="padding:22px;text-align:center">No detections match these filters.</td></tr>`;
   $('#listCount').textContent = `— showing ${slice.length} of ${sorted.length}`;
   $('#showMore').hidden = state.shown >= sorted.length;
 }
@@ -175,6 +177,7 @@ function rowHtml(r) {
   return `<tr>
     <td>${niceDate(r.date)}</td>
     <td><span class="pill" style="background:color-mix(in srgb,${cat.color} 16%,transparent);color:${cat.color}"><span class="dot" style="background:${cat.color}"></span>${cat.label}</span></td>
+    <td>${r.subtype ? `<span class="strain-tag">${escapeHtml(r.subtype)}</span>` : '<span class="muted">—</span>'}</td>
     <td>${escapeHtml(r.country)}</td>
     <td>${escapeHtml(r.admin1 || '—')}</td>
     <td>${escapeHtml(r.locality || (r.species ? r.species : '—'))}</td>
@@ -230,6 +233,11 @@ function wire() {
     state.category = b.dataset.cat; state.shown = 50;
     setActive('#categoryBtns', b); render();
   });
+  $('#strainBtns').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-strain]'); if (!b) return;
+    state.strain = b.dataset.strain; state.shown = 50;
+    setActive('#strainBtns', b); render();
+  });
   $('#timeframe').addEventListener('change', (e) => { state.timeframe = +e.target.value; state.shown = 50; render(); });
   $('#search').addEventListener('input', (e) => { state.search = e.target.value; state.shown = 50; renderList(filtered()); });
   $('#showMore').addEventListener('click', () => { state.shown += 50; renderList(filtered()); });
@@ -247,6 +255,19 @@ function setActive(container, btn) {
   btn.classList.add('is-active'); btn.setAttribute('aria-pressed', 'true');
 }
 
+// Build the Strain filter chips from the strain groups actually present in the data.
+function renderStrainChips() {
+  const order = ['H5', 'H7', 'H9', 'H10', 'H3', 'H6'];
+  const present = [...new Set(state.all.map((r) => r.strain).filter(Boolean))];
+  present.sort((a, b) => {
+    const ia = order.indexOf(a), ib = order.indexOf(b);
+    return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || a.localeCompare(b);
+  });
+  const chips = ['<button class="chip is-active" data-strain="all" aria-pressed="true">All strains</button>']
+    .concat(present.map((s) => `<button class="chip" data-strain="${s}" aria-pressed="false">${s}</button>`));
+  $('#strainBtns').innerHTML = chips.join('');
+}
+
 // ---------- boot ----------
 async function boot() {
   initMap(); renderLegend(); wire();
@@ -261,6 +282,7 @@ async function boot() {
     // everything so it never looks empty. Live data keeps the recent-first view.
     if (sum.mode !== 'live') { state.timeframe = 0; $('#timeframe').value = '0'; }
     countryLayer.addData(geo);
+    renderStrainChips();
     renderMeta(); render();
   } catch (err) {
     $('#updated').textContent = 'Could not load data.';

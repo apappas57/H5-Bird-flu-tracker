@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>H5 Bird Flu Tracker — global H5N1 cases &amp; impacted areas</title>
-  <meta name="description" content="A plain-language tracker for H5 (H5N1) bird flu detections in poultry, wild birds, mammals, dairy cattle and people — on a map and in a list. Data from CDC, USDA APHIS, WHO, WOAH and national agencies." />
+  <title>Bird Flu Tracker — global avian influenza cases &amp; impacted areas</title>
+  <meta name="description" content="A plain-language tracker for bird flu (avian influenza — H5N1, H7, H9 and other strains) detections in poultry, wild birds, mammals, dairy cattle and people — on a map and in a list. Data from CDC, USDA APHIS, WHO, WOAH and national agencies." />
   <meta name="color-scheme" content="light dark" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%A0%3C/text%3E%3C/svg%3E" />
   <link rel="canonical" href="https://birdflutracker.org/" />
   <meta property="og:url" content="https://birdflutracker.org/" />
-  <meta property="og:title" content="H5 Bird Flu Tracker" />
-  <meta property="og:description" content="Global H5N1 bird flu cases and impacted areas, on a map and in a list." />
+  <meta property="og:title" content="Bird Flu Tracker" />
+  <meta property="og:description" content="Global avian influenza (bird flu) cases and impacted areas, on a map and in a list." />
   <meta property="og:type" content="website" />
 
   <link rel="stylesheet" href="assets/leaflet/leaflet.css" />
@@ -24,8 +24,8 @@
       <div class="brand">
         <span class="logo" aria-hidden="true">🦠</span>
         <div>
-          <h1>H5 Bird Flu Tracker</h1>
-          <p class="tagline">Where H5N1 avian influenza is being detected — worldwide, with a focus on the United States and Australia.</p>
+          <h1>Bird Flu Tracker</h1>
+          <p class="tagline">Where avian influenza (bird flu — H5N1, H7 and other strains) is being detected — worldwide, with a focus on the United States and Australia.</p>
         </div>
       </div>
       <div class="status" id="status">
@@ -61,6 +61,13 @@
         </div>
       </div>
 
+      <div class="control-group" role="group" aria-label="Strain filter">
+        <span class="control-label">Strain</span>
+        <div class="btn-row" id="strainBtns">
+          <button class="chip is-active" data-strain="all" aria-pressed="true">All strains</button>
+        </div>
+      </div>
+
       <div class="control-group">
         <label class="control-label" for="timeframe">Timeframe</label>
         <select id="timeframe">
@@ -93,6 +100,7 @@
             <tr>
               <th data-sort="date" aria-sort="descending">Date ▾</th>
               <th data-sort="category">Type</th>
+              <th data-sort="subtype">Strain</th>
               <th data-sort="country">Country</th>
               <th data-sort="admin1">State / region</th>
               <th data-sort="locality">Locality</th>
@@ -110,9 +118,10 @@
     <section class="about" id="about">
       <h2>About this tracker</h2>
       <p>
-        This is an independent, public-interest tracker of <strong>H5 avian influenza (H5N1 "bird flu")</strong>.
-        It brings official detections from several agencies into one map and list so anyone can see
-        where the virus is being found — in poultry, wild birds, wild mammals, dairy cattle, and people.
+        This is an independent, public-interest tracker of <strong>avian influenza ("bird flu")</strong> —
+        all strains, including H5N1, H7 and H9. It brings official detections from several agencies into one
+        map and list so anyone can see where the virus is being found — in poultry, wild birds, wild mammals,
+        dairy cattle, and people. Use the <strong>Strain</strong> filter to focus on a specific subtype.
       </p>
       <div class="source-status" id="sourceStatus"></div>
       <h3>Data sources</h3>

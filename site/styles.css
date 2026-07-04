@@ -138,6 +138,7 @@ th { position: sticky; top: 0; background: var(--panel); cursor: pointer; user-s
 th.num, td.num { text-align: right; }
 tbody tr:hover { background: color-mix(in srgb, var(--accent) 7%, transparent); }
 .pill { display: inline-flex; align-items: center; gap: 6px; padding: 2px 9px; border-radius: 999px; font-size: .78rem; font-weight: 600; }
+.strain-tag { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .8rem; font-weight: 600; padding: 1px 7px; border-radius: 6px; background: color-mix(in srgb, var(--ink) 9%, transparent); white-space: nowrap; }
 .pill .dot { width: 9px; height: 9px; }
 .show-more { display: block; margin: 14px auto 2px; padding: 9px 20px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 8px; cursor: pointer; }
 .show-more:hover { border-color: var(--accent); }
