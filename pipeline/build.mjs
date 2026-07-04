@@ -78,12 +78,16 @@ async function main() {
 
 function buildSummary(records, results, mode) {
   const byCategory = {}, byCountry = {}, regions = { Global: records.length };
+  const bySubtype = {}, byStrain = {}, byDisease = {};
   const usStates = new Set(), auStates = new Set(), countries = new Set();
   let poultryBirds = 0, latest = '';
 
   for (const r of records) {
     byCategory[r.category] = (byCategory[r.category] || 0) + 1;
     byCountry[r.country] = (byCountry[r.country] || 0) + 1;
+    byDisease[r.disease] = (byDisease[r.disease] || 0) + 1;
+    if (r.subtype) bySubtype[r.subtype] = (bySubtype[r.subtype] || 0) + 1;
+    if (r.strain) byStrain[r.strain] = (byStrain[r.strain] || 0) + 1;
     countries.add(r.country);
     if (r.country === 'United States' && r.admin1) usStates.add(r.admin1);
     if (r.country === 'Australia' && r.admin1) auStates.add(r.admin1);
@@ -111,6 +115,9 @@ function buildSummary(records, results, mode) {
     },
     by_category: byCategory,
     by_country: byCountry,
+    by_disease: byDisease,
+    by_strain: byStrain,
+    by_subtype: bySubtype,
     regions,
     sources: results.map((r) => ({
       key: r.key, name: r.name, region: r.region, homepage: r.homepage,

@@ -4,6 +4,19 @@ import { resolvePlace } from './geo.mjs';
 
 export const CATEGORIES = ['human', 'poultry', 'dairy', 'wild_bird', 'mammal'];
 
+// Canonical disease names. Normalizing here prevents casing/alias variants
+// (e.g. "avian_influenza" vs "Avian influenza") from splitting by_disease counts.
+const DISEASE_ALIASES = {
+  'avian influenza': 'Avian influenza', 'avian_influenza': 'Avian influenza',
+  'bird flu': 'Avian influenza', 'ai': 'Avian influenza', 'hpai': 'Avian influenza',
+  'lpai': 'Avian influenza', 'influenza a': 'Avian influenza',
+};
+function normDisease(v) {
+  if (!v) return 'Avian influenza';
+  const key = String(v).trim().toLowerCase();
+  return DISEASE_ALIASES[key] || String(v).trim();
+}
+
 const slug = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 // Normalize an influenza subtype string, e.g. "h5n1" -> "H5N1", "H7" -> "H7". Null if unrecognizable.
@@ -45,7 +58,7 @@ export function makeRecord(raw) {
 
   const subtype = normSubtype(raw.subtype);
   const strain = strainGroup(subtype);
-  const disease = raw.disease || 'Avian influenza';
+  const disease = normDisease(raw.disease);
   const pathogenicity = raw.pathogenicity
     ? String(raw.pathogenicity).toUpperCase().replace(/[^A-Z]/g, '').slice(0, 4) || null
     : null;

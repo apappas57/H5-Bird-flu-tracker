@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T12:54:51.585Z",
+  "generated_at": "2026-07-04T12:58:10.149Z",
   "latest_event": "2026-07-03",
   "mode": "seed",
   "totals": {
@@ -28,6 +28,20 @@
     "Mexico": 1,
     "Vietnam": 1,
     "Antarctica": 1
+  },
+  "by_disease": {
+    "Avian influenza": 20
+  },
+  "by_strain": {
+    "H5": 16,
+    "H7": 4
+  },
+  "by_subtype": {
+    "H5N1": 14,
+    "H7N8": 3,
+    "H5N6": 1,
+    "H5N2": 1,
+    "H7N3": 1
   },
   "regions": {
     "Global": 20,
