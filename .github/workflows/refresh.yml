@@ -26,13 +26,15 @@ jobs:
       - name: Refresh data from live sources
         run: node pipeline/build.mjs
 
-      - name: Commit refreshed data (triggers the Vercel deploy)
+      - name: Commit refresh marker (triggers the Vercel deploy, which rebuilds the full data)
         run: |
+          # Only summary.json is committed daily to keep git history lean; Vercel
+          # regenerates the large detections.json fresh at build time from this push.
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add site/data/detections.json site/data/summary.json
+          git add site/data/summary.json
           if git diff --cached --quiet; then
-            echo "No data changes today."
+            echo "No changes today."
           else
             git commit -m "chore: daily data refresh"
             git push
