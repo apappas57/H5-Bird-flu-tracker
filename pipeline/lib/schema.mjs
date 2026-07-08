@@ -12,16 +12,24 @@ function validDate(d) {
   return /^\d{4}-\d{2}-\d{2}$/.test(s) && !Number.isNaN(Date.parse(s)) ? s : null;
 }
 
+/** Normalise a subtype string to a canonical HxNy / Hx token, else null. */
+function normalizeSubtype(v) {
+  if (!v) return null;
+  const m = String(v).toUpperCase().replace(/\s+/g, '').match(/H\d{1,2}(?:N\d{1,2})?/);
+  return m ? m[0] : null;
+}
+
 /**
  * Build one normalized record from a raw source row.
  * Returns null if the row can't be geolocated or categorized (caller counts skips).
  * @param {{category:string, country:string, admin1?:string, locality?:string,
- *          date:string, count?:number|null, flock_type?:string, species?:string,
+ *          lat?:number|string, lng?:number|string, date:string, count?:number|null,
+ *          subtype?:string, flock_type?:string, species?:string, uid?:string,
  *          source:string, source_url?:string}} raw
  */
 export function makeRecord(raw) {
   if (!CATEGORIES.includes(raw.category)) return null;
-  const place = resolvePlace({ country: raw.country, admin1: raw.admin1 });
+  const place = resolvePlace({ country: raw.country, admin1: raw.admin1, lat: raw.lat, lng: raw.lng });
   if (!place) return null;
   const date = validDate(raw.date);
   if (!date) return null;
@@ -29,11 +37,16 @@ export function makeRecord(raw) {
   const count = raw.count == null || Number.isNaN(Number(raw.count))
     ? null : Math.max(0, Math.round(Number(raw.count)));
 
-  const id = [
-    raw.category, place.country_code || slug(place.country),
-    place.admin1_code || slug(place.admin1) || 'na',
-    slug(raw.locality) || 'na', date, count ?? 'na',
-  ].join('_');
+  // Prefer a source-supplied stable id (e.g. FAO global_id, USDA OBJECTID) so
+  // distinct point detections in the same place/date never collapse, and the
+  // same event from the same source across runs stays stable.
+  const id = raw.uid
+    ? `${raw.category}_${slug(raw.uid)}`
+    : [
+        raw.category, place.country_code || slug(place.country) || 'na',
+        place.admin1_code || slug(place.admin1) || 'na',
+        slug(raw.locality) || 'na', date, count ?? 'na',
+      ].join('_');
 
   return {
     id,
@@ -48,6 +61,7 @@ export function makeRecord(raw) {
     level: place.level,
     date,
     count,
+    subtype: normalizeSubtype(raw.subtype),
     flock_type: raw.flock_type || null,
     species: raw.species || null,
     source: raw.source,

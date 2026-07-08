@@ -1,0 +1,29 @@
+{
+  "_comment": "Editorial current-status facts for the Australia banner. Slow-changing, sourced. The pipeline merges these with counts derived from the live data. Keep the tone calm and factual; human risk is currently low and the page must say so.",
+  "headline": "H5N1 bird flu (clade 2.3.4.4b) reached Australian wild birds in June 2026.",
+  "summary": "For the first time, high pathogenicity H5N1 avian influenza has been detected in wild birds in Australia. Detections so far are in migratory seabirds; there are no detections in commercial poultry. The risk to people is low.",
+  "first_detection": {
+    "date": "2026-06-20",
+    "species": "brown skua",
+    "place": "near Esperance, Western Australia",
+    "confirmed_by": "CSIRO Australian Centre for Disease Preparedness",
+    "source": "WOAH",
+    "source_url": "https://www.woah.org/en/australia-notifies-first-case-of-high-pathogenicity-avian-influenza-h5n1-in-a-wild-bird/"
+  },
+  "human_risk": "low",
+  "human_risk_note": "Australia's only human H5N1 case is a single travel-acquired case from May 2024, a different virus lineage unrelated to the 2026 wildlife detections. No human-to-human transmission has been reported.",
+  "poultry_note": "No detections in commercial poultry or other agriculture to date. The 2024 to 2025 outbreaks in poultry were a different subtype (H7) and are resolved.",
+  "report": {
+    "label": "Report sick or dead wild birds",
+    "hotline": "Emergency Animal Disease Hotline 1800 675 888"
+  },
+  "caveats": [
+    "\"First detection\" refers to Australian wild birds. A separate possible incursion at sub-Antarctic Heard Island, an external territory, was reported in late 2025 and is not counted in these figures.",
+    "Not every Western Australian detection is itemised in public data; the map shows the events published by official sources."
+  ],
+  "authorities": [
+    { "name": "DAFF / outbreak.gov.au", "url": "https://www.outbreak.gov.au/emerging-risks/high-pathogenicity-avian-influenza" },
+    { "name": "Wildlife Health Australia", "url": "https://wildlifehealthaustralia.com.au/Resource-Centre/H5-bird-flu" },
+    { "name": "Australian CDC (human health)", "url": "https://www.cdc.gov.au/diseases/bird-flu-avian-influenza" }
+  ]
+}
