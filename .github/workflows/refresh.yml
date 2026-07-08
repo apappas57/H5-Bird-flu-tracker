@@ -1,31 +1,39 @@
-name: Trigger daily Vercel rebuild
+name: Daily data refresh
 
-# The site is hosted on Vercel, which rebuilds (and re-pulls fresh USDA data)
-# whenever its deploy hook is pinged. This job pings it daily so the data stays
-# current without any manual redeploy.
-#
-# One-time setup:
-#   1. Vercel → Project → Settings → Git → Deploy Hooks → create one (branch: main).
-#   2. Copy its URL into a GitHub Actions secret named VERCEL_DEPLOY_HOOK_URL
-#      (repo → Settings → Secrets and variables → Actions).
+# The repo is connected to Vercel, so any push to main triggers a production
+# deploy (which re-runs pipeline/build.mjs and pulls fresh data). This job runs
+# the pipeline once a day and commits the refreshed data, which triggers that
+# deploy. It is fully self-contained: no deploy hook or external secret needed.
+
 on:
   schedule:
     - cron: "17 6 * * *"   # daily, 06:17 UTC
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Vercel deploy hook
-        env:
-          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Refresh data from live sources
+        run: node pipeline/build.mjs
+
+      - name: Commit refreshed data (triggers the Vercel deploy)
         run: |
-          if [ -z "$HOOK" ]; then
-            echo "::warning::VERCEL_DEPLOY_HOOK_URL not set — add it in repo Settings → Secrets → Actions. Skipping."
-            exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site/data/detections.json site/data/summary.json
+          if git diff --cached --quiet; then
+            echo "No data changes today."
+          else
+            git commit -m "chore: daily data refresh"
+            git push
           fi
-          curl -fsS -X POST "$HOOK" && echo "Triggered Vercel rebuild."

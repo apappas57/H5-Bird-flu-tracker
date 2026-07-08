@@ -85,9 +85,11 @@ No dependencies to install: the pipeline uses Node's built-in `fetch` (Node 20+)
 
 ## Deploy
 
-Hosted on **Vercel** (config in `vercel.json`: build `node pipeline/build.mjs`, output `site/`). Vercel
-pulls fresh data at build time. A daily [`refresh.yml`](.github/workflows/refresh.yml) workflow pings a
-Vercel deploy hook to rebuild; [`ci.yml`](.github/workflows/ci.yml) validates the pipeline on every PR.
+Hosted on **Vercel** (config in `vercel.json`: build `node pipeline/build.mjs`, output `site/`). The
+repo is connected to Vercel, so every push to `main` deploys and re-runs the pipeline for fresh data.
+A daily [`refresh.yml`](.github/workflows/refresh.yml) workflow re-runs the pipeline and commits the
+refreshed data, which triggers that deploy; [`ci.yml`](.github/workflows/ci.yml) validates the pipeline
+on every PR and push.
 
 ## Contributing
 
