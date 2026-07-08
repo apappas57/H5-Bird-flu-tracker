@@ -25,7 +25,7 @@ function subtypeOf(a) {
 }
 
 export function usdaWildBirdSource(cfg = {}) {
-  const name = cfg.name || 'USDA APHIS — Wild birds';
+  const name = cfg.name || 'USDA APHIS: wild birds';
   return {
     key: cfg.key || 'us-wild-birds',
     name,

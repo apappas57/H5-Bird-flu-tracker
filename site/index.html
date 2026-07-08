@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>H5 Bird Flu Tracker — global H5N1 cases &amp; impacted areas</title>
-  <meta name="description" content="A plain-language tracker for H5 (H5N1) bird flu detections in poultry, wild birds, mammals, dairy cattle and people — on a map and in a list. Data from CDC, USDA APHIS, WHO, WOAH and national agencies." />
+  <title>Australian Bird Flu Tracker: H5N1 avian influenza, live status &amp; map</title>
+  <meta name="description" content="A plain-language tracker for bird flu (avian influenza) in Australia: where H5N1 and other strains are being detected in wild birds, poultry, mammals and people, on a live map and list. Free official data from FAO, WOAH, USDA and WHO." />
   <meta name="color-scheme" content="light dark" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23F5ECD6'/%3E%3Crect x='1.5' y='1.5' width='29' height='29' rx='3' fill='none' stroke='%23C9A24B'/%3E%3Cg fill='none' stroke='%23241C12' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 21C11 15 13 11 20 9 23 8 25 8 27 9'/%3E%3Cpath d='M6 21C3 17 6 13 12 12 17 11 21 14 23 18'/%3E%3Cpath d='M7 22C8 26 14 28 20 26'/%3E%3C/g%3E%3Cpath d='M27 9l3.4-1.1-2.3 1.9z' fill='%23241C12'/%3E%3Ccircle cx='15' cy='27' r='2.4' fill='%23A8322A'/%3E%3C/svg%3E" />
   <link rel="canonical" href="https://birdflutracker.org/" />
@@ -12,8 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
   <meta property="og:url" content="https://birdflutracker.org/" />
-  <meta property="og:title" content="H5 Bird Flu Tracker" />
-  <meta property="og:description" content="Global H5N1 bird flu cases and impacted areas, on a map and in a list." />
+  <meta property="og:title" content="Australian Bird Flu Tracker" />
+  <meta property="og:description" content="Where H5N1 bird flu is being detected in Australia, on a live map and list, with the world for context. Human risk is currently low." />
   <meta property="og:type" content="website" />
 
   <link rel="stylesheet" href="assets/leaflet/leaflet.css" />
@@ -37,8 +37,8 @@
           </svg>
         </span>
         <div>
-          <h1>H5 Bird Flu Tracker</h1>
-          <p class="tagline">Where H5N1 avian influenza is being detected — worldwide, with a focus on the United States and Australia.</p>
+          <h1>Australian Bird Flu Tracker</h1>
+          <p class="tagline">Where H5N1 and other avian influenza is being detected across Australia, with the world for context.</p>
         </div>
       </div>
       <div class="status" id="status">
@@ -54,9 +54,9 @@
     <!-- Hero -->
     <section class="hero" aria-label="Introduction">
       <div>
-        <p class="hero__eyebrow">H5N1 · Highly Pathogenic Avian Influenza</p>
+        <p class="hero__eyebrow">H5N1 · High Pathogenicity Avian Influenza</p>
         <h2>Tracking bird flu <span class="script">down the flyway.</span></h2>
-        <p>Official detections in poultry, wild birds, wild mammals, dairy cattle and people — mapped along the migratory routes the virus travels, and listed as they are reported.</p>
+        <p>In June 2026, H5N1 reached Australian wild birds for the first time, carried down the Southern Ocean flyway by migrating seabirds. Every official detection in Australia, mapped where it happened and listed as it is reported, with the wider world for context.</p>
       </div>
       <figure class="hero__plate" aria-hidden="true">
         <svg id="heroBird" viewBox="0 0 600 780" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Engraved sentinel heron plate">
@@ -110,14 +110,17 @@
       </figure>
     </section>
 
+    <!-- Current status (Australia) -->
+    <section id="statusBanner" class="status-banner" aria-label="Current situation in Australia" hidden></section>
+
     <!-- Controls -->
     <section class="controls" aria-label="Filters">
       <div class="control-group" role="group" aria-label="Region focus">
         <span class="control-label">Region</span>
         <div class="btn-row" id="regionBtns">
-          <button class="chip is-active" data-region="global" aria-pressed="true">🌍 Global</button>
+          <button class="chip is-active" data-region="au" aria-pressed="true">🇦🇺 Australia</button>
+          <button class="chip" data-region="global" aria-pressed="false">🌍 Global</button>
           <button class="chip" data-region="us" aria-pressed="false">🇺🇸 United States</button>
-          <button class="chip" data-region="au" aria-pressed="false">🇦🇺 Australia</button>
         </div>
       </div>
 
@@ -133,13 +136,22 @@
         </div>
       </div>
 
+      <div class="control-group" role="group" aria-label="Strain filter">
+        <span class="control-label">Strain</span>
+        <div class="btn-row" id="subtypeBtns">
+          <button class="chip is-active" data-sub="all" aria-pressed="true">All</button>
+          <button class="chip" data-sub="H5N1" aria-pressed="false">H5N1</button>
+          <button class="chip" data-sub="H7" aria-pressed="false">H7</button>
+        </div>
+      </div>
+
       <div class="control-group">
         <label class="control-label" for="timeframe">Timeframe</label>
         <select id="timeframe">
           <option value="30">Last 30 days</option>
           <option value="90">Last 90 days</option>
-          <option value="365" selected>Last 12 months</option>
-          <option value="0">All time</option>
+          <option value="365">Last 12 months</option>
+          <option value="0" selected>All time</option>
         </select>
       </div>
     </section>
@@ -165,6 +177,7 @@
             <tr>
               <th data-sort="date" aria-sort="descending">Date ▾</th>
               <th data-sort="category">Type</th>
+              <th data-sort="subtype">Strain</th>
               <th data-sort="country">Country</th>
               <th data-sort="admin1">State / region</th>
               <th data-sort="locality">Locality</th>
@@ -182,21 +195,35 @@
     <section class="about" id="about">
       <h2>About this tracker</h2>
       <p>
-        This is an independent, public-interest tracker of <strong>H5 avian influenza (H5N1 "bird flu")</strong>.
-        It brings official detections from several agencies into one map and list so anyone can see
-        where the virus is being found — in poultry, wild birds, wild mammals, dairy cattle, and people.
+        This is an independent, public-interest tracker of <strong>avian influenza (bird flu) in Australia</strong>,
+        with the wider world for context. It brings official detections into one map and list so anyone can see
+        where the virus is being found, in wild birds, poultry, mammals and people. H5N1 is highlighted; the
+        2024 to 2025 H7 outbreaks in poultry are shown as historical context.
+      </p>
+      <p>
+        Australian detections come automatically from the FAO EMPRES-i+ animal disease system, which aggregates
+        the official WOAH notifications Australian agencies issue. United States wild-bird detections come from
+        USDA APHIS, and global human-case figures from the WHO via Our World in Data. Data refreshes daily. A
+        small set of well-documented human cases is maintained by hand. Sources are listed below, and every
+        detection links back to its source.
       </p>
       <div class="source-status" id="sourceStatus"></div>
       <h3>Data sources</h3>
       <ul id="sourceList" class="source-list"></ul>
+      <h3>Notes and caveats</h3>
+      <ul class="notes-list">
+        <li>&ldquo;First detection&rdquo; refers to Australian wild birds. A separate possible incursion at sub-Antarctic Heard Island, an external territory, was reported in late 2025 and is not counted here.</li>
+        <li>Coordinates follow the source. Some events are placed at a town or region; a few resolve only to a state.</li>
+        <li>Not every Western Australian detection is itemised in public data, so counts follow what official sources publish.</li>
+      </ul>
       <p class="disclaimer">
         <strong>Not medical advice.</strong> Figures are aggregated from public reports and may lag or be
-        revised by the source agencies. Current human health risk to the general public is assessed by
-        public-health authorities. For guidance, consult the
-        <a href="https://www.cdc.gov/bird-flu/" rel="noopener">CDC</a>,
-        <a href="https://www.who.int/health-topics/influenza-avian-and-other-zoonotic" rel="noopener">WHO</a>,
-        or your national/state health department. If you keep birds or work with livestock, report sick or
-        dead animals to your local agriculture authority.
+        revised by the source agencies. The risk to the general public is currently assessed as low by
+        Australian authorities. For guidance, consult the
+        <a href="https://www.cdc.gov.au/diseases/bird-flu-avian-influenza" rel="noopener">Australian CDC</a>,
+        <a href="https://www.outbreak.gov.au/emerging-risks/high-pathogenicity-avian-influenza" rel="noopener">DAFF</a>,
+        or your state health department. <strong>To report sick or dead wild birds, call the Emergency Animal
+        Disease Hotline on 1800&nbsp;675&nbsp;888.</strong>
       </p>
     </section>
   </main>
@@ -205,7 +232,7 @@
     <div class="wrap">
       <p>
         Open data · Auto-updated daily · <span id="footUpdated"></span> ·
-        <a id="repoLink" href="https://github.com/apappas57/h5-bird-flu-tracker" rel="noopener">Source &amp; methodology on GitHub</a>
+        <a id="repoLink" href="https://github.com/apappas57/H5-Bird-flu-tracker" rel="noopener">Source &amp; methodology on GitHub</a>
       </p>
       <p class="muted small">Built for the public. Map © OpenStreetMap contributors.</p>
     </div>

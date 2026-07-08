@@ -21,7 +21,7 @@ const REGION_VIEW = {
 
 const state = {
   all: [], summary: null,
-  region: 'global', category: 'all', timeframe: 365, search: '',
+  region: 'au', category: 'all', subtype: 'all', timeframe: 0, search: '',
   sortKey: 'date', sortDir: -1, shown: 50,
 };
 
@@ -55,6 +55,10 @@ function filtered() {
     if (state.region === 'us' && r.country !== 'United States') return false;
     if (state.region === 'au' && r.country !== 'Australia') return false;
     if (state.category !== 'all' && r.category !== state.category) return false;
+    if (state.subtype !== 'all') {
+      if (state.subtype === 'H7') { if (!(r.subtype && r.subtype.startsWith('H7'))) return false; }
+      else if (r.subtype !== state.subtype) return false;
+    }
     if (r.date < cut) return false;
     if (q) {
       const hay = `${r.country} ${r.admin1 || ''} ${r.locality || ''} ${r.species || ''} ${r.source}`.toLowerCase();
@@ -73,25 +77,44 @@ function render() {
 }
 
 // ---------- stats ----------
+const statCard = (k) =>
+  `<div class="stat ${k.cls}"><div class="val">${fmt(k.val)}</div><div class="lbl">${k.lbl}</div></div>`;
+
 function renderStats(recs) {
+  const s = state.summary;
+  // Australia: a fixed "current situation" summary drawn from the roll-up,
+  // so the headline numbers stay meaningful regardless of the map filters.
+  if (state.region === 'au' && s && s.au) {
+    const au = s.au, hc = s.human_context || {};
+    $('#stats').innerHTML = [
+      { cls: 'wild_bird', val: au.h5n1_wild_detections, lbl: 'H5N1 wild-bird detections' },
+      { cls: 'geo', val: au.h5n1_states, lbl: 'States affected' },
+      { cls: 'human', val: au.days_since_first_detection, lbl: 'Days since first detection' },
+      { cls: 'poultry', val: au.poultry, lbl: 'Poultry outbreaks (H7, 2024-25)' },
+      { cls: 'human', val: au.human, lbl: 'Human cases (all-time)' },
+      { cls: 'geo', val: hc.global_cumulative, lbl: 'Global human cases (WHO)' },
+    ].map(statCard).join('');
+    return;
+  }
+  // United States / Global: derive from the records in view.
   const c = { human: 0, poultry: 0, dairy: 0, wild_bird: 0, mammal: 0 };
-  const countries = new Set();
-  for (const r of recs) { c[r.category]++; countries.add(r.country); }
-  const cards = [
+  const countries = new Set(), admin1s = new Set();
+  for (const r of recs) { c[r.category]++; countries.add(r.country); if (r.admin1) admin1s.add(r.admin1); }
+  const isUs = state.region === 'us';
+  $('#stats').innerHTML = [
     { cls: 'human', val: c.human, lbl: 'Human cases' },
     { cls: 'poultry', val: c.poultry, lbl: 'Poultry outbreaks' },
     { cls: 'dairy', val: c.dairy, lbl: 'Dairy cattle herds' },
     { cls: 'wild_bird', val: c.wild_bird, lbl: 'Wild bird detections' },
     { cls: 'mammal', val: c.mammal, lbl: 'Mammal detections' },
-    { cls: 'geo', val: countries.size, lbl: 'Countries affected' },
-  ];
-  $('#stats').innerHTML = cards.map((k) =>
-    `<div class="stat ${k.cls}"><div class="val">${fmt(k.val)}</div><div class="lbl">${k.lbl}</div></div>`).join('');
+    { cls: 'geo', val: isUs ? admin1s.size : countries.size, lbl: isUs ? 'States affected' : 'Countries affected' },
+  ].map(statCard).join('');
 }
 
 // ---------- map ----------
 function initMap() {
-  map = L.map('map', { worldCopyJump: true, minZoom: 2 }).setView(REGION_VIEW.global.center, REGION_VIEW.global.zoom);
+  // preferCanvas keeps thousands of markers smooth (the US wild-bird layer is large)
+  map = L.map('map', { worldCopyJump: true, minZoom: 2, preferCanvas: true }).setView([-27, 134], 4);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors', maxZoom: 12,
   }).addTo(map);
@@ -117,6 +140,10 @@ function renderMarkers(recs) {
     if (rad > 8) {
       L.circleMarker(at, { radius: rad + 6, color: col, weight: 0, fillColor: col, fillOpacity: 0.13 }).addTo(markerLayer);
     }
+    // H5N1 gets a carmine alarm ring so the current strain of concern stands out
+    if (r.subtype === 'H5N1') {
+      L.circleMarker(at, { radius: rad + 3.5, color: '#A8322A', weight: 1.4, fill: false, opacity: 0.92 }).addTo(markerLayer);
+    }
     L.circleMarker(at, {
       radius: rad, color: '#241C12', weight: 1, fillColor: col, fillOpacity: 0.88,
     }).bindPopup(popupHtml(r)).addTo(markerLayer);
@@ -128,6 +155,7 @@ function popupHtml(r) {
   const rows = [
     `<div class="popup-row"><strong>${where}</strong></div>`,
     `<div class="popup-row">${niceDate(r.date)}</div>`,
+    r.subtype ? `<div class="popup-row">Strain: <strong>${escapeHtml(r.subtype)}</strong></div>` : '',
     r.species ? `<div class="popup-row">${escapeHtml(r.species)}</div>` : '',
     r.flock_type ? `<div class="popup-row">${escapeHtml(r.flock_type)}</div>` : '',
     r.count ? `<div class="popup-row">${fmt(r.count)} affected</div>` : '',
@@ -174,8 +202,8 @@ function renderList(recs) {
   });
   const slice = sorted.slice(0, state.shown);
   $('#tbody').innerHTML = slice.map(rowHtml).join('') ||
-    `<tr><td colspan="7" class="muted" style="padding:22px;text-align:center">No detections match these filters.</td></tr>`;
-  $('#listCount').textContent = `— showing ${slice.length} of ${sorted.length}`;
+    `<tr><td colspan="8" class="muted" style="padding:22px;text-align:center">No detections match these filters.</td></tr>`;
+  $('#listCount').textContent = `showing ${slice.length} of ${sorted.length}`;
   $('#showMore').hidden = state.shown >= sorted.length;
 }
 function rowHtml(r) {
@@ -185,11 +213,17 @@ function rowHtml(r) {
   return `<tr>
     <td>${niceDate(r.date)}</td>
     <td><span class="pill" style="background:color-mix(in srgb,${cat.color} 16%,transparent);color:${cat.color}"><span class="dot" style="background:${cat.color}"></span>${cat.label}</span></td>
+    <td>${subtypeBadge(r.subtype)}</td>
     <td>${escapeHtml(r.country)}</td>
     <td>${escapeHtml(r.admin1 || '—')}</td>
     <td>${escapeHtml(r.locality || (r.species ? r.species : '—'))}</td>
     <td class="num">${r.count ? fmt(r.count) : '—'}</td>
     <td>${src}</td></tr>`;
+}
+function subtypeBadge(sub) {
+  if (!sub) return '<span class="muted">—</span>';
+  const cls = sub === 'H5N1' ? 'h5n1' : (sub.startsWith('H7') ? 'h7' : 'other');
+  return `<span class="strain strain-${cls}">${escapeHtml(sub)}</span>`;
 }
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -212,7 +246,7 @@ function renderMeta() {
 
   if (s.mode !== 'live') {
     const b = $('#banner'); b.hidden = false;
-    b.innerHTML = `<div class="wrap"><strong>Preview mode.</strong> Showing verified curated events while automated agency feeds finish their first sync. Large datasets (poultry & wild-bird detections) populate automatically once deployed with network access — see <a href="#about">data sources</a>.</div>`;
+    b.innerHTML = `<div class="wrap"><strong>Preview mode.</strong> Showing verified curated events while the automated feeds finish their first sync. The full datasets populate automatically once deployed with network access. See <a href="#about">data sources</a>.</div>`;
   }
   // source status list
   const sources = s.sources || [];
@@ -228,6 +262,34 @@ function renderMeta() {
   $('#sourceList').innerHTML = srcItems.concat(refItems).join('');
 }
 
+// Current-situation banner for Australia, drawn from summary.status.
+function renderStatusBanner() {
+  const st = state.summary && state.summary.status;
+  const el = $('#statusBanner');
+  if (!st || !st.headline) { el.hidden = true; return; }
+  const fd = st.first_detection || {};
+  const figs = [
+    { v: st.h5n1_wild_detections, l: 'wild-bird detections' },
+    { v: st.h5n1_states, l: 'states affected' },
+    { v: st.days_since_first_detection, l: 'days since first detection' },
+  ].map((f) => `<div class="sb-fig"><span class="sb-num">${fmt(f.v)}</span><span class="sb-lbl">${f.l}</span></div>`).join('');
+  const risk = st.human_risk || 'unknown';
+  const src = fd.source_url ? ` <a href="${escapeHtml(fd.source_url)}" rel="noopener">${escapeHtml(fd.source || 'source')}</a>` : '';
+  const first = fd.date ? `First detection ${niceDate(fd.date)}: ${escapeHtml(fd.species || '')}, ${escapeHtml(fd.place || '')}.` : '';
+  const hotline = (st.report && st.report.hotline) ? ` &middot; ${escapeHtml(st.report.hotline)}` : '';
+  el.hidden = false;
+  el.innerHTML = `
+    <div class="sb-top">
+      <div class="sb-lead">
+        <p class="sb-headline">${escapeHtml(st.headline)}</p>
+        <p class="sb-sum">${escapeHtml(st.summary || '')}</p>
+      </div>
+      <span class="sb-risk sb-risk-${escapeHtml(risk)}">Human risk: ${escapeHtml(risk)}</span>
+    </div>
+    <div class="sb-figs">${figs}</div>
+    <p class="sb-foot">${first}${src}${hotline}</p>`;
+}
+
 // ---------- events ----------
 function wire() {
   $('#regionBtns').addEventListener('click', (e) => {
@@ -239,6 +301,11 @@ function wire() {
     const b = e.target.closest('[data-cat]'); if (!b) return;
     state.category = b.dataset.cat; state.shown = 50;
     setActive('#categoryBtns', b); render();
+  });
+  $('#subtypeBtns').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-sub]'); if (!b) return;
+    state.subtype = b.dataset.sub; state.shown = 50;
+    setActive('#subtypeBtns', b); render();
   });
   $('#timeframe').addEventListener('change', (e) => { state.timeframe = +e.target.value; state.shown = 50; render(); });
   $('#search').addEventListener('input', (e) => { state.search = e.target.value; state.shown = 50; renderList(filtered()); });
@@ -271,7 +338,7 @@ async function boot() {
     // everything so it never looks empty. Live data keeps the recent-first view.
     if (sum.mode !== 'live') { state.timeframe = 0; $('#timeframe').value = '0'; }
     countryLayer.addData(geo);
-    renderMeta(); render();
+    renderMeta(); renderStatusBanner(); render(); focusRegion(state.region);
   } catch (err) {
     $('#updated').textContent = 'Could not load data.';
     $('#banner').hidden = false;

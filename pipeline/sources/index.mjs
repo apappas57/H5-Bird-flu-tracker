@@ -18,14 +18,14 @@ import { usdaWildBirdSource } from './usda-wildbird.mjs';
 export const SOURCES = [
   faoSource({
     key: 'fao-au',
-    name: 'FAO EMPRES-i+ — Australia (WOAH/WAHIS)',
+    name: 'FAO EMPRES-i+: Australia (WOAH/WAHIS)',
     region: 'Australia',
     country: 'Australia',
     startDate: '2024-01-01',
   }),
   faoSource({
     key: 'fao-world',
-    name: 'FAO EMPRES-i+ — Global context',
+    name: 'FAO EMPRES-i+: global context',
     region: 'Global',
     country: 'all',
     days: 90,
@@ -33,7 +33,7 @@ export const SOURCES = [
   }),
   usdaWildBirdSource({
     key: 'us-wild-birds',
-    name: 'USDA APHIS — US wild birds',
+    name: 'USDA APHIS: US wild birds',
     region: 'United States',
   }),
 ];
@@ -41,14 +41,14 @@ export const SOURCES = [
 // Authoritative references for the curated overlay (see pipeline/curated.json)
 // and shown on the page under "Data sources".
 export const CURATED_REFERENCES = [
-  { name: 'WOAH — Australia notifies first H5N1 in a wild bird (20 Jun 2026)',
+  { name: 'WOAH: Australia notifies first H5N1 in a wild bird (20 Jun 2026)',
     url: 'https://www.woah.org/en/australia-notifies-first-case-of-high-pathogenicity-avian-influenza-h5n1-in-a-wild-bird/' },
-  { name: 'DAFF / outbreak.gov.au — national avian influenza situation',
+  { name: 'DAFF / outbreak.gov.au: national avian influenza situation',
     url: 'https://www.outbreak.gov.au/emerging-risks/high-pathogenicity-avian-influenza' },
-  { name: 'Wildlife Health Australia — H5 bird flu',
+  { name: 'Wildlife Health Australia: H5 bird flu',
     url: 'https://wildlifehealthaustralia.com.au/Resource-Centre/H5-bird-flu' },
-  { name: 'WHO — cumulative human cases of avian influenza A(H5N1)',
+  { name: 'WHO: cumulative human cases of avian influenza A(H5N1)',
     url: 'https://www.who.int/publications/m/item/cumulative-number-of-confirmed-human-cases-for-avian-influenza-a(h5n1)-reported-to-who' },
-  { name: 'Our World in Data — H5N1 human cases',
+  { name: 'Our World in Data: H5N1 human cases',
     url: 'https://ourworldindata.org/grapher/h5n1-flu-reported-cases' },
 ];

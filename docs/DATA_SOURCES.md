@@ -1,81 +1,132 @@
-# Data sources & verification
+# Data sources and verification
 
-This tracker aggregates **official** H5N1 detections into one normalized schema. This doc explains
-how each source is fetched and — importantly — the one-time checklist to run after the first live
-deploy, because the automated scrapers can only be exercised from an environment with outbound
-access to the agency websites (i.e. GitHub Actions, **not** a restricted dev sandbox).
+This tracker aggregates **official and authoritative** avian influenza detections into one normalised
+schema, with an Australia-first focus. This document explains how each source is fetched, the strain
+(subtype) rules, the caveats, and a checklist to run after a deploy.
 
-## How fetching works
+All sources below are free, need no API key, and were verified live on 8 July 2026.
 
-Each entry in `pipeline/sources/index.mjs` points at an authoritative **landing page**. The generic
-collector (`pipeline/sources/generic.mjs`) then, in order:
+## Sources
 
-1. scans the page for an embedded **JSON** data file and parses it;
-2. otherwise scans for an embedded **CSV** and parses it;
-3. otherwise parses the first relevant **HTML `<table>`** on the page.
+### 1. FAO EMPRES-i+ (primary backbone)
 
-Rows are mapped to the normalized record schema (`pipeline/lib/schema.mjs`) using **case-insensitive
-field-name hints**, so minor column renames don't break it. Every row is geolocated via
-`pipeline/lib/geo.mjs` (US state, AU state, or country centroid) so it can be placed on the map.
+The Global Animal Disease Information System. A BigQuery-backed CSV endpoint that returns events with
+coordinates, updated within days. It ingests WOAH/WAHIS notifications, so it already carries the
+Australian official events that AU government sites publish only as HTML or PDF.
 
-If a source returns nothing or errors, the run keeps the **last committed data** plus the
-**curated overlay** (`pipeline/curated.json`) — so the site never goes blank.
+```
+https://api.data.apps.fao.org/api/v2/bigquery
+  ?sql_url=https://data.apps.fao.org/catalog/dataset/96641600-b15c-493e-8e8d-6c22f145a960/resource/2fc21534-05da-4c58-b773-93a0f28bd1f6/download/avian-influenza-parameterized-query.sql
+  &start_date=YYYY-MM-DD&end_date=YYYY-MM-DD
+  &diagnosis_status=all&animal_type=all
+  &disease=Influenza%20-%20Avian        (exact string, required, or you get zero rows)
+  &country=Australia                     (exact country name, or "all" for global)
+```
 
-## Normalized record schema
+Columns: `global_id, disease, lat, lon, locality, country, region, location, observation_date,
+report_date, display_date, animal_type_list, species_overview_list, diagnosis_status, humans_affected,
+humans_deaths, diagnosis_source`.
+
+Two pulls (see `pipeline/sources/index.mjs`):
+
+- `fao-au`: `country=Australia` from 2024-01-01 (the full Australian history).
+- `fao-world`: `country=all` for the last 90 days (recent global context; US wild birds are excluded
+  here because the USDA source covers them at higher resolution).
+
+Licence: FAO open data (CC BY 4.0). Attribution required.
+
+### 2. USDA APHIS wild-bird surveillance (US)
+
+Public ArcGIS FeatureServer, no auth. Provides US wild-bird detections with real `Final_H5` /
+`Final_H7` subtype and county points. The full layer is large (~174k surveillance samples); the
+pipeline queries only actual H5/H7 detections in the last 365 days.
+
+```
+https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/
+  VS_Avian_Influenza_Wild_Bird_Surveillance_Dashboard_data_view_feature_layer_/FeatureServer/0/query
+  ?where=(Final_H5='Detected' OR Final_H7='Detected') AND Date_Collected >= timestamp '<cutoff>'
+  &outFields=*&returnGeometry=true&outSR=4326&f=json
+```
+
+`Date_Collected` is epoch milliseconds; the pipeline converts it to a date. Licence: US federal
+government, public domain. This replaces the old CDC "data-map" pages, which CDC **deprecated on
+7 July 2025** (it stopped hosting USDA animal data). Those pages now return HTTP 403.
+
+### 3. Our World in Data (global human cases)
+
+WHO human-case data republished as CSV. Used for a global context statistic, not map points (the data
+is monthly counts by country, not geolocated events).
+
+```
+https://ourworldindata.org/grapher/h5n1-flu-reported-cases.csv
+```
+
+Licence: CC BY.
+
+### 4. Curated overlay
+
+`pipeline/curated.json` holds a small set of well-documented, individually-sourced **human cases**
+(for example the May 2024 Australian travel-acquired case, and notable US cases) plus a couple of
+notable animal anchors. Australian animal detections are **not** curated: they come automatically from
+FAO EMPRES-i, so curating them would double-count.
+
+## Normalised record schema
 
 ```jsonc
 {
-  "id": "poultry_US_CA_merced_2025-06-12_120000",
-  "category": "poultry",          // human | poultry | dairy | wild_bird | mammal
-  "country": "United States",
-  "country_code": "US",
-  "admin1": "California",          // state / province (US & AU resolved to centroids)
-  "admin1_code": "CA",
-  "locality": "Merced",            // county / city, if provided
-  "lat": 36.116, "lng": -119.682,
-  "level": "admin1",               // admin1 | country
-  "date": "2025-06-12",            // YYYY-MM-DD
-  "count": 120000,                 // birds/animals affected, or null
-  "flock_type": "Commercial",      // poultry/dairy only
-  "species": null,                 // wild bird / mammal species
-  "source": "CDC/USDA — Poultry (commercial & backyard)",
-  "source_url": "https://…"
+  "id": "wild_bird_fao-unfao-hq-50510",
+  "category": "wild_bird",        // human | poultry | dairy | wild_bird | mammal
+  "country": "Australia",
+  "country_code": "AU",
+  "admin1": "Western Australia",  // state / territory (derived for AU from coords + text)
+  "admin1_code": "WA",
+  "locality": "Roses Beach",
+  "lat": -33.847, "lng": 121.591,
+  "level": "point",               // point | admin1 | country
+  "date": "2026-06-20",           // YYYY-MM-DD
+  "count": null,                  // animals affected, or null
+  "subtype": "H5N1",              // H5N1 | H7 | H5 | ... | null ("pending")
+  "flock_type": null,
+  "species": "Grey petrel (Procellaria cinerea)",
+  "source": "FAO EMPRES-i+ — Australia (WOAH/WAHIS)",
+  "source_url": "https://empres-i.apps.fao.org/"
 }
 ```
 
-`summary.json` adds headline totals, per-country counts (for the choropleth), and per-source status.
+## Strain (subtype) rules
 
-## ✅ Verification checklist (run once, after the first CI deploy)
+FAO's `disease` field is the generic "Influenza - Avian" with no subtype. Subtypes are assigned as
+follows:
 
-1. Open the **Actions** tab → the `Refresh data & deploy` run → the *"Fetch latest data"* step log.
-2. For each source, confirm it prints `OK <key>: N records (json:… | csv:… | html-table …)`.
-3. For any source printing `·· empty` or `ERR`, open its landing page in a browser and check:
-   - Has the agency moved the embedded data file? Update the `homepage` URL (or add the direct data
-     file URL) in `pipeline/sources/index.mjs`.
-   - Did the columns change? Adjust the `fields` hints for that source.
-4. Re-run the workflow (**Run workflow** button) and confirm the page badge flips to **Live data**.
-5. Spot-check a few map points against the source pages for accuracy.
+- **USA:** taken directly from USDA's `Final_H5` / `Final_H7` fields.
+- **Australia** (documented, sourced rule in `pipeline/sources/fao-empresi.mjs`):
+  - poultry, 2024-05 to 2025-06 -> `H7` (the resolved H7N3/N8/N9 outbreaks);
+  - wild bird / mammal from June 2026 -> `H5N1` (clade 2.3.4.4b, per the WOAH first-case notification
+    of 20 June 2026; Australia had no other wild-bird avian influenza in 2026, so this is safe);
+  - otherwise `null`, shown as "pending".
+- **Rest of world:** `null` unless the source states it. The H5N1 highlight is an Australia-focused
+  feature.
 
-Because agencies periodically reorganize their sites, budget ~30 minutes for this the first time,
-then it's largely maintenance-free. The `sources[]` block on the live page (under "Data sources")
-always shows which feeds are currently healthy.
+## Caveats
 
-## Curated overlay
+- "First detection" refers to Australian wild birds. A separate possible incursion at sub-Antarctic
+  Heard Island (an external territory) was reported in late 2025 and is not counted here.
+- Coordinates follow the source. Most Australian events resolve to a town or region; a few resolve
+  only to a state centroid.
+- Not every Western Australian detection is itemised in public data.
+- The 90-day global window is a context layer, not a complete global history.
 
-`pipeline/curated.json` holds a small set of **well-documented, individually-sourced** events
-(e.g. WHO-reported human cases, notable Australian and Antarctic detections). These change slowly
-and are merged into every run so the global view always has verified anchor points. Update them from
-the references listed in `CURATED_REFERENCES` (`pipeline/sources/index.mjs`):
+## Verification checklist (after a deploy)
 
-- WHO — cumulative human cases of A(H5N1)
-- WOAH / WAHIS — world animal health information system
-- CDC — global H5N1 human case summaries
-- Wildlife Health Australia — avian influenza
+1. Open the daily workflow run and confirm each source prints `OK <key>: N records`.
+2. Confirm `summary.json` shows `mode: live` and the `au` block has non-zero `h5n1_wild_detections`.
+3. Spot-check a few Australian map points against the WOAH notification and state bulletins.
+4. If a source prints `empty` or `error`, check whether the endpoint moved and update
+   `pipeline/sources/`. The site keeps working on the last committed data until then.
 
 ## Adding a source
 
-1. Add a `tabularSource({...})` entry to `SOURCES` in `pipeline/sources/index.mjs` (or write a custom
-   `collect()` that returns `{ records, note }`).
-2. Ensure places resolve: US/AU states use the centroid files in `site/assets/`; other countries use
-   `countries-meta.json`. Add aliases in `pipeline/lib/geo.mjs` if a source uses unusual names.
-3. Run `node pipeline/build.mjs` and confirm the new records appear.
+1. Write a collector in `pipeline/sources/` that returns `{ records, note }`, mapping rows through
+   `makeRecord()` (`pipeline/lib/schema.mjs`). Supply `lat`/`lng` for point-level placement.
+2. Register it in `pipeline/sources/index.mjs`.
+3. Run `node pipeline/build.mjs` and confirm the new records appear with correct geo and subtype.

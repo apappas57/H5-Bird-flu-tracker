@@ -62,12 +62,17 @@ function cleanSpecies(s) {
   return t || null;
 }
 
+const titleCase = (s) => s.replace(/\w[\w']*/g, (w) => w[0].toUpperCase() + w.slice(1).toLowerCase());
+
 /** Tidy EMPRES-i locality strings (drop outbreak/premises id and numeric prefixes). */
 function cleanLocality(s) {
   if (!s) return null;
   let t = s.replace(/^OB_\d+\s*-\s*IP\d+\s*-\s*/i, '').replace(/^\d{4,}\s*/, '').trim();
   const parts = t.split(/\s*-\s*/);
   if (parts.length === 2 && parts[0].toLowerCase() === parts[1].toLowerCase()) t = parts[0];
+  t = t.trim();
+  // Title-case the ALL-CAPS entries (EMPRES-i mixes cases); leave already-cased text.
+  if (t && t === t.toUpperCase()) t = titleCase(t);
   return t || null;
 }
 

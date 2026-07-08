@@ -1,56 +1,36 @@
-# Project status / handoff
+# Project status
 
-_Snapshot for picking the project back up. Delete once merged & deployed._
+_Last updated: 8 July 2026._
 
-## Where things are
+## Now
 
-- **Branch:** `claude/h5-flu-tracker-website-joihfc` — all work committed & pushed.
-- **PR:** [#1](https://github.com/apappas57/H5-Bird-flu-tracker/pull/1) (→ `main`), CI green.
-- **Hosting:** **Vercel** (config in `vercel.json`). GitHub Pages workflow removed.
-- **Domain:** `birdflutracker.org` bought. Re-point DNS at Vercel (A `@` → 76.76.21.21,
-  CNAME `www` → cname.vercel-dns.com) and add the domain in the Vercel dashboard.
+Australia-first rebuild. The tracker is centred on Australia, covers all avian influenza with H5N1
+highlighted, and pulls live from free official sources:
 
-## What works (verified in CI against live sources)
+- **FAO EMPRES-i+** is the automated backbone (Australia from 2024, plus a 90-day global context
+  layer). It carries the June 2026 H5N1 wild-bird detections and the 2024 to 2025 H7 poultry history.
+- **USDA APHIS** ArcGIS provides US wild-bird detections with real H5/H7 subtype.
+- **Our World in Data** provides global human-case context.
 
-The pipeline pulls **real USDA APHIS data** — ~9,000 live records, `mode=live`:
+The pipeline runs `mode: live`. The schema has a `subtype` field and point-level coordinates. The site
+has an Australia default view, a sourced current-status banner, a strain filter and column, and keeps
+the "Flyway" (Audubon) visual identity.
 
-| Feed | Status |
-| --- | --- |
-| USDA APHIS — Wild birds | ✅ live (~19k rows) |
-| USDA APHIS — Mammals | ✅ live (~800) |
-| USDA APHIS — Dairy/livestock | ✅ live (~116) |
-| USDA APHIS — Poultry | ⚠️ pending correct CSV filename (Tableau-backed page, no CSV link) |
-| Australia (DAFF) | ⚠️ page blocks bots — covered by the curated overlay |
+See [DATA_SOURCES.md](DATA_SOURCES.md) for endpoints, the subtype rule, and caveats, and
+[../docs/superpowers/specs/2026-07-08-australia-first-tracker-design.md](superpowers/specs/2026-07-08-australia-first-tracker-design.md)
+for the full design.
 
-## Open items
+## Roadmap (nice to have)
 
-1. **Poultry feed** — find the real direct-CSV filename. Working APHIS files follow
-   `https://www.aphis.usda.gov/sites/default/files/hpai-<slug>.csv`
-   (confirmed: `hpai-wild-birds.csv`, `hpai-mammals.csv`, `hpai-livestock.csv`).
-   Candidates are already listed in `pipeline/sources/index.mjs` (`us-poultry.dataUrls`);
-   check the latest CI "build" log to see if one hit. If not, open the
-   [commercial-backyard-flocks page](https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/commercial-backyard-flocks),
-   inspect the Tableau/network requests for the data file, and add its URL.
-2. **Merge PR #1**, then import the repo at **vercel.com/new** → Deploy (reads `vercel.json`).
-3. Add the custom domain in Vercel (Settings → Domains) and re-point DNS at Vercel.
-4. Create a Vercel Deploy Hook and add its URL as the GitHub secret `VERCEL_DEPLOY_HOOK_URL`
-   so `refresh.yml` can trigger the daily rebuild.
+- CIDRAP news ticker (verified free RSS).
+- A bundled Australian gazetteer for any future name-only sources.
+- Opportunistic pollers for the (currently empty) NSW DPIRD ArcGIS layer and data.gov.au, in case they
+  publish structured avian-influenza data.
+- Marker clustering for the dense US wild-bird layer.
 
-## Run it locally (on the laptop)
+## Run it locally
 
 ```bash
-git clone https://github.com/apappas57/H5-Bird-flu-tracker.git
-cd H5-Bird-flu-tracker
-git checkout claude/h5-flu-tracker-website-joihfc
-node pipeline/build.mjs     # refresh data (needs internet to reach APHIS; else uses curated seed)
-npm run serve               # preview at http://localhost:8080
+node pipeline/build.mjs   # refresh data from the live sources (Node 20+)
+npm run serve             # preview at http://localhost:8080
 ```
-
-## Map of the code
-
-- `site/` — the website (static). `index.html`, `styles.css`, `app.js`; data in `site/data/`;
-  bundled map assets in `site/assets/`.
-- `pipeline/` — the data engine. `build.mjs` orchestrates; `sources/` has the feeds;
-  `lib/` has geo/http/parse/schema helpers; `curated.json` is the hand-maintained overlay.
-- `.github/workflows/` — `ci.yml` (validate on PR) and `deploy.yml` (daily refresh + Pages deploy).
-- `docs/DATA_SOURCES.md` — source details + verification checklist.

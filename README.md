@@ -1,118 +1,113 @@
-# H5 Bird Flu Tracker
+# Australian Bird Flu Tracker
 
-A simple, public-interest website that shows where **H5 avian influenza (H5N1, "bird flu")**
-is being detected — worldwide, with a focus on the **United States** and **Australia** — on a
-map and in a plain-language list. Built for the general public: no jargon, no login, fast to load.
+A simple, public-interest website that shows where **avian influenza (bird flu)** is being
+detected in **Australia**, with the wider world for context, on a map and in a plain-language list.
+Built for the general public: no jargon, no login, fast to load.
 
-> **Function over fanciness.** It's a static website (no server to run or pay for) whose data is
-> refreshed automatically once a day by a small Node.js pipeline running in GitHub Actions.
+**Live:** [birdflutracker.org](https://birdflutracker.org)
 
----
+> **Function over fanciness.** It is a static website (nothing to run or pay for) whose data is
+> refreshed automatically each day by a small Node.js pipeline.
+
+## Why this exists
+
+In **June 2026**, high pathogenicity **H5N1 (clade 2.3.4.4b)** reached Australian wild birds for the
+first time, carried down the Southern Ocean flyway by migrating seabirds. Australia had been the last
+continent free of the current global panzootic. This tracker follows that unfolding situation using
+free, official data, and keeps the world in view so you can see where the virus is coming from.
+
+The risk to the general public is currently **low**. This site is not medical advice; see the
+disclaimer below.
 
 ## What it shows
 
-- **A world map** with a coloured dot for each detection, plus light shading over "impacted areas"
-  (countries with recent activity). Zoom presets for Global / United States / Australia.
-- **Headline numbers** — human cases, poultry outbreaks, dairy-cattle herds, wild-bird and mammal
-  detections, and how many countries are affected — that respond to the filters.
-- **A searchable, sortable list** of individual detections with date, place, species/type, size,
-  and a link to the source.
-- Five detection categories, colour-coded with a **colour-blind-safe palette**:
-  🟥 People · 🟧 Poultry · 🟦 Dairy cattle · 🟩 Wild birds · 🟪 Mammals.
-
-## Architecture (why it's simple and robust)
-
-```
- ┌─────────────────────────┐      daily (GitHub Actions, full internet)
- │  pipeline/build.mjs      │  ── fetches ──▶ CDC · USDA APHIS · WHO · WOAH · AU agencies
- │  + curated overlay       │
- └─────────────┬───────────┘
-               │ writes normalized JSON
-               ▼
-   site/data/detections.json   site/data/summary.json
-               │
-               ▼
- ┌─────────────────────────┐
- │  static site (site/)     │  Leaflet map + vanilla JS, no build step, no framework
- │  deployed to GitHub Pages│
- └─────────────────────────┘
-```
-
-- **No API keys, no paid services.** Map tiles are OpenStreetMap; Leaflet is vendored locally.
-- **Never goes blank.** If a source is unreachable on a given day, the run falls back to the last
-  committed data plus a hand-curated overlay of well-documented events.
-- **Transparent.** Every run records per-source status (`live` / `empty` / `error`) in
-  `summary.json`, shown on the page under "Data sources", and refreshed data is committed to git so
-  you get a full history.
+- **An Australia-first map** with a coloured point for each detection. H5N1 detections carry a
+  carmine ring so the strain of current concern stands out. Region presets for Australia / Global /
+  United States.
+- **Headline numbers** for Australia: H5N1 wild-bird detections, states affected, days since the
+  first detection, the historical H7 poultry outbreaks, human cases, and the global human-case total.
+- **A current-status banner** summarising the situation in one glance, with sources.
+- **A searchable, sortable list** of individual detections with date, type, **strain** (H5N1 / H7),
+  place, and a link to the source.
+- Five detection categories, colour-coded with a colour-blind-safe palette:
+  People, Poultry, Dairy cattle, Wild birds, Mammals.
 
 ## Data sources
 
-Authoritative, machine-readable feeds (fetched in `pipeline/sources/`):
+All free, no API keys. Verified live on 8 July 2026.
 
-| Region | Category | Source |
+| Role | Source | What it provides |
 | --- | --- | --- |
-| USA | Poultry | [CDC / USDA — commercial & backyard flocks](https://www.cdc.gov/bird-flu/situation-summary/data-map-commercial.html) |
-| USA | Wild birds | [CDC / USDA — wild birds](https://www.cdc.gov/bird-flu/situation-summary/data-map-wild-birds.html) |
-| USA | Dairy cattle | [USDA APHIS — livestock](https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/hpai-confirmed-cases-livestock) |
-| USA | Mammals | [USDA APHIS — mammals](https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/mammals) |
-| Australia | Poultry / all | [DAFF — avian influenza](https://www.agriculture.gov.au/biosecurity-trade/pests-diseases-weeds/animal/avian-influenza) · [Agriculture Victoria](https://agriculture.vic.gov.au/biosecurity/animal-diseases/poultry-diseases/avian-influenza) |
-| Global | Human | [WHO — cumulative H5N1 human cases](https://www.who.int/emergencies/disease-outbreak-news) |
-| Global | Animal | [WOAH / WAHIS](https://wahis.woah.org/) |
+| **Primary backbone** | [FAO EMPRES-i+](https://empres-i.apps.fao.org/) | Global animal disease events including Australia, with coordinates, near-real-time. It ingests WOAH/WAHIS notifications, so it already carries Australia's official events. |
+| **US wild birds** | [USDA APHIS wild-bird surveillance](https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/wild-bird-surveillance-dashboard) | US wild-bird H5/H7 detections with real subtype and county points. |
+| **Human context** | [Our World in Data](https://ourworldindata.org/grapher/h5n1-flu-reported-cases) | WHO global human-case totals, including Australia. |
+| **Curated anchors** | WOAH, WHO, CDC bulletins | A small, hand-maintained set of well-documented human cases. |
 
-See **[docs/DATA_SOURCES.md](docs/DATA_SOURCES.md)** for the exact fetch strategy and the
-**verification checklist** to run after the first deploy.
+Australia's own government portals (Wildlife Health Australia, outbreak.gov.au, DAFF, state
+departments) publish only as HTML or PDF and block automated access, so they are used as cross-checks
+rather than pipeline inputs. FAO EMPRES-i already carries their WOAH notifications. Full detail and
+the verification checklist are in **[docs/DATA_SOURCES.md](docs/DATA_SOURCES.md)**.
+
+## Architecture
+
+```
+ pipeline/build.mjs   (daily, GitHub Actions + Vercel deploy hook)
+   |
+   |-- sources/fao-empresi.mjs   FAO EMPRES-i+ : Australia (2024+) and 90-day world context
+   |-- sources/usda-wildbird.mjs USDA APHIS ArcGIS : US wild-bird H5/H7 detections
+   |-- sources/owid-human.mjs    Our World in Data : global human-case context
+   |-- curated.json              hand-maintained human-case anchors
+   |-- au-status.json            editorial current-status facts (sourced)
+   |
+   v  normalise (subtype + point-level geo) -> dedupe -> sort
+ site/data/detections.json  +  site/data/summary.json
+   |
+   v
+ site/  (static Leaflet + vanilla JS, "Flyway" visual identity)  ->  Vercel
+```
+
+- **Never goes blank.** If a source is unreachable on a given day, the run falls back to the last
+  committed data plus the curated overlay.
+- **Transparent.** Every run records per-source status in `summary.json`, shown on the page under
+  "Data sources". Refreshed data is committed to git, so there is a full history.
+- **Honest about strain.** FAO's feed does not carry a subtype. Australian subtypes are assigned by an
+  explicit, sourced rule (see `pipeline/sources/fao-empresi.mjs` and DATA_SOURCES.md): the 2024 to 2025
+  poultry outbreaks were H7; the June 2026 wild-bird incursion is H5N1 clade 2.3.4.4b per WOAH.
 
 ## Local development
 
 ```bash
-node pipeline/build.mjs   # refresh site/data/*.json (uses curated overlay if offline)
+node pipeline/build.mjs   # refresh site/data/*.json from the live sources
 npm run serve             # preview at http://localhost:8080
 ```
 
-No dependencies to install — the pipeline uses Node's built-in `fetch` (Node 20+).
+No dependencies to install: the pipeline uses Node's built-in `fetch` (Node 20+).
 
-## Deploy (Vercel)
+## Deploy
 
-The site is hosted on **Vercel** (config in [`vercel.json`](vercel.json)).
+Hosted on **Vercel** (config in `vercel.json`: build `node pipeline/build.mjs`, output `site/`). Vercel
+pulls fresh data at build time. A daily [`refresh.yml`](.github/workflows/refresh.yml) workflow pings a
+Vercel deploy hook to rebuild; [`ci.yml`](.github/workflows/ci.yml) validates the pipeline on every PR.
 
-1. At **[vercel.com/new](https://vercel.com/new)**, *Import Git Repository* → `apappas57/H5-Bird-flu-tracker` → **Deploy**.
-   Vercel reads `vercel.json` (build `node pipeline/build.mjs`, output `site/`) and pulls fresh USDA
-   data at build time — no other configuration needed.
+## Contributing
 
-### Custom domain — birdflutracker.org
+Issues and pull requests are welcome, especially:
 
-In the Vercel dashboard: **Project → Settings → Domains → Add `birdflutracker.org`**. Vercel then
-shows the exact records to create — **use the values shown in your dashboard**, since Vercel assigns
-a per-domain `www` target and periodically updates its apex IP. As of this writing:
+- new free, machine-readable, official sources (particularly Australian ones);
+- corrections to any detection, strain label, or caveat;
+- accessibility and mobile improvements.
 
-| Type | Host / name | Value |
-| --- | --- | --- |
-| A | `@` (apex) | `216.150.1.1` (older `76.76.21.21` also works) |
-| CNAME | `www` | the per-domain target Vercel shows, e.g. `<hash>.vercel-dns-###.com` (generic `cname.vercel-dns.com` also works) |
-
-If `www` reads "Invalid Configuration", its CNAME doesn't match the value Vercel shows — copy the exact
-target from the dashboard, or drop the `www` record if you only want the apex.
-Vercel issues and renews HTTPS automatically once DNS resolves. The site then serves at
-`https://birdflutracker.org` and `https://www.birdflutracker.org`.
-
-### Daily data refresh
-
-Vercel rebuilds (re-pulling the latest USDA data) whenever its **Deploy Hook** is pinged:
-
-1. Vercel → Project → **Settings → Git → Deploy Hooks** → create one (branch `main`), copy the URL.
-2. Add it as a GitHub Actions secret **`VERCEL_DEPLOY_HOOK_URL`**
-   (repo → Settings → Secrets and variables → Actions).
-
-The [`refresh.yml`](.github/workflows/refresh.yml) workflow then pings it daily. CI
-([`ci.yml`](.github/workflows/ci.yml)) still validates the pipeline on every PR.
+Please keep the tone calm and factual, and cite a source for any data change.
 
 ## Disclaimer
 
 Not medical advice. Figures are aggregated from public reports and may lag or be revised by the
-source agencies. For current risk guidance, consult the CDC, WHO, or your national/state health
-department. If you keep birds or livestock, report sick or dead animals to your local agriculture
-authority.
+source agencies. For guidance, consult the [Australian CDC](https://www.cdc.gov.au/diseases/bird-flu-avian-influenza),
+[DAFF](https://www.outbreak.gov.au/emerging-risks/high-pathogenicity-avian-influenza), or your state
+health department. **To report sick or dead wild birds, call the Emergency Animal Disease Hotline on
+1800 675 888.**
 
 ## License
 
-MIT. Map data © OpenStreetMap contributors. Source data © the respective agencies.
+[MIT](LICENSE). Map data (c) OpenStreetMap contributors. Source data (c) the respective agencies:
+FAO EMPRES-i (CC BY), USDA APHIS (US public domain), WHO via Our World in Data (CC BY).

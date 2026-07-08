@@ -125,6 +125,38 @@ a:hover { color: var(--accent); }
 .banner .wrap { display: block; }
 .banner strong { font-family: var(--serif); }
 
+/* ---------- Status banner (Australia current situation) ---------- */
+.status-banner {
+  background: var(--panel); border: 1px solid var(--line); border-top: 3px solid var(--accent);
+  border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 20px; margin: 20px 0 4px;
+  position: relative;
+}
+.status-banner::after { content:""; position:absolute; inset:5px; border:1px solid color-mix(in srgb, var(--gilt) 40%, transparent); border-radius:3px; pointer-events:none; }
+.sb-top { display:flex; gap:16px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; position:relative; z-index:1; }
+.sb-lead { flex:1 1 340px; }
+.sb-headline { font-family: var(--serif); font-weight:600; font-size: clamp(1.15rem,2.4vw,1.5rem); line-height:1.15; margin:0 0 6px; color: var(--ink); }
+.sb-sum { margin:0; color: var(--ink-soft); max-width:72ch; font-size:.98rem; }
+.sb-risk {
+  flex:none; align-self:flex-start; font-family: var(--serif); font-size:.72rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.1em; padding:5px 12px; border-radius:999px;
+  border:1px solid currentColor; white-space:nowrap;
+}
+.sb-risk-low { color:#3E4A28; } .sb-risk-moderate,.sb-risk-elevated { color:#8A6326; } .sb-risk-high { color: var(--accent-deep); }
+@media (prefers-color-scheme: dark){ .sb-risk-low{color:#9DAE6E} .sb-risk-moderate,.sb-risk-elevated{color:#D6A758} }
+.sb-figs { display:flex; gap: 24px 34px; flex-wrap:wrap; margin:15px 0 12px; position:relative; z-index:1; }
+.sb-fig { display:flex; flex-direction:column; gap:2px; }
+.sb-num { font-family: var(--mono); font-size: clamp(1.5rem,3.4vw,2.1rem); line-height:1; font-variant-numeric: tabular-nums; color: var(--accent-deep); }
+@media (prefers-color-scheme: dark){ .sb-num{ color: var(--accent); } }
+.sb-lbl { font-size:.78rem; color: var(--ink-soft); letter-spacing:.03em; }
+.sb-foot { margin:0; font-size:.82rem; color: var(--ink-soft); position:relative; z-index:1; }
+
+/* ---------- Strain badges ---------- */
+.strain { font-family: var(--mono); font-size:.74rem; font-weight:500; padding:2px 8px; border-radius:4px; border:1px solid currentColor; letter-spacing:.02em; }
+.strain-h5n1 { color: var(--accent-deep); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.strain-h7 { color:#8A6326; background: color-mix(in srgb, var(--c-poultry) 14%, transparent); }
+.strain-other { color: var(--ink-soft); }
+@media (prefers-color-scheme: dark){ .strain-h5n1{color:#E58374} .strain-h7{color:#D6A758} }
+
 /* ---------- Controls ---------- */
 .controls {
   display: flex; gap: 18px 28px; flex-wrap: wrap; align-items: flex-end;
@@ -210,6 +242,8 @@ tbody tr:hover { background: var(--bg-sunk); }
 .src-badge.live { color:#3E4A28; } .src-badge.error,.src-badge.empty { color:#7E2018; } .src-badge.seed { color:#8A6326; }
 @media (prefers-color-scheme: dark){ .src-badge.live{color:#9DAE6E} .src-badge.error,.src-badge.empty{color:#D65A4A} .src-badge.seed{color:#D6A758} }
 .source-status { margin: 12px 0; font-size: .9rem; color: var(--ink-soft); }
+.notes-list { margin: 6px 0 0; padding-left: 20px; color: var(--ink-soft); font-size: .9rem; display: grid; gap: 6px; max-width: 78ch; }
+.notes-list li { line-height: 1.5; }
 .disclaimer { font-size: .88rem; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 16px; margin-top: 20px; }
 .disclaimer strong { color: var(--accent-deep); font-family: var(--serif); }
 
