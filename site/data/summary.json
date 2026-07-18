@@ -1,34 +1,34 @@
 {
-  "generated_at": "2026-07-17T08:26:59.066Z",
-  "latest_event": "2026-07-13",
+  "generated_at": "2026-07-18T08:06:34.739Z",
+  "latest_event": "2026-07-17",
   "mode": "live",
   "au": {
-    "total": 28,
-    "wild_bird": 7,
+    "total": 36,
+    "wild_bird": 15,
     "poultry": 20,
     "dairy": 0,
     "mammal": 0,
     "human": 1,
-    "h5n1_detections": 8,
+    "h5n1_detections": 16,
     "h7_detections": 20,
-    "h5n1_wild_detections": 7,
+    "h5n1_wild_detections": 15,
     "h5n1_states": 3,
     "h5n1_state_list": [
-      "South Australia",
       "New South Wales",
-      "Western Australia"
+      "Western Australia",
+      "South Australia"
     ],
     "states_affected": 5,
     "states": [
-      "South Australia",
       "New South Wales",
       "Western Australia",
+      "South Australia",
       "Victoria",
       "Australian Capital Territory"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 27,
-    "latest_detection": "2026-07-10"
+    "days_since_first_detection": 28,
+    "latest_detection": "2026-07-16"
   },
   "status": {
     "headline": "H5N1 bird flu (clade 2.3.4.4b) reached Australian wild birds in June 2026.",
@@ -66,12 +66,12 @@
         "url": "https://www.cdc.gov.au/diseases/bird-flu-avian-influenza"
       }
     ],
-    "h5n1_wild_detections": 7,
+    "h5n1_wild_detections": 15,
     "h5n1_states": 3,
-    "wild_bird_detections": 7,
+    "wild_bird_detections": 15,
     "poultry_detections": 20,
     "states_affected": 5,
-    "days_since_first_detection": 27,
+    "days_since_first_detection": 28,
     "human_cases_au": 1
   },
   "human_context": {
@@ -82,46 +82,46 @@
     "source_url": "https://ourworldindata.org/grapher/h5n1-flu-reported-cases"
   },
   "totals": {
-    "total_events": 3007,
+    "total_events": 3009,
     "human_cases": 9,
-    "poultry_events": 263,
+    "poultry_events": 258,
     "poultry_birds_affected": 0,
     "dairy_events": 4,
-    "wild_bird_events": 2725,
-    "mammal_events": 6,
+    "wild_bird_events": 2733,
+    "mammal_events": 5,
     "countries_affected": 42,
     "us_states_affected": 48,
     "au_states_affected": 5
   },
   "by_category": {
-    "wild_bird": 2725,
-    "poultry": 263,
+    "wild_bird": 2733,
+    "poultry": 258,
     "dairy": 4,
-    "mammal": 6,
+    "mammal": 5,
     "human": 9
   },
   "by_country": {
+    "New Zealand": 2,
+    "Australia": 36,
     "Austria": 5,
-    "New Zealand": 1,
-    "Australia": 28,
     "Honduras": 6,
     "Peru": 32,
-    "Poland": 55,
+    "Poland": 51,
     "Nepal": 53,
-    "United States": 2591,
+    "United States": 2590,
     "Germany": 66,
     "Netherlands": 33,
     "Philippines": 15,
     "Nigeria": 1,
-    "the United Kingdom of Great Britain and Northern Ireland": 9,
+    "the United Kingdom of Great Britain and Northern Ireland": 8,
     "Vietnam": 23,
     "Costa Rica": 1,
-    "China, Taiwan Province of": 3,
     "Belgium": 6,
+    "China, Taiwan Province of": 2,
     "Bhutan": 1,
     "Colombia": 1,
-    "Portugal": 2,
     "South Africa": 7,
+    "Portugal": 2,
     "Norway": 14,
     "Finland": 9,
     "Latvia": 1,
@@ -132,22 +132,22 @@
     "Estonia": 2,
     "Senegal": 1,
     "Argentina": 1,
-    "Czech Republic": 2,
     "Chile": 8,
+    "Czech Republic": 2,
     "Japan": 6,
     "Sweden": 1,
     "Cambodia": 2,
-    "Ukraine": 1,
     "Denmark": 1,
+    "Ukraine": 1,
     "Svalbard and Jan Mayen Islands": 1,
     "China": 1,
     "Mexico": 1,
     "Antarctica": 1
   },
   "regions": {
-    "Global": 3007,
-    "United States": 2591,
-    "Australia": 28
+    "Global": 3009,
+    "United States": 2590,
+    "Australia": 36
   },
   "sources": [
     {
@@ -156,8 +156,8 @@
       "region": "Australia",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 27,
-      "note": "fao(Australia) 2024-01-01..2026-07-17: 28 rows -> 27 records (1 skipped)"
+      "records": 35,
+      "note": "fao(Australia) 2024-01-01..2026-07-18: 36 rows -> 35 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -165,8 +165,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 427,
-      "note": "fao(all) 2026-04-18..2026-07-17: 437 rows -> 427 records (10 skipped)"
+      "records": 429,
+      "note": "fao(all) 2026-04-19..2026-07-18: 439 rows -> 429 records (10 skipped)"
     },
     {
       "key": "us-wild-birds",
