@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-28T08:49:19.186Z",
-  "latest_event": "2026-07-19",
+  "generated_at": "2026-07-29T09:06:50.914Z",
+  "latest_event": "2026-07-21",
   "mode": "live",
   "au": {
     "total": 37,
@@ -27,7 +27,7 @@
       "Australian Capital Territory"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 38,
+    "days_since_first_detection": 39,
     "latest_detection": "2026-07-16"
   },
   "status": {
@@ -71,7 +71,7 @@
     "wild_bird_detections": 16,
     "poultry_detections": 20,
     "states_affected": 5,
-    "days_since_first_detection": 38,
+    "days_since_first_detection": 39,
     "human_cases_au": 1
   },
   "human_context": {
@@ -82,29 +82,31 @@
     "source_url": "https://ourworldindata.org/grapher/h5n1-flu-reported-cases"
   },
   "totals": {
-    "total_events": 2965,
+    "total_events": 2982,
     "human_cases": 9,
-    "poultry_events": 234,
+    "poultry_events": 235,
     "poultry_birds_affected": 0,
-    "dairy_events": 4,
-    "wild_bird_events": 2715,
+    "dairy_events": 19,
+    "wild_bird_events": 2716,
     "mammal_events": 3,
     "countries_affected": 41,
     "us_states_affected": 48,
     "au_states_affected": 5
   },
   "by_category": {
-    "poultry": 234,
-    "wild_bird": 2715,
-    "dairy": 4,
+    "wild_bird": 2716,
+    "poultry": 235,
+    "dairy": 19,
     "mammal": 3,
     "human": 9
   },
   "by_country": {
+    "Norway": 13,
     "Vietnam": 37,
-    "the United Kingdom of Great Britain and Northern Ireland": 5,
+    "the United Kingdom of Great Britain and Northern Ireland": 4,
     "Netherlands": 40,
     "Australia": 37,
+    "United States": 2602,
     "Poland": 32,
     "Chile": 2,
     "Brazil": 2,
@@ -116,19 +118,17 @@
     "Honduras": 7,
     "Peru": 23,
     "Nepal": 49,
-    "United States": 2586,
     "Germany": 55,
     "Philippines": 15,
-    "Nigeria": 1,
     "Mexico": 4,
+    "Nigeria": 1,
     "Costa Rica": 1,
-    "Belgium": 5,
     "China, Taiwan Province of": 2,
+    "Belgium": 5,
     "Colombia": 1,
     "Bhutan": 1,
-    "Portugal": 2,
     "South Africa": 6,
-    "Norway": 11,
+    "Portugal": 2,
     "Finland": 9,
     "Latvia": 1,
     "France": 3,
@@ -144,8 +144,8 @@
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2965,
-    "United States": 2586,
+    "Global": 2982,
+    "United States": 2602,
     "Australia": 37
   },
   "sources": [
@@ -156,7 +156,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 36,
-      "note": "fao(Australia) 2024-01-01..2026-07-28: 37 rows -> 36 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-07-29: 37 rows -> 36 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -164,8 +164,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 386,
-      "note": "fao(all) 2026-04-29..2026-07-28: 392 rows -> 386 records (6 skipped)"
+      "records": 403,
+      "note": "fao(all) 2026-04-30..2026-07-29: 409 rows -> 403 records (6 skipped)"
     },
     {
       "key": "us-wild-birds",
