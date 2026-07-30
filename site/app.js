@@ -543,6 +543,17 @@ function renderOfficialGap() {
   const phrasing = off.national_total_phrasing ? ' (' + escapeHtml(off.national_total_phrasing) + ')' : '';
   const asAt = off.as_at_text ? ' as at ' + escapeHtml(off.as_at_text)
     : (off.as_at_date ? ' as at ' + niceDate(off.as_at_date) : '');
+  /* The Commonwealth pages answer from an Australian IP and not from the build
+   * environment, so a deploy can fail to read them and reuse the last good copy.
+   * A reused figure keeps its original "as at" text, which would otherwise read
+   * as if it had just been fetched, so its age is stated explicitly. Quoting a
+   * stale official number as current is exactly the error this whole panel exists
+   * to prevent. */
+  const staleOfficial = off.from_last_good
+    ? ' This figure is the last one this site could read'
+      + (off.last_good_age_days ? ', ' + off.last_good_age_days + ' day(s) ago' : '')
+      + ', not a fresh read. Check the official page for the current number.'
+    : '';
   const mappedFig = '<div class="og-fig"><span class="og-num">' + escapeHtml(fmtFig(gap.mapped_total)) + '</span>'
     + '<span class="og-lbl">individually mapped here'
     + '<span class="og-sub">automated WOAH feed plus curated firsts</span></span></div>';
@@ -630,7 +641,7 @@ function renderOfficialGap() {
   el.hidden = false;
   el.innerHTML = '<h3 class="og-title">Official count and mapped count</h3>'
     + '<div class="og-figs">' + figs + '</div>'
-    + '<p class="og-note">' + note + (extra.length ? ' ' + extra.join(' ') : '') + '</p>'
+    + '<p class="og-note">' + note + staleOfficial + (extra.length ? ' ' + extra.join(' ') : '') + '</p>'
     + srcLine + newsLeadHtml(s);
 }
 

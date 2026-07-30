@@ -273,6 +273,34 @@ async function main() {
     log(`au official unavailable: ${e.message}`); // belt and braces, it does not throw
   }
 
+  // Last-good fallback for the official position, matching the never-goes-blank
+  // rule the record feeds already follow.
+  //
+  // WHY: agriculture.gov.au answers from an Australian IP and does not answer from
+  // the build environment this site deploys in, so a build that succeeds locally
+  // can publish official_au.ok === false in production. Observed on the first
+  // deploy of 31 July 2026: every parse flag false because both fetches failed,
+  // not because the parse broke. Without this, the site's headline comparison of
+  // the official count against the mapped count goes dark on every deploy.
+  //
+  // The reused figure is republished with its original "as at" text intact and an
+  // explicit staleness marker, so the page can say how old it is. It is never
+  // silently presented as fresh, and a stale official figure is never allowed to
+  // look like a live one.
+  if ((!official || official.ok === false) && prevMeta.official_au && prevMeta.official_au.ok) {
+    const prevOfficial = prevMeta.official_au;
+    const ageDays = prevOfficial.fetched_at
+      ? Math.floor((Date.parse(now) - Date.parse(prevOfficial.fetched_at)) / 86400000) : null;
+    official = {
+      ...prevOfficial,
+      from_last_good: true,
+      last_good_fetched_at: prevOfficial.fetched_at || null,
+      last_good_age_days: ageDays,
+    };
+    log(`au official: fetch failed, reusing last good from ${prevOfficial.fetched_at}`
+      + `${ageDays == null ? '' : ` (${ageDays} day(s) old)`}, total ${official.national_total}`);
+  }
+
   // News early-signal tier: a maintainer-facing gap detector, never map data and
   // never part of any published count. It answers one question, is something being
   // reported that our mapped data does not have. Non-fatal, never throws.
