@@ -1,7 +1,18 @@
 {
   "_comment": "Editorial current-status facts for the Australia banner. Slow-changing, sourced. The pipeline merges these with counts derived from the live data. Keep the tone calm and factual; human risk is currently low and the page must say so.",
   "headline": "H5N1 bird flu (clade 2.3.4.4b) reached Australian wild birds in June 2026.",
-  "summary": "For the first time, high pathogenicity H5N1 avian influenza has been detected in wild birds in Australia. Detections so far are in migratory seabirds; there are no detections in commercial poultry. The risk to people is low.",
+  "summary": "For the first time, high pathogenicity H5N1 avian influenza has been detected in wild birds in Australia. Every detection so far is a coastal wild seabird, and there are none in commercial poultry. The early cases were migratory seabirds that carried the virus in. On 29 July 2026 the Australian Chief Veterinary Officer reported that genetic sequencing suggests the virus has begun spreading locally, between resident greater crested terns in South Australia. Queensland recorded its first detection on 25 July 2026 and Victoria on 30 July 2026, which makes five mainland states. The risk to people remains low.",
+  "local_transmission": {
+    "status": "suggested",
+    "date": "2026-07-29",
+    "where": "resident greater crested terns in coastal South Australia",
+    "note": "Until late July every Australian detection was consistent with migratory seabirds carrying the virus in from the sub-Antarctic. On 29 July 2026, after the Consultative Committee on Emergency Animal Diseases considered CSIRO sequencing, the Australian Chief Veterinary Officer said the evidence suggests some local transmission has now occurred between resident greater crested terns in South Australia. That is a change in kind, not just in count: the virus is no longer only arriving, it is moving between birds already here.",
+    "quote": "We agreed that the evidence does suggest that some local transmission has now occurred between a number of greater crested terns that are resident in coastal locations in South Australia.",
+    "attributed_to": "Dr Beth Cookson, Australian Chief Veterinary Officer",
+    "containment_note": "Officials have said that in the wild there are limited feasible and practical actions to control or contain spread, and that once the virus becomes established overseas experience shows it cannot be eradicated. Response now focuses on monitoring, on protecting high-priority conservation species, and on keeping the virus out of poultry.",
+    "source": "DAFF ministerial doorstop transcript, 29 July 2026",
+    "source_url": "https://minister.agriculture.gov.au/collins/speeches-and-transcripts/doorstop-sydney-bird-flu-south-aus"
+  },
   "first_detection": {
     "date": "2026-06-20",
     "species": "brown skua",
@@ -12,14 +23,18 @@
   },
   "human_risk": "low",
   "human_risk_note": "Australia's only human H5N1 case is a single travel-acquired case from May 2024, a different virus lineage unrelated to the 2026 wildlife detections. No human-to-human transmission has been reported.",
-  "poultry_note": "No detections in commercial poultry or other agriculture to date. The 2024 to 2025 outbreaks in poultry were a different subtype (H7) and are resolved.",
+  "poultry_note": "No detections in commercial poultry or other agriculture to date. The 2024 to 2025 outbreaks in poultry were a different subtype (H7) and are resolved. As a precaution while wild-bird detections continue, national animal health authorities (CCEAD) support heightened poultry biosecurity, including the option of voluntarily housing free-range birds where that is practical and consistent with animal welfare. Housing is advice, not a mandatory order, and bird owners are asked to keep sheds, yards and equipment clean, limit contact between their birds and wild birds, and report unusual sickness or deaths to the Emergency Animal Disease Hotline.",
   "report": {
     "label": "Report sick or dead wild birds",
     "hotline": "Emergency Animal Disease Hotline 1800 675 888"
   },
   "caveats": [
+    "Records are grouped by the event they belong to and are never added together. Victoria's records, for example, are three separate things: current H5N1 wild bird detections, resolved H7 poultry outbreaks from 2024 to 2025 of a different subtype, and one unrelated travel-acquired human case from May 2024 of a different virus lineage. Only the current H5N1 group describes this outbreak, which is why a news report of Victoria's first case is correct even though this site also holds older Victorian records.",
     "\"First detection\" refers to Australian wild birds. A separate possible incursion at sub-Antarctic Heard Island, an external territory, was reported in late 2025 and is not counted in these figures.",
-    "Not every Western Australian detection is itemised in public data; the map shows the events published by official sources."
+    "Not every Western Australian detection is itemised in public data; the map shows the events published by official sources.",
+    "The mapped detections come from an automated feed that follows WOAH notifications, and on 30 July 2026 it was measured running about two weeks behind the Commonwealth's own updates. The number of detections on the map can therefore be lower than the official national count, so both figures are shown.",
+    "Victoria's first detection, announced by Agriculture Victoria on 30 July 2026, is shown as presumptive: H5 was detected and confirmatory sequencing at the CSIRO Australian Centre for Disease Preparedness in Geelong was still under way. Official Australian tallies also count confirmed and presumed positive detections together. Its map point is the town of Portland, because no specific site was published.",
+    "Queensland's first detection, a petrel on Moreton Island confirmed on 25 July 2026, is mapped at the island because no specific site was published. The official statement did not name the petrel species."
   ],
   "authorities": [
     { "name": "DAFF / outbreak.gov.au", "url": "https://www.outbreak.gov.au/emerging-risks/high-pathogenicity-avian-influenza" },

@@ -3,242 +3,285 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Australian Bird Flu Tracker: H5N1 avian influenza, live status &amp; map</title>
-  <meta name="description" content="A plain-language tracker for bird flu (avian influenza) in Australia: where H5N1 and other strains are being detected in wild birds, poultry, mammals and people, on a live map and list. Free official data from FAO, WOAH, USDA and WHO." />
-  <meta name="color-scheme" content="light dark" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23F5ECD6'/%3E%3Crect x='1.5' y='1.5' width='29' height='29' rx='3' fill='none' stroke='%23C9A24B'/%3E%3Cg fill='none' stroke='%23241C12' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 21C11 15 13 11 20 9 23 8 25 8 27 9'/%3E%3Cpath d='M6 21C3 17 6 13 12 12 17 11 21 14 23 18'/%3E%3Cpath d='M7 22C8 26 14 28 20 26'/%3E%3C/g%3E%3Cpath d='M27 9l3.4-1.1-2.3 1.9z' fill='%23241C12'/%3E%3Ccircle cx='15' cy='27' r='2.4' fill='%23A8322A'/%3E%3C/svg%3E" />
+  <title>Australian Bird Flu Tracker: H5N1 detections, official count and map</title>
+  <meta name="description" content="Where H5N1 bird flu (clade 2.3.4.4b) is being detected in Australia. Every officially reported detection mapped and listed with its source, the Commonwealth's own national count shown beside the mapped total, and the resolved 2024 to 2025 H7 poultry outbreaks kept separate." />
+  <!-- One deliberate light identity. A viewer in OS dark mode still gets the white page. -->
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#FFFFFF" />
+  <!-- Inline mark: white ground, ink hairline frame, one red square. No external request. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFFFFF'/%3E%3Crect x='.5' y='.5' width='31' height='31' fill='none' stroke='%23101010'/%3E%3Crect x='10' y='10' width='12' height='12' fill='%23C8102E'/%3E%3C/svg%3E" />
   <link rel="canonical" href="https://birdflutracker.org/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
   <meta property="og:url" content="https://birdflutracker.org/" />
   <meta property="og:title" content="Australian Bird Flu Tracker" />
-  <meta property="og:description" content="Where H5N1 bird flu is being detected in Australia, on a live map and list, with the world for context. Human risk is currently low." />
+  <meta property="og:description" content="Where H5N1 bird flu is being detected in Australia, mapped and listed with sources. The official national count is shown beside the mapped total. Risk to human health is currently assessed as low." />
   <meta property="og:type" content="website" />
 
+  <link rel="stylesheet" href="assets/fonts/source-code-pro.css" />
   <link rel="stylesheet" href="assets/leaflet/leaflet.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#map">Skip to map</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
-    <div class="wrap header-inner">
-      <div class="brand">
-        <span class="logo" aria-hidden="true">
-          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 21 C 11 15, 13 11, 20 9 C 23 8, 25 8, 27 9"/>
-              <path d="M6 21 C 3 17, 6 13, 12 12 C 17 11, 21 14, 23 18"/>
-              <path d="M7 22 C 8 26, 14 28, 20 26"/>
-            </g>
-            <path d="M27 9 l 3.4 -1.1 l -2.3 1.9 z" fill="currentColor"/>
-            <circle cx="15" cy="27" r="2.4" fill="#A8322A"/>
-          </svg>
-        </span>
-        <div>
-          <h1>Australian Bird Flu Tracker</h1>
-          <p class="tagline">Where H5N1 and other avian influenza is being detected across Australia, with the world for context.</p>
-        </div>
+    <div class="wrap site-header__inner">
+      <div class="stack stack--xs">
+        <p class="site-title"><a href="./">Australian Bird Flu Tracker</a></p>
+        <p class="site-subtitle">Official avian influenza detections in Australia, mapped and listed, with the world for context.</p>
       </div>
-      <div class="status" id="status">
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="index.html" aria-current="page">Tracker</a>
+        <a href="history.html">History</a>
+        <a href="#sources">Data sources</a>
+      </nav>
+      <p class="meta-row">
         <span class="mode-badge" id="modeBadge" hidden></span>
-        <span class="updated" id="updated">Loading data…</span>
-      </div>
+        <span class="updated" id="updated">Loading data</span>
+      </p>
     </div>
   </header>
 
+  <!-- The live incursion only. Filled from status.local_transmission. -->
+  <div id="liveBanner" class="banner banner--live" hidden></div>
+  <!-- Data plumbing notices: cached or preview data, or a load failure. -->
   <div id="banner" class="banner" hidden></div>
 
-  <main class="wrap">
-    <!-- Hero -->
-    <section class="hero" aria-label="Introduction">
-      <div>
-        <p class="hero__eyebrow">H5N1 · High Pathogenicity Avian Influenza</p>
-        <h2>Tracking bird flu <span class="script">down the flyway.</span></h2>
-        <p>In June 2026, H5N1 reached Australian wild birds for the first time, carried down the Southern Ocean flyway by migrating seabirds. Every official detection in Australia, mapped where it happened and listed as it is reported, with the wider world for context.</p>
-      </div>
-      <figure class="hero__plate" aria-hidden="true">
-        <svg id="heroBird" viewBox="0 0 600 780" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Engraved sentinel heron plate">
-          <defs>
-            <linearGradient id="hb_body" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EFE3C7"/><stop offset=".55" stop-color="#D8C39A"/><stop offset="1" stop-color="#B79A66"/></linearGradient>
-            <linearGradient id="hb_wing" x1="0" y1="0" x2=".4" y2="1"><stop offset="0" stop-color="#6E5A3C"/><stop offset="1" stop-color="#33291B"/></linearGradient>
-            <linearGradient id="hb_water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E8695" stop-opacity=".5"/><stop offset="1" stop-color="#47606E" stop-opacity=".15"/></linearGradient>
-            <radialGradient id="hb_fox" cx=".5" cy=".4" r=".75"><stop offset="0" stop-color="#FBF6E9"/><stop offset=".7" stop-color="#F5ECD6"/><stop offset="1" stop-color="#E6D6B2"/></radialGradient>
-            <style>
-              #heroBird .ink{fill:none;stroke:#241C12;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
-              #heroBird .fine{fill:none;stroke:#33291B;stroke-width:.6;stroke-linecap:round}
-              #heroBird .rl{fill:none;stroke:#241C12}
-              #heroBird .gl{fill:none;stroke:#C9A24B}
-              #heroBird .lbl{font-family:"Cormorant Garamond","Iowan Old Style",Georgia,serif;fill:#33291B}
-              #heroBird .scr{font-family:"Pinyon Script","Snell Roundhand",cursive;fill:#241C12}
-            </style>
-          </defs>
-          <rect width="600" height="780" fill="url(#hb_fox)"/>
-          <path d="M60 612 H540 V690 H60 Z" fill="url(#hb_water)"/>
-          <g class="fine" opacity=".5"><path d="M80 628 q40 -6 80 0 t80 0 t80 0 t80 0 t80 0"/><path d="M90 648 q40 -6 80 0 t80 0 t80 0 t80 0 t70 0"/><path d="M80 668 q40 -6 80 0 t80 0 t80 0 t80 0 t80 0"/></g>
-          <g class="ink" opacity=".85"><path d="M108 640 C 112 560, 118 500, 132 452"/><path d="M132 452 C 126 470, 132 476, 140 470"/><path d="M120 640 C 126 580, 134 540, 150 506"/><path d="M492 640 C 486 560, 480 512, 470 470"/><path d="M470 470 C 476 486, 470 492, 462 486"/></g>
-          <g transform="translate(0 -6)">
-            <path d="M250 470 C 210 470, 188 440, 196 402 C 202 372, 232 356, 268 356 C 320 356, 360 372, 384 402 C 372 430, 342 452, 300 466 C 284 471, 266 472, 250 470 Z" fill="url(#hb_body)"/>
-            <path d="M300 372 C 356 372, 396 400, 402 448 C 380 470, 330 476, 292 462 C 300 430, 302 398, 300 372 Z" fill="url(#hb_wing)" opacity=".9"/>
-            <path class="ink" d="M262 468 C 260 520, 256 566, 250 612 M250 612 l -14 20 M250 612 l 6 22 M250 612 l 16 16"/>
-            <path class="ink" d="M292 470 C 296 522, 300 568, 306 614 M306 614 l -14 18 M306 614 l 4 22 M306 614 l 18 14"/>
-            <path class="ink" d="M250 470 C 210 470, 188 440, 196 402 C 202 372, 232 356, 268 356 C 320 356, 360 372, 384 402"/>
-            <path class="ink" d="M384 402 C 372 430, 342 452, 300 466 C 284 471, 266 472, 250 470"/>
-            <path class="ink" d="M256 372 C 244 336, 250 300, 276 280 C 300 262, 306 236, 296 212"/>
-            <path class="ink" d="M284 366 C 276 332, 284 302, 306 284 C 326 268, 330 244, 322 220"/>
-            <path class="ink" d="M296 212 C 292 198, 300 188, 314 186 C 330 184, 342 192, 344 206 C 345 214, 340 220, 332 222 C 322 224, 322 220, 322 220"/>
-            <path class="ink" d="M344 204 L 402 190 L 346 214 Z" fill="#B8893B"/>
-            <path class="fine" d="M344 200 L 400 190"/>
-            <circle cx="328" cy="203" r="3.4" fill="#241C12"/><circle cx="329" cy="202" r="1" fill="#F5ECD6"/>
-            <path class="ink" d="M312 186 C 300 176, 288 172, 274 174 M316 187 C 306 179, 296 176, 286 178"/>
-            <g class="fine"><path d="M300 384 c 14 2 22 10 22 22"/><path d="M296 400 c 16 2 26 10 27 24"/><path d="M292 418 c 18 2 30 12 31 27"/><path d="M288 436 c 20 3 33 14 34 30"/><path d="M300 380 c 20 2 34 8 44 18"/><path d="M300 396 c 24 2 40 10 52 22"/><path d="M298 414 c 26 3 44 13 58 27"/></g>
-            <g class="ink" opacity=".9"><path d="M362 452 C 356 470, 350 484, 342 496"/><path d="M376 448 C 372 468, 366 484, 358 498"/><path d="M390 442 C 388 464, 382 482, 374 496"/></g>
-            <g class="fine" opacity=".65"><path d="M214 410 q10 6 8 18 M224 402 q10 6 8 18 M234 396 q10 6 8 18 M210 428 q10 6 8 18 M222 424 q10 6 8 18 M234 420 q10 6 8 18"/></g>
-            <g class="fine" opacity=".5"><path d="M258 340 q8 4 6 12 M266 320 q8 4 6 12 M276 302 q8 4 6 12 M288 286 q8 4 6 12"/></g>
-          </g>
-          <path d="M250 618 C 248 650, 250 672, 258 688" class="fine" opacity=".4"/>
-          <path d="M306 620 C 308 652, 306 674, 300 688" class="fine" opacity=".4"/>
-          <rect x="20" y="20" width="560" height="740" class="rl" stroke-width="1"/>
-          <rect x="27" y="27" width="546" height="726" class="gl" stroke-width=".8"/>
-          <g class="gl" stroke-width="1"><path d="M27 55 Q 27 27 55 27 M573 55 Q 573 27 545 27 M27 725 Q 27 753 55 753 M573 725 Q 573 753 545 753"/></g>
-          <text class="lbl" x="556" y="52" text-anchor="end" font-size="17" letter-spacing="0.12em">PLATE CCXXI</text>
-          <text class="lbl" x="44" y="52" font-size="13" letter-spacing="0.18em" opacity=".7">ORDER · PELECANIFORMES</text>
-          <text class="scr" x="300" y="712" text-anchor="middle" font-size="40">Ardea sentinella</text>
-          <text class="lbl" x="300" y="736" text-anchor="middle" font-size="15" letter-spacing="0.28em">THE SENTINEL HERON</text>
-        </svg>
+  <main class="wrap" id="main">
+
+    <!-- 2  Hero. The image is a band above the type, so every word stays at full
+         contrast on white. The credit is a licence condition (CC BY-SA 4.0). -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <figure class="hero__figure">
+        <img class="hero__img" src="assets/img/tern-hero.jpg" width="1920" height="840"
+             alt="A greater crested tern in flight with its wings raised, photographed side on against a plain white background." />
+        <figcaption class="hero__credit">
+          Greater crested tern (<i>Thalasseus bergii</i>), the species of Victoria&rsquo;s first detection and of the
+          South Australian cluster. Photograph by
+          <a href="https://www.jjharrison.com.au/" rel="noopener">JJ Harrison</a>,
+          <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="noopener">CC BY-SA 4.0</a>,
+          cropped and converted to greyscale.
+        </figcaption>
       </figure>
-    </section>
-
-    <!-- Current status (Australia) -->
-    <section id="statusBanner" class="status-banner" aria-label="Current situation in Australia" hidden></section>
-
-    <!-- Controls -->
-    <section class="controls" aria-label="Filters">
-      <div class="control-group" role="group" aria-label="Region focus">
-        <span class="control-label">Region</span>
-        <div class="btn-row" id="regionBtns">
-          <button class="chip is-active" data-region="au" aria-pressed="true">🇦🇺 Australia</button>
-          <button class="chip" data-region="global" aria-pressed="false">🌍 Global</button>
-          <button class="chip" data-region="us" aria-pressed="false">🇺🇸 United States</button>
-        </div>
-      </div>
-
-      <div class="control-group" role="group" aria-label="Category filter">
-        <span class="control-label">Show</span>
-        <div class="btn-row" id="categoryBtns">
-          <button class="chip is-active" data-cat="all" aria-pressed="true">All</button>
-          <button class="chip" data-cat="human" aria-pressed="false"><span class="dot" data-catdot="human"></span>People</button>
-          <button class="chip" data-cat="poultry" aria-pressed="false"><span class="dot" data-catdot="poultry"></span>Poultry</button>
-          <button class="chip" data-cat="dairy" aria-pressed="false"><span class="dot" data-catdot="dairy"></span>Dairy cattle</button>
-          <button class="chip" data-cat="wild_bird" aria-pressed="false"><span class="dot" data-catdot="wild_bird"></span>Wild birds</button>
-          <button class="chip" data-cat="mammal" aria-pressed="false"><span class="dot" data-catdot="mammal"></span>Mammals</button>
-        </div>
-      </div>
-
-      <div class="control-group" role="group" aria-label="Strain filter">
-        <span class="control-label">Strain</span>
-        <div class="btn-row" id="subtypeBtns">
-          <button class="chip is-active" data-sub="all" aria-pressed="true">All</button>
-          <button class="chip" data-sub="H5N1" aria-pressed="false">H5N1</button>
-          <button class="chip" data-sub="H7" aria-pressed="false">H7</button>
-        </div>
-      </div>
-
-      <div class="control-group">
-        <label class="control-label" for="timeframe">Timeframe</label>
-        <select id="timeframe">
-          <option value="30">Last 30 days</option>
-          <option value="90">Last 90 days</option>
-          <option value="365">Last 12 months</option>
-          <option value="0" selected>All time</option>
-        </select>
+      <div class="hero__text">
+        <p class="hero__eyebrow">H5N1 clade 2.3.4.4b, Australia</p>
+        <h1 class="hero__title" id="heroTitle">Where bird flu is being detected in Australia</h1>
+        <p class="hero__lede">
+          Every officially reported detection, mapped where it happened and listed with the source that reported it.
+          The Commonwealth&rsquo;s own national count is shown beside our mapped total rather than merged into it, and
+          the resolved 2024 to 2025 H7 poultry outbreaks are a different subtype, kept separate throughout.
+        </p>
+        <p class="hero__meta" id="heroMeta"></p>
       </div>
     </section>
 
-    <!-- Stat cards -->
-    <section class="stats" id="stats" aria-label="Summary statistics"></section>
-
-    <!-- Map -->
-    <section class="map-section">
-      <div id="map" role="application" aria-label="Map of H5N1 detections"></div>
-      <div class="legend" id="legend" aria-hidden="true"></div>
+    <!-- 3  Current situation. Headline, human risk, the 29 July local transmission
+         development, then a typographic figures row. No cards. -->
+    <section class="section section--strong" id="situation" aria-labelledby="situationTitle">
+      <div class="section__head">
+        <p class="label">Current situation, Australia</p>
+        <h2 class="section__title" id="situationTitle">Loading the current situation</h2>
+      </div>
+      <div class="stack stack--lg" id="situationBody"></div>
     </section>
 
-    <!-- List -->
-    <section class="list-section" aria-label="Detection list">
+    <!-- 4  The official count next to the count of individually mapped detections.
+         Stays hidden when the official figure could not be read. -->
+    <section class="section" id="official" aria-labelledby="officialTitle">
+      <div class="section__head">
+        <p class="label">Two figures, measured differently</p>
+        <h2 class="section__title" id="officialTitle">The official count and this map</h2>
+        <p class="section__note">
+          The map is built from automated feeds that follow WOAH notifications, which arrive after an Australian
+          announcement. The Commonwealth counts from its own updates. Rather than pick one number, both are published
+          here and the difference is named.
+        </p>
+      </div>
+      <div class="official-gap" id="officialGap" aria-label="Official national count compared with mapped detections" hidden></div>
+      <div class="stack stack--lg" id="officialStatement" hidden></div>
+    </section>
+
+    <!-- 5  Map with impact areas, plus the filters that drive both map and table. -->
+    <section class="section" id="detections" aria-labelledby="detectionsTitle">
+      <div class="section__head">
+        <h2 class="section__title" id="detectionsTitle">Detections and their location</h2>
+        <p class="section__note">
+          The view starts on the current H5N1 incursion. Historical events are opt in, and are labelled as historical,
+          resolved, and a different subtype wherever they appear.
+        </p>
+      </div>
+
+      <div class="controls" aria-label="Filters">
+        <div class="control-group" role="group" aria-label="Region">
+          <span class="control-label">Region</span>
+          <div class="btn-row" id="regionBtns"></div>
+        </div>
+
+        <div class="control-group" role="group" aria-label="Event">
+          <span class="control-label">Event</span>
+          <label class="check">
+            <input type="checkbox" id="includeHistorical" />
+            Include historical and other records
+          </label>
+          <span class="era-note" id="eraNote"></span>
+        </div>
+
+        <div class="control-group" role="group" aria-label="Detection type">
+          <span class="control-label">Type</span>
+          <div class="btn-row" id="categoryBtns"></div>
+        </div>
+
+        <div class="control-group" role="group" aria-label="Strain">
+          <span class="control-label">Strain</span>
+          <div class="btn-row" id="subtypeBtns"></div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="timeframe">Timeframe</label>
+          <select id="timeframe">
+            <option value="30">Last 30 days</option>
+            <option value="90">Last 90 days</option>
+            <option value="365">Last 12 months</option>
+            <option value="0" selected>All time</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="map-section">
+        <div class="stack stack--sm" id="viewFigures"></div>
+        <div id="map" role="application" aria-label="Map of avian influenza detections"></div>
+        <div class="legend" id="legend"></div>
+        <p class="map-note" id="mapNote"></p>
+        <p class="map-credit">Basemap tiles and data &copy; OpenStreetMap contributors.</p>
+        <details class="disclose">
+          <summary>What the category marks mean</summary>
+          <div class="disclose__body">
+            <ul class="key key--stack" id="categoryKey"></ul>
+            <p class="footnote">
+              The marks carry the category and are drawn in one stroke weight so they read as a set. Colour is not part
+              of them: on this site colour means strain and era, so a mark is legible in plain black on white.
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 6  Cases table. A real table, tabular figures, sortable, searchable. -->
+    <section class="section" id="cases" aria-labelledby="casesTitle">
+      <div class="section__head">
+        <h2 class="section__title" id="casesTitle">Detections, one row per record</h2>
+        <p class="section__note">
+          One officially reported detection per row, each with the source that reported it. Dates are the reported or
+          confirmation date, not the date an animal was found. The table follows the filters above and every column
+          heading sorts. On a narrow screen each record becomes a labelled block instead of a row, so no column is left
+          off the side of the page.
+        </p>
+      </div>
       <div class="list-head">
-        <h2>Recent detections <span class="muted" id="listCount"></span></h2>
-        <input type="search" id="search" placeholder="Search country, state, county, species…" aria-label="Search detections" />
+        <p class="list-count" id="listCount"></p>
+        <div>
+          <label class="visually-hidden" for="search">Search the table</label>
+          <input type="search" id="search" placeholder="Search place, state, species, source" />
+        </div>
       </div>
-      <div class="table-scroll">
-        <table id="table">
-          <thead>
-            <tr>
-              <th data-sort="date" aria-sort="descending">Date ▾</th>
-              <th data-sort="category">Type</th>
-              <th data-sort="subtype">Strain</th>
-              <th data-sort="country">Country</th>
-              <th data-sort="admin1">State / region</th>
-              <th data-sort="locality">Locality</th>
-              <th data-sort="count" class="num">Affected</th>
-              <th>Source</th>
-            </tr>
-          </thead>
+      <!-- The table fits its measure, so this scrolls only if a source ever
+           publishes an unusually long place or species name. tabindex keeps it
+           reachable by keyboard in that case. -->
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Detections, scrollable">
+        <table class="table" id="table">
+          <caption class="visually-hidden">Officially reported avian influenza detections, filtered by the controls above</caption>
+          <thead id="thead"></thead>
           <tbody id="tbody"></tbody>
         </table>
       </div>
       <button id="showMore" class="show-more" hidden>Show more</button>
+      <p class="list-foot" id="listFoot"></p>
     </section>
 
-    <!-- About / sources -->
-    <section class="about" id="about">
-      <h2>About this tracker</h2>
-      <p>
-        This is an independent, public-interest tracker of <strong>avian influenza (bird flu) in Australia</strong>,
-        with the wider world for context. It brings official detections into one map and list so anyone can see
-        where the virus is being found, in wild birds, poultry, mammals and people. H5N1 is highlighted; the
-        2024 to 2025 H7 outbreaks in poultry are shown as historical context.
-      </p>
-      <p>
-        Australian detections come automatically from the FAO EMPRES-i+ animal disease system, which aggregates
-        the official WOAH notifications Australian agencies issue. United States wild-bird detections come from
-        USDA APHIS, and global human-case figures from the WHO via Our World in Data. Data refreshes daily. A
-        small set of well-documented human cases is maintained by hand. Sources are listed below, and every
-        detection links back to its source.
-      </p>
-      <div class="source-status" id="sourceStatus"></div>
-      <h3>Data sources</h3>
-      <ul id="sourceList" class="source-list"></ul>
-      <h3>Notes and caveats</h3>
-      <ul class="notes-list">
-        <li>&ldquo;First detection&rdquo; refers to Australian wild birds. A separate possible incursion at sub-Antarctic Heard Island, an external territory, was reported in late 2025 and is not counted here.</li>
-        <li>Coordinates follow the source. Some events are placed at a town or region; a few resolve only to a state.</li>
+    <!-- 7  Recent news, Australia specific. Never mapped, never counted. -->
+    <section class="section" id="news" aria-labelledby="newsTitle">
+      <div class="section__head">
+        <p class="label">Media reports, not official notifications</p>
+        <h2 class="section__title" id="newsTitle">Recent Australian news coverage</h2>
+        <p class="news-note">
+          These are media reports gathered from an Australian news feed. They are not official notifications. Nothing on
+          this list is plotted on the map or counted in any figure anywhere on this page. Treat each one as a lead to
+          check against a primary source.
+        </p>
+      </div>
+      <ul class="news-list" id="newsList"></ul>
+      <p class="footnote" id="newsFoot"></p>
+    </section>
+
+    <!-- 8  Data sources: what each one provides, and whether it is official or a signal. -->
+    <section class="section" id="sources" aria-labelledby="sourcesTitle">
+      <div class="section__head">
+        <h2 class="section__title" id="sourcesTitle">Data sources and method</h2>
+      </div>
+      <div class="prose">
+        <p>
+          This is an independent, public-interest tracker of avian influenza in Australia, with the wider world for
+          context. Australian detections come automatically from the FAO EMPRES-i+ animal disease system, which
+          aggregates the official WOAH notifications Australian agencies issue. United States wild-bird detections come
+          from USDA APHIS, and global human-case figures from the WHO via Our World in Data. Data refreshes daily.
+        </p>
+        <p>
+          The FAO feed follows WOAH notifications, which arrive after an Australian announcement, so the number of
+          detections plotted here can trail the Commonwealth&rsquo;s own figure. The page therefore reads the official
+          national count straight from the Department of Agriculture&rsquo;s H5 bird flu updates and national campaign
+          page and shows it beside the mapped total. Those pages publish place names without coordinates, so they
+          inform the counts and never add points to the map: a guessed coordinate on a public health map is worse than a
+          missing one. A nationally significant first, such as a state&rsquo;s first detection, may be added by hand with
+          its primary source attached until the automated feed catches up.
+        </p>
+      </div>
+      <p class="source-status" id="sourceStatus"></p>
+      <h3>Feeds that produce mapped records</h3>
+      <ul class="source-list" id="sourceList"></ul>
+      <h3>Sources that inform the page without producing map points</h3>
+      <ul class="source-list" id="contextSourceList"></ul>
+      <h3>Further reference</h3>
+      <ul class="source-list" id="referenceList"></ul>
+    </section>
+
+    <!-- 9  Notes and caveats, from the data so the page and the public JSON cannot drift. -->
+    <section class="section" id="notes" aria-labelledby="notesTitle">
+      <div class="section__head">
+        <h2 class="section__title" id="notesTitle">Notes and caveats</h2>
+      </div>
+      <ul class="notes-list" id="notesList">
+        <li>Records are grouped by the event they belong to and are never added together.</li>
+        <li>Coordinates follow the source. Some events are placed at a town or region, and a few resolve only to a state.</li>
         <li>Not every Western Australian detection is itemised in public data, so counts follow what official sources publish.</li>
       </ul>
-      <p class="disclaimer">
-        <strong>Not medical advice.</strong> Figures are aggregated from public reports and may lag or be
-        revised by the source agencies. The risk to the general public is currently assessed as low by
-        Australian authorities. For guidance, consult the
-        <a href="https://www.cdc.gov.au/diseases/bird-flu-avian-influenza" rel="noopener">Australian CDC</a>,
-        <a href="https://www.outbreak.gov.au/emerging-risks/high-pathogenicity-avian-influenza" rel="noopener">DAFF</a>,
-        or your state health department. <strong>To report sick or dead wild birds, call the Emergency Animal
-        Disease Hotline on 1800&nbsp;675&nbsp;888.</strong>
-      </p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <p>
-        Open data · Auto-updated daily · <span id="footUpdated"></span> ·
-        <a id="repoLink" href="https://github.com/apappas57/H5-Bird-flu-tracker" rel="noopener">Source &amp; methodology on GitHub</a>
-      </p>
-      <p class="muted small">Built for the public. Map © OpenStreetMap contributors.</p>
+      <div class="stack">
+        <p class="callout">
+          <strong>To report sick or dead wild birds, call the Emergency Animal Disease Hotline on 1800&nbsp;675&nbsp;888.</strong>
+          Do not touch or move sick or dead birds.
+        </p>
+        <p class="disclaimer">
+          <strong>Not medical advice.</strong> Figures are aggregated from public official reports and may lag or be
+          revised by the source agencies. The risk to the general public is currently assessed as low by Australian
+          authorities. For guidance, consult the
+          <a href="https://www.cdc.gov.au/diseases/bird-flu-avian-influenza" rel="noopener">Australian CDC</a>,
+          <a href="https://www.outbreak.gov.au/emerging-risks/high-pathogenicity-avian-influenza" rel="noopener">DAFF</a>,
+          or your state health department.
+        </p>
+        <p class="small">Open data, rebuilt daily. <span id="footUpdated"></span></p>
+        <p class="small">
+          <a href="https://github.com/apappas57/H5-Bird-flu-tracker" rel="noopener">Source and methodology on GitHub</a>.
+          Basemap tiles and data &copy; OpenStreetMap contributors. Hero photograph by JJ Harrison, CC BY-SA 4.0.
+        </p>
+      </div>
     </div>
   </footer>
 
   <script src="assets/leaflet/leaflet.js"></script>
+  <script src="icons.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

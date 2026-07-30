@@ -62,12 +62,36 @@ function cleanSpecies(s) {
   return t || null;
 }
 
-const titleCase = (s) => s.replace(/\w[\w']*/g, (w) => w[0].toUpperCase() + w.slice(1).toLowerCase());
+// Unicode-aware on purpose. The ASCII-only \w class broke every accented place name in
+// the feed: \w stops at the accented letter, the next match starts on the letter AFTER
+// it, and that letter gets capitalised mid-word. EMPRES-i publishes ALL-CAPS localities
+// worldwide, so this ran daily: "BÜNSDORF" became "BÜNsdorf", "CAÑETE" became "CaÑEte",
+// "ROŹDZIN" became "RoŹDzin". The class below is exactly \w plus the apostrophes, but
+// with letters and digits from every script, so a word runs to its real end.
+const WORD_RE = /[\p{L}\p{N}_][\p{L}\p{N}_'’]*/gu;
+
+// A one-letter prefix followed by an apostrophe is a name particle, so the letter after
+// it is capitalised: O'Halloran, D'Estrees, both real South Australian coastal names.
+// A longer stem before the apostrophe is a possessive and is left alone, so
+// "BURKE'S PASS" stays "Burke's Pass" rather than becoming "Burke'S Pass".
+const PARTICLE_RE = /(^|[^\p{L}\p{N}])(\p{L})(['’])(\p{L})/gu;
+
+const titleCase = (s) => String(s)
+  .replace(WORD_RE, (w) => {
+    // First code point, not first code unit: taking w[0] of a character outside the
+    // basic plane would split a surrogate pair and corrupt the letter.
+    const first = String.fromCodePoint(w.codePointAt(0));
+    return first.toUpperCase() + w.slice(first.length).toLowerCase();
+  })
+  .replace(PARTICLE_RE, (_, pre, letter, quote, next) => pre + letter.toUpperCase() + quote + next.toUpperCase());
 
 /** Tidy EMPRES-i locality strings (drop outbreak/premises id and numeric prefixes). */
 function cleanLocality(s) {
   if (!s) return null;
-  let t = s.replace(/^OB_\d+\s*-\s*IP\d+\s*-\s*/i, '').replace(/^\d{4,}\s*/, '').trim();
+  // The premises id ("IP1") is optional: EMPRES-i emits both "OB_123 - IP1 - Placename"
+  // and a bare "ob_192774 - Robe". Without the optional group the bare form survived and
+  // Australian localities rendered on the site as "ob_192774 - Robe".
+  let t = s.replace(/^OB_\d+\s*-\s*(?:IP\d+\s*-\s*)?/i, '').replace(/^\d{4,}\s*/, '').trim();
   const parts = t.split(/\s*-\s*/);
   if (parts.length === 2 && parts[0].toLowerCase() === parts[1].toLowerCase()) t = parts[0];
   t = t.trim();

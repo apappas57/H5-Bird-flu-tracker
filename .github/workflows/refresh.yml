@@ -28,11 +28,14 @@ jobs:
 
       - name: Commit refresh marker (triggers the Vercel deploy, which rebuilds the full data)
         run: |
-          # Only summary.json is committed daily to keep git history lean; Vercel
-          # regenerates the large detections.json fresh at build time from this push.
+          # summary.json and history.json are both written by the pipeline and both
+          # committed daily; Vercel regenerates the large detections.json fresh at build
+          # time from this push. history.json has to be staged too: the credibility page
+          # reads it, its Australian half is regenerated on every run, and staging only
+          # summary.json left the committed history drifting behind the summary.
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add site/data/summary.json
+          git add site/data/summary.json site/data/history.json
           if git diff --cached --quiet; then
             echo "No changes today."
           else

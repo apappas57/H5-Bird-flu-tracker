@@ -41,4 +41,48 @@ jobs:
             }
             console.log("OK:", d.length, "records, mode=" + s.mode);
             console.log("Source health:", (s.sources || []).map(x => x.key + "=" + x.status).join(", "));
+            // The recent-news list is one of the four things the site shows, and it once
+            // rendered empty because the pipeline counted the headlines without publishing
+            // them. An empty list is legitimate on a quiet week, a missing or malformed
+            // one is not, so the shape is checked and the count is not.
+            const cs = s.coverage_signal;
+            if (cs) {
+              if (!Array.isArray(cs.headlines)) throw new Error("coverage_signal.headlines is not an array");
+              for (const h of cs.headlines) {
+                if (!h.title || !/^https?:\/\//.test(h.url || "") || !/^\d{4}-\d{2}-\d{2}$/.test(h.date || ""))
+                  throw new Error("bad headline: " + JSON.stringify(h));
+              }
+              console.log("News:", cs.headlines.length, "published of", cs.headlines_checked, "retained");
+            }
+          '
+
+      - name: Validate history dataset
+        # The credibility page lives or dies on "no fact without a source", and its
+        # Australian half is regenerated on every run. Without this, a regression that
+        # silently dropped sourced entries would ship green.
+        run: |
+          node -e '
+            const h = require("./site/data/history.json");
+            if (!Array.isArray(h.entries)) throw new Error("history.json has no entries array");
+            // Floors, not exact counts: the curated global timeline is committed and must
+            // never shrink by accident, and the generated Australian entries move with the
+            // live data. Raise these when the curated set grows.
+            const CURATED_FLOOR = 20, TOTAL_FLOOR = 25;
+            if (h.entries.length < TOTAL_FLOOR)
+              throw new Error("history.json has " + h.entries.length + " entries, floor is " + TOTAL_FLOOR);
+            if (!h.counts || h.counts.curated < CURATED_FLOOR)
+              throw new Error("history.json has " + (h.counts && h.counts.curated) + " curated entries, floor is " + CURATED_FLOOR);
+            if (h.counts.total !== h.entries.length)
+              throw new Error("history.json counts.total does not match the entries array");
+            // An entry the build dropped is an entry that had no citable URL. On this page
+            // that is a repository error, so it fails the build rather than disappearing.
+            if (h.counts.dropped) throw new Error(h.counts.dropped + " history entries were dropped for having no citable URL");
+            for (const e of h.entries) {
+              if (!e.id || !e.title || !/^\d{4}-\d{2}-\d{2}$/.test(e.sort_date || ""))
+                throw new Error("bad history entry: " + JSON.stringify(e).slice(0, 200));
+              const cited = (e.citations || []).filter(c => c && /^https?:\/\//.test(c.url || ""));
+              if (!cited.length) throw new Error("history entry with no cited URL: " + e.id);
+            }
+            console.log("History OK:", h.entries.length, "entries (" + h.counts.curated + " curated, "
+              + h.counts.generated + " generated),", h.counts.citations, "citations");
           '

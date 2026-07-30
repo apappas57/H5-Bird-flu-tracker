@@ -1,265 +1,1549 @@
-/* ============================================================================
-   H5 Bird Flu Tracker — "Flyway" visual identity
-   Design language after John James Audubon, The Birds of America (1827–1838):
-   aged Whatman paper, bistre engraving ink, copperplate labels, and a
-   hand-tinted watercolour palette repurposed as an epidemiological scale.
+/* The font stylesheet is linked from each page HEAD, not @imported here. An
+ * @import is a serial chain: the browser cannot even discover the font CSS
+ * until styles.css has downloaded and parsed, which measured 492 to 564ms of
+ * extra first contentful paint. Two parallel <link>s cost neither. */
 
-   Structure & class names are unchanged from the original — this is a re-skin.
+/* ============================================================================
+   birdflutracker.org, design system.
+
+   One typeface (Source Code Pro), white ground, four greys, two hairlines, one
+   red. Structure comes from space and 1px rules, never from cards. Colour means
+   STRAIN AND ERA, never category: red is the live 2026 H5N1 clade 2.3.4.4b
+   incursion and nothing else. Historical H7 poultry and the 2024 human case are
+   grey and outlined.
+
+   Reading order:
+     1  tokens
+     2  reset and base type
+     3  layout: wrap, section, prose, rules
+     4  a11y: skip link, focus, visually hidden
+     5  site header, nav, footer
+     6  banner
+     7  hero
+     8  figures (headline numbers, no cards)
+     9  breakdowns, definition rows, state list
+    10  tags: strain, era, confidence, source, media
+    11  marks and category icons
+    12  controls: buttons, selects, search, checkbox, disclosure
+    13  tables
+    14  map, legend, Leaflet overrides
+    15  news list
+    16  sources list
+    17  notes, caveats, disclaimer
+    18  history page: timeline, events, citations
+    19  status block (.sb-*) and official gap (.og-*)
+    20  legacy aliases
+    21  responsive, reduced motion, print
+
+   Contrast note, read before using --ink-3. On white, --ink-2 (#4A4A4A) is
+   8.9:1 and safe for any text size. --ink-3 (#8C8C8C) is 3.4:1, so it passes AA
+   only for large text (24px and up) and for non-text parts: rules, marks,
+   borders, placeholder hints. Captions and metadata therefore use --ink-2, not
+   --ink-3. --live (#C8102E) is 5.9:1 on white and 5.9:1 against white text, so
+   it is safe both as ink and as a fill behind white.
    ========================================================================== */
 
 :root {
-  /* Category colours — hand-tinted, kept hue- & lightness-distinct.
-     Must stay in sync with CATEGORY colours in app.js. */
-  --c-human:     #A8322A;  /* carmine  — people (most severe) */
-  --c-poultry:   #C6891F;  /* ochre    — poultry */
-  --c-dairy:     #3F6B82;  /* slate    — dairy cattle */
-  --c-wild_bird: #5E7A3A;  /* verdant  — wild birds */
-  --c-mammal:    #7E579B;  /* amethyst — mammals */
+  /* ground and ink */
+  --paper:    #FFFFFF;
+  --paper-2:  #FAFAFA;   /* the only fill allowed, used sparingly */
+  --ink:      #101010;   /* headings, primary text */
+  --ink-2:    #4A4A4A;   /* secondary text */
+  --ink-3:    #8C8C8C;   /* captions, metadata */
+  --rule:     #E2E2E2;   /* hairlines */
+  --rule-2:   #F0F0F0;   /* faintest separators */
 
-  /* Paper & ink */
-  --bg:       #F5ECD6;   /* aged Whatman ground */
-  --bg-sunk:  #EFE3C7;
-  --panel:    #FBF6E9;   /* raised plate */
-  --ink:      #241C12;   /* bistre */
-  --ink-soft: #6E5A3C;
-  --line:     #D8C39A;   /* border on paper */
-  --line-soft:#E6D6B2;
-  --accent:      #A8322A; /* carmine — primary action / alarm */
-  --accent-deep: #7E2018;
-  --accent-ink:  #FBF6E9;
-  --gilt:     #C9A24B;
-  --sepia:    #6B4E2E;   /* choropleth ink wash */
+  /* the single accent. This is an alarm colour, spend it only on the live outbreak. */
+  --live:     #C8102E;
+  --live-wash: rgba(200, 16, 46, 0.08);
 
-  --shadow: 0 1px 0 rgba(255,255,255,.5) inset, 0 2px 14px -6px rgba(36,28,18,.34);
-  --shadow-lift: 0 12px 40px -16px rgba(36,28,18,.46);
-  --radius: 6px;
-  --maxw: 1180px;
+  --mono: "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
 
-  --serif:   "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --body:    "EB Garamond", "Iowan Old Style", Palatino, Georgia, "Times New Roman", serif;
-  --script:  "Pinyon Script", "Snell Roundhand", "Apple Chancery", cursive;
-  --mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-
+/* Single deliberate light identity. This also stops the UA from inverting form
+   controls, scrollbars and selection for a viewer whose OS is in dark mode. */
+html {
   color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #1C1610; --bg-sunk: #16110C; --panel: #241D16;
-    --ink: #F2E6CC; --ink-soft: #B49B6F; --line: #3A2E20; --line-soft: #2C231A;
-    --accent: #D65A4A; --accent-deep: #A8322A; --accent-ink: #1C1610; --gilt: #D9B65E;
-    --sepia: #B99A6A;
-    --shadow: 0 1px 0 rgba(255,255,255,.03) inset, 0 2px 18px -6px rgba(0,0,0,.6);
-    /* keep category hues legible on dark ground */
-    --c-human: #D65A4A; --c-poultry: #D6A758; --c-dairy: #7F9CAC;
-    --c-wild_bird: #9DAE6E; --c-mammal: #A98FC4;
-    color-scheme: dark;
-  }
+  background: var(--paper);
+  /* Set on html as well as body so no element can fall back to the UA serif. */
+  font-family: var(--mono);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+/* --------------------------------------------------------------------------
+   2  reset and base type
+   -------------------------------------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
 body {
-  margin: 0; background-color: var(--bg); color: var(--ink);
-  font-family: var(--body); font-size: 17px; line-height: 1.55;
-  text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased;
-  background-image:
-    radial-gradient(120% 70% at 50% -8%, rgba(201,162,75,.10), transparent 60%),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.035'/></svg>");
-  background-attachment: fixed;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 16px;
+  line-height: 1.65;
+  font-weight: 400;
+  /* Source Code Pro is monospaced, so tabular figures are free and every column
+     of numbers on the site lines up without per-element opt-in. */
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
-.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(14px, 3vw, 26px); }
-h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; margin: 0 0 .35em; letter-spacing: .005em; }
-a { color: var(--accent-deep); text-underline-offset: 3px; }
-a:hover { color: var(--accent); }
-.muted { color: var(--ink-soft); font-weight: 400; }
-.small { font-size: .85rem; }
+
+/* All weights of a monospace share one advance width, so switching to 700 for a
+   selected state or a heading never shifts layout. That is used deliberately
+   throughout the control styles below. */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.18;
+  text-wrap: balance;
+}
+h1, .h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); letter-spacing: -0.02em; line-height: 1.12; }
+h2, .h2 { font-size: clamp(1.15rem, 2.8vw, 1.45rem); }
+h3, .h3 { font-size: 1.0625rem; font-weight: 600; }
+h4, .h4 { font-size: 0.9375rem; font-weight: 600; }
+
+p, ul, ol, dl, figure, table, pre { margin: 0; }
+p { max-width: 66ch; }               /* about 66 characters in a monospace */
+
+strong, b { font-weight: 700; }
+/* Source Code Pro ships upright only, so the browser synthesises the slant. That
+   is wanted here: species binomials (Thalasseus bergii) need real italics, and a
+   slant is clearly not a link, whereas an underline would be. */
+em, i, cite, var { font-style: italic; }
+small { font-size: 0.8125rem; }
+sup { font-size: 0.7em; line-height: 0; vertical-align: super; }
+abbr[title] { text-decoration: underline dotted var(--ink-3); text-underline-offset: 3px; cursor: help; }
+
+/* Quoted officials, for example the Chief Veterinary Officer statements. Set as
+   a marked block, not as a card, and never in red. */
+blockquote, .quote {
+  margin: 0;
+  border-left: 2px solid var(--rule);
+  padding: 2px 0 2px 16px;
+  color: var(--ink);
+  font-size: 0.9375rem;
+  max-width: 64ch;
+}
+/* No dash before the attribution: the site bans em dashes, and an en dash or
+   hyphen here would just be a weaker version of the same tic. Space and size
+   already separate the speaker from the words. */
+.quote__attr {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--ink-3);
+  text-underline-offset: 3px;
+}
+a:hover { text-decoration-color: var(--ink); }
+
+/* Interaction stays monochrome on purpose. Red is reserved for the live
+   incursion, so hover and focus never borrow it. */
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+::selection { background: var(--ink); color: var(--paper); }
+
+/* Small uppercase letterspaced labels are the section markers of this design. */
+.label {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.label--lg { font-size: 0.75rem; }
+.label--ink { color: var(--ink); }
+
+.lede { font-size: 1.0625rem; color: var(--ink-2); max-width: 66ch; }
+.muted { color: var(--ink-2); }
+.quiet { color: var(--ink-2); font-size: 0.875rem; }
+.small { font-size: 0.8125rem; }
+.num, .tnum { font-variant-numeric: tabular-nums; }
+.nowrap { white-space: nowrap; }
+
+/* --------------------------------------------------------------------------
+   3  layout
+   -------------------------------------------------------------------------- */
+
+.wrap {
+  max-width: 940px;
+  margin: 0 auto;
+  padding-inline: clamp(18px, 4vw, 32px);
+}
+.wrap--narrow { max-width: 720px; }
+
+/* Spacing is done with gap, not per-element margins. */
+.stack { display: grid; gap: 14px; align-content: start; }
+.stack--xs { gap: 6px; }
+.stack--sm { gap: 10px; }
+.stack--lg { gap: 22px; }
+.stack--xl { gap: 34px; }
+
+.row { display: flex; gap: 14px 22px; flex-wrap: wrap; align-items: baseline; }
+.row--between { justify-content: space-between; }
+.row--center { align-items: center; }
+
+/* A section is separated by a hairline and space. It is not a box. */
+.section {
+  border-top: 1px solid var(--rule);
+  padding-top: clamp(22px, 3.5vw, 34px);
+  margin-top: clamp(30px, 5vw, 52px);
+}
+.section--plain { border-top: 0; padding-top: 0; }
+.section--strong { border-top-color: var(--ink); }
+.section__head { display: grid; gap: 6px; margin-bottom: 18px; }
+.section__title { font-size: clamp(1.15rem, 2.8vw, 1.45rem); }
+.section__note { color: var(--ink-2); font-size: 0.875rem; max-width: 66ch; }
+
+.prose { display: grid; gap: 14px; max-width: 66ch; }
+.prose p { max-width: none; }
+
+hr, .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; height: 0; }
+.rule--strong { border-top-color: var(--ink); }
+.rule--faint { border-top-color: var(--rule-2); }
+
+/* --------------------------------------------------------------------------
+   4  a11y helpers
+   -------------------------------------------------------------------------- */
 
 .skip-link {
-  position: absolute; left: -999px; top: 0; background: var(--ink);
-  color: var(--accent-ink); padding: 10px 14px; z-index: 2000; border-radius: 0 0 6px 0;
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 2000;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 10px 16px;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 .skip-link:focus { left: 0; }
 
-/* ---------- Header ---------- */
-.site-header {
-  background: color-mix(in srgb, var(--bg) 90%, transparent);
-  backdrop-filter: blur(8px) saturate(1.1);
-  border-bottom: 1px solid var(--line);
-  position: sticky; top: 0; z-index: 900;
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
-.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; flex-wrap: wrap; }
-.brand { display: flex; align-items: center; gap: 14px; }
-.logo { display: inline-flex; width: 46px; height: 46px; flex: none; }
-.logo svg { width: 100%; height: 100%; }
-.site-header h1 { font-size: clamp(1.35rem, 3vw, 1.9rem); margin: 0; letter-spacing: .01em; }
-.tagline { margin: 1px 0 0; color: var(--ink-soft); font-size: .95rem; max-width: 62ch; font-style: italic; }
-.status { text-align: right; font-size: .85rem; color: var(--ink-soft); font-family: var(--mono); }
-.mode-badge {
-  display: inline-block; padding: 2px 10px; border-radius: 999px; font-weight: 600;
-  font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px;
-  font-family: var(--serif); border: 1px solid currentColor;
+
+/* --------------------------------------------------------------------------
+   5  site header, nav, footer
+   -------------------------------------------------------------------------- */
+
+/* Not sticky. This reads as a printed document, and a fixed bar would also
+   collide with the sticky table headers. */
+.site-header { border-bottom: 1px solid var(--ink); }
+.site-header__inner {
+  display: flex;
+  gap: 12px 26px;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 16px 0 14px;
 }
-.mode-badge.seed  { color: var(--ochre, #8A6326); color: #8A6326; }
-.mode-badge.stale { color: #8A6326; }
-.mode-badge.live  { color: #3E4A28; }
-@media (prefers-color-scheme: dark){ .mode-badge.seed,.mode-badge.stale{ color:#D6A758; } .mode-badge.live{ color:#9DAE6E; } }
+.site-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.site-title a { text-decoration: none; }
+.site-title a:hover { text-decoration: underline; text-decoration-color: var(--ink); }
+.site-subtitle { color: var(--ink-2); font-size: 0.8125rem; letter-spacing: 0.01em; }
 
-/* ---------- Hero (specimen plate) ---------- */
-.hero { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: clamp(18px, 4vw, 44px); align-items: center; padding: clamp(22px, 4vw, 40px) 0 clamp(6px, 2vw, 14px); }
-.hero__eyebrow { font-family: var(--serif); font-size: .72rem; letter-spacing: .26em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 12px; display: flex; align-items: center; gap: 12px; }
-.hero__eyebrow::before { content: ""; width: 34px; height: 1px; background: var(--gilt); }
-.hero h2 { font-size: clamp(1.9rem, 4.5vw, 3rem); margin: 0 0 .3em; letter-spacing: .01em; line-height: 1.02; }
-.hero h2 .script { font-family: var(--script); color: var(--accent); font-size: 1.15em; display: inline-block; }
-.hero p { color: var(--ink-soft); max-width: 54ch; font-size: 1.05rem; margin: 0; }
-.hero__plate { position: relative; background: #FBF6E9; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-lift); padding: 12px; }
-.hero__plate::after { content: ""; position: absolute; inset: 7px; border: 1px solid color-mix(in srgb, var(--gilt) 55%, transparent); border-radius: 3px; pointer-events: none; }
-.hero__plate svg { display: block; width: 100%; height: auto; }
-@media (max-width: 760px) { .hero { grid-template-columns: 1fr; } .hero__plate { max-width: 300px; margin: 4px auto 0; order: -1; } }
+.site-nav { display: flex; gap: 18px; flex-wrap: wrap; align-items: baseline; }
+.site-nav a {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a:hover { color: var(--ink); border-bottom-color: var(--rule); }
+.site-nav a[aria-current="page"] { color: var(--ink); font-weight: 700; border-bottom-color: var(--ink); }
 
-/* ---------- Banner ---------- */
+.meta-row {
+  display: flex;
+  gap: 8px 16px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  font-size: 0.75rem;
+  color: var(--ink-2);
+}
+.updated { font-size: 0.75rem; color: var(--ink-2); }
+
+.site-footer {
+  border-top: 1px solid var(--ink);
+  margin-top: clamp(38px, 6vw, 68px);
+  padding: 20px 0 40px;
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+}
+.site-footer .stack { gap: 6px; }
+.site-footer p { max-width: 78ch; }
+
+/* --------------------------------------------------------------------------
+   6  banner (site-wide notice: preview data, load failure, official lag)
+   -------------------------------------------------------------------------- */
+
 .banner {
-  background: color-mix(in srgb, var(--gilt) 16%, var(--panel));
-  border-bottom: 1px solid var(--gilt); color: var(--ink);
-  padding: 11px 0; font-size: .92rem;
+  background: var(--paper-2);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 12px 0;
+  font-size: 0.875rem;
+  color: var(--ink);
 }
-.banner .wrap { display: block; }
-.banner strong { font-family: var(--serif); }
+.banner p { max-width: 78ch; margin: 0; }
+.banner strong { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8125rem; }
+/* Only for the live incursion. Do not use for data-plumbing notices. */
+.banner--live { border-left: 3px solid var(--live); }
+.banner--live > .wrap { padding-left: clamp(15px, 4vw, 29px); }
 
-/* ---------- Status banner (Australia current situation) ---------- */
-.status-banner {
-  background: var(--panel); border: 1px solid var(--line); border-top: 3px solid var(--accent);
-  border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 20px; margin: 20px 0 4px;
-  position: relative;
+/* --------------------------------------------------------------------------
+   7  hero
+   -------------------------------------------------------------------------- */
+
+/* The tern image is greyscale and already feathered to white, so it needs no
+   treatment and no container. It sits as a band, the type sits beneath it, and
+   nothing overlaps: that keeps every word at full contrast on white. */
+.hero { padding-top: clamp(20px, 4vw, 34px); }
+.hero__figure { margin: 0; display: grid; gap: 6px; }
+.hero__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 340px;
+  object-fit: cover;
+  object-position: 50% 42%;
 }
-.status-banner::after { content:""; position:absolute; inset:5px; border:1px solid color-mix(in srgb, var(--gilt) 40%, transparent); border-radius:3px; pointer-events:none; }
-.sb-top { display:flex; gap:16px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; position:relative; z-index:1; }
-.sb-lead { flex:1 1 340px; }
-.sb-headline { font-family: var(--serif); font-weight:600; font-size: clamp(1.15rem,2.4vw,1.5rem); line-height:1.15; margin:0 0 6px; color: var(--ink); }
-.sb-sum { margin:0; color: var(--ink-soft); max-width:72ch; font-size:.98rem; }
-.sb-risk {
-  flex:none; align-self:flex-start; font-family: var(--serif); font-size:.72rem; font-weight:700;
-  text-transform:uppercase; letter-spacing:.1em; padding:5px 12px; border-radius:999px;
-  border:1px solid currentColor; white-space:nowrap;
+.hero__credit {
+  font-size: 0.6875rem;
+  color: var(--ink-2);
+  letter-spacing: 0.02em;
+  text-align: right;
+  max-width: none;
 }
-.sb-risk-low { color:#3E4A28; } .sb-risk-moderate,.sb-risk-elevated { color:#8A6326; } .sb-risk-high { color: var(--accent-deep); }
-@media (prefers-color-scheme: dark){ .sb-risk-low{color:#9DAE6E} .sb-risk-moderate,.sb-risk-elevated{color:#D6A758} }
-.sb-figs { display:flex; gap: 24px 34px; flex-wrap:wrap; margin:15px 0 12px; position:relative; z-index:1; }
-.sb-fig { display:flex; flex-direction:column; gap:2px; }
-.sb-num { font-family: var(--mono); font-size: clamp(1.5rem,3.4vw,2.1rem); line-height:1; font-variant-numeric: tabular-nums; color: var(--accent-deep); }
-@media (prefers-color-scheme: dark){ .sb-num{ color: var(--accent); } }
-.sb-lbl { font-size:.78rem; color: var(--ink-soft); letter-spacing:.03em; }
-.sb-foot { margin:0; font-size:.82rem; color: var(--ink-soft); position:relative; z-index:1; }
+.hero__credit a { text-decoration-color: var(--rule); }
 
-/* ---------- Strain badges ---------- */
-.strain { font-family: var(--mono); font-size:.74rem; font-weight:500; padding:2px 8px; border-radius:4px; border:1px solid currentColor; letter-spacing:.02em; }
-.strain-h5n1 { color: var(--accent-deep); background: color-mix(in srgb, var(--accent) 12%, transparent); }
-.strain-h7 { color:#8A6326; background: color-mix(in srgb, var(--c-poultry) 14%, transparent); }
-.strain-other { color: var(--ink-soft); }
-@media (prefers-color-scheme: dark){ .strain-h5n1{color:#E58374} .strain-h7{color:#D6A758} }
+.hero__text {
+  display: grid;
+  gap: 14px;
+  border-top: 1px solid var(--ink);
+  padding-top: 18px;
+  margin-top: 4px;
+}
+.hero__eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0;
+}
+.hero__title { font-size: clamp(1.6rem, 5vw, 2.6rem); letter-spacing: -0.025em; line-height: 1.08; max-width: 28ch; }
+.hero__lede { font-size: 1.0625rem; color: var(--ink-2); max-width: 64ch; margin: 0; }
+.hero__meta { display: flex; gap: 8px 20px; flex-wrap: wrap; font-size: 0.75rem; color: var(--ink-2); }
 
-/* ---------- Controls ---------- */
+/* Standalone image credit, usable anywhere the photograph appears. Attribution
+   is a licence condition (CC BY-SA 4.0, JJ Harrison), so this must stay. */
+.credit { font-size: 0.6875rem; color: var(--ink-2); letter-spacing: 0.02em; }
+
+/* --------------------------------------------------------------------------
+   8  figures: one headline number, everything else as a labelled row
+
+   Removing the box from a stat card is not enough: an equal-width grid of large
+   numbers IS the dashboard rhythm, and repeating the same figure in three of
+   them is what made the page read as generated. So the page carries exactly ONE
+   large numeral, and it sits on the figure this site exists to publish
+   honestly: the Commonwealth's own national count, next to the smaller number
+   this map can place individually. See section 19.
+
+   Every other quantity is a definition row, a small uppercase label with a
+   tabular figure at reading size. The per-state counts live in .state-list, the
+   record-level detail lives in the table, and the reasoning lives in prose.
+
+   The .figures grid below is still the base for the history page. On the tracker
+   it is overridden per section, immediately after.
+   -------------------------------------------------------------------------- */
+
+.figures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 22px 30px;
+}
+.figures--sm { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 18px 26px; }
+.figures--inline { display: flex; flex-wrap: wrap; gap: 20px 34px; }
+
+.figure {
+  display: grid;
+  gap: 4px;
+  align-content: start;
+  border-top: 1px solid var(--ink);
+  padding-top: 10px;
+  min-width: 0;
+}
+.figure__num {
+  font-size: clamp(2.1rem, 5.6vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.figures--sm .figure__num { font-size: clamp(1.5rem, 3.6vw, 2rem); }
+.figure__label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+.figure__note { font-size: 0.75rem; color: var(--ink-2); line-height: 1.5; max-width: 34ch; }
+
+/* The live 2026 H5N1 incursion. Nothing else takes this. */
+.figure--live { border-top-color: var(--live); }
+.figure--live .figure__num { color: var(--live); }
+
+/* Historical H7 poultry, and the unrelated 2024 human case. Grey, never red. */
+.figure--historical { border-top-color: var(--rule); }
+.figure--historical .figure__num { color: var(--ink-2); }
+
+/* A figure set apart because it measures something different, for example the
+   reporting lag between the official tally and the mapped total. */
+.figure--aside { border-top-color: var(--rule); padding-left: 16px; border-left: 1px solid var(--rule); }
+
+/* 3  Current situation. The four quantities app.js emits here (mapped count,
+   states, days since the first detection, the unrelated 2024 human case) were a
+   four-up grid of 51px numerals, the exact treatment Alex rejected, and two of
+   the four are restated within 200px of themselves: the state count by the
+   .state-list directly beneath it, and the mapped count by the official
+   comparison in the next section. They are rows now. */
+#situationBody .figures { display: grid; grid-template-columns: 1fr; gap: 0; }
+#situationBody .figures > .figure {
+  grid-template-columns: 5ch 1fr;
+  gap: 2px 14px;
+  align-items: baseline;
+  border-top: 1px solid var(--rule-2);
+  padding: 9px 0;
+}
+#situationBody .figures > .figure:first-child { border-top: 1px solid var(--rule); }
+#situationBody .figures .figure__num {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0;
+  text-align: right;
+}
+#situationBody .figures .figure__label { grid-column: 2; grid-row: 1; letter-spacing: 0.1em; }
+#situationBody .figures .figure__note { grid-column: 2; grid-row: 2; max-width: 62ch; }
+
+/* 5  What the current filters put on the map. This changes as the reader
+   filters, so it is a readout, not a headline: number and label on one line at
+   reading size, hairline-separated, with the strain note beneath. */
+#viewFigures .figures { display: flex; flex-wrap: wrap; gap: 10px 26px; }
+#viewFigures .figure {
+  grid-template-columns: auto 1fr;
+  gap: 1px 0.7ch;
+  align-items: baseline;
+  border-top: 0;
+  border-left: 1px solid var(--rule);
+  padding: 1px 0 1px 10px;
+  max-width: 30ch;
+}
+#viewFigures .figure--live { border-left-color: var(--live); }
+#viewFigures .figure--historical,
+#viewFigures .figure--aside { border-left-color: var(--rule); }
+#viewFigures .figure__num {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+#viewFigures .figure__label { grid-column: 2; grid-row: 1; letter-spacing: 0.1em; }
+#viewFigures .figure__note { grid-column: 1 / -1; grid-row: 2; max-width: none; }
+
+/* --------------------------------------------------------------------------
+   9  breakdowns, definition rows, state list
+   -------------------------------------------------------------------------- */
+
+/* The fix for "14 detections in Victoria". One line per era and strain, each
+   with its own count, so a total can never read as one undifferentiated thing. */
+.breakdown { list-style: none; padding: 0; display: grid; gap: 0; }
+.breakdown__item {
+  display: grid;
+  grid-template-columns: 4.5ch 1fr;
+  gap: 0 14px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-top: 1px solid var(--rule-2);
+}
+.breakdown__item:first-child { border-top: 1px solid var(--rule); }
+.breakdown__num { font-size: 1.25rem; font-weight: 600; line-height: 1.2; text-align: right; font-variant-numeric: tabular-nums; }
+.breakdown__text { font-size: 0.875rem; color: var(--ink-2); line-height: 1.5; }
+.breakdown__text strong { color: var(--ink); }
+.breakdown__item--live .breakdown__num { color: var(--live); }
+.breakdown__item--live { border-left: 2px solid var(--live); padding-left: 12px; }
+.breakdown__item--historical { border-left: 2px solid var(--rule); padding-left: 12px; }
+.breakdown__item--historical .breakdown__num { color: var(--ink-2); }
+
+/* Plain definition rows, for anything that is not a real table. */
+.dl { display: grid; gap: 0; }
+.dl-row {
+  display: grid;
+  grid-template-columns: minmax(9rem, 22ch) 1fr;
+  gap: 2px 20px;
+  padding: 9px 0;
+  border-top: 1px solid var(--rule-2);
+  align-items: baseline;
+}
+.dl-row:first-child { border-top: 1px solid var(--rule); }
+.dl-key {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.dl-val { margin: 0; font-size: 0.9375rem; max-width: 62ch; }
+
+/* State by state counts, aligned on the digits. */
+.state-list { list-style: none; padding: 0; display: grid; gap: 0; }
+.state-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 16px;
+  align-items: baseline;
+  padding: 8px 0;
+  border-top: 1px solid var(--rule-2);
+}
+.state-row:first-child { border-top: 1px solid var(--rule); }
+.state-name { font-size: 0.9375rem; }
+.state-count { font-variant-numeric: tabular-nums; font-weight: 600; }
+.state-row--live .state-count { color: var(--live); }
+.state-note { grid-column: 1 / -1; font-size: 0.75rem; color: var(--ink-2); }
+
+/* --------------------------------------------------------------------------
+   10  tags: strain, era, confidence, source, media
+
+   Typewritten labels: square, 1px, uppercase, letterspaced. No pills.
+   -------------------------------------------------------------------------- */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 1px 6px;
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  white-space: nowrap;
+  vertical-align: 1px;
+}
+.tag--live { color: var(--live); border-color: var(--live); background: var(--live-wash); }
+.tag--historical { color: var(--ink-2); border-color: var(--ink-3); background: transparent; }
+.tag--official { color: var(--ink); border-color: var(--ink); }
+.tag--signal { color: var(--ink-2); border-style: dashed; border-color: var(--ink-3); }
+.tag--media { color: var(--ink-2); border-style: dashed; border-color: var(--ink-3); }
+.tag--presumptive { color: var(--ink-2); border-style: dotted; border-color: var(--ink-3); }
+.tag--solid { color: var(--paper); background: var(--ink); border-color: var(--ink); }
+.tag--lg { font-size: 0.75rem; padding: 2px 8px; }
+
+/* Strain badge. --live is the current H5N1 clade 2.3.4.4b incursion only. The
+   2024 human case is H5N1 too but a different lineage (2.3.2.1a), so it takes
+   .strain--historical and must carry a lineage note wherever it appears. */
+.strain,
+.conf,
+.src-badge,
+.mode-badge,
+.media-tag,
+.pill,
+.og-lead-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 1px 6px;
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  white-space: nowrap;
+  vertical-align: 1px;
+}
+.strain--live, .strain-h5n1 { color: var(--live); border-color: var(--live); background: var(--live-wash); }
+.strain--historical, .strain-h7, .strain-other { color: var(--ink-2); border-color: var(--ink-3); background: transparent; }
+
+/* Presumptive: an authority has reported an initial positive while confirmatory
+   testing continues. A routine official category in this outbreak, so it is set
+   quietly and the word does the work, never the colour. */
+.conf, .conf--presumptive { border-style: dotted; border-color: var(--ink-3); color: var(--ink-2); }
+
+.media-tag, .og-lead-tag { border-style: dashed; border-color: var(--ink-3); }
+
+.mode-badge { border-color: var(--ink-3); }
+.mode-badge.live { border-color: var(--ink); color: var(--ink); }
+.mode-badge.stale, .mode-badge.seed { border-style: dashed; }
+
+.src-badge { min-width: 6.5ch; justify-content: center; }
+.src-badge.live, .src-badge--live { border-color: var(--ink); color: var(--ink); }
+.src-badge.error, .src-badge.empty, .src-badge--error, .src-badge--empty { border-style: dashed; border-color: var(--live); color: var(--live); }
+.src-badge.seed, .src-badge--seed { border-style: dashed; }
+.src-badge.official, .src-badge--official { border-color: var(--ink); color: var(--ink); }
+.src-badge.signal, .src-badge--signal { border-style: dashed; border-color: var(--ink-3); }
+
+/* An era caption, for example "historical, resolved, different subtype". It sits
+   in a flex control group that can stretch to the full 876px measure, so it
+   needs the same cap as every other text block on the page. */
+.era-note { display: block; font-size: 0.75rem; color: var(--ink-2); letter-spacing: 0.02em; max-width: 62ch; }
+
+/* --------------------------------------------------------------------------
+   11  marks and category icons
+
+   Era and strain marks are squares: filled for the live incursion, hollow for
+   historical. Fill against outline is a shape difference, so it survives with
+   colour removed. Map legend marks are circles, to match the map itself.
+   -------------------------------------------------------------------------- */
+
+.mark {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  flex: none;
+  border: 1px solid var(--ink-3);
+  background: transparent;
+  vertical-align: 1px;
+}
+.mark--live { border-color: var(--live); background: var(--live); }
+.mark--historical { border-color: var(--ink-3); background: transparent; }
+.mark--round { border-radius: 50%; }
+.mark--area {                       /* the map's vicinity circle, in a legend */
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 1px solid var(--live);
+  background: var(--live-wash);
+}
+.mark--lg { width: 12px; height: 12px; }
+
+/* Category marks are inline SVG on a shared grid, stroked in currentColor.
+   They are legible in pure black on white, because colour now means strain. */
+.icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  flex: none;
+  vertical-align: -2px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  overflow: visible;
+}
+.icon--sm { width: 12px; height: 12px; stroke-width: 1.6; }
+.icon--lg { width: 18px; height: 18px; stroke-width: 1.4; }
+.icon-label { display: inline-flex; align-items: center; gap: 0.5em; white-space: nowrap; }
+
+/* Key for the five category marks, and for the era distinction. */
+.key { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.key--stack { flex-direction: column; gap: 7px; }
+.key__item { display: flex; align-items: center; gap: 8px; font-size: 0.8125rem; color: var(--ink-2); }
+.key__text { color: var(--ink-2); }
+.key__item--live .key__text { color: var(--ink); }
+
+/* --------------------------------------------------------------------------
+   12  controls
+
+   Built from rules and weight, not pills and fills. The selected state carries
+   four independent signals: bracket marks, 700 weight, an ink border, and a 2px
+   ink underscore. None of them is colour, so it reads in greyscale.
+
+   Boundary contrast, WCAG 2.2 SC 1.4.11. A control's resting border is the only
+   thing that says it is a control, so it must clear 3:1 against the white it
+   sits on. --rule (#E2E2E2) measures 1.30:1 and fails. --ink-3 (#8C8C8C)
+   measures 3.36:1 and passes, and it is already in the token list, so no new
+   colour is introduced. Hover and focus then move to --ink (19.05:1) so the
+   states stay distinguishable. --rule keeps its real job, which is separating
+   content, not outlining controls.
+   -------------------------------------------------------------------------- */
+
 .controls {
-  display: flex; gap: 18px 28px; flex-wrap: wrap; align-items: flex-end;
-  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 16px 18px; margin: 20px 0; box-shadow: var(--shadow); position: relative;
+  display: flex;
+  gap: 18px 30px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  padding: 16px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
 }
-.controls::after { content:""; position:absolute; inset:5px; border:1px solid color-mix(in srgb, var(--gilt) 45%, transparent); border-radius: 3px; pointer-events:none; }
-.control-group { display: flex; flex-direction: column; gap: 8px; position: relative; z-index: 1; }
-.control-label { font-family: var(--serif); font-size: .72rem; text-transform: uppercase; letter-spacing: .18em; color: var(--ink-soft); font-weight: 600; }
-.btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
-.chip {
-  border: 1px solid var(--line); background: var(--bg); color: var(--ink);
-  padding: 7px 14px; border-radius: 999px; font-size: .92rem; cursor: pointer;
-  display: inline-flex; align-items: center; gap: 7px; transition: .14s ease;
-  font-family: var(--body);
+.control-group { display: grid; gap: 8px; align-content: start; }
+.control-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
 }
-.chip:hover { border-color: var(--accent); color: var(--accent-deep); }
-.chip.is-active { background: var(--ink); color: var(--accent-ink); border-color: var(--ink); }
-.chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; background: #999; border: 1px solid rgba(0,0,0,.15); }
-[data-catdot="human"]{background:var(--c-human)}[data-catdot="poultry"]{background:var(--c-poultry)}
-[data-catdot="dairy"]{background:var(--c-dairy)}[data-catdot="wild_bird"]{background:var(--c-wild_bird)}
-[data-catdot="mammal"]{background:var(--c-mammal)}
-select {
-  padding: 7px 12px; border-radius: 4px; border: 1px solid var(--line);
-  background: var(--bg); color: var(--ink); font-size: .92rem; font-family: var(--body);
+.btn-row, .jump-nav { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.ctl, .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 5px 9px;
+  border: 1px solid var(--ink-3);
+  border-bottom: 2px solid var(--ink-3);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink-2);
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.12s ease, color 0.12s ease;
+}
+/* Bracket marks are always present and only change opacity, so toggling the
+   selected state cannot shift the row. */
+.ctl::before, .chip::before { content: "["; opacity: 0; }
+.ctl::after, .chip::after { content: "]"; opacity: 0; }
+
+.ctl:hover, .chip:hover { color: var(--ink); border-color: var(--ink); }
+
+.ctl.is-active, .chip.is-active,
+.ctl[aria-pressed="true"], .chip[aria-pressed="true"],
+.ctl[aria-current="true"], .ctl[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 700;
+  background: var(--paper-2);
+  border-color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+.ctl.is-active::before, .ctl.is-active::after,
+.chip.is-active::before, .chip.is-active::after,
+.ctl[aria-pressed="true"]::before, .ctl[aria-pressed="true"]::after,
+.chip[aria-pressed="true"]::before, .chip[aria-pressed="true"]::after,
+.ctl[aria-current="true"]::before, .ctl[aria-current="true"]::after,
+.ctl[aria-current="page"]::before, .ctl[aria-current="page"]::after { opacity: 1; }
+
+.ctl:disabled, .chip:disabled { color: var(--ink-3); border-color: var(--rule-2); cursor: not-allowed; }
+
+/* Region selectors: plain uppercase letterspaced text, no flags, no icons. */
+.ctl--caps { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 10px; }
+.ctl--sm { font-size: 0.75rem; padding: 3px 7px; }
+
+/* A quiet text-only button, for "show more" and similar. */
+.btn, .show-more, .toggle-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 8px 16px;
+  border: 1px solid var(--ink-3);
+  border-bottom: 2px solid var(--ink-3);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.btn:hover, .show-more:hover, .toggle-more:hover { border-color: var(--ink); border-bottom-color: var(--ink); }
+.show-more { margin: 18px auto 0; }
+
+/* Text link that reads as an action. */
+.link-out { text-decoration-color: var(--ink-3); }
+.link-quiet { color: var(--ink-2); text-decoration-color: var(--rule); }
+.link-quiet:hover { color: var(--ink); text-decoration-color: var(--ink-2); }
+
+/* Inputs and selects. Square, hairline, monospace, no inner shadow. */
+input[type="search"], input[type="text"], .field, select, .select {
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--ink-3);
+  border-bottom: 2px solid var(--ink-3);
+  border-radius: 0;
+  padding: 6px 10px;
+  min-width: 0;
+}
+input[type="search"] { min-width: 240px; }
+/* --ink-2, not --ink-3: placeholder text is still text, and --ink-3 is only
+   3.4:1 on white. The italic keeps it from reading as a typed value. */
+input::placeholder { color: var(--ink-2); font-style: italic; }
+input[type="search"]:hover, select:hover { border-color: var(--ink); }
+input[type="search"]:focus-visible, select:focus-visible { border-color: var(--ink); }
+
+/* Caret drawn inline, no external asset. */
+select, .select {
+  padding-right: 28px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='7' viewBox='0 0 10 7'><path d='M1 1l4 4 4-4' fill='none' stroke='%234A4A4A' stroke-width='1.4'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
 }
 
-/* ---------- Stat cards (plates) ---------- */
-.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-bottom: 20px; }
-.stat {
-  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 16px 18px; box-shadow: var(--shadow); border-top: 3px solid var(--line);
-  position: relative;
+/* Checkbox, used for the historical opt-in. Drawn here rather than left to the
+   UA so its resting boundary is a known 3.36:1 --ink-3 hairline, square like
+   every other control, and so an OS in dark mode cannot repaint it. The tick is
+   an inline data URI, no external request. */
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+  cursor: pointer;
 }
-.stat .val { font-family: var(--mono); font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 500; line-height: 1; font-variant-numeric: tabular-nums; }
-.stat .lbl { font-size: .8rem; color: var(--ink-soft); margin-top: 7px; letter-spacing: .04em; }
-.stat.human{border-top-color:var(--c-human)} .stat.poultry{border-top-color:var(--c-poultry)}
-.stat.dairy{border-top-color:var(--c-dairy)} .stat.wild_bird{border-top-color:var(--c-wild_bird)}
-.stat.mammal{border-top-color:var(--c-mammal)} .stat.geo{border-top-color:var(--gilt)}
+.check input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  /* A checkbox carries no text, but leaving the UA font on it leaves a second
+     family in the document, and this site has one. */
+  font-family: inherit;
+  flex: none;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  border: 1px solid var(--ink-3);
+  border-radius: 0;
+  background: var(--paper) no-repeat center;
+  cursor: pointer;
+}
+.check input[type="checkbox"]:checked {
+  border-color: var(--ink);
+  background-color: var(--ink);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><path d='M2 6.2l2.6 2.6L10 3.2' fill='none' stroke='%23FFFFFF' stroke-width='1.8'/></svg>");
+}
+.check:hover { color: var(--ink); }
+.check:hover input[type="checkbox"] { border-color: var(--ink); }
 
-/* ---------- Map (the plate) ---------- */
-.map-section { position: relative; margin-bottom: 24px; }
-#map {
-  height: clamp(360px, 58vh, 620px); border-radius: var(--radius);
-  border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--panel); z-index: 1;
+/* Disclosure, for opt-in historical content. Never a card. */
+.disclose { border-top: 1px solid var(--rule); }
+.disclose > summary {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6em;
+  padding: 12px 0;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
 }
+.disclose > summary::-webkit-details-marker { display: none; }
+.disclose > summary::before { content: "+"; font-weight: 700; color: var(--ink); width: 1ch; }
+.disclose[open] > summary::before { content: "\2212"; }   /* minus sign */
+.disclose > summary:hover { color: var(--ink); }
+.disclose__body { padding: 0 0 20px; display: grid; gap: 14px; }
+
+/* --------------------------------------------------------------------------
+   13  tables
+
+   Real tables for the detections list. Digits are tabular, so columns align
+   without any per-cell work.
+
+   The detections table carries ten columns in Australia and eleven elsewhere,
+   which does not fit an 876px measure while every cell refuses to wrap. So:
+
+     - cells wrap by default, and only the date, the badges and the count are
+       held on one line. A printed reference table with two-line cells is fine;
+       three columns permanently parked off the right edge is not.
+     - below 940px each record becomes a labelled block instead, because ten
+       columns cannot be made readable on a phone by any amount of wrapping.
+       Nothing is dropped: every cell keeps its value and gains its column name.
+     - .table-scroll keeps overflow-x as insurance only, and is focusable so a
+       keyboard can reach it in the case where it does scroll.
+
+   Sticky headers are NOT used, and the claim has been removed rather than
+   faked. overflow-x on .table-scroll makes computed overflow-y auto too, which
+   makes the container the nearest scrollport, so `th { position: sticky }`
+   sticks to the container and never to the viewport. The alternatives were a
+   nested vertical scroller or dropping the overflow insurance, and neither is
+   worth it: the header names are repeated on every record below 940px, and the
+   list is paged at 50 rows above it.
+   -------------------------------------------------------------------------- */
+
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* 12px, so ten columns plus their padding fit the 876px measure. It is still a
+   monospace, so the columns line up regardless. */
+table, .table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+caption {
+  caption-side: top;
+  text-align: left;
+  padding-bottom: 10px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+th, td { text-align: left; padding: 8px 10px 8px 0; vertical-align: baseline; }
+/* Headings wrap too. "State or region" held on one line was setting the
+   min-content width of a column whose values are mostly one short word. */
+th {
+  background: var(--paper);
+  border-bottom: 1px solid var(--ink);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  white-space: normal;
+}
+/* Cells wrap at spaces. A wrapped place name is readable; a place name behind a
+   horizontal scrollbar is not. Words are never broken here, only in the two
+   long-text columns below, because "Wild birds" split as "Wil / d bir / ds" is
+   worse than either. */
+td { border-bottom: 1px solid var(--rule-2); color: var(--ink); white-space: normal; }
+/* Held on one line: the date, because a broken date reads as two dates, and any
+   figure column, because a broken number reads as two numbers. */
+td:first-child, th:first-child { white-space: nowrap; }
+tbody tr:hover td { background: var(--paper-2); }
+th.num, td.num, .col-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+/* "not stated" is prose standing in for a figure, so it may wrap even in a
+   figure column. A real number still must not. */
+td.num .muted { white-space: normal; }
+td:last-child, th:last-child { padding-right: 0; }
+/* Badges are inline-flex, so letting their text wrap keeps a single border box
+   and drops the column to the width of its longest word instead of its longest
+   phrase. "Current H5N1 incursion" was costing 197px of an 876px measure. The
+   Type mark and its word stay together: the column is short either way, and a
+   mark stranded above its own label reads as a missing value. */
+td .tag, td .strain { white-space: normal; }
+td .icon-label, td .conf { white-space: nowrap; }
+/* Species and Source. These are the only two columns where a source can publish
+   a token with nothing to break at, for example a species field reading
+   "Grey Heron:Ardea cinerea(Ardeidae)". overflow-wrap: anywhere, not
+   break-word, because only `anywhere` lowers the column's min-content width and
+   so lets the table fit at all; one of those tokens was claiming 176px on its
+   own. The min-width stops the same rule from crushing the column to a sliver. */
+.td-wrap { white-space: normal; overflow-wrap: anywhere; min-width: 10ch; }
+.td-nowrap { white-space: nowrap; }
+.table--compact th, .table--compact td { padding-top: 6px; padding-bottom: 6px; }
+
+/* Sortable headers. JS sets aria-sort only; the indicator is drawn here, so no
+   glyph is ever injected into the header text. */
+th[data-sort] { cursor: pointer; user-select: none; }
+th[data-sort]:hover { color: var(--ink); }
+th[data-sort]::after { content: ""; display: inline-block; width: 1.4ch; margin-left: 0.5ch; color: var(--ink-3); }
+th[aria-sort]:not([aria-sort="none"]) { color: var(--ink); }
+th[aria-sort="ascending"]::after { content: "\2191"; color: var(--ink); }   /* up arrow */
+th[aria-sort="descending"]::after { content: "\2193"; color: var(--ink); }  /* down arrow */
+
+/* Era and strain on a row. The left edge rule says which event this belongs to,
+   and the strain badge in the same row says it again in words. Every body row
+   reserves the 2px edge, transparent by default, so nothing shifts and the
+   header stays aligned with the cells beneath it. */
+tbody td:first-child { border-left: 2px solid transparent; padding-left: 10px; }
+thead th:first-child { padding-left: 12px; }
+tbody tr.is-live > td:first-child { border-left-color: var(--live); }
+tbody tr.is-historical > td:first-child { border-left-color: var(--rule); }
+
+.table-empty { padding: 26px 0; text-align: center; color: var(--ink-2); white-space: normal; }
+.list-head { display: flex; gap: 12px 22px; flex-wrap: wrap; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
+.list-count { font-size: 0.75rem; color: var(--ink-2); }
+.list-foot { margin-top: 14px; font-size: 0.8125rem; color: var(--ink-2); max-width: 78ch; }
+
+/* --------------------------------------------------------------------------
+   13b  the detections table below 940px: one labelled block per record
+
+   Ten columns of monospace cannot be read on a 320px screen, and a horizontal
+   scrollbar is not a layout, it is three columns hidden by default. So each
+   record becomes what it already is on paper: a short list of field names and
+   values, hairline-separated, carrying the same 2px era edge the table row
+   carried. No box, no fill, no radius, no shadow.
+
+   The column names are restored as generated content per cell. app.js builds a
+   variable column set: the Event column exists only when more than one era is in
+   view, and the Country column only outside Australia, so a cell's position
+   alone does not identify it (a ten-cell row is Australia-with-Event or
+   world-without-Event). Counting is therefore anchored on the header, which is
+   built from the same array as the cells and so cannot drift from them: the
+   Event column exists if and only if a header offers data-sort="era", and the
+   Country column if and only if one offers data-sort="country". The last five
+   cells are in fixed order in every layout, so they count from the right.
+
+   If app.js ever emits data-label on each cell, the last rule in this block
+   picks it up automatically and all the counting below becomes inert.
+
+   The header row survives as a labelled strip of sort controls rather than being
+   hidden, so sorting is not a desktop-only feature. Changing display on table
+   elements does drop their table roles in the accessibility tree, which is the
+   accepted cost of this pattern: the per-cell generated labels are exposed to
+   assistive technology and replace the column-header association.
+   -------------------------------------------------------------------------- */
+
+/* 939px, not 899px: the wrap reaches its full 876px measure only at a 940px
+   viewport, so a table shown at 900px would have 836px and overflow again. */
+@media (max-width: 939px) {
+  /* Nothing scrolls sideways here, so the container is out of the way. */
+  .table-scroll { overflow: visible; }
+
+  #table, #table thead, #table tbody, #table tr, #table th, #table td { display: block; }
+  #table { font-size: 0.875rem; }
+
+  /* Header row: a sort strip. Column names that cannot sort stay plain text. */
+  #table thead tr {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 8px;
+    padding: 0 0 16px;
+    border-bottom: 1px solid var(--ink);
+  }
+  #table thead tr::before {
+    content: "Sort by";
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    flex-basis: 100%;
+  }
+  #table thead th {
+    border: 0;
+    background: none;
+    padding: 0;
+    white-space: nowrap;
+  }
+  #table thead th[data-sort] {
+    border: 1px solid var(--ink-3);
+    border-bottom-width: 2px;
+    padding: 4px 8px;
+  }
+  #table thead th[aria-sort]:not([aria-sort="none"]) { border-color: var(--ink); font-weight: 700; }
+  #table thead th:first-child { padding-left: 8px; }
+  /* Not sortable, so it gets no control boundary. --ink-2, not --ink-3: this is
+     11px text, and --ink-3 is 3.36:1, which passes for a border and not for a
+     word. */
+  #table thead th:not([data-sort]) { color: var(--ink-2); }
+
+  /* One record, one block. The era edge moves from the first cell to the block. */
+  #table tbody tr {
+    border-top: 1px solid var(--rule);
+    border-left: 2px solid transparent;
+    padding: 12px 0 14px 12px;
+  }
+  #table tbody tr:first-child { border-top: 1px solid var(--ink); }
+  #table tbody tr.is-live { border-left-color: var(--live); }
+  #table tbody tr.is-historical { border-left-color: var(--rule); }
+  #table tbody tr:hover td { background: none; }
+
+  #table tbody td {
+    display: grid;
+    grid-template-columns: 11ch 1fr;
+    gap: 0 12px;
+    align-items: baseline;
+    /* start, not the grid default of stretch: a badge is sized by its own text,
+       and a stretched badge reads as an empty input. Long text still wraps,
+       because the track is what constrains it. */
+    justify-items: start;
+    border: 0;
+    padding: 3px 0;
+    white-space: normal;
+    text-align: left;
+  }
+  #table tbody td:first-child { border-left: 0; padding-left: 0; }
+  #table tbody td.num { text-align: left; }
+  #table tbody td::before {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+
+  /* First cell is the date in every layout. */
+  #table tbody td:nth-child(1)::before { content: "Date"; }
+
+  /* The head of the row shifts by one depending on whether Event is present. */
+  #table:has(thead th[data-sort="era"]) tbody td:nth-child(2)::before { content: "Event"; }
+  #table:has(thead th[data-sort="era"]) tbody td:nth-child(3)::before { content: "Type"; }
+  #table:has(thead th[data-sort="era"]) tbody td:nth-child(4)::before { content: "Strain"; }
+  #table:has(thead th[data-sort="era"]) tbody td:nth-child(5)::before { content: "Status"; }
+  #table:not(:has(thead th[data-sort="era"])) tbody td:nth-child(2)::before { content: "Type"; }
+  #table:not(:has(thead th[data-sort="era"])) tbody td:nth-child(3)::before { content: "Strain"; }
+  #table:not(:has(thead th[data-sort="era"])) tbody td:nth-child(4)::before { content: "Status"; }
+
+  /* Country, when it exists at all, is always the sixth cell from the end. */
+  #table:has(thead th[data-sort="country"]) tbody td:nth-last-child(6)::before { content: "Country"; }
+
+  /* The tail is in fixed order in every layout. */
+  #table tbody td:nth-last-child(5)::before { content: "State"; }
+  #table:has(thead th[data-sort="country"]) tbody td:nth-last-child(5)::before { content: "State or region"; }
+  #table tbody td:nth-last-child(4)::before { content: "Place"; }
+  #table tbody td:nth-last-child(3)::before { content: "Species"; }
+  #table tbody td:nth-last-child(2)::before { content: "Affected"; }
+  #table tbody td:nth-last-child(1)::before { content: "Source"; }
+
+  /* Preferred source of truth if it ever exists. Last, so it wins. */
+  #table tbody td[data-label]::before { content: attr(data-label); }
+
+  /* The empty-table message is one cell spanning the row, not a field. */
+  #table tbody td.table-empty {
+    display: block;
+    padding: 22px 0;
+    text-align: left;
+  }
+  #table tbody td.table-empty::before { content: none; }
+  #table tbody tr:has(> td.table-empty) { border-left-color: transparent; padding-left: 0; }
+}
+
+/* Enough room for two fields side by side, which roughly halves the height of a
+   record without shrinking anything. */
+@media (min-width: 620px) and (max-width: 939px) {
+  #table tbody tr { display: grid; grid-template-columns: 1fr 1fr; gap: 0 26px; }
+  #table tbody td.table-empty { grid-column: 1 / -1; }
+}
+
+/* --------------------------------------------------------------------------
+   14  map, legend, Leaflet overrides
+   -------------------------------------------------------------------------- */
+
+.map-section { display: grid; gap: 10px; }
+#map, .map {
+  height: clamp(340px, 56vh, 580px);
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  z-index: 0;
+}
+.map-note { font-size: 0.75rem; color: var(--ink-2); max-width: 78ch; }
+.map-note strong { color: var(--ink); }
+.map-credit { font-size: 0.6875rem; color: var(--ink-2); }
+
+/* Legend sits under the map, not floating over it: no panel, no shadow. */
 .legend {
-  position: absolute; bottom: 16px; right: 16px; z-index: 500;
-  background: color-mix(in srgb, var(--panel) 94%, transparent); border: 1px solid var(--line); border-radius: 6px;
-  padding: 11px 14px; font-size: .8rem; box-shadow: var(--shadow); max-width: 200px;
-  backdrop-filter: blur(4px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8125rem;
+  color: var(--ink-2);
 }
-.legend h4 { font-family: var(--serif); margin: 0 0 7px; font-size: .68rem; text-transform: uppercase; letter-spacing: .16em; color: var(--ink-soft); }
-.legend .row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
-.legend .sw { width: 12px; height: 12px; border-radius: 50%; flex: none; border: 1px solid rgba(0,0,0,.2); }
+.legend__title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0;
+}
+.legend__row, .legend .row { display: flex; align-items: center; gap: 8px; }
+.legend__mark, .legend .sw {
+  width: 10px; height: 10px; flex: none;
+  border-radius: 50%;
+  border: 1px solid var(--ink-3);
+  background: transparent;
+}
+.legend__mark--live { border-color: var(--live); background: var(--live); }
+.legend__mark--historical { border-color: var(--ink-3); background: transparent; }
+.legend__mark--area { width: 15px; height: 15px; border-color: var(--live); background: var(--live-wash); }
+.legend__note { flex-basis: 100%; font-size: 0.75rem; color: var(--ink-2); max-width: 78ch; }
 
-/* ---------- List (specimen ledger) ---------- */
-.list-section { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px; margin-bottom: 24px; }
-.list-head { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
-.list-head h2 { font-size: 1.4rem; margin: 0; }
-#search { padding: 8px 13px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); color: var(--ink); min-width: 240px; font-size: .92rem; font-family: var(--body); }
-#search:focus-visible { outline: 2px solid var(--accent); }
-.table-scroll { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; font-size: .92rem; }
-th, td { text-align: left; padding: 10px 11px; border-bottom: 1px solid var(--line-soft); white-space: nowrap; }
-th { position: sticky; top: 0; background: var(--panel); cursor: pointer; user-select: none; font-family: var(--serif); font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--ink-soft); border-bottom: 2px solid var(--ink-soft); }
-th.num, td.num { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; }
-td.num { font-size: .88rem; }
-tbody tr:hover { background: var(--bg-sunk); }
-.pill { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border-radius: 999px; font-size: .74rem; font-weight: 600; font-family: var(--serif); letter-spacing: .08em; text-transform: uppercase; border: 1px solid currentColor; }
-.pill .dot { width: 8px; height: 8px; border: none; }
-.show-more { display: block; margin: 16px auto 2px; padding: 9px 22px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 4px; cursor: pointer; font-family: var(--serif); font-size: .95rem; }
-.show-more:hover { border-color: var(--accent); color: var(--accent-deep); }
+/* Basemap: greyed and lightened to a hairline drawing, which also removes every
+   trace of the OpenStreetMap yellows and greens. */
+.leaflet-tile-pane { filter: grayscale(1) contrast(0.88) brightness(1.08); opacity: 0.55; }
+.leaflet-container { background: var(--paper); font-family: var(--mono); font-size: 0.8125rem; color: var(--ink); }
+.leaflet-container a { color: var(--ink); }
 
-/* ---------- About ---------- */
-.about { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px 24px; margin-bottom: 28px; }
-.about h2 { font-size: 1.55rem; } .about h3 { font-size: 1.15rem; margin-top: 20px; }
-.about p { max-width: 72ch; }
-.source-list { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 9px; }
-.source-list li { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
-.src-badge { font-family: var(--serif); font-size: .66rem; font-weight: 700; text-transform: uppercase; padding: 2px 9px; border-radius: 999px; letter-spacing: .1em; border: 1px solid currentColor; }
-.src-badge.live { color:#3E4A28; } .src-badge.error,.src-badge.empty { color:#7E2018; } .src-badge.seed { color:#8A6326; }
-@media (prefers-color-scheme: dark){ .src-badge.live{color:#9DAE6E} .src-badge.error,.src-badge.empty{color:#D65A4A} .src-badge.seed{color:#D6A758} }
-.source-status { margin: 12px 0; font-size: .9rem; color: var(--ink-soft); }
-.notes-list { margin: 6px 0 0; padding-left: 20px; color: var(--ink-soft); font-size: .9rem; display: grid; gap: 6px; max-width: 78ch; }
-.notes-list li { line-height: 1.5; }
-.disclaimer { font-size: .88rem; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 16px; margin-top: 20px; }
-.disclaimer strong { color: var(--accent-deep); font-family: var(--serif); }
+.leaflet-popup-content-wrapper {
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  box-shadow: none;
+}
+.leaflet-popup-tip { background: var(--paper); border: 1px solid var(--ink); box-shadow: none; }
+.leaflet-popup-content { margin: 12px 14px; font-size: 0.8125rem; line-height: 1.55; }
+.leaflet-popup-content p { margin: 0; max-width: 40ch; }
+.popup-title, .popup__title {
+  display: flex; align-items: center; gap: 0.5em;
+  font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink); margin-bottom: 6px;
+}
+.popup-row, .popup__row { font-size: 0.8125rem; color: var(--ink-2); }
+.popup-row strong, .popup__row strong { color: var(--ink); }
+.popup__where { color: var(--ink); font-weight: 600; }
+/* leaflet.css:535 sets `font: 16px/24px Tahoma, Verdana, sans-serif` on this
+ * button, which put a literal second typeface into the interface on the glyph
+ * of the close control. Matching the vendored selector exactly and relying on
+ * later source order wins without !important. The `font` shorthand must be
+ * respecified, not just font-family, because the shorthand resets line-height. */
+.leaflet-container a.leaflet-popup-close-button {
+  color: var(--ink-2);
+  font: 600 16px/24px var(--mono);
+}
+.leaflet-container a.leaflet-popup-close-button:hover,
+.leaflet-container a.leaflet-popup-close-button:focus { color: var(--ink); background: transparent; }
+/* leaflet.css:268 draws the shift-drag box-zoom outline in #38f, and :320 draws
+ * the disabled zoom button in #f4f4f4/#bbb. Both are off-palette and both are
+ * reachable by ordinary use, so both are brought into the token set. */
+.leaflet-container .leaflet-zoom-box { border: 1px solid var(--live); background: var(--live-wash); }
+.leaflet-bar a.leaflet-disabled,
+.leaflet-bar a.leaflet-disabled:hover { background-color: var(--paper-2); color: var(--ink-3); }
+/* leaflet.css:309/313 round the zoom bar corners to 4px. The brief allows 0 or 2px. */
+.leaflet-touch .leaflet-bar, .leaflet-bar,
+.leaflet-touch .leaflet-bar a:first-child, .leaflet-bar a:first-child,
+.leaflet-touch .leaflet-bar a:last-child, .leaflet-bar a:last-child { border-radius: 0; }
 
-/* ---------- Footer ---------- */
-.site-footer { border-top: 2px solid var(--ink-soft); background: var(--bg-sunk); padding: 20px 0; font-size: .88rem; color: var(--ink-soft); }
-.site-footer p { margin: 4px 0; }
+/* Controls keep Leaflet's own shadow. They are the one exception.
 
-/* ---------- Leaflet theming ---------- */
-.leaflet-popup-content-wrapper { background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; box-shadow: var(--shadow-lift); }
-.leaflet-popup-tip { background: var(--panel); border: 1px solid var(--line); }
-.leaflet-popup-content { font-family: var(--body); font-size: .95rem; margin: 13px 15px; }
-.leaflet-container { font: inherit; }
-.popup-title { font-family: var(--serif); font-weight: 700; font-size: 1.05rem; margin-bottom: 5px; letter-spacing: .02em; }
-.popup-row { font-size: .86rem; color: var(--ink-soft); }
-.leaflet-bar a { background: var(--panel); color: var(--ink); border-bottom-color: var(--line); }
-.leaflet-bar a:hover { background: var(--bg-sunk); }
+   leaflet.css sets `font: bold 18px 'Lucida Console', Monaco, monospace` on the
+   zoom controls, and 22px on .leaflet-touch, so the plus and minus on the most
+   clicked control on the page were rendering in a second typeface. The whole
+   site is one typeface, so the family is set here. The selector repeats
+   leaflet's own .leaflet-touch compound so specificity matches and source order
+   decides, and this file loads second. */
+.leaflet-bar { border-radius: 0; }
+.leaflet-bar a, .leaflet-bar a:hover { background: var(--paper); color: var(--ink); border-radius: 0; border-bottom-color: var(--ink-3); }
+.leaflet-bar a:hover { background: var(--paper-2); }
+.leaflet-touch .leaflet-bar { border: 1px solid var(--ink-3); }
+.leaflet-bar a,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-touch .leaflet-control-zoom-in,
+.leaflet-touch .leaflet-control-zoom-out {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 17px;
+}
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.88);
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-2);
+}
+.leaflet-control-attribution a { color: var(--ink-2); }
+/* Leaflet 1.9 builds its attribution prefix with an inline SVG flag filled
+   #4C7BE1, #FFD500 and #E0BC00, and leaflet.css forces `display: inline
+   !important` on it. There is no yellow in this palette, so the flag is
+   suppressed. The "Leaflet" credit and the OpenStreetMap credit both stay,
+   because attribution is a licence obligation, not decoration. */
+.leaflet-control-attribution svg.leaflet-attribution-flag { display: none !important; }
+.leaflet-tooltip {
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  padding: 3px 7px;
+}
+.leaflet-tooltip-top::before { border-top-color: var(--ink); }
+.leaflet-tooltip-bottom::before { border-bottom-color: var(--ink); }
+.leaflet-tooltip-left::before { border-left-color: var(--ink); }
+.leaflet-tooltip-right::before { border-right-color: var(--ink); }
 
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* --------------------------------------------------------------------------
+   15  news list
+
+   News is presented as news: dated, attributed, linked out, never mapped and
+   never counted. It must stay visibly separate from official data.
+   -------------------------------------------------------------------------- */
+
+.news-note { font-size: 0.8125rem; color: var(--ink-2); max-width: 72ch; }
+.news-list { list-style: none; padding: 0; display: grid; gap: 0; }
+.news-item {
+  display: grid;
+  grid-template-columns: 12ch 1fr;
+  gap: 2px 18px;
+  padding: 12px 0;
+  border-top: 1px solid var(--rule-2);
+}
+.news-item:first-child { border-top: 1px solid var(--rule); }
+.news-item__date { font-size: 0.75rem; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.news-item__body { display: grid; gap: 4px; min-width: 0; }
+.news-item__title { font-size: 0.9375rem; line-height: 1.5; max-width: 66ch; }
+.news-item__title a { text-decoration-color: var(--ink-3); }
+.news-item__outlet {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+/* --------------------------------------------------------------------------
+   16  sources list
+   -------------------------------------------------------------------------- */
+
+.source-status { font-size: 0.875rem; color: var(--ink-2); max-width: 72ch; }
+.source-list { list-style: none; padding: 0; display: grid; gap: 0; }
+.source-item, .source-list li {
+  display: flex;
+  gap: 6px 12px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding: 10px 0;
+  border-top: 1px solid var(--rule-2);
+}
+.source-item:first-child, .source-list li:first-child { border-top: 1px solid var(--rule); }
+.source-name { font-size: 0.875rem; }
+.source-meta { font-size: 0.75rem; color: var(--ink-2); }
+.source-note { flex-basis: 100%; font-size: 0.75rem; color: var(--ink-2); max-width: 78ch; }
+
+/* --------------------------------------------------------------------------
+   17  notes, caveats, disclaimer
+   -------------------------------------------------------------------------- */
+
+.notes-list { margin: 0; padding-left: 1.6em; display: grid; gap: 8px; color: var(--ink-2); font-size: 0.875rem; }
+.notes-list li { max-width: 74ch; line-height: 1.6; }
+.notes-list li::marker { color: var(--ink-3); }
+
+.disclaimer {
+  border-top: 1px solid var(--rule);
+  padding-top: 16px;
+  font-size: 0.875rem;
+  color: var(--ink-2);
+  max-width: 78ch;
+}
+.disclaimer strong { color: var(--ink); }
+.footnote { font-size: 0.75rem; color: var(--ink-2); max-width: 78ch; }
+
+/* Hotline and other must-not-miss lines. Ink, not red: red belongs to the
+   outbreak, and an emergency number does not need a colour to be found. */
+.callout {
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 14px 0;
+  font-size: 0.9375rem;
+}
+.callout strong { font-weight: 700; }
+
+/* --------------------------------------------------------------------------
+   18  history page: timeline, events, citations
+
+   Era grouping first, so the live H5N1 incursion is never adjacent to the
+   resolved H7 outbreaks without a heading between them.
+   -------------------------------------------------------------------------- */
+
+.timeline { display: grid; gap: clamp(26px, 4vw, 44px); }
+.era { display: grid; gap: 14px; }
+.era__head { display: grid; gap: 6px; border-top: 1px solid var(--ink); padding-top: 12px; }
+.era__title { font-size: clamp(1.05rem, 2.4vw, 1.3rem); }
+.era__range { font-size: 0.75rem; color: var(--ink-2); font-variant-numeric: tabular-nums; letter-spacing: 0.06em; }
+.era__note { font-size: 0.8125rem; color: var(--ink-2); max-width: 72ch; }
+.era--live .era__head { border-top-color: var(--live); }
+.era--live .era__title { color: var(--ink); }
+.era--historical .era__head { border-top-color: var(--rule); }
+
+.events { list-style: none; padding: 0; display: grid; gap: 0; }
+.event {
+  display: grid;
+  grid-template-columns: 13ch 1fr;
+  gap: 4px 20px;
+  padding: 14px 0;
+  border-top: 1px solid var(--rule-2);
+}
+.event:first-child { border-top: 1px solid var(--rule); }
+.event__date { font-size: 0.75rem; color: var(--ink-2); font-variant-numeric: tabular-nums; letter-spacing: 0.04em; }
+.event__body { display: grid; gap: 7px; min-width: 0; }
+.event__title { font-size: 0.9375rem; font-weight: 700; line-height: 1.45; max-width: 60ch; }
+.event__text { font-size: 0.875rem; color: var(--ink-2); line-height: 1.65; max-width: 66ch; }
+.event__tags { display: flex; gap: 6px 10px; flex-wrap: wrap; }
+.event--live { border-left: 2px solid var(--live); padding-left: 12px; }
+.event--live .event__date { color: var(--live); }
+.event--historical { border-left: 2px solid var(--rule); padding-left: 12px; }
+
+/* No fact without a source. Every entry carries a real citation with a URL. */
+.cite { font-size: 0.75rem; color: var(--ink-2); max-width: 72ch; }
+.cite::before { content: "Source: "; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.6875rem; }
+.cite a { text-decoration-color: var(--ink-3); }
+.cite-list { list-style: none; padding: 0; display: grid; gap: 5px; font-size: 0.75rem; color: var(--ink-2); }
+.cite-list li { display: flex; gap: 8px; align-items: baseline; }
+.cite-list li::before { content: "\2192"; color: var(--ink-3); }   /* right arrow */
+/* Where a fact is contested or approximate, say so. This is the marker for it. */
+.cite-caveat { font-size: 0.75rem; color: var(--ink-2); border-left: 2px solid var(--rule); padding-left: 10px; max-width: 66ch; }
+
+/* --------------------------------------------------------------------------
+   19  status block and official gap
+
+   Existing hooks from app.js, rebuilt with no panel, no border box and no
+   coloured top stripe. Both are hairline-separated blocks of type.
+   -------------------------------------------------------------------------- */
+
+.status-banner {
+  display: grid;
+  gap: 16px;
+  border-top: 2px solid var(--live);
+  padding-top: 16px;
+  margin-top: clamp(24px, 4vw, 38px);
+}
+.sb-top { display: flex; gap: 12px 26px; flex-wrap: wrap; align-items: baseline; justify-content: space-between; }
+.sb-lead { flex: 1 1 340px; display: grid; gap: 8px; }
+.sb-headline { font-size: clamp(1.15rem, 2.8vw, 1.5rem); font-weight: 700; letter-spacing: -0.015em; line-height: 1.25; margin: 0; max-width: 46ch; }
+.sb-sum { margin: 0; color: var(--ink-2); font-size: 0.9375rem; max-width: 68ch; }
+.sb-risk {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border: 1px solid var(--ink-3);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.sb-risk-low { border-color: var(--ink-3); color: var(--ink-2); }
+.sb-risk-moderate, .sb-risk-elevated { border-color: var(--ink); color: var(--ink); }
+.sb-risk-high { border-color: var(--live); color: var(--live); background: var(--live-wash); }
+.sb-figs { display: flex; flex-wrap: wrap; gap: 20px 34px; }
+.sb-fig { display: grid; gap: 4px; border-top: 1px solid var(--live); padding-top: 9px; min-width: 8ch; }
+.sb-num { font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 500; line-height: 1; letter-spacing: -0.02em; color: var(--live); font-variant-numeric: tabular-nums; }
+.sb-lbl { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); }
+.sb-foot { margin: 0; font-size: 0.8125rem; color: var(--ink-2); max-width: 78ch; }
+
+.official-gap {
+  display: grid;
+  gap: 14px;
+  border-top: 1px solid var(--ink);
+  padding-top: 16px;
+  margin-top: clamp(22px, 3.5vw, 34px);
+}
+.og-title { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); margin: 0; }
+
+/* The one headline figure on the page. app.js emits the Commonwealth's national
+   count first, then the count this map places individually, then the difference,
+   and the note beneath calls the official figure "the one to quote". So the
+   first figure is set large and the two that qualify it are labelled rows
+   beneath it. That is a stated figure with its own footnotes, not a three-up
+   row of equal numerals, and it is the only large numeral on the page.
+
+   In the branch where the official figure could not be read, app.js emits the
+   mapped count alone. It is then the first figure and takes the same treatment,
+   which is correct: it is the only figure there is. */
+.og-figs { display: grid; grid-template-columns: 1fr; gap: 0; }
+.og-fig { display: grid; gap: 2px 14px; grid-template-columns: 5ch 1fr; align-items: baseline; border-top: 1px solid var(--rule-2); padding: 9px 0; }
+.og-num { font-weight: 600; font-size: 1.125rem; line-height: 1.35; letter-spacing: 0; text-align: right; color: var(--ink); font-variant-numeric: tabular-nums; grid-column: 1; grid-row: 1; }
+.og-lbl { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2); grid-column: 2; grid-row: 1; }
+.og-sub { display: block; font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.02em; text-transform: none; color: var(--ink-2); margin-top: 3px; max-width: 62ch; }
+
+.og-fig:first-child {
+  grid-template-columns: 1fr;
+  border-top: 1px solid var(--ink);
+  padding-top: 12px;
+  padding-bottom: 16px;
+  gap: 4px;
+}
+.og-fig:first-child .og-num {
+  grid-column: 1;
+  font-size: clamp(2rem, 5.2vw, 3rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+.og-fig:first-child .og-lbl { grid-column: 1; grid-row: auto; font-size: 0.75rem; letter-spacing: 0.14em; }
+
+/* The difference is reporting lag, so it is said in words and set apart with a
+   rule, never with a colour. */
+.og-diff .og-num { color: var(--ink-2); }
+.og-note, .og-src, .og-lead { margin: 0; font-size: 0.875rem; color: var(--ink-2); max-width: 78ch; }
+.og-src { font-size: 0.8125rem; }
+/* Media reporting: hedged, cited, never mapped and never counted. Quieter than
+   everything above it so it cannot read as a confirmed detection. */
+.og-lead { border-top: 1px dashed var(--rule); padding-top: 12px; font-size: 0.8125rem; }
+.og-lead-tag { margin-right: 8px; }
+
+/* --------------------------------------------------------------------------
+   20  legacy aliases
+
+   Kept so a page or script still emitting the old hooks renders in the new
+   identity instead of unstyled. Prefer the names above in new markup.
+   -------------------------------------------------------------------------- */
+
+/* The old .stats / .stat stat-card grid is deliberately NOT aliased here. No
+   page or script emits it, and keeping a rule that reinstates an equal-width
+   grid of large numbers only invites the treatment back in. If a script ever
+   starts emitting it, the fix is to change the script.
+
+   .pill likewise stays only as a typewritten label, never as a rounded pill. */
+.pill { border-color: var(--ink-3); }
+.dot { display: inline-block; width: 8px; height: 8px; flex: none; border: 1px solid var(--ink-3); background: transparent; vertical-align: 1px; }
+.hero__plate, .logo { display: none; }   /* retired: the engraved plate and bird logo */
+
+/* --------------------------------------------------------------------------
+   21  responsive, reduced motion, print
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 720px) {
+  body { font-size: 15px; }
+  .hero__img { max-height: 220px; }
+  .event, .news-item { grid-template-columns: 1fr; gap: 6px; }
+  .event__date, .news-item__date { letter-spacing: 0.08em; }
+  .dl-row { grid-template-columns: 1fr; gap: 4px; }
+  .figures { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 18px 22px; }
+  .figure__num { font-size: clamp(1.8rem, 10vw, 2.4rem); }
+  input[type="search"] { min-width: 0; width: 100%; }
+  .controls { gap: 14px 20px; }
+  .figure--aside { border-left: 0; padding-left: 0; }
+  /* The label column of a definition row gets its own line when there is no
+     room for a number and an uppercase label side by side. */
+  #situationBody .figures > .figure,
+  .og-fig { grid-template-columns: 4ch 1fr; gap: 2px 10px; }
+  #viewFigures .figure { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}
+
+@media print {
+  html, body { background: var(--paper); color: var(--ink); font-size: 10.5pt; }
+  .site-header, .site-nav, .controls, .map-section, .show-more, .toggle-more, .btn, .skip-link, .banner { display: none !important; }
+  .section, .figure, .event, .news-item, .source-item, #table tbody tr { break-inside: avoid; }
+  .hero__img { max-height: 120mm; }
+  .cite a::after, .source-list a::after { content: " (" attr(href) ")"; font-size: 0.85em; color: var(--ink-2); }
+  a { text-decoration: none; }
+}

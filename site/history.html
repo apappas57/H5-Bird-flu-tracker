@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>History of H5N1 bird flu: the sourced record, and how Australia fits in</title>
+  <meta name="description" content="A plain-language, fully sourced history of the H5N1 bird flu lineage: from geese in southern China in 1996, through the clade 2.3.4.4b panzootic, to its arrival in Australian wild birds in June 2026. Every entry carries a citation." />
+  <!-- One deliberate light identity. A viewer whose system is in dark mode still
+       gets the white page rather than a half-inverted one. -->
+  <meta name="color-scheme" content="light" />
+  <link rel="canonical" href="https://birdflutracker.org/history.html" />
+  <!-- The live mark from the design system: a filled red square inside a hairline
+       frame. White, one grey-free hairline, one red. No other colour. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFFFFF'/%3E%3Crect x='.5' y='.5' width='31' height='31' fill='none' stroke='%23101010'/%3E%3Crect x='10' y='10' width='12' height='12' fill='%23C8102E'/%3E%3C/svg%3E" />
+
+  <meta property="og:url" content="https://birdflutracker.org/history.html" />
+  <meta property="og:title" content="History of H5N1 bird flu, sourced" />
+  <meta property="og:description" content="Where H5N1 came from, how it spread, and what is and is not part of the outbreak now in Australian wild birds. Every entry carries a source." />
+  <meta property="og:type" content="article" />
+
+  <link rel="stylesheet" href="assets/fonts/source-code-pro.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#timeline">Skip to the timeline</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <div>
+        <p class="site-title"><a href="index.html">Australian Bird Flu Tracker</a></p>
+        <p class="site-subtitle">History of the virus</p>
+      </div>
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="index.html">Tracker</a>
+        <a href="history.html" aria-current="page">History</a>
+        <a href="index.html#sources">Data sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Load failure notice. Filled and revealed by history.js only when the data
+       file does not arrive. Plain banner, never .banner--live: red belongs to the
+       outbreak, not to a plumbing problem. -->
+  <div id="loadNotice" class="banner" role="status" hidden></div>
+
+  <main class="wrap">
+
+    <!-- ------------------------------------------------------------------
+         Opening. What this page is.
+         ------------------------------------------------------------------ -->
+    <section id="overview" class="hero stack stack--lg" aria-labelledby="pageTitle">
+      <p class="label">History of the virus</p>
+      <h1 id="pageTitle">The history of H5N1, and how Australia fits into it</h1>
+      <p class="lede">
+        Where this virus came from, how it spread across the world, and what is and is not part of
+        the outbreak now under way in Australian wild birds. Every entry on this page carries a
+        source you can open and read.
+      </p>
+
+      <div class="prose">
+        <p>
+          Bird flu is a family of viruses rather than a single one, and most of the confusion in
+          news coverage comes from that. This page follows one lineage in particular: the H5N1
+          viruses descended from a virus found in domestic geese in southern China in 1996, and
+          especially the branch of that family called clade 2.3.4.4b, which is the virus being
+          found in Australian wild birds now.
+        </p>
+        <p>
+          Clade is the only piece of jargon you need. Influenza viruses are sorted into a family
+          tree, and a clade is one branch of it: a group of viruses that share a recent common
+          ancestor. The numbers, 2.3.4.4b or 2.3.2.1a, are just that branch's address. Two branches
+          can carry the same name, H5N1, and still sit a long way apart on the tree.
+        </p>
+        <p>
+          Nothing here is asserted without a citation. Where a figure is approximate, ranged, or
+          still being confirmed, the entry says so rather than rounding the doubt away. The
+          Australian part of the record is generated from this tracker's own data and from official
+          Australian statements, so it is rebuilt every day.
+        </p>
+      </div>
+
+      <!-- Headline figures as a typographic row, filled from the data file.
+           Hidden until it has real numbers in it. -->
+      <div class="figures figures--sm" id="overviewFigures" hidden></div>
+      <div class="meta-row" id="overviewMeta" hidden></div>
+
+      <nav class="jump-nav" aria-label="On this page">
+        <a class="ctl" href="#subtypes">H5 versus H7</a>
+        <a class="ctl" href="#reading">How to read this page</a>
+        <a class="ctl" href="#timeline">Timeline</a>
+        <a class="ctl" href="#build">How this page is built</a>
+      </nav>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         The separation. H5 against H7, and clade 2.3.4.4b against 2.3.2.1a.
+         This is the reader confusion the page exists to fix, so it comes
+         before the timeline and it gets real space.
+         ------------------------------------------------------------------ -->
+    <section id="subtypes" class="section" aria-labelledby="subtypesTitle">
+      <div class="section__head">
+        <h2 class="section__title" id="subtypesTitle">Three different viruses, three different events</h2>
+        <p class="section__note">
+          A news report can be right that a detection is the first in a state while a tracker shows
+          older records from that same state. Both can be true, because the older records are a
+          different virus.
+        </p>
+      </div>
+
+      <div class="prose">
+        <p>
+          Influenza A viruses are named after two proteins on their surface, haemagglutinin, the H,
+          and neuraminidase, the N. So H5N1 and H7N3 are separate viruses, not two versions of one
+          virus. Australia's poultry outbreaks in 2024 and 2025 were H7. The virus in Australian
+          wild birds now is H5N1. They are counted separately here and never added together.
+        </p>
+        <p>
+          Within H5N1 the same care is needed one level down. Australia's single human case, in
+          2024, was H5N1, but from clade 2.3.2.1a and acquired overseas. The wild bird detections
+          from June 2026 are clade 2.3.4.4b. Same subtype name, different branch, different event.
+        </p>
+      </div>
+
+      <dl class="dl">
+        <div class="dl-row">
+          <dt class="dl-key">H5N1, clade 2.3.4.4b</dt>
+          <dd class="dl-val">
+            The current event. High pathogenicity H5N1 in Australian wild birds, first detected in
+            June 2026 and still developing. This is the only thing shown in red on this site.
+          </dd>
+        </div>
+        <div class="dl-row">
+          <dt class="dl-key">H7N3, H7N8, H7N9</dt>
+          <dd class="dl-val">
+            A different subtype, in commercial poultry, across 2024 and 2025, and eradicated. Not
+            part of the current event, never added to its count. Victoria, New South Wales and the
+            Australian Capital Territory all hold records of this kind.
+          </dd>
+        </div>
+        <div class="dl-row">
+          <dt class="dl-key">H5N1, clade 2.3.2.1a</dt>
+          <dd class="dl-val">
+            One human case in 2024, acquired while travelling in India, and the person recovered.
+            A different branch of the family tree from the virus in the birds, and unrelated to it.
+            It is listed in the timeline below under
+            <a href="#entry-au-human-2024-05-22">Australia before June 2026</a>.
+          </dd>
+        </div>
+      </dl>
+
+      <h3>The sourced entries behind this</h3>
+      <ul class="events" id="subtypeEntries">
+        <li class="event event--historical">
+          <div class="event__date">Loading</div>
+          <div class="event__body"><p class="event__text">Loading the sourced entries.</p></div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         How to read the page. Colour key, date bases, citations.
+         ------------------------------------------------------------------ -->
+    <section id="reading" class="section" aria-labelledby="readingTitle">
+      <div class="section__head">
+        <h2 class="section__title" id="readingTitle">How to read this page</h2>
+      </div>
+
+      <ul class="key key--stack">
+        <li class="key__item key__item--live">
+          <span class="mark mark--live" aria-hidden="true"></span>
+          <span class="key__text">Red: the current Australian H5N1 incursion, from June 2026.</span>
+        </li>
+        <li class="key__item">
+          <span class="mark mark--historical" aria-hidden="true"></span>
+          <span class="key__text">Grey: everything else, the global event included.</span>
+        </li>
+        <li class="key__item">
+          <span class="tag tag--presumptive">Preliminary</span>
+          <span class="key__text">A dotted label: this fact is not settled.</span>
+        </li>
+        <li class="key__item">
+          <span class="tag tag--signal">Live data</span>
+          <span class="key__text">A dashed label: this entry is rebuilt daily.</span>
+        </li>
+      </ul>
+
+      <p class="footnote">
+        Grey does not mean finished. The global outbreak is ongoing, and every entry states its own
+        status in words. Only the Australian incursion is coloured, because that is the one place a
+        reader could otherwise mistake an old and unrelated record for a new case.
+      </p>
+
+      <p class="footnote" id="dateNote" hidden></p>
+
+      <p class="footnote">
+        A dotted label always has its reason printed under the entry: approximate, preliminary,
+        reported rather than taken from a primary statement, or disputed between sources. Every entry
+        ends with its sources. An entry that somehow reaches this page without one is labelled
+        Unsourced rather than published quietly.
+      </p>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         The timeline itself.
+         ------------------------------------------------------------------ -->
+    <section id="timeline" class="section section--strong" aria-labelledby="timelineTitle">
+      <div class="section__head">
+        <h2 class="section__title" id="timelineTitle">Timeline</h2>
+        <p class="section__note">
+          Oldest first, and grouped so the current Australian incursion never sits beside an
+          unrelated event without a heading between them.
+        </p>
+      </div>
+      <div class="timeline" id="timelineRoot">
+        <p class="table-empty">Loading the timeline.</p>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         Provenance.
+         ------------------------------------------------------------------ -->
+    <section id="build" class="section" aria-labelledby="buildTitle">
+      <div class="section__head">
+        <h2 class="section__title" id="buildTitle">How this page is built</h2>
+      </div>
+
+      <div class="prose" id="datasetNote"></div>
+      <p class="footnote" id="datasetCounts"></p>
+
+      <h3>What the labels on an entry mean</h3>
+      <dl class="dl" id="certaintyKey"></dl>
+
+      <h3>Subject areas</h3>
+      <dl class="dl" id="categoryKey"></dl>
+
+      <ul class="notes-list">
+        <li>
+          The data behind this page is a single flat file in the repository,
+          <a href="data/history.json">data/history.json</a>. There is no API behind it and no key,
+          so it costs nothing to keep running.
+        </li>
+        <li>
+          Detections, the map and the current situation live on the
+          <a href="index.html">tracker</a>. Every source used across the site is listed under
+          <a href="index.html#sources">data sources</a>.
+        </li>
+        <li>
+          Corrections are welcome. A fact on this page is only as good as the citation next to it,
+          and a citation that has moved or gone is worth telling us about.
+        </li>
+      </ul>
+
+      <p class="callout">
+        <strong>To report sick or dead wild birds, call the Emergency Animal Disease Hotline on
+        1800&nbsp;675&nbsp;888.</strong> Do not handle sick or dead wild birds, and keep pets away
+        from them.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap stack">
+      <p>Open data. The Australian entries rebuild daily. <span id="footStamp"></span></p>
+      <p class="muted small">
+        Independent public-interest tracker.
+        <a href="https://github.com/apappas57/H5-Bird-flu-tracker" rel="noopener">Source and methodology on GitHub</a>.
+        Not medical advice.
+      </p>
+    </div>
+  </footer>
+
+  <script src="history.js"></script>
+</body>
+</html>
