@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T23:38:52.949Z",
+  "generated_at": "2026-07-30T23:42:28.497Z",
   "latest_event": "2026-07-30",
   "mode": "live",
   "mode_note": null,
@@ -575,7 +575,7 @@
   },
   "official_au": {
     "ok": true,
-    "fetched_at": "2026-07-30T23:38:55.035Z",
+    "fetched_at": "2026-07-30T23:42:29.987Z",
     "national_total": 33,
     "national_total_phrasing": "confirmed or presumed positive",
     "national_total_source": "updates",
