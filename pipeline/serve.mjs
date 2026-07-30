@@ -8,10 +8,17 @@ import { dirname, resolve } from 'node:path';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../site');
 const PORT = process.env.PORT || 8080;
+// Every type the site actually serves. The hero photograph is a jpg, and without an
+// entry here local review served it as application/octet-stream, which is not what
+// production does. Local review has to match production or it is not review.
 const MIME = {
   '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript',
   '.json': 'application/json', '.geojson': 'application/json',
-  '.png': 'image/png', '.svg': 'image/svg+xml', '.ico': 'image/x-icon',
+  '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp', '.avif': 'image/avif', '.gif': 'image/gif',
+  '.svg': 'image/svg+xml', '.ico': 'image/x-icon',
+  '.woff2': 'font/woff2', '.woff': 'font/woff',
+  '.txt': 'text/plain', '.md': 'text/plain',
 };
 
 http.createServer((req, res) => {

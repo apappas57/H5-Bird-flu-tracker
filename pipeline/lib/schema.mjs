@@ -20,12 +20,41 @@ function normalizeSubtype(v) {
 }
 
 /**
+ * Normalise an official confidence label to 'confirmed' or 'presumptive', else null.
+ *
+ * Officials use this distinction routinely in the 2026 Australian incursion, so the
+ * tracker has to be able to express it or it publishes preliminary results as settled
+ * fact. The Commonwealth counts in the category "confirmed or presumed positive"
+ * (agriculture.gov.au H5 bird flu updates); several Western Australian cases are
+ * presumed positive because sequencing could not be determined and DPIRD treats them
+ * as positive precautionarily; Victoria's first case was announced on 30 July 2026
+ * with confirmatory testing still running at CSIRO ACDP, Geelong.
+ *
+ * Rules, all of which fail toward the weaker claim:
+ *   - a hedge word anywhere wins, so a mixed phrase resolves to 'presumptive';
+ *   - "suspect" and "unconfirmed" return null, not 'presumptive': samples sent with no
+ *     positive result yet is a weaker statement than a positive result that sequencing
+ *     could not fully type, and we will not upgrade it;
+ *   - anything unrecognised returns null, which is exactly what every existing source
+ *     emits today (the field is optional and absence means "not stated").
+ */
+function normalizeConfidence(v) {
+  if (!v) return null;
+  const s = String(v).trim().toLowerCase();
+  if (/presum|probable|provisional/.test(s)) return 'presumptive';
+  if (/unconfirmed|not confirmed|suspect|pending|awaiting/.test(s)) return null;
+  if (/confirm/.test(s)) return 'confirmed';
+  return null;
+}
+
+/**
  * Build one normalized record from a raw source row.
  * Returns null if the row can't be geolocated or categorized (caller counts skips).
  * @param {{category:string, country:string, admin1?:string, locality?:string,
  *          lat?:number|string, lng?:number|string, date:string, count?:number|null,
  *          subtype?:string, flock_type?:string, species?:string, uid?:string,
- *          source:string, source_url?:string}} raw
+ *          confidence?:string, source:string, source_url?:string}} raw
+ *   confidence is optional: 'confirmed' | 'presumptive' | anything else (-> null).
  */
 export function makeRecord(raw) {
   if (!CATEGORIES.includes(raw.category)) return null;
@@ -62,6 +91,8 @@ export function makeRecord(raw) {
     date,
     count,
     subtype: normalizeSubtype(raw.subtype),
+    // null means the source did not state it, NOT that the detection is unconfirmed.
+    confidence: normalizeConfidence(raw.confidence),
     flock_type: raw.flock_type || null,
     species: raw.species || null,
     source: raw.source,
