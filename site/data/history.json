@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T09:15:28.585Z",
+  "generated_at": "2026-08-01T02:26:33.720Z",
   "version": 1,
   "curated_updated": "2026-07-30",
   "entries_order": "ascending by sort_date, oldest first",
@@ -700,19 +700,39 @@
     },
     {
       "id": "au-first-qld",
-      "sort_date": "2026-07-25",
-      "date_display": "25 July 2026",
+      "sort_date": "2026-07-22",
+      "date_display": "22 July 2026",
       "date_precision": "day",
       "title": "First detection in Queensland",
       "category": "australia",
       "scope": "australia",
       "certainty": "established",
-      "body": "The first detection in Queensland in the current H5N1 incursion, dated 25 July 2026. Petrel (species not specified by the source), Moreton Island. It is recorded as confirmed.",
+      "body": "The first detection in Queensland in the current H5N1 incursion, dated 22 July 2026. Grey petrel (Procellaria cinerea), Moreton Island. It is recorded as confirmed.",
       "citations": [
         {
-          "publisher": "DAFF: Australian Chief Veterinary Officer update, 25 July 2026 (first Queensland detection)",
+          "publisher": "FAO EMPRES-i+: Australia (WOAH/WAHIS)",
           "title": "First Queensland detection",
-          "url": "https://www.agriculture.gov.au/about/news/H5-bird-flu-updates"
+          "url": "https://empres-i.apps.fao.org/"
+        }
+      ],
+      "origin": "generated",
+      "generated_from": "first current-incursion record for this state"
+    },
+    {
+      "id": "au-first-vic",
+      "sort_date": "2026-07-28",
+      "date_display": "28 July 2026",
+      "date_precision": "day",
+      "title": "First detection in Victoria",
+      "category": "australia",
+      "scope": "australia",
+      "certainty": "established",
+      "body": "The first detection in Victoria in the current H5N1 incursion, dated 28 July 2026. Swift tern (Thalasseus bergii), Portland. The source did not state a confirmation status.",
+      "citations": [
+        {
+          "publisher": "FAO EMPRES-i+: Australia (WOAH/WAHIS)",
+          "title": "First Victoria detection",
+          "url": "https://empres-i.apps.fao.org/"
         }
       ],
       "origin": "generated",
@@ -741,35 +761,15 @@
       "generated_from": "pipeline/au-status.json local_transmission"
     },
     {
-      "id": "au-first-vic",
-      "sort_date": "2026-07-30",
-      "date_display": "30 July 2026",
-      "date_precision": "day",
-      "title": "First detection in Victoria",
-      "category": "australia",
-      "scope": "australia",
-      "certainty": "preliminary",
-      "body": "The first detection in Victoria in the current H5N1 incursion, dated 30 July 2026. Tern, Portland. It is recorded as presumptive: an authority announced the detection while confirmatory testing was still outstanding. Australian official tallies count confirmed and presumed positive detections together.",
-      "citations": [
-        {
-          "publisher": "FAO EMPRES-i+: Australia (WOAH/WAHIS)",
-          "title": "First Victoria detection",
-          "url": "https://empres-i.apps.fao.org/"
-        }
-      ],
-      "origin": "generated",
-      "generated_from": "first current-incursion record for this state"
-    },
-    {
       "id": "au-official-position",
-      "sort_date": "2026-07-31",
-      "date_display": "9am AEST, 31 July 2026",
+      "sort_date": "2026-08-01",
+      "date_display": "9am AEST, 1 August 2026",
       "date_precision": "day",
       "title": "Where the official national count stands",
       "category": "australia",
       "scope": "australia",
       "certainty": "established",
-      "body": "As at 9am AEST, 31 July 2026, the Australian Government reported 33 confirmed or presumed positive detections of H5 bird flu in Australia (South Australia 19, Western Australia 10, New South Wales 2, Victoria 1, Queensland 1). This site individually maps 18 current detections, which is not a subset of that tally: the two figures are different measurements, and each can hold an event the other does not yet. The mapped points follow WOAH notification, which lags by about a fortnight, and the official count follows the Commonwealth's own updates. Both are published rather than reconciled into one.",
+      "body": "As at 9am AEST, 1 August 2026, the Australian Government reported 52 confirmed or presumed positive detections of H5 bird flu in Australia (South Australia 38, Western Australia 10, New South Wales 2, Victoria 1, Queensland 1). This site individually maps 25 current detections, which is not a subset of that tally: the two figures are different measurements, and each can hold an event the other does not yet. The mapped points follow WOAH notification, which lags by about a fortnight, and the official count follows the Commonwealth's own updates. Both are published rather than reconciled into one.",
       "citations": [
         {
           "publisher": "Australian Government Department of Agriculture, Fisheries and Forestry",

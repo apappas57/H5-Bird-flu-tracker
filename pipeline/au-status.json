@@ -1,7 +1,7 @@
 {
   "_comment": "Editorial current-status facts for the Australia banner. Slow-changing, sourced. The pipeline merges these with counts derived from the live data. Keep the tone calm and factual; human risk is currently low and the page must say so.",
-  "headline": "H5N1 bird flu (clade 2.3.4.4b) reached Australian wild birds in June 2026.",
-  "summary": "For the first time, high pathogenicity H5N1 avian influenza has been detected in wild birds in Australia. Every detection so far is a coastal wild seabird, and there are none in commercial poultry. The early cases were migratory seabirds that carried the virus in. On 29 July 2026 the Australian Chief Veterinary Officer reported that genetic sequencing suggests the virus has begun spreading locally, between resident greater crested terns in South Australia. Queensland recorded its first detection on 25 July 2026 and Victoria on 30 July 2026, which makes five mainland states. The risk to people remains low.",
+  "headline": "H5N1 bird flu (clade 2.3.4.4b) reached mainland Australian wild birds in June 2026.",
+  "summary": "For the first time, high pathogenicity H5N1 avian influenza has been detected in wild birds in mainland Australia. Every detection so far is a coastal wild seabird, and there are none in commercial poultry. The early cases were migratory seabirds that carried the virus in. On 29 July 2026 the Australian Chief Veterinary Officer reported that genetic sequencing suggests the virus has begun spreading locally, between resident greater crested terns in South Australia. Queensland recorded its first detection on 25 July 2026 and Victoria on 30 July 2026, which makes five mainland states. The risk to people remains low.",
   "local_transmission": {
     "status": "suggested",
     "date": "2026-07-29",
@@ -30,15 +30,24 @@
   },
   "caveats": [
     "Records are grouped by the event they belong to and are never added together. Victoria's records, for example, are three separate things: current H5N1 wild bird detections, resolved H7 poultry outbreaks from 2024 to 2025 of a different subtype, and one unrelated travel-acquired human case from May 2024 of a different virus lineage. Only the current H5N1 group describes this outbreak, which is why a news report of Victoria's first case is correct even though this site also holds older Victorian records.",
-    "\"First detection\" refers to Australian wild birds. A separate possible incursion at sub-Antarctic Heard Island, an external territory, was reported in late 2025 and is not counted in these figures.",
+    "\"First detection\" refers to mainland Australia. H5N1 clade 2.3.4.4b reached sub-Antarctic Heard Island, an Australian external territory, earlier: the Australian Antarctic Program estimates it arrived about August 2025 and has since confirmed it in six species there, including king penguin, gentoo penguin and South Georgia diving petrel, alongside very high southern elephant seal pup mortality. Those detections are a separate event on a remote external territory and are not counted in the figures on this page.",
     "Not every Western Australian detection is itemised in public data; the map shows the events published by official sources.",
     "The mapped detections come from an automated feed that follows WOAH notifications, and on 30 July 2026 it was measured running about two weeks behind the Commonwealth's own updates. The number of detections on the map can therefore be lower than the official national count, so both figures are shown.",
     "Victoria's first detection, announced by Agriculture Victoria on 30 July 2026, is shown as presumptive: H5 was detected and confirmatory sequencing at the CSIRO Australian Centre for Disease Preparedness in Geelong was still under way. Official Australian tallies also count confirmed and presumed positive detections together. Its map point is the town of Portland, because no specific site was published.",
     "Queensland's first detection, a petrel on Moreton Island confirmed on 25 July 2026, is mapped at the island because no specific site was published. The official statement did not name the petrel species."
   ],
   "authorities": [
-    { "name": "DAFF / outbreak.gov.au", "url": "https://www.outbreak.gov.au/emerging-risks/high-pathogenicity-avian-influenza" },
-    { "name": "Wildlife Health Australia", "url": "https://wildlifehealthaustralia.com.au/Resource-Centre/H5-bird-flu" },
-    { "name": "Australian CDC (human health)", "url": "https://www.cdc.gov.au/diseases/bird-flu-avian-influenza" }
+    {
+      "name": "DAFF / outbreak.gov.au",
+      "url": "https://www.outbreak.gov.au/emerging-risks/high-pathogenicity-avian-influenza"
+    },
+    {
+      "name": "Wildlife Health Australia",
+      "url": "https://wildlifehealthaustralia.com.au/Resource-Centre/H5-bird-flu"
+    },
+    {
+      "name": "Australian CDC (human health)",
+      "url": "https://www.cdc.gov.au/diseases/bird-flu-avian-influenza"
+    }
   ]
 }
