@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T08:32:35.083Z",
+  "generated_at": "2026-08-02T08:35:45.248Z",
   "latest_event": "2026-07-30",
   "mode": "live",
   "mode_note": null,
@@ -57,7 +57,7 @@
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 42,
+    "days_since_first_detection": 43,
     "latest_detection": "2026-07-30"
   },
   "eras": {
@@ -167,7 +167,7 @@
       "au_human_2024": 1,
       "global_h5_panzootic": 2510,
       "other_subtype": 48,
-      "subtype_unstated": 377
+      "subtype_unstated": 376
     }
   },
   "au_eras": {
@@ -563,7 +563,7 @@
     "wild_bird_detections": 25,
     "poultry_detections": 20,
     "states_affected": 6,
-    "days_since_first_detection": 42,
+    "days_since_first_detection": 43,
     "human_cases_au": 1
   },
   "human_context": {
@@ -677,7 +677,7 @@
     "notes": [],
     "from_last_good": true,
     "last_good_fetched_at": "2026-08-01T02:26:35.539Z",
-    "last_good_age_days": 0
+    "last_good_age_days": 1
   },
   "official_gap": {
     "behind": true,
@@ -721,27 +721,39 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 94 headlines, detection signal in 2 (SA, VIC); 1 coverage gap: SA short by 27 (high)",
+    "note": "google news 14d: 95 headlines, detection signal in 2 (SA, VIC); 1 coverage gap: SA short by 27 (high)",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 40,
     "headlines": [
       {
-        "date": "2026-08-01",
-        "outlet": "The Canberra Times",
-        "title": "Bird flu testing, as mass mortality incident detected",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNUkxLYktCbUlyWUxpcmp5NFl6Z3pIUk5XWkF6OHNQZDJuSlY0Y0QxUGY3c3B3cFdXeHA1a0xleDNxUE4wZDI3bWo0LVBnOUs5TGxzWlJhYmRZN1prTWx5VzZsaVFEU3BYNF9vT3FqZGhwbkdEeFItY1o5ZUV5Qjg2eG9PX2xlQmdmNHdjV2hQVkMwN0x0ekZKTE5nTHpIRGNPU1E?oc=5"
+        "date": "2026-08-02",
+        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
+        "title": "Fears shared on Australia reaching bleak milestone in the spread of H5 bird flu",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1zVlRzbWlNTk93Z3dMOVJ3Y0dUQmhRbUJWbGl0ZURfVERPT3FCOGx3V1hHN3VLV2JfSzZwcUQ2UWJLS1MzLWItNFRfczZncmk5LXRlQ09pLW9DbDR2ZmVCRkRnSTFiUkZyNS1qMlJocGtmT1VlS0FN?oc=5"
       },
       {
-        "date": "2026-08-01",
-        "outlet": "Nine.com.au",
-        "title": "H5 bird flu: Testing under way after mass mortality event in SA",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPdTdRT1o3RTJELTNfR09HeDVvdGVLX2Q5MmNPUkFDTThRUEhLNURvWDdlMERfR1pRZjBUQ2RyZzk5bUM4azdod2hMMFdhSE1zRElJRmFZZEN5Z0V6ZW1VZkJrTTIwdWc4Y0hjdGczT3dZTnhNOWRnLWsyUGVkTU4tc3l6SVpxWEZ0dEJXMlpaNVlsaGNLWm1tREc0eE1neEV0dkE5R293YnZOUEEzX2Fsa0l4N0tjTGRXWDNR?oc=5"
+        "date": "2026-08-02",
+        "outlet": "SBS",
+        "title": "Australia facing 'tsunami of devastation' over H5 bird flu outbreak",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQMVdCc2R6NTB4MmQ2RjdRX0JRYTU4ZEgwTTdiSU9SYmVhajRHcU5HRGhJcnBDRm1JVmtEOG11LUlBcnFNOGR5S29WY0RuNElwRll2SXpMVk50SDZMd1ItczFtcmpHT0NXVXk4bDlCeU0yWDUzVkNvVTlBdERsSmh6Y0xHY3hrdVROXzVaZDdyMjBySENXa3BFcFl5Nmh0V0ZTRm5KYnhxXzRTdXdFNmVjSno1eXZUUFp1T2M4?oc=5"
       },
       {
-        "date": "2026-08-01",
-        "outlet": "Inside State Government",
-        "title": "Bird flu cases take off in South Australia",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOODZpN0lFaF9FVE5FYklCdVVIZ1BkLUVNemllZEpOVTdJQzc5XzBOaVl5NVNLVGNUMjV0SUcyOXJ6b195QVpyZmo2WGQxbWplSXNNeUpVbkdNb0RLaXJjdlhLT1NXUjBhVXBDc0g0OERpVV95RzVkOVVBOHh3b1J5R3NUNUlRUkJPMDd6cQ?oc=5"
+        "date": "2026-08-02",
+        "outlet": "ausleisure.com.au",
+        "title": "Zoos SA releases statement on detection of H5 avian influenza near Monarto",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPQXNuRlNXcWl3YXh6d19WRFdtY0Y0M3RRa3YtSW9ZZzkwemY0dXJiUUROMi1PMVZ6LXUwWU12MDdta2xadUhMTm5nekwyeTdYTFZxblBabWFMNmlTU3kzMnhhT1gxWW9TcTNHQTdqaHhfQzM3NlZvZW10M1c1eUp4R24yUzhCNDllMUU1Z3BZNGx6VmtEUU5hcTB1QzVEeGgwTDFWNHBtLVE2d2ZqR0E?oc=5"
+      },
+      {
+        "date": "2026-08-02",
+        "outlet": "News.com.au",
+        "title": "First suspected bird flu mass mortality event",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQR2E0aHlFeE5hWVRyaHAwY3JpeUxGVHV4NHpVQmg3S0VHWWVSeWQtOHY3T1I4cmFNMFJVOHhRWUtzaWxXZzRYdUJzMFRFaWZHMFRmcEtadnFQbGxWSGwxTjVSblhRY1Vzb2ZwZTkwbFpuaVM2VUJ2Z2dFc0pqSFMwUFZNMFRsUFE1LVg2M05raEdnd1N1cURvR1RNQUVlNTlrbk9PYm9yWThiUdIBrwFBVV95cUxOdnJ6N0dud2dTZ3dDdFhRZFZ4M0Vjdy1YamdPbEhxTmlneXBCLVhnNURveGl4WmtTNGQwLVZIYkJFRzdzU2NQSWhhOFBOVW5wV0cyVk5KSHVYMjVfWDNmMHRRU2o5eS03bkM3bWVoWWlta1VrdTlIOGZzaVBvVk1oN1gtYlQ1MDdQbU50RzNoM042dl9FQ0x1THF3akYzVHNBVERTQ2s4d2Z0WVBxUVhF?oc=5"
+      },
+      {
+        "date": "2026-08-02",
+        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
+        "title": "Historic strike, YouTuber's fate features in photo picks for June, July",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdERBT0p3NnlLSE40RXlCbkZPejhRVGdNZHlYblNPV3N5R1dqX2lOZEFrQ2JlQ25hMzRWRUQxa0hUSGZHLTRjWXBxOUEyOWN4TU1pdDcwWGYtQXJBMldIczhyTDlxZDBaN0ppd0doT3JIWlNTN0ZSd1k4Z3BHV2E4bEV3?oc=5"
       },
       {
         "date": "2026-08-01",
@@ -751,51 +763,39 @@
       },
       {
         "date": "2026-08-01",
-        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
-        "title": "Breaking: H5 bird flu testing underway for mass mortality of terns on SA island",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPWlBIWkNSc0NnZ0RHNWtndER3VDR3OTQyZ1lNTTg5cUZ5cXI1WlhnY3IwNzczcmk1VkJ5RmlkZmJIUzFVUzA3bmk3M0dSeHBrd0w3ZzViOGlvVTJsSW9feEZTVmdDSUQyZHlnaUhtal90SVhqYVNjaUsxWFhtVmxvdC1oOWd0ajJZR3JYRjlKbndFaVlOd0ZCRmV2bXdEbUREc2RFak1tOUs?oc=5"
+        "outlet": "The Conversation",
+        "title": "The warning signs are over: Australia now faces a devastating bird flu outbreak in wildlife",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPcGhMVkxBZlVFOGVjeW1YdTdPb1RMaDNva2JlbnVDdFpqZk9ic1BGMjBCYTd5RG9YT3JJRkhDSzJIRlBNZXd3c2Nxa3dRZU5ldDhPZlBkb3QwTmZkNWU4MjNNMTJ5V3FjcmhuX085UlBEVVNoUUF4RDktZWhYZ2ROd3VKX2h3VkZCWFNsWjJ5TEc5a1oxSlk0UHZNVUZSckRjOXVwNVc5d3RWb2lNd3lPNDJYMVFxNEhyZnBfckxZcWp0SE0?oc=5"
       },
       {
         "date": "2026-08-01",
-        "outlet": "Adelaide Now",
-        "title": "Nearly 50 dead birds found in SA sparking mass mortality fears",
-        "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNQ2k2YU0ybUZ1VVRabll1X0tnZWw5VmJ3TXFld1F6bkttMXA1djAtTDRNMngzcDhabWsxSEhabHUzU2xodk93Vl9IY2M3djdXeWpENWNjenE4MUp6MGtwR0FycjZKMmdXa05wZU52UnFFYXJzakl2YzlodHIzZlNyQXgySmU1RDBVd1JmQXVnT2h1UFJJUk5OaWJOQmJ6S3NOQXg0SmE5ejZ6VFBBdktOWkdUeV9ldi14NzlLU2I1WnpLZ2pUVGlSZkd5cWloSk5CMndTYlFneEtOUmx2ODVUejhkMmZIc0tkX055TGtLWUlhYjNqck5DODBKcTlWU09uenRvUmtHWnPSAYgCQVVfeXFMTUNpNmFNMm1GdVVUWm5ZdV9LZ2VsOVZid01xZXdRem5LbTFwNXYwLUw0TTJ4M3A4Wm1rMUhIWmx1M1NsaHZPd1ZfSGNjN3Y3V3lqRDVjY3pxODFKejBrcEdBcnI2SjJnV2tOcGVOdlJxRWFyc2pJdmM5aHRyM2ZTckF4MkplNUQwVXdSZkF1Z09odVBSSVJOTmliTkJiektzTkF4NEphOXo2elRQQXZLTlpHVHlfZXYteDc5S1NiNVp6S2dqVFRpUmZHeXFpaEpOQjJ3U2JRZ3hLTlJsdjg1VHo4ZDJmSHNLZF9OeUxrS1lJYWIzanJOQzgwSnE5VlNPbnp0b1JrR1pz?oc=5"
+        "outlet": "Herald Sun",
+        "title": "‘Mass mortality’: Fears for wildlife as bird flu starts ‘to take off’",
+        "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNYkQ4R1hrMUVoSWRMTVZ5NjJ3MVNhZ3MtQ2R2dVl4LXZ1N1NfM1I2cDFpNTJRQ1FrVnlaTzJoWGUtNUl1eDRTUE9rV0Jvc2ZOSDJkRWhHSjVpOTRwazZBR2c4X0F3d0ZYUjVlX0RyaDl3T3lFSmFiMWtNVTE3YUxGZEk2UnhGUWFHRUtURTRocHlqVmNCMHo0VG1NM0k1dnhDcFpRSFJYY3paVlQweWkwQmlCaVVZVk5qQm9UUnNkbVlQVzd6MXRZRk5IQlpZdV9SdjhoeDEyNkZMTUNsQXpFLXFRRW1TbjU1MjF5dEJkTndUUW_SAfgBQVVfeXFMUDJxd3I3M21hU04waHNobUt3VVMzdGZrNXFFTzVRYy1LOVlpeXFqZHhjajR2T0gxbjI3OXI0eXMyb1hNOGU1R1U2UzJoM3pBUGQwVWNVbjNSXy1SOXM5am1LdVRZNDh0UUM4bGxwTC1UcDZDdGxQNlVsQ1FNQmFGRzZDem9yLVV1cG1XeGkxY194RTZwanRwSEh2Y3FJS1pMMkI2QVlHRzJZdUVRWkIxU0ZENUdpUVFEdGZ4NkI0cS1oUzJJRHNzMi1zczdCWFJ5bWFTOHR3aHdSZEliRFpPQnlZRFVNTXh6WVhTeHhpTmxWMnIyVklSbXo?oc=5"
       },
       {
         "date": "2026-08-01",
-        "outlet": "The Age",
-        "title": "WA government prepared as bird flu cases rise nationwide",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPMm5yM3pqR0QxTERsY0tKQmhxSzZsb3VZZ0VKaDJiRERGdEZOWE9qZm91Q0VLTW9VemEyWkU0bU9OdktXdnA4NFZhd2RUMHRiRFZhUUd2UlN5dEdWNlJtMzNXYlBnUzZFQlVhUUl3VFF4X28xZjJIQmI4VkpzRG56RHIwNkExQUc4dkJmSmNRSXhwYVVKU1FlTk0zQ1FBX3hkcy0zNDJWMFJybXVSRzl2WVdPVHk1UzY1VERmMy1WcG5xaWZEQ2tnbkJ3?oc=5"
+        "outlet": "Nine.com.au",
+        "title": "‘Tsunami breaking over our native wildlife’: Bird flu spreads to gulls, mass mortality event under investigation",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPdTdRT1o3RTJELTNfR09HeDVvdGVLX2Q5MmNPUkFDTThRUEhLNURvWDdlMERfR1pRZjBUQ2RyZzk5bUM4azdod2hMMFdhSE1zRElJRmFZZEN5Z0V6ZW1VZkJrTTIwdWc4Y0hjdGczT3dZTnhNOWRnLWsyUGVkTU4tc3l6SVpxWEZ0dEJXMlpaNVlsaGNLWm1tREc0eE1neEV0dkE5R293YnZOUEEzX2Fsa0l4N0tjTGRXWDNR?oc=5"
       },
       {
         "date": "2026-08-01",
-        "outlet": "Brisbane Times",
-        "title": "WA government prepared as bird flu cases surge nationwide",
-        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNelJON0J2WE9fakpsRHhsUEwzNEVfc1VYRjdyOEI4cVlxQlNWalBYbVZGcUVIdDJRYVZCanoycEZFUGtKVGZFNjVXQnAtNkJ2ZEFtRzhKTjVYQXhSRnR3cVE5VFJwelItY3lneG9JWFR4OGFseFRhUUNuOEd2NEdqb2ozd2FRcjAxYXVZV1d6ZGs2Q2xqQ2xkX1BacDJQLVJmQUgxdjJDVkdPdWRVMVlzWHZVOE5UZEZXby1yTEJ0MG02UjduQ3o4UTBLdjBNczEtOFJ5Ng?oc=5"
+        "outlet": "SMH.com.au",
+        "title": "More bird flu cases in South Australia",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNOUEyZ3I3TURCVXdyYzA2ZndYWmJrcWxpc2lmRzFHNkxodXpHTG92RUtFeXJMTDRoRXR0eDVYdlQtZXhPWVZnOG5qamxOOXE3UWs0b08yRFRqMnpWall4eGNTNGExZmRPRjM3Qlp1YjdLQWduNHFVc21xSmp4ejNfYXhvYU96bkVTbXdhWDdNaHpMOFRNc3c?oc=5"
       },
       {
         "date": "2026-08-01",
         "outlet": "The Canberra Times",
-        "title": "Bird flu cases grow to 53 as first gull tests positive",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQ25WSUdCaFlCbHJfelRJOUNjVUJCcU05cnFWWXBNQldrSC1HNmk2NlZ4R0YtRndYTk5xVmZYZk1vc3pVeWxJWF9EOXN0X1BtMGZ6dGR2eVpuOERxVV9aM1BCSWZpV3U1Q0hDamY4bnFUQ2pRLXR3VnNTZ09mTlZ1SmFyRjVVanFSWUxweUFvRVg3R0gtTlNQQjI1RERNQTJhbFlxYw?oc=5"
+        "title": "Bird flu testing, as mass mortality incident detected",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNUkxLYktCbUlyWUxpcmp5NFl6Z3pIUk5XWkF6OHNQZDJuSlY0Y0QxUGY3c3B3cFdXeHA1a0xleDNxUE4wZDI3bWo0LVBnOUs5TGxzWlJhYmRZN1prTWx5VzZsaVFEU3BYNF9vT3FqZGhwbkdEeFItY1o5ZUV5Qjg2eG9PX2xlQmdmNHdjV2hQVkMwN0x0ekZKTE5nTHpIRGNPU1E?oc=5"
       },
       {
         "date": "2026-08-01",
-        "outlet": "Mirage News",
-        "title": "Western Australia Ready And Responding On H5 Bird Flu",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOMklsRzEteGdicjBfMGo1UFdKbTluV1diYVU4RTFNMjduMGtQSnpFRXNBMmhKMEZ4eTgySG40SjlGaGk5OW9QYnBXbVpBWG9kdE5LQjBBMDdVbkxHOW9FOW5CdkZJbkR2T1Bpc2JWUW1la2FfYm1iNjE0UVktakNXN1o1bVEtOXM?oc=5"
-      },
-      {
-        "date": "2026-08-01",
-        "outlet": "The Age",
-        "title": "H5N1 bird flu: Another 19 cases in SA, taking national total to 52",
-        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNaDVOVFM4cFFmdEpWRGNfV2hnR19KYXh4V1BsOHdJaUw1ZDhNZzBYbzhtU3NlRFgzYU5pVWJTcjJIY0huaS1SRHN1ekViTHpZZjNnSDFITk53WGk4ZldyVEFHbFFRNXNwUGFvSGQtNWV6TklaNWw5SXRxSHJXeGhQVTZnT0lTNFVHYjgwTEFGWG51TmVNVHJiNnpGVWgtUUR0N0liQUdnZjBEdUJuMkdNaHlLa1pwNzUwc1hySmhTS0RPdW5qRFBULQ?oc=5"
-      },
-      {
-        "date": "2026-08-01",
-        "outlet": "The Age",
-        "title": "‘Early part of that curve’: Mass mortality feared as bird flu cases surge",
-        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNOWJUdGhFdl9zU0M1ZS1mM0dYaFlrcVVmYm9tRHBtb3VneWJYdVFONHZNUnlNUXp3eGVsMUlMQk9EZ3ROUk51SXhHNnZlbElwbThwQWI5RDlBZWt0V2wxR1AxWXV2VzZ3TExhaUFRQS1JcmxfS1JST0xaelREY3RacU9JcmJ1YkkwcnNhalpoel9TTUNCdmppSXF3MEpCR0JYMU1vMlZXQ0M2cEk5TnBZaHFDVU5UVXNzZTBtX0lzVER3al9fUXc2LXJKSjVncEF6?oc=5"
+        "outlet": "Inside State Government",
+        "title": "Bird flu cases take off in South Australia",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOODZpN0lFaF9FVE5FYklCdVVIZ1BkLUVNemllZEpOVTdJQzc5XzBOaVl5NVNLVGNUMjV0SUcyOXJ6b195QVpyZmo2WGQxbWplSXNNeUpVbkdNb0RLaXJjdlhLT1NXUjBhVXBDc0g0OERpVV95RzVkOVVBOHh3b1J5R3NUNUlRUkJPMDd6cQ?oc=5"
       }
     ],
     "headlines_window_days": 14,
@@ -816,7 +816,7 @@
         "official_count": 38,
         "official_as_of": "9am AEST, 1 August 2026",
         "news_outlets": [
-          "Glam Adelaide",
+          "ausleisure.com.au",
           "ABC News & Headlines – Australian Broadcasting Corporation"
         ],
         "news_confidence": "medium",
@@ -834,10 +834,10 @@
           },
           {
             "kind": "news",
-            "title": "Seven more suspected bird flu cases detected in SA seabirds as Limestone Coast surveillance ramps up",
-            "outlet": "Glam Adelaide",
-            "date": "2026-07-27",
-            "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNVHFUYW1keW1QMWRKQ0hHVmVBM004bXR0UWRGWElVNkpwMHJqcF9Cc293TEdPWnJNQlV3c1VMNVZ2b2FMZk1pTHRVREh6QTJTLXZSUDZBNnZELWtHNDVWRUdaTkhIMk9zd0pGandUMjVHQzhZTVhBYUpVTnduUmdYOTVLSkRqRjFjd2dOdk0tU20zWUVlaTNBUnZWUmNTcjY2U2l1VEdaVXFWTENlTkR2NHFaWlYzN3pJcU54U00zWmdvLUlhaUd4RQ?oc=5"
+            "title": "Zoos SA releases statement on detection of H5 avian influenza near Monarto",
+            "outlet": "ausleisure.com.au",
+            "date": "2026-08-02",
+            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPQXNuRlNXcWl3YXh6d19WRFdtY0Y0M3RRa3YtSW9ZZzkwemY0dXJiUUROMi1PMVZ6LXUwWU12MDdta2xadUhMTm5nekwyeTdYTFZxblBabWFMNmlTU3kzMnhhT1gxWW9TcTNHQTdqaHhfQzM3NlZvZW10M1c1eUp4R24yUzhCNDllMUU1Z3BZNGx6VmtEUU5hcTB1QzVEeGgwTDFWNHBtLVE2d2ZqR0E?oc=5"
           },
           {
             "kind": "news",
@@ -858,9 +858,9 @@
     ]
   },
   "totals": {
-    "total_events": 2981,
+    "total_events": 2980,
     "human_cases": 9,
-    "poultry_events": 227,
+    "poultry_events": 226,
     "poultry_birds_affected": 0,
     "dairy_events": 19,
     "wild_bird_events": 2723,
@@ -871,7 +871,7 @@
   },
   "by_category": {
     "wild_bird": 2723,
-    "poultry": 227,
+    "poultry": 226,
     "dairy": 19,
     "mammal": 3,
     "human": 9
@@ -883,16 +883,16 @@
     "Vietnam": 37,
     "the United Kingdom of Great Britain and Northern Ireland": 3,
     "Netherlands": 40,
+    "Poland": 29,
     "United States": 2600,
-    "Poland": 30,
-    "Chile": 2,
     "Brazil": 2,
+    "Chile": 2,
     "Austria": 4,
     "New Zealand": 2,
     "Ecuador": 1,
     "Togo": 5,
-    "Honduras": 7,
     "Denmark": 1,
+    "Honduras": 7,
     "Peru": 23,
     "Nepal": 49,
     "Philippines": 12,
@@ -920,7 +920,7 @@
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2981,
+    "Global": 2980,
     "United States": 2600,
     "Australia": 46
   },
@@ -932,7 +932,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 45,
-      "note": "fao(Australia) 2024-01-01..2026-08-01: 46 rows -> 45 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-08-02: 46 rows -> 45 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -940,8 +940,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 402,
-      "note": "fao(all) 2026-05-03..2026-08-01: 408 rows -> 402 records (6 skipped)"
+      "records": 401,
+      "note": "fao(all) 2026-05-04..2026-08-02: 407 rows -> 401 records (6 skipped)"
     },
     {
       "key": "us-wild-birds",
