@@ -1534,6 +1534,51 @@ tbody tr.is-historical > td:first-child { border-left-color: var(--rule); }
   #viewFigures .figure { max-width: none; }
 }
 
+/* Tap targets. At mobile widths every interactive control must present at
+   least 44px of hit area (WCAG 2.5.8 enhanced / Apple HIG). The type does not
+   grow: only padding and min-height do, so the sizes below are hit area, not
+   font blowup. 939px, not 720px, so the sort strip (which exists only below
+   940px) is covered by the same block. Inline links in prose are exempt: the
+   inline exception exists precisely so body text does not balloon. */
+@media (max-width: 939px) {
+  /* 11px type at 1.65 is 18.15px; +13 +11 padding +2px underscore = 44.2px. */
+  .site-nav a { padding-top: 13px; padding-bottom: 11px; }
+
+  /* 13px type at 1.4 is 18.2px; +12 +11 padding +3px borders = 44.2px. */
+  .ctl, .chip { padding-top: 12px; padding-bottom: 11px; }
+  /* These two override .ctl's padding shorthand, so they are restated whole.
+     12px type at 1.4 is 16.8px; +13 +12 padding +3px borders = 44.8px. */
+  .ctl--caps { padding: 13px 10px 12px; }
+  .ctl--sm { padding: 13px 7px 12px; }
+
+  /* 13px type at 1.65 is 21.45px; +10 +10 padding +3px borders = 44.5px. */
+  .btn, .show-more, .toggle-more { padding-top: 10px; padding-bottom: 10px; }
+
+  /* Replaced elements centre their own text, so min-height is enough. Border
+     box, so 44px is the rendered height. */
+  input[type="search"], input[type="text"], .field, select, .select { min-height: 44px; }
+
+  /* The 14px square is the mark, not the target: the whole label toggles the
+     box, and the label is what grows. align-items: center is already set. */
+  .check { min-height: 44px; }
+
+  /* The sort strip. 11px type at 1.65 is 18.15px; +12 +11 padding +3px
+     borders = 44.2px. Same selector as the rule above, later in the file. */
+  #table thead th[data-sort] { padding: 12px 10px 11px; }
+
+  /* Leaflet draws these 26px, or 30px with .leaflet-touch, so the compound
+     selector is repeated to outrank the vendored touch rule by source order. */
+  .leaflet-bar a,
+  .leaflet-touch .leaflet-bar a { width: 44px; height: 44px; line-height: 44px; }
+  /* 24px in leaflet.css. The font shorthand is respecified because it resets
+     line-height, which centres the glyph in the new 44px box. */
+  .leaflet-container a.leaflet-popup-close-button {
+    width: 44px;
+    height: 44px;
+    font: 600 16px/44px var(--mono);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
