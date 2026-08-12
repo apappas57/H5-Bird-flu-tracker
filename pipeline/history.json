@@ -1,7 +1,7 @@
 {
-  "_comment": "Hand-curated history of the H5N1 lineage. This file is the reason the history page costs nothing to run: the global historical record barely changes, so it is committed as a flat dataset rather than fetched, while the Australian part of the timeline is generated fresh from live pipeline data on every build (see buildHistory in pipeline/build.mjs). No paid or keyed API is involved, and none may be added. RULES FOR EDITING: every entry carries at least one citation with a real URL, and no entry may state a fact its citations do not support. Where a figure is approximate or sources disagree, say so in the body and set certainty to 'approximate', 'contested' or 'reported' rather than smoothing it into a clean number. Prefer an organisation's stable landing page over a deep link that may rot: a dead citation on a page whose whole purpose is credibility is worse than a shallower one. No em dashes, no emoji.",
+  "_comment": "Hand-curated history of the H5N1 lineage. This file is the reason the history page costs nothing to run: the global historical record barely changes, so it is committed as a flat dataset rather than fetched, while the Australian part of the timeline is generated fresh from live pipeline data on every build (see buildHistory in pipeline/build.mjs). No paid or keyed API is involved, and none may be added. RULES FOR EDITING: every entry carries at least one citation with a real URL, and no entry may state a fact its citations do not support. Where a figure is approximate or sources disagree, say so in the body and set certainty to 'approximate', 'contested' or 'reported' rather than smoothing it into a clean number. Every citation must point at a page that actually contains the claim it supports, never an organisation's landing page or homepage: verify the claim appears at the URL before committing it, and prefer the most stable such claim-bearing page. No em dashes, no emoji.",
   "version": 1,
-  "curated_updated": "2026-07-30",
+  "curated_updated": "2026-08-12",
   "certainty_levels": [
     { "id": "established", "label": "Well established", "note": "Reported consistently by official and scientific sources." },
     { "id": "approximate", "label": "Approximate figure", "note": "The number is a round or ranged estimate, or it changes as authorities publish updates. Check the citation for the current value." },
@@ -30,8 +30,8 @@
       "certainty": "established",
       "body": "The ancestor of every H5N1 virus discussed today was identified in domestic geese in Guangdong province, southern China, in 1996, and is referred to as A/goose/Guangdong/1/1996. All the later genetic groups, including clade 2.3.4.4b now in Australian wild birds, descend from that lineage. It has circulated continuously somewhere in the world for close to three decades.",
       "citations": [
-        { "publisher": "World Health Organization", "title": "Influenza, avian and other zoonotic", "url": "https://www.who.int/health-topics/influenza-avian-and-other-zoonotic" },
-        { "publisher": "World Organisation for Animal Health (WOAH)", "title": "Avian influenza", "url": "https://www.woah.org/en/disease/avian-influenza/" }
+        { "publisher": "World Health Organization", "title": "Influenza (avian and other zoonotic) fact sheet", "url": "https://www.who.int/news-room/fact-sheets/detail/influenza-(avian-and-other-zoonotic)" },
+        { "publisher": "Wildlife Health Australia", "title": "Technical update: global high pathogenicity avian influenza in wildlife", "url": "https://wildlifehealthaustralia.com.au/Portals/0/Incidents/HPAI_Technical_Update.pdf" }
       ]
     },
     {
@@ -45,7 +45,8 @@
       "certainty": "established",
       "body": "H5N1 infected people for the first known time in Hong Kong in 1997, causing 18 recorded cases and 6 deaths. Authorities culled the territory's entire commercial poultry population, in the order of 1.5 million birds, and the human outbreak stopped. That response is why H5N1 is treated as an animal health emergency rather than only a wildlife problem.",
       "citations": [
-        { "publisher": "World Health Organization", "title": "Influenza, avian and other zoonotic", "url": "https://www.who.int/health-topics/influenza-avian-and-other-zoonotic" }
+        { "publisher": "Clinical Infectious Diseases (Oxford Academic)", "title": "Outbreak of avian influenza A(H5N1) virus infection in Hong Kong in 1997", "url": "https://academic.oup.com/cid/article/34/Supplement_2/S58/459477" },
+        { "publisher": "United States Centers for Disease Control and Prevention", "title": "Highlights in the history of avian influenza (bird flu)", "url": "https://www.cdc.gov/bird-flu/avian-timeline/index.html" }
       ]
     },
     {
@@ -59,8 +60,9 @@
       "certainty": "established",
       "body": "From late 2003 H5N1 returned in force, causing large poultry epidemics across East and Southeast Asia and human cases in Vietnam, Thailand, Indonesia, Cambodia and China. Tens of millions of poultry died or were culled. WHO's running count of laboratory-confirmed human H5N1 cases starts from 2003 for this reason.",
       "citations": [
-        { "publisher": "World Health Organization", "title": "Disease Outbreak News", "url": "https://www.who.int/emergencies/disease-outbreak-news" },
-        { "publisher": "World Health Organization", "title": "Influenza, avian and other zoonotic", "url": "https://www.who.int/health-topics/influenza-avian-and-other-zoonotic" }
+        { "publisher": "World Health Organization", "title": "Cumulative number of confirmed human cases for avian influenza A(H5N1) reported to WHO, 2003-2026", "url": "https://www.who.int/publications/m/item/cumulative-number-of-confirmed-human-cases-for-avian-influenza-a(h5n1)-reported-to-who--2003-2026--7-july-2026" },
+        { "publisher": "United States Centers for Disease Control and Prevention", "title": "2000-2009 highlights in the history of avian influenza (bird flu) timeline", "url": "https://www.cdc.gov/bird-flu/avian-timeline/2000-2009.html" },
+        { "publisher": "World Health Organization", "title": "Influenza (avian and other zoonotic) fact sheet", "url": "https://www.who.int/news-room/fact-sheets/detail/influenza-(avian-and-other-zoonotic)" }
       ]
     },
     {
@@ -74,8 +76,8 @@
       "certainty": "approximate",
       "body": "A large die-off of wild waterbirds at Qinghai Lake in western China in 2005 was attributed to H5N1, and over the following year the virus moved west with wild birds into Russia, the Middle East, Europe and Africa. Reported bird counts for that event differ between sources, so any single figure should be read as approximate. It was the first clear sign that wild birds could carry this virus across continents rather than only catch it from poultry.",
       "citations": [
-        { "publisher": "World Organisation for Animal Health (WOAH)", "title": "Avian influenza", "url": "https://www.woah.org/en/disease/avian-influenza/" },
-        { "publisher": "World Health Organization", "title": "Influenza, avian and other zoonotic", "url": "https://www.who.int/health-topics/influenza-avian-and-other-zoonotic" }
+        { "publisher": "PubMed Central (NIH)", "title": "H5N1 avian influenza re-emergence of Lake Qinghai: phylogenetic and antigenic analyses of the newly isolated viruses and roles of migratory birds in virus circulation", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2885753/" },
+        { "publisher": "Food and Agriculture Organization of the United Nations (FAO)", "title": "Global avian influenza viruses with zoonotic potential situation update", "url": "https://www.fao.org/animal-health/situation-updates/global-aiv-with-zoonotic-potential/en" }
       ]
     },
     {
@@ -89,8 +91,8 @@
       "certainty": "established",
       "body": "Nigeria reported the first African H5N1 detection in poultry in February 2006. Through 2006 the virus was reported in poultry or wild birds across dozens of countries in Asia, Europe, the Middle East and Africa. In several countries, including Egypt and Indonesia, it then settled in and became endemic in poultry rather than being eradicated.",
       "citations": [
-        { "publisher": "World Organisation for Animal Health (WOAH)", "title": "Avian influenza", "url": "https://www.woah.org/en/disease/avian-influenza/" },
-        { "publisher": "World Organisation for Animal Health (WOAH)", "title": "WAHIS, World Animal Health Information System", "url": "https://wahis.woah.org/" }
+        { "publisher": "World Health Organization", "title": "Disease Outbreak News: avian influenza, situation (birds) in Nigeria, 8 February 2006", "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2006_02_08-en" },
+        { "publisher": "Food and Agriculture Organization of the United Nations (FAO)", "title": "EMPRES global avian influenza update, issue 31: endemic countries and poultry losses since 2003", "url": "https://www.fao.org/4/an388e/an388e.pdf" }
       ]
     },
     {
@@ -104,8 +106,7 @@
       "certainty": "established",
       "body": "Clade 2.3.4.4 was described in China around 2013. In 2014 a reassortant H5N8 virus from that clade spread out of Asia along wild bird flyways and reached Europe and North America within months. This was the pattern that later characterised clade 2.3.4.4b: long distance movement in wild birds rather than in the poultry trade.",
       "citations": [
-        { "publisher": "European Food Safety Authority (EFSA)", "title": "Avian influenza", "url": "https://www.efsa.europa.eu/en/topics/topic/avian-influenza" },
-        { "publisher": "World Organisation for Animal Health (WOAH)", "title": "Avian influenza", "url": "https://www.woah.org/en/disease/avian-influenza/" }
+        { "publisher": "Frontiers in Veterinary Science (PubMed Central)", "title": "Evolution, transmission, and pathogenicity of high pathogenicity avian influenza virus A (H5N8) clade 2.3.4.4, South Korea, 2014-2016", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9253604/" }
       ]
     },
     {
@@ -119,7 +120,7 @@
       "certainty": "approximate",
       "body": "H5N8 and H5N2 viruses caused an epizootic in United States poultry over the 2014 to 2015 winter and spring, in which roughly 50 million birds died or were culled. It was the largest animal health emergency the United States had faced to that point. The commonly cited figure is a rounded total, so treat it as approximate.",
       "citations": [
-        { "publisher": "USDA Animal and Plant Health Inspection Service", "title": "Avian influenza", "url": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza" }
+        { "publisher": "USDA Economic Research Service", "title": "The 2014-15 highly pathogenic avian influenza outbreak significantly impacted turkey and egg producers", "url": "https://www.ers.usda.gov/data-products/charts-of-note/86663" }
       ]
     },
     {
@@ -133,7 +134,8 @@
       "certainty": "established",
       "body": "Clade 2.3.4.4b, the specific genetic group behind the current global event, was described in H5N8 viruses that caused a very large European poultry and wild bird epizootic across the 2016 to 2017 season. At this stage the dominant subtype in that clade was H5N8 rather than H5N1.",
       "citations": [
-        { "publisher": "European Food Safety Authority (EFSA)", "title": "Avian influenza", "url": "https://www.efsa.europa.eu/en/topics/topic/avian-influenza" }
+        { "publisher": "EFSA, ECDC and EU Reference Laboratory for Avian Influenza", "title": "Avian influenza overview October 2016 - August 2017", "url": "https://www.ecdc.europa.eu/en/publications-data/avian-influenza-overview-october-2016-august-2017" },
+        { "publisher": "Frontiers in Veterinary Science", "title": "Highly pathogenic avian influenza H5N8 clade 2.3.4.4b in Germany in 2016/2017", "url": "https://www.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2017.00240/full" }
       ]
     },
     {
@@ -147,8 +149,8 @@
       "certainty": "established",
       "body": "Around 2020 and 2021 H5N1 reassortants within clade 2.3.4.4b displaced H5N8 and became the dominant high pathogenicity avian influenza virus in Europe and beyond. Unlike earlier waves, this one did not fade over the northern summer. Continuous year-round circulation in wild birds is what turned a series of seasonal epizootics into a panzootic.",
       "citations": [
-        { "publisher": "European Food Safety Authority (EFSA)", "title": "Avian influenza", "url": "https://www.efsa.europa.eu/en/topics/topic/avian-influenza" },
-        { "publisher": "European Centre for Disease Prevention and Control (ECDC)", "title": "Avian influenza in humans", "url": "https://www.ecdc.europa.eu/en/avian-influenza-humans" }
+        { "publisher": "EFSA, ECDC and EU Reference Laboratory for Avian Influenza", "title": "Avian influenza overview September - December 2021", "url": "https://www.ecdc.europa.eu/en/publications-data/avian-influenza-overview-september-december-2021" },
+        { "publisher": "Food and Agriculture Organization of the United Nations (FAO)", "title": "Global avian influenza viruses with zoonotic potential situation update", "url": "https://www.fao.org/animal-health/situation-updates/global-aiv-with-zoonotic-potential/en" }
       ]
     },
     {
@@ -162,8 +164,9 @@
       "certainty": "established",
       "body": "H5N1 clade 2.3.4.4b was detected in Newfoundland, Canada, in late 2021 and in the United States from January 2022, having crossed the Atlantic in wild birds. United States poultry losses since then are counted in the tens of millions of birds, with the running total published by USDA. Late 2021 is the conventional starting point for the panzootic, and this tracker uses it as the boundary for its global era grouping.",
       "citations": [
-        { "publisher": "USDA Animal and Plant Health Inspection Service", "title": "Avian influenza", "url": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza" },
-        { "publisher": "World Organisation for Animal Health (WOAH)", "title": "Avian influenza", "url": "https://www.woah.org/en/disease/avian-influenza/" }
+        { "publisher": "United States Geological Survey", "title": "Wildlife health bulletin: detection of highly pathogenic avian influenza H5N1 in an exhibition farm in Newfoundland and Labrador, Canada", "url": "https://www.usgs.gov/media/files/wildlife-health-bulletin-detection-highly-pathogenic-avian-influenza-h5n1-exhibition" },
+        { "publisher": "United States Centers for Disease Control and Prevention", "title": "2020-2024 highlights in the history of avian influenza (bird flu) timeline", "url": "https://www.cdc.gov/bird-flu/avian-timeline/2020s.html" },
+        { "publisher": "USDA Animal and Plant Health Inspection Service", "title": "Confirmations of highly pathogenic avian influenza in commercial and backyard flocks", "url": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/commercial-backyard-flocks" }
       ]
     },
     {
@@ -177,8 +180,9 @@
       "certainty": "approximate",
       "body": "The virus reached South America in late 2022 and moved down the Pacific coast through Colombia, Peru and Chile. It killed very large numbers of wild seabirds, including Peruvian pelicans, and then killed South American sea lions in the thousands to tens of thousands. Published mortality estimates vary widely between countries and surveys, so the figures should be read as estimates rather than counts.",
       "citations": [
-        { "publisher": "World Organisation for Animal Health (WOAH)", "title": "Avian influenza", "url": "https://www.woah.org/en/disease/avian-influenza/" },
-        { "publisher": "World Organisation for Animal Health (WOAH)", "title": "WAHIS, World Animal Health Information System", "url": "https://wahis.woah.org/" }
+        { "publisher": "Travel Medicine and Infectious Disease (PubMed)", "title": "Pacific and Atlantic sea lion mortality caused by highly pathogenic avian influenza A(H5N1) in South America", "url": "https://pubmed.ncbi.nlm.nih.gov/38461878/" },
+        { "publisher": "PubMed Central (NIH)", "title": "Highly pathogenic avian influenza A (H5N1) in marine mammals and seabirds in Peru", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10484921/" },
+        { "publisher": "Pan American Health Organization (PAHO/WHO)", "title": "Epidemiological update: outbreaks of avian influenza caused by influenza A(H5N1) in the Region of the Americas", "url": "https://www.paho.org/en/documents/epidemiological-update-outbreaks-avian-influenza-caused-influenza-ah5n1-region-americas" }
       ]
     },
     {
@@ -192,8 +196,9 @@
       "certainty": "established",
       "body": "H5N1 clade 2.3.4.4b was confirmed in brown skuas on South Georgia in the sub-Antarctic in October 2023, and in the Antarctic region in February 2024. Polar seabird and seal colonies are dense, long-lived and have never met this virus, which is why wildlife health bodies treat the southern spread as a conservation emergency rather than an agricultural one.",
       "citations": [
-        { "publisher": "Scientific Committee on Antarctic Research (SCAR)", "title": "SCAR, including the Antarctic Wildlife Health Network", "url": "https://scar.org/" },
-        { "publisher": "World Organisation for Animal Health (WOAH)", "title": "WAHIS, World Animal Health Information System", "url": "https://wahis.woah.org/" }
+        { "publisher": "British Antarctic Survey", "title": "Additional cases of avian flu (HPAI) confirmed on South Georgia", "url": "https://www.bas.ac.uk/media-post/additional-cases-of-avian-flu-hpai-confirmed-on-south-georgia/" },
+        { "publisher": "Frontiers in Veterinary Science (PubMed Central)", "title": "Confirmation of highly pathogenic avian influenza H5N1 in skuas, Antarctica 2024", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11660801/" },
+        { "publisher": "Scientific Committee on Antarctic Research (SCAR)", "title": "Sub-Antarctic and Antarctic HPAI monitoring project, Antarctic Wildlife Health Network", "url": "https://scar.org/library-data/avian-flu" }
       ]
     },
     {
@@ -205,10 +210,11 @@
       "category": "mammals",
       "scope": "global",
       "certainty": "established",
-      "body": "In March 2024 H5N1 clade 2.3.4.4b was confirmed in dairy cattle in Texas, the first time the virus had been found in cattle anywhere in the world. The responsible genotype, B3.13, then spread between herds across many United States states, largely through cattle movements and milking equipment rather than through birds. USDA publishes the running herd and state totals, which is where a current figure should be taken from.",
+      "body": "In March 2024 H5N1 clade 2.3.4.4b was confirmed in dairy cattle in Texas, the first time the virus had been found in cattle anywhere in the world. The responsible genotype, B3.13, then spread between herds across many United States states, largely through cattle movements rather than through birds. USDA publishes the running herd and state totals, which is where a current figure should be taken from.",
       "citations": [
-        { "publisher": "USDA Animal and Plant Health Inspection Service", "title": "Avian influenza", "url": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza" },
-        { "publisher": "USDA Animal and Plant Health Inspection Service", "title": "HPAI detections in mammals", "url": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/mammals" }
+        { "publisher": "World Health Organization", "title": "Disease Outbreak News: avian influenza A(H5N1), United States of America, 9 April 2024", "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2024-DON512" },
+        { "publisher": "United States Centers for Disease Control and Prevention", "title": "CDC confirms first severe case of H5N1 bird flu in the United States", "url": "https://www.cdc.gov/media/releases/2024/m1218-h5n1-flu.html" },
+        { "publisher": "USDA Animal and Plant Health Inspection Service", "title": "HPAI confirmed cases in livestock", "url": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/hpai-detections/hpai-confirmed-cases-livestock" }
       ]
     },
     {
@@ -222,8 +228,8 @@
       "certainty": "established",
       "body": "A Texas dairy worker was diagnosed in April 2024, the first human case anywhere linked to cattle. Dozens of further United States cases followed among dairy and poultry workers, most of them mild and many presenting as conjunctivitis rather than respiratory illness. CDC publishes the current case count and its risk assessment.",
       "citations": [
-        { "publisher": "United States Centers for Disease Control and Prevention", "title": "Avian influenza (bird flu)", "url": "https://www.cdc.gov/bird-flu/" },
-        { "publisher": "United States Centers for Disease Control and Prevention", "title": "Bird flu spotlights", "url": "https://www.cdc.gov/bird-flu/spotlights/" }
+        { "publisher": "World Health Organization", "title": "Disease Outbreak News: avian influenza A(H5N1), United States of America, 9 April 2024", "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2024-DON512" },
+        { "publisher": "United States Centers for Disease Control and Prevention", "title": "A(H5) bird flu: current situation", "url": "https://www.cdc.gov/bird-flu/situation-summary/index.html" }
       ]
     },
     {
@@ -237,7 +243,8 @@
       "certainty": "established",
       "body": "A patient in Louisiana became the first person to die of H5N1 in the United States, after exposure to sick and dead birds including backyard poultry. The case was not linked to the dairy cattle outbreak. It was a reminder that a virus producing mostly mild occupational cases can still cause severe disease.",
       "citations": [
-        { "publisher": "United States Centers for Disease Control and Prevention", "title": "Bird flu spotlights", "url": "https://www.cdc.gov/bird-flu/spotlights/" }
+        { "publisher": "United States Centers for Disease Control and Prevention", "title": "First H5 bird flu death reported in United States", "url": "https://www.cdc.gov/media/releases/2025/m0106-h5-birdflu-death.html" },
+        { "publisher": "United States Centers for Disease Control and Prevention", "title": "CDC confirms first severe case of H5N1 bird flu in the United States", "url": "https://www.cdc.gov/media/releases/2024/m1218-h5n1-flu.html" }
       ]
     },
     {
@@ -251,8 +258,8 @@
       "certainty": "approximate",
       "body": "Since 2003 WHO has recorded roughly 900 to 1,000 laboratory-confirmed human H5N1 cases worldwide and on the order of 460 to 480 deaths, across around 25 countries. That is close to half of reported cases, but the ratio is almost certainly an overestimate of true lethality, because mild infections are far less likely to be tested and counted. A range is given here deliberately: the running total changes with each WHO update, so take the current number from WHO rather than from this page.",
       "citations": [
-        { "publisher": "World Health Organization", "title": "Influenza, avian and other zoonotic", "url": "https://www.who.int/health-topics/influenza-avian-and-other-zoonotic" },
-        { "publisher": "World Health Organization", "title": "Disease Outbreak News", "url": "https://www.who.int/emergencies/disease-outbreak-news" }
+        { "publisher": "World Health Organization", "title": "Cumulative number of confirmed human cases for avian influenza A(H5N1) reported to WHO, 2003-2026", "url": "https://www.who.int/publications/m/item/cumulative-number-of-confirmed-human-cases-for-avian-influenza-a(h5n1)-reported-to-who--2003-2026--7-july-2026" },
+        { "publisher": "United States Centers for Disease Control and Prevention", "title": "First H5 bird flu death reported in United States", "url": "https://www.cdc.gov/media/releases/2025/m0106-h5-birdflu-death.html" }
       ]
     },
     {
@@ -266,8 +273,8 @@
       "certainty": "established",
       "body": "Despite three decades of circulation and hundreds of human cases, H5N1 has never been shown to transmit in a sustained way from person to person. Almost every human case has followed close contact with infected birds or, recently, infected cattle. WHO and CDC assess the risk to the general public as low, and higher for people with occupational exposure, and both reassess as the situation changes.",
       "citations": [
-        { "publisher": "World Health Organization", "title": "Influenza, avian and other zoonotic", "url": "https://www.who.int/health-topics/influenza-avian-and-other-zoonotic" },
-        { "publisher": "United States Centers for Disease Control and Prevention", "title": "Avian influenza (bird flu)", "url": "https://www.cdc.gov/bird-flu/" }
+        { "publisher": "World Health Organization", "title": "Influenza (avian and other zoonotic) fact sheet", "url": "https://www.who.int/news-room/fact-sheets/detail/influenza-(avian-and-other-zoonotic)" },
+        { "publisher": "United States Centers for Disease Control and Prevention", "title": "A(H5) bird flu: current situation", "url": "https://www.cdc.gov/bird-flu/situation-summary/index.html" }
       ]
     },
     {
@@ -281,8 +288,8 @@
       "certainty": "reported",
       "body": "In poultry, high pathogenicity avian influenza is controlled by culling, movement restrictions and biosecurity, and outbreaks are routinely eradicated. In wild birds there is no equivalent tool, and international experience since 2021 is that once clade 2.3.4.4b establishes itself in a region's wild birds it stays. Response then shifts to surveillance, protecting high-priority species, and keeping the virus out of poultry.",
       "citations": [
-        { "publisher": "World Organisation for Animal Health (WOAH)", "title": "Avian influenza", "url": "https://www.woah.org/en/disease/avian-influenza/" },
-        { "publisher": "Wildlife Health Australia", "title": "H5 bird flu resource centre", "url": "https://wildlifehealthaustralia.com.au/Resource-Centre/H5-bird-flu" }
+        { "publisher": "Australian Government Department of Agriculture, Fisheries and Forestry", "title": "Bird flu (avian influenza) frequently asked questions", "url": "https://www.agriculture.gov.au/biosecurity-trade/pests-diseases-weeds/animal/avian-influenza/faq" },
+        { "publisher": "Wildlife Health Australia", "title": "Incident: H5N1 high pathogenicity avian influenza (H5 bird flu) in wild birds, Australia, ongoing", "url": "https://wildlifehealthaustralia.com.au/Incidents/Incident-Information/incident-h5n1-high-pathogenicity-avian-influenza-h5-bird-flu-in-wild-birds-australia-ongoing" }
       ]
     },
     {
@@ -296,7 +303,8 @@
       "certainty": "established",
       "body": "Influenza A viruses are named for two surface proteins, haemagglutinin (H) and neuraminidase (N), so H5N1 and H7N3 are separate viruses rather than variants of a single one. Australia's poultry outbreaks in 2024 and 2025 were H7, specifically H7N3, H7N8 and H7N9, and they were eradicated. They have no epidemiological connection to the H5N1 clade 2.3.4.4b now in Australian wild birds, which is why this tracker counts the two separately and never adds them together.",
       "citations": [
-        { "publisher": "Australian Government, outbreak.gov.au", "title": "High pathogenicity avian influenza", "url": "https://www.outbreak.gov.au/emerging-risks/high-pathogenicity-avian-influenza" },
+        { "publisher": "CSIRO", "title": "Supporting the fight against the 2024 H7 bird flu outbreaks in Australia", "url": "https://www.csiro.au/en/research/animals/veterinary/AvianInfluenza_H7Outbreaks_2024" },
+        { "publisher": "Australian Government Department of Agriculture, Fisheries and Forestry", "title": "Australia free from high pathogenicity avian influenza in poultry", "url": "https://www.agriculture.gov.au/about/news/h7-eradication-successful" },
         { "publisher": "World Organisation for Animal Health (WOAH)", "title": "Avian influenza", "url": "https://www.woah.org/en/disease/avian-influenza/" }
       ]
     },
@@ -311,8 +319,8 @@
       "certainty": "established",
       "body": "Australia has had a series of high pathogenicity avian influenza outbreaks in commercial poultry since the 1970s, and all of them were H7 subtypes, and all of them were eradicated. The accepted explanation is different from an incursion of H5: a low pathogenicity virus carried harmlessly by wild waterbirds enters a poultry flock and mutates to a high pathogenicity form there. That is why Australia had decades of outbreak experience and still had never recorded H5N1 before June 2026.",
       "citations": [
-        { "publisher": "Australian Government, outbreak.gov.au", "title": "High pathogenicity avian influenza", "url": "https://www.outbreak.gov.au/emerging-risks/high-pathogenicity-avian-influenza" },
-        { "publisher": "Wildlife Health Australia", "title": "H5 bird flu resource centre", "url": "https://wildlifehealthaustralia.com.au/Resource-Centre/H5-bird-flu" }
+        { "publisher": "Wildlife Health Australia", "title": "Technical update: global high pathogenicity avian influenza in wildlife", "url": "https://wildlifehealthaustralia.com.au/Portals/0/Incidents/HPAI_Technical_Update.pdf" },
+        { "publisher": "Australian Government Department of Agriculture, Fisheries and Forestry", "title": "About bird flu", "url": "https://www.agriculture.gov.au/biosecurity-trade/pests-diseases-weeds/animal/avian-influenza/about" }
       ]
     },
     {
@@ -326,8 +334,9 @@
       "certainty": "reported",
       "body": "Until June 2026 Australia and New Zealand were widely described as the last populated parts of the world that clade 2.3.4.4b had not reached, having been spared while the virus circled the Americas, Europe, Africa, Asia and the Antarctic. A possible incursion at sub-Antarctic Heard Island, an Australian external territory, was reported in late 2025 and is not counted in the mainland figures on this site. Australian agencies had been preparing for arrival for several years before it happened.",
       "citations": [
-        { "publisher": "Wildlife Health Australia", "title": "H5 bird flu resource centre", "url": "https://wildlifehealthaustralia.com.au/Resource-Centre/H5-bird-flu" },
-        { "publisher": "Australian Government, outbreak.gov.au", "title": "High pathogenicity avian influenza", "url": "https://www.outbreak.gov.au/emerging-risks/high-pathogenicity-avian-influenza" }
+        { "publisher": "Wildlife Health Australia", "title": "Technical update: global high pathogenicity avian influenza in wildlife", "url": "https://wildlifehealthaustralia.com.au/Portals/0/Incidents/HPAI_Technical_Update.pdf" },
+        { "publisher": "Australian Government ministers for agriculture and the environment", "title": "Joint media release: confirmation of H5 bird flu on sub-Antarctic Heard Island, 25 November 2025", "url": "https://minister.agriculture.gov.au/collins/media-release/joint-media-release-confirmed-H5-bird-flu-on-heard-island-sub-antarctic" },
+        { "publisher": "Australian Government Department of Agriculture, Fisheries and Forestry", "title": "Government action on bird flu", "url": "https://www.agriculture.gov.au/biosecurity-trade/pests-diseases-weeds/animal/avian-influenza/government-action" }
       ]
     },
     {
