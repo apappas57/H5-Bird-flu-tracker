@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T07:34:40.392Z",
+  "generated_at": "2026-08-12T07:49:53.414Z",
   "version": 1,
   "curated_updated": "2026-08-12",
   "entries_order": "ascending by sort_date, oldest first",
@@ -74,7 +74,7 @@
     "curated": 23,
     "generated": 8,
     "dropped": 0,
-    "citations": 51,
+    "citations": 60,
     "by_category": {
       "emergence": 4,
       "human_health": 7,
