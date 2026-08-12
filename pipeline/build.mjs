@@ -19,6 +19,7 @@ import { fetchHumanContext } from './sources/owid-human.mjs';
 // main() the way fetchHumanContext is, and surfaced separately in the summary.
 import { fetchOfficialAuStatus, officialGap, AU_OFFICIAL_SOURCES } from './sources/au-official.mjs';
 import { auNewsSignalCheck, NEWS_SIGNAL } from './sources/au-news-signal.mjs';
+import { splitDetections } from './split-detections.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = resolve(__dirname, '../site/data');
@@ -325,6 +326,9 @@ async function main() {
   const summary = buildSummary(records, results, mode, humanContext, auStatus, official, newsSignal, coverage);
   writeFileSync(DETECTIONS, JSON.stringify(records));
   writeFileSync(SUMMARY, JSON.stringify(summary, null, 2));
+  // Per-region split of the same records, so the site can lazy-load by region.
+  const split = splitDetections(records, DATA_DIR);
+  log(`split detections: ${Object.entries(split.regions).map(([k, v]) => `${k}=${v.count}`).join(', ')}`);
   log(`wrote ${records.length} records, mode=${mode}`
     + `, australia published ${summary.au.total} (${summary.data_coverage.australia.status})`);
   log(`news: ${summary.coverage_signal ? summary.coverage_signal.headlines.length : 0} headline(s) published`
@@ -719,9 +723,9 @@ function generateAustralianHistory(records, summary, auStatus, official) {
       if (c && !seen.has(c.url)) { seen.add(c.url); citations.push(c); }
     }
     citations.push({
-      publisher: 'Australian Government, outbreak.gov.au',
-      title: 'High pathogenicity avian influenza',
-      url: 'https://www.outbreak.gov.au/emerging-risks/high-pathogenicity-avian-influenza',
+      publisher: 'Australian Government Department of Agriculture, Fisheries and Forestry',
+      title: 'Australia free from high pathogenicity avian influenza in poultry',
+      url: 'https://www.agriculture.gov.au/about/news/h7-eradication-successful',
     });
     const states = Object.keys(h7.state_counts || {});
     out.push({

@@ -76,6 +76,10 @@ const REGION_VIEW = {
 };
 const REGION_KEYS = ['au', 'global', 'us'];
 const REGION_COUNTRY = { au: 'Australia', us: 'United States' };
+/* The pipeline splits detections.json by region into data/detections/, so the
+ * default Australian view downloads only the Australian records. Which split
+ * files each view needs; the global view is every bucket. */
+const REGION_FILES = { au: ['au'], us: ['us'], global: ['au', 'us', 'row'] };
 /* Plain words for the region, for a spoken announcement. The buttons carry the
  * letterspaced uppercase label; read aloud, uppercase is unreliable. */
 const REGION_WORD = { au: 'Australia', global: 'World', us: 'United States' };
@@ -1647,7 +1651,18 @@ function wire() {
     state.shown = 50;
     setPressed('#regionBtns', b);
     focusRegion(state.region);
-    render();
+    /* The region's records may not be loaded yet. render() always draws
+     * state.region, so a late resolution after further clicks stays correct. */
+    ensureRegionData(state.region).then(render, (err) => {
+      /* Even the whole-file fallback failed: say so rather than presenting a
+       * partial view as the region. Never the live-incursion treatment. */
+      console.error(err);
+      const bn = $('#banner');
+      bn.hidden = false;
+      bn.innerHTML = '<div class="wrap"><p><strong>Some detection data did not load.</strong> The view below may be '
+        + 'missing records. Please try again shortly.</p></div>';
+      render();
+    });
   });
 
   $('#categoryBtns').addEventListener('click', (e) => {
@@ -1707,6 +1722,70 @@ function wire() {
   });
 }
 
+/* ------------------------------------------------------------- data loading */
+
+function fetchJson(url) {
+  return fetch(url).then((r) => {
+    if (!r.ok) throw new Error(url + ': HTTP ' + r.status);
+    return r.json();
+  });
+}
+
+/* Detection records arrive lazily, one per-region file at a time, appended to
+ * state.all as they land. Each file is fetched once; a failed fetch may be
+ * retried on the next region switch. If the split is missing altogether (an
+ * older deploy, or a CDN still holding one), the whole detections.json is
+ * fetched once instead and stands in for every region. */
+const loadedParts = new Set();
+const partFetches = new Map();
+let indexFetch = null;
+let wholeFetch = null;
+
+function loadWholeDetections() {
+  if (!wholeFetch) {
+    wholeFetch = fetchJson('data/detections.json').then((det) => {
+      state.all = Array.isArray(det) ? det : [];
+      REGION_FILES.global.forEach((p) => loadedParts.add(p));
+    }).catch((err) => {
+      wholeFetch = null;
+      throw err;
+    });
+  }
+  return wholeFetch;
+}
+
+function loadPart(part) {
+  if (loadedParts.has(part)) return Promise.resolve();
+  if (!partFetches.has(part)) {
+    const p = fetchJson('data/detections/' + part + '.json').then((recs) => {
+      /* The whole-file fallback may have landed while this was in flight;
+       * appending on top of it would duplicate every record in this bucket. */
+      if (wholeFetch || loadedParts.has(part)) return;
+      loadedParts.add(part);
+      state.all = state.all.concat(Array.isArray(recs) ? recs : []);
+    }).catch((err) => {
+      partFetches.delete(part);
+      throw err;
+    });
+    partFetches.set(part, p);
+  }
+  return partFetches.get(part);
+}
+
+/* Resolves once every record the region's view needs is in state.all. The
+ * index is fetched first: it is the probe that this build published the split
+ * at all, and it carries the per-region counts and bounds. */
+async function ensureRegionData(region) {
+  try {
+    if (!indexFetch) indexFetch = fetchJson('data/detections/index.json');
+    await indexFetch;
+    await Promise.all((REGION_FILES[region] || REGION_FILES.global).map(loadPart));
+  } catch (err) {
+    console.error(err);
+    await loadWholeDetections();
+  }
+}
+
 /* ---------------------------------------------------------------------- boot */
 
 async function boot() {
@@ -1715,12 +1794,11 @@ async function boot() {
   wire();
   ensureLiveRegion();
   try {
-    const [sum, det] = await Promise.all([
-      fetch('data/summary.json').then((r) => r.json()),
-      fetch('data/detections.json').then((r) => r.json()),
+    const [sum] = await Promise.all([
+      fetchJson('data/summary.json'),
+      ensureRegionData(state.region),
     ]);
     state.summary = sum;
-    state.all = Array.isArray(det) ? det : [];
     buildControls();
     renderCategoryKey();
     renderMeta();
