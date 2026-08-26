@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T07:06:42.897Z",
+  "generated_at": "2026-08-26T07:06:56.764Z",
   "version": 1,
   "curated_updated": "2026-08-12",
   "entries_order": "ascending by sort_date, oldest first",
@@ -70,11 +70,11 @@
     }
   ],
   "counts": {
-    "total": 31,
+    "total": 32,
     "curated": 23,
-    "generated": 8,
+    "generated": 9,
     "dropped": 0,
-    "citations": 60,
+    "citations": 61,
     "by_category": {
       "emergence": 4,
       "human_health": 7,
@@ -82,7 +82,7 @@
       "mammals": 2,
       "polar": 1,
       "subtype_distinction": 3,
-      "australia": 8
+      "australia": 9
     }
   },
   "entries": [
@@ -814,7 +814,7 @@
       "category": "australia",
       "scope": "australia",
       "certainty": "established",
-      "body": "As at 9am AEST, 1 August 2026, the Australian Government reported 52 confirmed or presumed positive detections of H5 bird flu in Australia (South Australia 38, Western Australia 10, New South Wales 2, Victoria 1, Queensland 1). This site individually maps 69 current detections, which is not a subset of that tally: the two figures are different measurements, and each can hold an event the other does not yet. The mapped points follow WOAH notification, which lags by about a fortnight, and the official count follows the Commonwealth's own updates. Both are published rather than reconciled into one.",
+      "body": "As at 9am AEST, 1 August 2026, the Australian Government reported 52 confirmed or presumed positive detections of H5 bird flu in Australia (South Australia 38, Western Australia 10, New South Wales 2, Victoria 1, Queensland 1). This site individually maps 78 current detections, which is not a subset of that tally: the two figures are different measurements, and each can hold an event the other does not yet. The mapped points follow WOAH notification, which lags by about a fortnight, and the official count follows the Commonwealth's own updates. Both are published rather than reconciled into one.",
       "citations": [
         {
           "publisher": "Australian Government Department of Agriculture, Fisheries and Forestry",
@@ -829,6 +829,26 @@
       ],
       "origin": "generated",
       "generated_from": "live Commonwealth tally"
+    },
+    {
+      "id": "au-first-tas",
+      "sort_date": "2026-08-14",
+      "date_display": "14 August 2026",
+      "date_precision": "day",
+      "title": "First detection in Tasmania",
+      "category": "australia",
+      "scope": "australia",
+      "certainty": "established",
+      "body": "The first detection in Tasmania in the current H5N1 incursion, dated 14 August 2026. Brown skua (Stercorarius antarcticus), Burgess Cove. The source did not state a confirmation status.",
+      "citations": [
+        {
+          "publisher": "FAO EMPRES-i+: Australia (WOAH/WAHIS)",
+          "title": "First Tasmania detection",
+          "url": "https://empres-i.apps.fao.org/"
+        }
+      ],
+      "origin": "generated",
+      "generated_from": "first current-incursion record for this state"
     }
   ]
 }
