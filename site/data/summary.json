@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T12:39:54.930Z",
+  "generated_at": "2026-08-30T11:51:55.301Z",
   "latest_event": "2026-08-23",
   "mode": "live",
   "mode_note": null,
@@ -60,7 +60,7 @@
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 70,
+    "days_since_first_detection": 71,
     "latest_detection": "2026-08-23"
   },
   "eras": {
@@ -169,8 +169,8 @@
       "au_h7_poultry_2024_2025": 20,
       "au_human_2024": 1,
       "global_h5_panzootic": 2456,
-      "other_subtype": 47,
-      "subtype_unstated": 271
+      "other_subtype": 44,
+      "subtype_unstated": 270
     }
   },
   "au_eras": {
@@ -598,7 +598,7 @@
     "wild_bird_detections": 78,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 70,
+    "days_since_first_detection": 71,
     "human_cases_au": 1
   },
   "human_context": {
@@ -712,7 +712,7 @@
     "notes": [],
     "from_last_good": true,
     "last_good_fetched_at": "2026-08-01T02:26:35.539Z",
-    "last_good_age_days": 28
+    "last_good_age_days": 29
   },
   "official_gap": {
     "behind": false,
@@ -760,10 +760,16 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 99 headlines, detection signal in 1 (SA); no coverage gaps detected",
+    "note": "google news 14d: 98 headlines, detection signal in 1 (SA); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 40,
     "headlines": [
+      {
+        "date": "2026-08-29",
+        "outlet": "SMH.com.au",
+        "title": "Deadly bird flu could decimate our wildlife. Experts say we’re doing almost nothing to stop it",
+        "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQbmRfaWJuMTE4eXBkVll3V2hLbTZmNW1oemIzQ0dtUjE0TmZ5RzBDVk5ISWljRmJIamJ0WS1zVmJudzhxdFVUY2ZvQ1ZXSjVqNjBRdEt3TFZrRlUwUE9hNkNWcnRGOTBPZ2VoNEVSZXlTRUwya0oyY291QzFhU0FFTTY5ZjhGdWRxQ1QydXFSU0pVZ1J0d29FbHVRWXg5MEJpNkRVb1dMMVFFeUNjNUVrWG4yWW9lWUE4SVVGWG9OUkUxSXNxNmpfRWVNWk85a09pUFFzSzRISVNKcDJJTHJoTFUwMEJlczN6dVFlSmhHdTdjNE4x?oc=5"
+      },
       {
         "date": "2026-08-29",
         "outlet": "Nine.com.au",
@@ -773,7 +779,7 @@
       {
         "date": "2026-08-29",
         "outlet": "SBS",
-        "title": "How bird flu could spread among Australia's mammals, and what it means for your pets",
+        "title": "What we know as Australia's bird flu outbreak enters a grim new chapter",
         "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1hMHZReEgxeGxuUGw2WjVuMHRjM1BHbXA5T3lGUVdnaU9jT29lVmFuSU9FMlgyaU9lNUloREs5ZnNlMjZkVGpLaXVJekFyS2R4Tjl4ZzhiM2p0WVhNTTBCbDBFQjREUjRnLUJwSVBGTExjVnR6a3NQM1VzekQ?oc=5"
       },
       {
@@ -829,12 +835,6 @@
         "outlet": "The Guardian",
         "title": "Afternoon Update: Anxious wait as Australians remain missing in Nepal, dolphin dies from bird flu, and The Full Monty",
         "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQMU5BMlBhUnhjYkFyTzg4bjlySnk4eXJvaU14Nkc3eVhBRWpkZ2RUbmNvQ0F2TmxUUHFfN3FlcjVLbFQxU1QtY1A3OXk5MGNwQXRXZ0FFRkpLaE9CX0I3Sl85dHBpcERnMnFiN0RVTW15dDRtVjNmV0Z5ZFZfN1MtRTEycElPd2F2bjYxWEx3?oc=5"
-      },
-      {
-        "date": "2026-08-28",
-        "outlet": "Anadolu Ajansı",
-        "title": "Bird flu threat forces Australia to pull researchers from sub-Antarctic island",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxON0cwT1FpNTNZQ183U3dzbW1vdFpDamNlREFGUldMbGl1enU0em9VZGRid0VUZHg5QUdUclNFbWFlRzZGcG0yZEl1cFJKd0JrWldtSjluQUxsRTFwRFZxclR4aEUzR2VYd0lCNUFRa0VYZDZHVnBjSnZNZ0tEMjR1NF92a1g4ZGtlTFExMFdiTFJCTmx6VDJDbkRHZVdXb1Z4aGk0RnlJR0RJMXgzTk5fRmhJbU1yTU5zZ25zWnFNVy00dw?oc=5"
       }
     ],
     "headlines_window_days": 14,
@@ -849,20 +849,20 @@
     "gaps": []
   },
   "totals": {
-    "total_events": 2873,
+    "total_events": 2869,
     "human_cases": 9,
-    "poultry_events": 151,
+    "poultry_events": 150,
     "poultry_birds_affected": 0,
     "dairy_events": 17,
-    "wild_bird_events": 2694,
+    "wild_bird_events": 2691,
     "mammal_events": 2,
     "countries_affected": 33,
     "us_states_affected": 47,
     "au_states_affected": 7
   },
   "by_category": {
-    "wild_bird": 2694,
-    "poultry": 151,
+    "wild_bird": 2691,
+    "poultry": 150,
     "dairy": 17,
     "mammal": 2,
     "human": 9
@@ -871,23 +871,23 @@
     "Australia": 99,
     "New Zealand": 3,
     "Norway": 12,
-    "the United Kingdom of Great Britain and Northern Ireland": 3,
     "Denmark": 2,
+    "the United Kingdom of Great Britain and Northern Ireland": 3,
     "Sweden": 2,
+    "United States": 2522,
     "Portugal": 2,
-    "United States": 2525,
     "Netherlands": 36,
     "Brazil": 3,
-    "Finland": 1,
     "Germany": 39,
+    "Finland": 1,
+    "Peru": 38,
     "Honduras": 8,
-    "Peru": 39,
     "Vietnam": 32,
     "Poland": 2,
     "Chile": 2,
     "Austria": 1,
-    "Ecuador": 1,
     "Togo": 5,
+    "Ecuador": 1,
     "Mexico": 5,
     "Nepal": 32,
     "Philippines": 7,
@@ -903,8 +903,8 @@
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2873,
-    "United States": 2525,
+    "Global": 2869,
+    "United States": 2522,
     "Australia": 99
   },
   "sources": [
@@ -915,7 +915,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 98,
-      "note": "fao(Australia) 2024-01-01..2026-08-29: 99 rows -> 98 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-08-30: 99 rows -> 98 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -923,8 +923,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 349,
-      "note": "fao(all) 2026-05-31..2026-08-29: 353 rows -> 349 records (4 skipped)"
+      "records": 348,
+      "note": "fao(all) 2026-06-01..2026-08-30: 351 rows -> 348 records (3 skipped)"
     },
     {
       "key": "us-wild-birds",
@@ -932,8 +932,8 @@
       "region": "United States",
       "homepage": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/wild-bird-surveillance-dashboard",
       "status": "live",
-      "records": 2493,
-      "note": "usda wild-bird: 2493 features -> 2493 records (H5/H7, 365d)"
+      "records": 2490,
+      "note": "usda wild-bird: 2490 features -> 2490 records (H5/H7, 365d)"
     }
   ],
   "context_sources": [
