@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T11:51:55.301Z",
+  "generated_at": "2026-08-31T13:44:24.707Z",
   "latest_event": "2026-08-23",
   "mode": "live",
   "mode_note": null,
@@ -60,7 +60,7 @@
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 71,
+    "days_since_first_detection": 72,
     "latest_detection": "2026-08-23"
   },
   "eras": {
@@ -170,7 +170,7 @@
       "au_human_2024": 1,
       "global_h5_panzootic": 2456,
       "other_subtype": 44,
-      "subtype_unstated": 270
+      "subtype_unstated": 260
     }
   },
   "au_eras": {
@@ -598,7 +598,7 @@
     "wild_bird_detections": 78,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 71,
+    "days_since_first_detection": 72,
     "human_cases_au": 1
   },
   "human_context": {
@@ -712,7 +712,7 @@
     "notes": [],
     "from_last_good": true,
     "last_good_fetched_at": "2026-08-01T02:26:35.539Z",
-    "last_good_age_days": 29
+    "last_good_age_days": 30
   },
   "official_gap": {
     "behind": false,
@@ -760,10 +760,52 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 98 headlines, detection signal in 1 (SA); no coverage gaps detected",
+    "note": "google news 14d: 97 headlines, detection signal in 2 (SA, QLD); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 40,
     "headlines": [
+      {
+        "date": "2026-08-31",
+        "outlet": "Western Sydney University",
+        "title": "Bird flu could compound pressures on Australia’s native wildlife, expert warns",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOSE8xWklqbUk3RkZwamtTd0VzNWVISTg3S2plT2NrZlBDa210TF9XMGI1TzloWk8wbFNBWjRwdGFqcGtNMlphdHI0WEYzM01mWGlhcTJtSkVjbFR1dmtfNEhHMmsxWGEzNzk3N0Z3Z01HdEd4WEhac1JlYjB6OERmc0pQWlFBeGpsTkY5aXFrRGhVSlVxUDFYM0N0bm1keE92VDhXV1NoUkxnTG51Um9FVENza3dCbUtjSUpxaHVVR0lhQ1NYU3VTYS1JNjhUcDZX?oc=5"
+      },
+      {
+        "date": "2026-08-31",
+        "outlet": "Sheep Central",
+        "title": "Bird flu, foxes and sheep – no need for alarm",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9OWHFQU3lSQmkyRUZPMHlsNkZteEFwVVJ2RVU2MXNQcHI0b1hEbEp2OHFsUUFwTUUxLWdPV2RvTHF2My1vZmVRQ3ExdkpTQmdZZXhob05QLS1ncm9YS204cGE4c3VmdGJXRm45Mkhzbm10c21xTEdIZFFJU2w?oc=5"
+      },
+      {
+        "date": "2026-08-31",
+        "outlet": "The Conversation",
+        "title": "What happens next with bird flu? An expert explains why monitoring matters",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNSWV2aTdPcUhTRUZ4R21Dc2pUcjFrOFVWaVZ6ZFcyUl9ld3Y1Xy00UnFnRkRZV2UwT2o2eU91bTBzQmRVZWNJTDV0c2gtcVdMMVdLNGZKZWgzZlVyMTJyVTZfcWVINGtfRFA3T3dDSlZNYkJ3c0xRa2pqdDVNOEtEM2Fwb2kzVUdsN1cyVlFlTXdfRnZhWEdFOFNsSFdzVXlqSEFsSTVHakRGUmxq?oc=5"
+      },
+      {
+        "date": "2026-08-31",
+        "outlet": "Independent Australia",
+        "title": "Australia’s bird flu crisis exposes dangerous gaps in wildlife protection",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOckVDZHByd3htQ1Z3NEw3UUxXeWNLMWxjUW10ZWQ4U3NkZ2x2SVJIb1B1Vnh6SkgwVk9ZWEg4SDhiZHNzTnNYYW1xTmVubHBjajYxMmVyUHlSS0MxTjZiTk9PZ1VhbEdqSlBYQkVuTE9UTV8weU5VNDRqSGRZdlhLdmppUTd6Z1VCVTZmM2o4QW40QzhPaGhCUzNpbHBEWnBJbm05ajRSeVVuLWVzZ1ZyUDNpVlNOSFk0Vms2aENlUU1pZUFNUUl1LWhrNV9wUjJ2eHV3?oc=5"
+      },
+      {
+        "date": "2026-08-31",
+        "outlet": "Fremantle Shipping News",
+        "title": "The H5N1 Bird Flu Challenge – Chooks or Wildlife?",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOaG5KT29DS2Y0TGdGdnhtdkhDSkx6cFl2dnhEbEFaX0sydHZyM1p3Z19FT0VaMVAzRlVnempuUGFBRUx2dFNIY28yZ05PS3dUMTItZDAtU1BFZjZELW9UN2pVYkZRNXd5dHRoVnRlTkdQLTJvZG9WT25vTnFWTzNKaUFvSUlKRDFrT2liUUtSbndMTmFtR0dvQWtZYw?oc=5"
+      },
+      {
+        "date": "2026-08-31",
+        "outlet": "Mirage News",
+        "title": "Funding Boost For H5 Bird Flu Response 31 August",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQY0xNODVreGdid3QzdFQxZjVmZTNxcjZYM0FWVnNwbmxSLTRnVXNDNVJselJtc0hKNlFTSFdvMFVvQ2d1YjFudVJGQ3V1Q1l4LXNMM1FPZzRiTlhSSjBKRl80dWZDUFJBSzZkbEZlY3VtOEMzaUxzUU5uWTBLM0hmZWpZeWRfUURTLWFvWg?oc=5"
+      },
+      {
+        "date": "2026-08-30",
+        "outlet": "The Mandarin",
+        "title": "Suburban fox first Australian land mammal to test positive to H5 bird flu",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQVkI5WXFxbEZaWGdtWGNIYXk4eUEzOE8tODBWbEduYVBMZ2g0bHhfTUNnX2Y5QkNsMjNoTGNtQlVxazNaYmxqWUMycEw1UmNNa0k1ckc3enBRT2ZDWTRNVGZER0xCeWFPZ0ZDVVVKbklKSXVCcUtKaHAtZHZ4dFFHeDBQc0pYLTkxd2ZGRllFdU5rTTNDUnlubi1RTmd3QzVzRGk4MW9iT3RveXBTMjNCOWZR?oc=5"
+      },
       {
         "date": "2026-08-29",
         "outlet": "SMH.com.au",
@@ -793,48 +835,6 @@
         "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
         "title": "Pigeon race still on in Victoria's west despite bird flu outbreak",
         "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQR3UweXJ2ZmdsajRPUTZZVDBLUWUteUxVMDdIbXl3RW81NGdsdFhXaGpGelpKYnRma1oxbFAxQWRmSXVlMDNuTS1XSFplUWpmcDRtai1sYmpBMGpRY0lxVFRkNkNrVGlkbjJMVmlSSUppcFdLTnh3bTE3ajVHRi1MR2M0Z21UY2JmQTI5cUVrUGpTMUs1Ti1MUDdKV2xvVWlYanJOcjVPLUxWdE9xYWFybTZB?oc=5"
-      },
-      {
-        "date": "2026-08-28",
-        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
-        "title": "Cost of chicken to rise soon, even if bird flu doesn't spread",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxObnhFVzItTklyMnRNSW51UjhjXzNXUzhDeDV2SE80OHNLTGlMX19IdFBsMnlaMnlwR3FKclh4a1pDX3JKWnNaREtPc01GN1p5ZTEtcV8tMFFPX2FMUXNSSlZXSHZLbzdqSlJxMkM2c2RLb3UyQXFIUmNmcU1lUkxLUkpoRTU2NlYwemJ5cE9zZDQ3ZktKSFFDbWdiYw?oc=5"
-      },
-      {
-        "date": "2026-08-28",
-        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
-        "title": "'Pretty overwhelming': The 23 species in Australia hit by bird flu so far",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdU9MR24zQ0Jtc2FxekNGSzJiM0dDVllZM2NmQjA4YmJZeXNKQW5wYlJ0akNUZ283SE5BQVY5UGRqZE1DZmthZ3IwTzAzZnltNzdoX2FYRG51Z3NBSDRCUVNWampzZFVaTUZPd1FRTUNDNnA0Zm15a2lDcWxWZ2lzVnhqV1dtSDZBYzNZMERWeHl4cldCVlBVZFZTS0QyT1hPMXFyWW1rcVJyb2ZP?oc=5"
-      },
-      {
-        "date": "2026-08-28",
-        "outlet": "The Australian",
-        "title": "Dolphin washes up dead with bird flu in Australian first",
-        "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQcFRfcVBqUU1iZGwwaVN5eUdkdDB0LTkyQzRoSURCbE1nVG04aVBlUlNIWjhZSnFjRmdWaFRCZG9qRThILU9vbkstWkU3SVVoUnJiNElrWEVBNTRwZGJhcVZ5cFVTR3dGSzFBc2phS1hTX0lpS0pBSTc4UFA2UlE2UlJIMEstM0xtWDBwUzFQdnhlSk9NaWlzTXd6WnJ1Q2dMRDFocUUxZms1VHM2cno1alc1cWpzSUIyaXB6VGJBRS15cEZFYXFaNjQ1SWJMOXpOMEl5am9tN0J0dnA5Z2NEZWNzYWxlNGluNGfSAe8BQVVfeXFMT3Zsb3QwSzlHaHpxcGtIUXNMN1phelVoQlB2bHdRZlhncy1PTGVHQWZiUkdGV05WZ0xyWDNycVpJOHBUYUJOZ2tBRFFDN1g5c1RRNjV3LUF1RjNxaG9LUmE1MXNTa3o1U0ZFNk1MTkZ2SWRGU0ZQYU0wVDRLcTJyZnpxaVQ2ODN6XzdEWHJOc0JCbW9hOUhjenJhME14dVdydUU4d2d1bXhMZHlxN0w4LWZ6NjVrSkt3WTJMa0N4YnQ2MGhGdnN2ekVwaWdBV05rNXU5bUpwempGT3dUMl92Y2JRa3QxM2RXRXhuSUNxZ00?oc=5"
-      },
-      {
-        "date": "2026-08-28",
-        "outlet": "TRT World",
-        "title": "Australia pulls researchers from sub-Antarctic island over bird flu threat",
-        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE05eDlkd2tYaWVVUXVLeTNSR0k2WElYSXpSdi00eG5UalVyRFljNjJoWmVvenJPelZJR1NrSzVzZ2xFMHF6X2ZBWHZqc0dyZWl6Mmg4TllySkI?oc=5"
-      },
-      {
-        "date": "2026-08-28",
-        "outlet": "Phys.org",
-        "title": "Australia to evacuate sub-Antarctic research base over bird flu fears",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9JU0hMZXA2c2NhZjhmaVotNG1YUzhKS1FPMkRhMkNkT2o3ZVR6TWhteTQ4QUg3YTdEMzJid2QzNlRnMFQyd3A4aWRvVnU0WXQ4RTV2T21PV0FUZlNxVUw4cF81M1pTTm5PVk1QdjZsalRBVmVZYmlBcExVMERGZw?oc=5"
-      },
-      {
-        "date": "2026-08-28",
-        "outlet": "Phys.org",
-        "title": "Bird flu detected in dead dolphin in South Australia",
-        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9kYmxMb3RhOUFaNW55M0ZqN0hzY1MyWkFhRnFpdmpuQ1NBTElzVk92Ql9tLVMwa3c1RDdaTHVjQkgzeWZPLVBvdHU5dzE3dlNhbDZLaXhQRU5vS3lYSEFKVmhWZGJqeG9FOFBLR21Raw?oc=5"
-      },
-      {
-        "date": "2026-08-28",
-        "outlet": "The Guardian",
-        "title": "Afternoon Update: Anxious wait as Australians remain missing in Nepal, dolphin dies from bird flu, and The Full Monty",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQMU5BMlBhUnhjYkFyTzg4bjlySnk4eXJvaU14Nkc3eVhBRWpkZ2RUbmNvQ0F2TmxUUHFfN3FlcjVLbFQxU1QtY1A3OXk5MGNwQXRXZ0FFRkpLaE9CX0I3Sl85dHBpcERnMnFiN0RVTW15dDRtVjNmV0Z5ZFZfN1MtRTEycElPd2F2bjYxWEx3?oc=5"
       }
     ],
     "headlines_window_days": 14,
@@ -849,20 +849,20 @@
     "gaps": []
   },
   "totals": {
-    "total_events": 2869,
+    "total_events": 2859,
     "human_cases": 9,
-    "poultry_events": 150,
+    "poultry_events": 145,
     "poultry_birds_affected": 0,
     "dairy_events": 17,
-    "wild_bird_events": 2691,
+    "wild_bird_events": 2686,
     "mammal_events": 2,
     "countries_affected": 33,
     "us_states_affected": 47,
     "au_states_affected": 7
   },
   "by_category": {
-    "wild_bird": 2691,
-    "poultry": 150,
+    "wild_bird": 2686,
+    "poultry": 145,
     "dairy": 17,
     "mammal": 2,
     "human": 9
@@ -870,16 +870,16 @@
   "by_country": {
     "Australia": 99,
     "New Zealand": 3,
-    "Norway": 12,
+    "Norway": 11,
     "Denmark": 2,
     "the United Kingdom of Great Britain and Northern Ireland": 3,
     "Sweden": 2,
-    "United States": 2522,
     "Portugal": 2,
-    "Netherlands": 36,
+    "United States": 2521,
+    "Netherlands": 32,
     "Brazil": 3,
-    "Germany": 39,
     "Finland": 1,
+    "Germany": 39,
     "Peru": 38,
     "Honduras": 8,
     "Vietnam": 32,
@@ -889,22 +889,22 @@
     "Togo": 5,
     "Ecuador": 1,
     "Mexico": 5,
-    "Nepal": 32,
+    "Nepal": 28,
     "Philippines": 7,
     "Nigeria": 1,
     "Costa Rica": 1,
     "China, Taiwan Province of": 1,
     "Belgium": 3,
-    "Colombia": 1,
     "Bhutan": 1,
+    "Colombia": 1,
     "South Africa": 1,
     "Cambodia": 1,
     "China": 1,
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2869,
-    "United States": 2522,
+    "Global": 2859,
+    "United States": 2521,
     "Australia": 99
   },
   "sources": [
@@ -915,7 +915,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 98,
-      "note": "fao(Australia) 2024-01-01..2026-08-30: 99 rows -> 98 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-08-31: 99 rows -> 98 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -923,8 +923,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 348,
-      "note": "fao(all) 2026-06-01..2026-08-30: 351 rows -> 348 records (3 skipped)"
+      "records": 338,
+      "note": "fao(all) 2026-06-02..2026-08-31: 341 rows -> 338 records (3 skipped)"
     },
     {
       "key": "us-wild-birds",
