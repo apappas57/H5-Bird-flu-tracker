@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T11:35:57.300Z",
+  "generated_at": "2026-09-02T11:14:41.215Z",
   "latest_event": "2026-08-23",
   "mode": "live",
   "mode_note": null,
@@ -60,7 +60,7 @@
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 73,
+    "days_since_first_detection": 74,
     "latest_detection": "2026-08-23"
   },
   "eras": {
@@ -170,7 +170,7 @@
       "au_human_2024": 1,
       "global_h5_panzootic": 2456,
       "other_subtype": 44,
-      "subtype_unstated": 254
+      "subtype_unstated": 243
     }
   },
   "au_eras": {
@@ -598,7 +598,7 @@
     "wild_bird_detections": 78,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 73,
+    "days_since_first_detection": 74,
     "human_cases_au": 1
   },
   "human_context": {
@@ -712,7 +712,7 @@
     "notes": [],
     "from_last_good": true,
     "last_good_fetched_at": "2026-08-01T02:26:35.539Z",
-    "last_good_age_days": 31
+    "last_good_age_days": 32
   },
   "official_gap": {
     "behind": false,
@@ -765,10 +765,16 @@
     "headlines_checked": 40,
     "headlines": [
       {
-        "date": "2026-09-01",
-        "outlet": "abc.net.au",
-        "title": "One of Australia's rarest birds gets vaccinated as bird flu spreads",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxONjBQdHNpbnRxU05oVDJQNjExUExoSzN3X1VxOGNCdEFrbUxPZzZJSmFRelk0TUFIbmJiMU1yT1h6RXBNUldYVWw1d0VBVXJFRUNSU0VicDJhYjFDZTZ0RkltVzF3Tk9PUWpXelQ0UFVoX2RmQWVicXF1ZnA4R2tsR05pWVVlWkV3NmVQWHZHRXcyNl9ZR3J6S2xxVVZnWGVBb3N5R3JHS1RnTGM?oc=5"
+        "date": "2026-09-02",
+        "outlet": "SBS",
+        "title": "Caroline is a nature lover. Bird flu has her worried",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZ3FtOVIxM0o5bkpnT2k3Y0F5Y24wS2xSSEQtdFk1V3ktMzUzajVJYTR1TjFoQWJwZ3VfaVVFdldpTzFGbHdqTmtiay00MWpUUGFFZXY5Ml94aHZOWXlBOUFGV2lDQW1BbW9RR3FxMUdvMk82Z2hVeGRsS2FVS0Zka3V6RGVvVDhEWmRqOU5qTThIR1pHWnBSVjhCb25YOVJHb09mOXJ6dXQ?oc=5"
+      },
+      {
+        "date": "2026-09-02",
+        "outlet": "knowledge.aidr.org.au",
+        "title": "Why bird flu matters beyond animal health",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPeVc3YmJwQ2Z1Y2dKaHZHS2hYNElrcVhfQWpMZTg5MGdDVFl1UTZUNDFfd0RHUkg5LUN2T21vb01OVldpd2VwYm5PS2hTaWlMMWdmTi0wQVh6eHJsQWJERmdwOGJiOHVZLVZMNzhob0doMWJzaXFjUUg3S0EwMzRCMUpiUQ?oc=5"
       },
       {
         "date": "2026-09-01",
@@ -778,9 +784,15 @@
       },
       {
         "date": "2026-09-01",
-        "outlet": "Department for Environment and Water",
+        "outlet": "environment.sa.gov.au",
         "title": "Bird flu in South Australia: Your questions answered",
         "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQcXhqOTVGaW4taDVCX2NVWjMtQ2VxY1BJZnpZZXdob3JDeTBvWVZFS3VaYzA2OTFUMGI0amhrMUxDdHZCU3p2TzFUUDNyc0tIOXhNNG5DVk45TVIyZk0yd0NZQVltTGE0dWtRVmVqd2Y2LUhaWG9QRkdNblRRZk53YzhPbnJid0JqN1ZVZ1o3b2VIQ2VjQVE?oc=5"
+      },
+      {
+        "date": "2026-09-01",
+        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
+        "title": "One of Australia's rarest birds gets vaccinated as bird flu spreads",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxONjBQdHNpbnRxU05oVDJQNjExUExoSzN3X1VxOGNCdEFrbUxPZzZJSmFRelk0TUFIbmJiMU1yT1h6RXBNUldYVWw1d0VBVXJFRUNSU0VicDJhYjFDZTZ0RkltVzF3Tk9PUWpXelQ0UFVoX2RmQWVicXF1ZnA4R2tsR05pWVVlWkV3NmVQWHZHRXcyNl9ZR3J6S2xxVVZnWGVBb3N5R3JHS1RnTGM?oc=5"
       },
       {
         "date": "2026-08-31",
@@ -808,15 +820,9 @@
       },
       {
         "date": "2026-08-31",
-        "outlet": "independentaustralia.net",
+        "outlet": "Independent Australia",
         "title": "Australia’s bird flu crisis exposes dangerous gaps in wildlife protection",
         "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOckVDZHByd3htQ1Z3NEw3UUxXeWNLMWxjUW10ZWQ4U3NkZ2x2SVJIb1B1Vnh6SkgwVk9ZWEg4SDhiZHNzTnNYYW1xTmVubHBjajYxMmVyUHlSS0MxTjZiTk9PZ1VhbEdqSlBYQkVuTE9UTV8weU5VNDRqSGRZdlhLdmppUTd6Z1VCVTZmM2o4QW40QzhPaGhCUzNpbHBEWnBJbm05ajRSeVVuLWVzZ1ZyUDNpVlNOSFk0Vms2aENlUU1pZUFNUUl1LWhrNV9wUjJ2eHV3?oc=5"
-      },
-      {
-        "date": "2026-08-31",
-        "outlet": "Fremantle Shipping News",
-        "title": "The H5N1 Bird Flu Challenge – Chooks or Wildlife?",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOaG5KT29DS2Y0TGdGdnhtdkhDSkx6cFl2dnhEbEFaX0sydHZyM1p3Z19FT0VaMVAzRlVnempuUGFBRUx2dFNIY28yZ05PS3dUMTItZDAtU1BFZjZELW9UN2pVYkZRNXd5dHRoVnRlTkdQLTJvZG9WT25vTnFWTzNKaUFvSUlKRDFrT2liUUtSbndMTmFtR0dvQWtZYw?oc=5"
       },
       {
         "date": "2026-08-31",
@@ -829,12 +835,6 @@
         "outlet": "The Mandarin",
         "title": "Suburban fox first Australian land mammal to test positive to H5 bird flu",
         "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQVkI5WXFxbEZaWGdtWGNIYXk4eUEzOE8tODBWbEduYVBMZ2g0bHhfTUNnX2Y5QkNsMjNoTGNtQlVxazNaYmxqWUMycEw1UmNNa0k1ckc3enBRT2ZDWTRNVGZER0xCeWFPZ0ZDVVVKbklKSXVCcUtKaHAtZHZ4dFFHeDBQc0pYLTkxd2ZGRllFdU5rTTNDUnlubi1RTmd3QzVzRGk4MW9iT3RveXBTMjNCOWZR?oc=5"
-      },
-      {
-        "date": "2026-08-29",
-        "outlet": "smh.com.au",
-        "title": "Deadly bird flu could decimate our wildlife. Experts say we’re doing almost nothing to stop it",
-        "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQbmRfaWJuMTE4eXBkVll3V2hLbTZmNW1oemIzQ0dtUjE0TmZ5RzBDVk5ISWljRmJIamJ0WS1zVmJudzhxdFVUY2ZvQ1ZXSjVqNjBRdEt3TFZrRlUwUE9hNkNWcnRGOTBPZ2VoNEVSZXlTRUwya0oyY291QzFhU0FFTTY5ZjhGdWRxQ1QydXFSU0pVZ1J0d29FbHVRWXg5MEJpNkRVb1dMMVFFeUNjNUVrWG4yWW9lWUE4SVVGWG9OUkUxSXNxNmpfRWVNWk85a09pUFFzSzRISVNKcDJJTHJoTFUwMEJlczN6dVFlSmhHdTdjNE4x?oc=5"
       }
     ],
     "headlines_window_days": 14,
@@ -849,20 +849,20 @@
     "gaps": []
   },
   "totals": {
-    "total_events": 2853,
+    "total_events": 2842,
     "human_cases": 9,
-    "poultry_events": 143,
+    "poultry_events": 133,
     "poultry_birds_affected": 0,
     "dairy_events": 17,
-    "wild_bird_events": 2682,
+    "wild_bird_events": 2681,
     "mammal_events": 2,
     "countries_affected": 33,
     "us_states_affected": 47,
     "au_states_affected": 7
   },
   "by_category": {
-    "wild_bird": 2682,
-    "poultry": 143,
+    "wild_bird": 2681,
+    "poultry": 133,
     "dairy": 17,
     "mammal": 2,
     "human": 9
@@ -874,24 +874,24 @@
     "Denmark": 2,
     "the United Kingdom of Great Britain and Northern Ireland": 3,
     "Sweden": 2,
+    "United States": 2519,
     "Portugal": 2,
-    "United States": 2521,
     "Netherlands": 32,
     "China, Taiwan Province of": 2,
     "Brazil": 3,
     "Germany": 35,
     "Finland": 1,
-    "Honduras": 8,
-    "Peru": 38,
-    "Vietnam": 32,
+    "Honduras": 7,
+    "Peru": 36,
+    "Vietnam": 31,
     "Poland": 2,
     "Chile": 2,
     "Austria": 1,
     "Togo": 5,
     "Ecuador": 1,
     "Mexico": 4,
-    "Nepal": 26,
-    "Philippines": 7,
+    "Nepal": 25,
+    "Philippines": 3,
     "Nigeria": 1,
     "Costa Rica": 1,
     "Belgium": 3,
@@ -903,8 +903,8 @@
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2853,
-    "United States": 2521,
+    "Global": 2842,
+    "United States": 2519,
     "Australia": 99
   },
   "sources": [
@@ -915,7 +915,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 98,
-      "note": "fao(Australia) 2024-01-01..2026-09-01: 99 rows -> 98 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-09-02: 99 rows -> 98 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -923,8 +923,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 332,
-      "note": "fao(all) 2026-06-03..2026-09-01: 335 rows -> 332 records (3 skipped)"
+      "records": 321,
+      "note": "fao(all) 2026-06-04..2026-09-02: 324 rows -> 321 records (3 skipped)"
     },
     {
       "key": "us-wild-birds",
