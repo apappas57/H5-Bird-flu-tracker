@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-09T11:18:55.806Z",
-  "latest_event": "2026-09-01",
+  "generated_at": "2026-09-10T11:15:45.532Z",
+  "latest_event": "2026-09-07",
   "mode": "live",
   "mode_note": null,
   "data_coverage": {
@@ -60,7 +60,7 @@
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 81,
+    "days_since_first_detection": 82,
     "latest_detection": "2026-08-23"
   },
   "eras": {
@@ -168,9 +168,9 @@
       "au_h5n1_2026": 78,
       "au_h7_poultry_2024_2025": 20,
       "au_human_2024": 1,
-      "global_h5_panzootic": 2386,
-      "other_subtype": 42,
-      "subtype_unstated": 253
+      "global_h5_panzootic": 2368,
+      "other_subtype": 39,
+      "subtype_unstated": 247
     }
   },
   "au_eras": {
@@ -598,7 +598,7 @@
     "wild_bird_detections": 78,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 81,
+    "days_since_first_detection": 82,
     "human_cases_au": 1
   },
   "human_context": {
@@ -712,7 +712,7 @@
     "notes": [],
     "from_last_good": true,
     "last_good_fetched_at": "2026-08-01T02:26:35.539Z",
-    "last_good_age_days": 39
+    "last_good_age_days": 40
   },
   "official_gap": {
     "behind": false,
@@ -760,10 +760,70 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 91 headlines, detection signal in 2 (SA, VIC); no coverage gaps detected",
+    "note": "google news 14d: 92 headlines, detection signal in 2 (SA, VIC); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 40,
     "headlines": [
+      {
+        "date": "2026-09-10",
+        "outlet": "Nine.com.au",
+        "title": "Young whale to be tested for bird flu after washing up on South Australian beach",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNckE3bldCeVMzZ0pubkx0ZmVLT2JQWHBJTmVuNWNnQ2tsdzU4S1ZhdzR5eHQtbGVmenlZQWV4ekVxRm9TZW94SHBPQW1fZzdCOFg0ZDR4QkFKa1AzWVB4eGw4YWR0NXhuY2xQLWVNSXRWOFA4SFdNZHJFUE5XSzl4RWRTRGtlMzRIM0RDclVFdy1ra29UQXVQRnE0cWZTcG5vN3JZSmM0YWJka0NELWc5M1RQZUJOaFFRdUFhTnBlMWVZaEljUF9JcXVNWQ?oc=5"
+      },
+      {
+        "date": "2026-09-10",
+        "outlet": "news24.com.au",
+        "title": "Whale carcass found on SA beach tested for bird flu",
+        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOcXgxQkQ0T0xuZHlqbEFiYmdjV3d5VDhxTHptM0oxVk1BZVp1M3Z3azJ3ck9DUWRya1otcC01ODVuaUFUVE1BenNoX0lyVDdTVDhYX21EX3NRRDRqY3BObWN3R3EzNzZmM0hSeUdsUnpQRHFlZVQyWGNCcWJvRXdSNHlfMlhtVTFtSVBSaGlfelBybDJ6MnpvSXRINTVEYnU4bmV6TmUtWDZpa3Fpc29CSFdPUWRyeXNlYkZIODlLM09WNmRFMUlBclpMdlhpWXdjeDl4YWlibzlJQ2ZkTkkyaW9LcEFhX3lEc0w4YTdxY1PSAfYBQVVfeXFMTnNad081MzhETWtFQmtwZ3FncDNwVG9tU1ZfQlRrdnhKbEFUMHdWWURmMmZfQ0h2enB3TkZoRE9VY3ROTkloTjRlcENtX1ZWQVAwbE1NelRaQ3F6N3UtVUhRb19fNVY4aWtfdGNoREdtcjBnd1dmMHJ1eVRQVW5COGg3SkwwVGxZUmwxaUxoR0hsYkprSURtSGxDX0tvQTlFZlpLV3h0dkZZZzZPZWVBeEg2YWp4WnYzLVVyRThsQThtUk9yN3oyTXQxcGVzcTdKVTlISm1OR0pvLVpBc2NlWGdNQUZXZnYyV2Vxa01XclRPbG93bDdB?oc=5"
+      },
+      {
+        "date": "2026-09-10",
+        "outlet": "glamadelaide.com.au",
+        "title": "Adelaide records first H5 bird flu detection in a little penguin",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQM2JnNnY4REwtbVczdkxuUUN5WE9YZTcwTkZuOXVQQWZDTVFzLWZQVEtqYVlVZVRsWUtuVFhSU196d250dXY1MWp4OHZ2VU11LThCTFlGbmZRVmlXREFnek05d2xVMnk0VDhxUGhtdXlmZG1UNTZCZFUzOEpFRm1oVF9NRlZYTThvdlJBMzNkR1FGNFJ4eVB4RQ?oc=5"
+      },
+      {
+        "date": "2026-09-10",
+        "outlet": "The Australian",
+        "title": "Beached whale carcass linked to bird flu",
+        "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQeFhHMmxKVTRUc2NHRFI3ZG1zamZiTnJpa29KSFJvSUMyVDBINm5ibEo0enotYmJURzExVTAtcmg0Z2o4QXhuSjJMVFZMbGVYMjk3bE1vUlNGU3JWZHhfdTRBS2M3WTI0NkQ5LWg0WHJ6d01JMklXNjRfRURfdGF5LVJrd2lMN2N2bjh3endIdHJ1c2ppVUxhT2tpMVhUZVo1eHRVd3BKZ21JSnZjU0daT2llMFNUaHlCd2xEUDhNSnpwcnhVS0JXWmhENGxiV0E4cHNyTTR6dG5ROERMb3JLWWlaTGdBejJMWnV5X1JldTBrWEhyV2twYkZVMmVoOHAyX19idVFhd9IBjAJBVV95cUxQNHJ5NkFldGJ4czFwaXNwaTN4WkxlRnQtSVJ6MWE0cnY4U2U0Ry1tWkF4bTgyd2MwT3VrM1RyV2hZU0lSMXNTRzJnUllqSVBvRGlLWXhxTmpKUkJyU3MwTjhIZkx0ZEJuN1pwUi01ajF4UXV3S2xkVkVlOEl2cmZBMGZmSUNWTDV4eGVVSDFOV1lVTGdxS2Fvek0zYzZ1MFNSdHNfVlFUM2l2X1NfOWkxLURQS0NhdERKZllCR2V6MFBkSjhRUlpRV3A5RDBJMjlVTXNoa0NuUzVIUEdGcGQ5RVFjYnZVNlFycjAwT082VGhPSVkyZWlRUXdicGNDTzBKcjlOM04wakxLX0h0?oc=5"
+      },
+      {
+        "date": "2026-09-10",
+        "outlet": "UA.NEWS",
+        "title": "Young whale carcass in Australia to be tested for bird flu, ABC News Australia",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPa0lGY0VMSS1wZTJBVWwxbTBVV1Z3cVdNLUF4QzlpM1N5M3NEVDZoMTlpcEdpRlc3aWhlMnZVeGNDNndVbTl4N1VGWHF4QlJIR2RGaXNMVnJOVkxrT2pyZnUyZVNIX1hmNE83dVMzaXZSRzZPTFdVWkF4M3FYZ2ZvOFQ5Wi16dWNOclI2LWN2eU1Dak5JemF2cV8yNE9CTE1wX1VseThlbVM?oc=5"
+      },
+      {
+        "date": "2026-09-10",
+        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
+        "title": "Dead juvenile whale washed up on SA beach to be tested for bird flu",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPNWRweGIxbnhCNjE1QzRTZ2dSMTZaREhJc1k5Njdpa3QzV1Zza2NBNEF6aUYzSjVoT1YtZVo0U2ZNekExdVM3QUVvT3IyYmVLd0pKMGJTR1prREpKM0JvVDZqMzRDZThxdXdIcTNaMS1nVElBdk1MTGE0RjRkNHh0Q3lEbm5VWGhpLXRyRkhNM21FSmhEZkR5WExITjFXQUlG?oc=5"
+      },
+      {
+        "date": "2026-09-10",
+        "outlet": "Mirage News",
+        "title": "New Wildlife Hospital Boosts WA Bird Flu Response",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPby0tY3RRSFdzQmFCekRNOUdtZHVaTjFDMXFrS1I5R2x1Mk5NUVkwdjNycC0zajlEVVNWQVo1VWhuTU9sRldmWEF4TW5oaWtvejkzcl92T0JURy10X1FnRnhhb0ZITi15S2FReDFDUmlOdGRaTm5tSS1qa0dWM2RFd1lR?oc=5"
+      },
+      {
+        "date": "2026-09-10",
+        "outlet": "Adelaide Now",
+        "title": "Bird flu tests as whale washes up dead at Victor Harbor",
+        "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNUVUxMmZ3QURDYTBwOW8xbnJvUmJzWVNBTmVHN2RDc254dEtscGtOTW1RZnM3VHc2cHM4SHZGX1pVWDNaWV9JUE8wcmliaFpVRW9jcFBlMHJVcWdtdDdmMmxhMk8zSWJzZVNnVDlNNnJ3RHU2QnJEbE5DLWJLbHR2Qm9KdDVjZFVYVWJENzR2UGRkQjhUaXc5R1E3cklHWHRpX0prbzM2OV85RHRSYkFUZTdHOWZPY3FHSk4zUjJFakw2NzJSd09hMGFRRURFVG0tOUZxTmJPYmhUZjhwX1ByMWtWSldCTWt5NC1KU1BEdEV1VGx1VExrVzByQXhGc2RQWGI0X2MwWlM?oc=5"
+      },
+      {
+        "date": "2026-09-10",
+        "outlet": "The Weekly Times",
+        "title": "No external injuries as dead whale sparks bird flu fears",
+        "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxOMU5CaG42RmdoLWRTMVN2REQ5ODdiRnA1RkJqZUw2dDVRX3NadWtzcDRNUzc1SGx5WHFZQUJ3WXVOZ3VUaGZBSF94YjRCX3dUekRLTlA2cng2VFFJal9CaDJ4OGJjU1FsWXFWTV9VVU9oUkhfZnU5TkMtZjloTU1PWVpZdnJ6dThXNVV1SjhscGZ2YXdJNk1jQ3ZMcUhPRXVhMnVCdl9sTHpKeUJkR2Vzc1JlOHgzcG03a3JXOF84TnlnSC1hSUdPWHBvX2lhZnNEanVORjFhUWVXVlMzVjEtT0RDM0hHUHBuN0ppOFdwbkZNM29CWE9HY0Jac29paUdMTGZzVjFManRXSEpW?oc=5"
+      },
+      {
+        "date": "2026-09-09",
+        "outlet": "The Conversation",
+        "title": "Worried your pet might catch bird flu? Here’s what you can do",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPZnl2cUM4M2xfaWk3R0dqbm0tWXF3WkdLRlYtVGdtUER5Wi1ZRVZIYk9FSHQ1VVQ2MDBINVRiOHRRM3h3SVVKdjRLenVDZFZfclJldmVNUUNVWGtTSmt5UlFMaHRmQndzUkFZTDJIVVl3QndhRG9JRXp2bW8zV2MwS25IUXFYczcyai04Ukd5Q0lmUzRoUUhSRnpB?oc=5"
+      },
       {
         "date": "2026-09-08",
         "outlet": "aap.com.au",
@@ -775,66 +835,6 @@
         "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
         "title": "Bird flu's spread to foxes calls for 'major rethink' for city dwellers dealing with the pest",
         "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPcXZ4clM2TVdRdlNnVW5ubjdkOG8xcVk1d19BMTk3NWJmVkl6MjQ5N1RFTllVbERJMk05YnJDUWNyZm9OY0NjQlFuQ1NKM08tZGZPb3FEMmFqZzhvbDNjMlp4bjd0NUs0N2cxODdKUjExRFF2Vy1tMU5RazZwRmNKTlNKSUx5UUIyS2hCRkJRMVJPNENXWnBSampHdDZ2VUxtb2FVQ2RsR3daSmNlbjBVeG53?oc=5"
-      },
-      {
-        "date": "2026-09-06",
-        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
-        "title": "What happened to the beetle that was threatening our tree canopy?",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNUEFnZ2tmNGJxWFl4dzczT1FwZkhoTXFWeVlQX040bnNGYTR3UkJzMV90VTY4cTAwSklGV0M4ajZFbV9GNWR0Mm80R0Y4U1JzWEZRRFBvOFU1NmhlX0JRQjB4ODFEZVdGcXZuem54VU9oMzVGYWhwMGxpcDV5Y0ZwaHg4YlJLSDlHc2ZEdnZNWTRKMlg4WXh4M2QwbXFScjdSYTBjSnFxZw?oc=5"
-      },
-      {
-        "date": "2026-09-06",
-        "outlet": "The Mandarin",
-        "title": "Monday Briefing: H5 bird flu",
-        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9NZld1eTNkODh5cmhFVDZjZzBIV2FjUTlCWXl6WHJONnkxMWNwWHNkc1NqYU0zQUhVQWlBZzZHY3FaYnl6MXUzTXc5TWZVMGo4SEhndWNabnkwN3BsM3VCdmNZMW1GZXRYR0ZiaDZNcGw1UGRt?oc=5"
-      },
-      {
-        "date": "2026-09-06",
-        "outlet": "Adelaide Now",
-        "title": "Lock them up: Push for SA cat owners to face brutal statewide curfew",
-        "url": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxQS1lVUzhRRDZHVkk1ckpaOTNKLUpxNWJCT2gyYVYtSGVOcVZibDlPdGtfb2d4dE0zR0F1RV83aFFSejZBZHdnZXpheU94bGdPNWwtWWtfOXBBY0xPdVJXSGNjM0NrS1lrdUxzNFF0NVdkZlhNd25YNS1rU1lIZUhQdFhsX1Azbm1VbTFFU3l5Z3BhNklkb0J5dFVoY1BqQ2M0a1JNMVJxZDItbGpKMWtrNUJFY010ZDJNUG1LSkJ5end2NGdFaHRwMzVhMWdmVjJUSVhaNHF1NEJtSzFWOHdYdmc3WkdPTXV1RUttZ09VZFBpVHdCQVlHaE1SOFFlRTFOY1B4MkZPYnppY0dGZ2pBbWZOSGxzNVZhbnAxU3RldWxwYndpcXVuSVJ6YVBGTGFqQ25sZjR5R0xkYlNoaE5OQQ?oc=5"
-      },
-      {
-        "date": "2026-09-06",
-        "outlet": "Glam Adelaide",
-        "title": "Cleland Wildlife Park begins bird flu vaccinations for vulnerable native species",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQbm5jZGJNWW43YTRVc2VEWkpHU01WdFZIWmthT0RpWGE2dGpuLWI1LWhfb1hrTlpGSmUzY0YyNFJSR0RZdTVMOTg3WVk3SGJnUEFuWkx4Y2Rqd3J3cW5nSjB6YkwweURDVnd6VVp2c0VDeHdBSXdOVWRGVW9TWHk3eDN6LVItYUx3ZkFDZ2VHQmhEN3VTMHJMSkJVWnlLdzRkOTgwbmF6XzQwZU1DRmc?oc=5"
-      },
-      {
-        "date": "2026-09-05",
-        "outlet": "The Canberra Times",
-        "title": "Precautions urged as sixth bird flu case confirmed",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQeVVwOUNycllUYlJ3aVhZWDdmMWh1TGtJVjRGazBLRzJsczBMd3pNTktqOWpoTmg0cTlXMWR5YU5vM3BnWFkwQ2paSlJMWTVjZUw1VEc1XzNaZ3NLeC1nTEl0RWVVTjJ5U3VvZ1JsSGJsV1dHc01SaVdFWUdmbERrS0pvSEgyWjRjMUFHOC1pV3FqR3JVWVZrdG9TdjdVM3M?oc=5"
-      },
-      {
-        "date": "2026-09-05",
-        "outlet": "Pittwater Online News",
-        "title": "Pittwater Online News",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNOHhmNDR6RWg0MUIwZWhSMXZYQ1p1MFRPc3o2MzJUeV9UQW9PRF9nUVJ1U2VERU9BekY4LXJLZW8xTmJBanpvTjRVR2thTG9uVnpTZXA2VUFYTWxRMHk1Ym1abkxsMHgxeG1WZmhxMlRzSTlZNFRlSUpyWWg4UmdURHluRkFveXhna0RSQVZ0eHFQQQ?oc=5"
-      },
-      {
-        "date": "2026-09-04",
-        "outlet": "thewest.com.au",
-        "title": "Experts say cats at risk from deadly bird flu spread in WA",
-        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOckp2SzVwNlNVU2pGMF85elRzVW1ObW1Yam5kVVlkYkhxbENpTXUxaGQ5UXVld2ZDX2FCeTRtX3ZHcWtNd2Q0LVF5X0pmWXBBMWRUUXU5VjBuTWY5bE42ek03cm5udmJLOG5weFlQbnlEV1U0NUV6Q3d1YW52c1NhYU4zeGlTVC1KYTVqZEZLYWdsT1NWcFpHTzc3MEtBUkx6N0czbVZrcEx4TjdiY3Y4Vmx1Q3RPN015VnhBa2NrREFSR2Y3dVlGaTE4d3VOWmJFTkFyUUNYWV9ZSWZFaHVlVGRXSWYtTUkzbVMyU3ZBVQ?oc=5"
-      },
-      {
-        "date": "2026-09-04",
-        "outlet": "News.com.au",
-        "title": "Three new bird flu cases found in NSW",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQRTNfbi1OMnVoVmVKZndBX2l4cVYtX0NCeDE0TllnRUdEbGxLb3V1Qlh2emVqbldhbnZEUFJwQTJJSDBydkRoWWZsTVhIblEyUy1JbkxuSnZlcHEyUHU1cDNZWjdRTVpmMzZBUmw0bTdSQXBlbG1sbHNocEpDYVAwdE9obkxEc0J1RWtDbWdMNTZPNFJmOGlRMkstNHFlbXlrRW1jY0E2SHN0YXhLeHfSAbMBQVVfeXFMUElKSTVSSzRwbTJMbHFacFFtMFJrbFpzbjQ2RmJwVzVmanlXZ2VpQ19DRjRKcGdJUXdTTG9vM3JVZy0zNHRLN1Y0MUR2RUZPeVo0b1VUWXEzYUtGa2R0cldOZGswbUdwV2tVMy12cDV1dDFGM3RGUVNJRlhETDA1RjBud3FqSlFmejRnY2hka0ZheEtxbDJ3Sjloa2p6YnNoUWRqQ3VGNlp5WG5rSWVKZ0Zpbm8?oc=5"
-      },
-      {
-        "date": "2026-09-04",
-        "outlet": "aapnews.aap.com.au",
-        "title": "'Social distancing' plea for birds as flu hits Sydney",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNaWRhSjlVcmpzZ09IZU1lVE5kbjF3Z3NQVEJEMUhIaTc5UTdoR1BIUHpQVmJBRWUzTUw3U0RaWUZnN2o4YWRqZUVRbDBKbnNGd0ZacjBRRG5sSTQ2MDAydWY2UlA5YzR4UnBzT2xiYkw4ejdtTmNoM2trckpIbTNqdVUta1hlQW04NUxoYzRGVEk?oc=5"
-      },
-      {
-        "date": "2026-09-04",
-        "outlet": "Port Stephens News Of The Area",
-        "title": "Port Stephens residents urged to watch for bird flu as wildlife threat grows",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOMWhfZE5zRTJILTBhV1ZURGVPeHphTUpQa0ZmUUZYeW9uV1haOTBKTDBnbllVRDVtcjdGakNqUmRBR04yT0JOcE1vaGhqTXNubzdQQVJCbHBUZDhvR2dUNTJscDRqakxQVVFNX3E3VWZQWVZrRGVEQ0JOa2FCWkFvTG50bHc2YUYwTm9CeHRHenhUTzNuNlBydy1QZ1NmSmRHMzVHOFhJOHpEREl2X0xnWUdxam9uMFlBRVE?oc=5"
       }
     ],
     "headlines_window_days": 14,
@@ -849,42 +849,42 @@
     "gaps": []
   },
   "totals": {
-    "total_events": 2780,
+    "total_events": 2753,
     "human_cases": 9,
-    "poultry_events": 156,
+    "poultry_events": 154,
     "poultry_birds_affected": 0,
     "dairy_events": 16,
-    "wild_bird_events": 2597,
+    "wild_bird_events": 2572,
     "mammal_events": 2,
     "countries_affected": 34,
     "us_states_affected": 47,
     "au_states_affected": 7
   },
   "by_category": {
-    "wild_bird": 2597,
-    "poultry": 156,
+    "poultry": 154,
+    "wild_bird": 2572,
     "dairy": 16,
     "mammal": 2,
     "human": 9
   },
   "by_country": {
+    "France": 3,
     "Norway": 13,
     "Bulgaria": 1,
-    "France": 1,
     "Denmark": 3,
     "Australia": 99,
     "New Zealand": 3,
-    "Netherlands": 29,
+    "Netherlands": 27,
     "Vietnam": 57,
     "the United Kingdom of Great Britain and Northern Ireland": 3,
     "Sweden": 2,
-    "United States": 2446,
+    "United States": 2425,
     "Portugal": 1,
     "China, Taiwan Province of": 2,
     "Brazil": 3,
-    "Finland": 1,
     "Germany": 26,
-    "Honduras": 7,
+    "Finland": 1,
+    "Honduras": 5,
     "Peru": 35,
     "Poland": 2,
     "Chile": 2,
@@ -892,7 +892,7 @@
     "Ecuador": 1,
     "Togo": 5,
     "Mexico": 4,
-    "Nepal": 24,
+    "Nepal": 20,
     "Philippines": 1,
     "Nigeria": 1,
     "Costa Rica": 1,
@@ -904,8 +904,8 @@
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2780,
-    "United States": 2446,
+    "Global": 2753,
+    "United States": 2425,
     "Australia": 99
   },
   "sources": [
@@ -916,7 +916,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 98,
-      "note": "fao(Australia) 2024-01-01..2026-09-09: 99 rows -> 98 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-09-10: 99 rows -> 98 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -924,8 +924,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 331,
-      "note": "fao(all) 2026-06-11..2026-09-09: 333 rows -> 331 records (2 skipped)"
+      "records": 325,
+      "note": "fao(all) 2026-06-12..2026-09-10: 327 rows -> 325 records (2 skipped)"
     },
     {
       "key": "us-wild-birds",
@@ -933,8 +933,8 @@
       "region": "United States",
       "homepage": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/wild-bird-surveillance-dashboard",
       "status": "live",
-      "records": 2418,
-      "note": "usda wild-bird: 2418 features -> 2418 records (H5/H7, 365d)"
+      "records": 2397,
+      "note": "usda wild-bird: 2397 features -> 2397 records (H5/H7, 365d)"
     }
   ],
   "context_sources": [
