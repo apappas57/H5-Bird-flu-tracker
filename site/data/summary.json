@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-12T10:42:33.597Z",
+  "generated_at": "2026-09-13T11:47:51.078Z",
   "latest_event": "2026-09-07",
   "mode": "live",
   "mode_note": null,
@@ -60,7 +60,7 @@
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 84,
+    "days_since_first_detection": 85,
     "latest_detection": "2026-08-23"
   },
   "eras": {
@@ -168,9 +168,9 @@
       "au_h5n1_2026": 78,
       "au_h7_poultry_2024_2025": 20,
       "au_human_2024": 1,
-      "global_h5_panzootic": 2326,
+      "global_h5_panzootic": 2301,
       "other_subtype": 38,
-      "subtype_unstated": 235
+      "subtype_unstated": 234
     }
   },
   "au_eras": {
@@ -598,7 +598,7 @@
     "wild_bird_detections": 78,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 84,
+    "days_since_first_detection": 85,
     "human_cases_au": 1
   },
   "human_context": {
@@ -712,7 +712,7 @@
     "notes": [],
     "from_last_good": true,
     "last_good_fetched_at": "2026-08-01T02:26:35.539Z",
-    "last_good_age_days": 42
+    "last_good_age_days": 43
   },
   "official_gap": {
     "behind": false,
@@ -760,81 +760,81 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 82 headlines, detection signal in 1 (VIC); no coverage gaps detected",
+    "note": "google news 14d: 78 headlines, detection signal in 2 (SA, VIC); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 40,
     "headlines": [
       {
-        "date": "2026-09-11",
-        "outlet": "The Southern Wire",
-        "title": "Avian bird flu detected in Goulburn",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPMTJMakhHaGNxMnJod2dNWE5yNS1BN3FHMmJVUzNGNWFVRXM5TDZ5N1RqVGU2QnhwRGw2UWE0NElrYS1yM1NMQ0pMUjcwS1hyaDRfZEtYRHJDQkdqdnhpaFZpZk5Pc3ppd2FKakc1TElOTURjR3Rsc0pQcFR3ZkdBSllCdk5fRVFq?oc=5"
+        "date": "2026-09-13",
+        "outlet": "The Peninsula Qatar",
+        "title": "Australia reports first bird flu case in endangered sea lion",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNcXJIZlpvXy1BdDFranNDSW9ud05qVXZEaHBYMzJZMmF1SU9Jd3ZkVlJrTmxHYlJubzh3VDRmRklpV1NRSVZRbTlROWxLcnFPd2M0MDd3TzZxYU54U3NUc0xpUlNBWFRacEZDYlFzdFlNUE9OZmlUQ2hCdmlwWm9wNHdzNHl3MS0xZngzNkYtV1RfN2RoZjlCa0pRMnl0U2ZfU3dtdDRQQ05yNzVhQ3c?oc=5"
       },
       {
-        "date": "2026-09-11",
+        "date": "2026-09-13",
+        "outlet": "Rus Tourism News",
+        "title": "First Bird Flu Death Hits Sea Lions at Famous Kangaroo Island Attraction",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNlRBWjR4TWlZeDhPcUFUQk1lNFd2Y3VET05XUUdkSElBZVhNQ25Ob3pHclBDUldUUlVGbGMzZEhsekR3YlJ4NWFmSzFFR3luUXdWSzF2UUNETkt6TFJ0MUw0b2sxRUpfMkpMd25PUW9IRnljODBRNmhpTjVlYnVxYzZ5X0x0S0FOZG5McUZqNkNnZThsMjRXQnRkeFp6YmpjT3ZOTDlxcXFITUFaa0FZMS1QSWhVZw?oc=5"
+      },
+      {
+        "date": "2026-09-13",
+        "outlet": "Oz Arab Media",
+        "title": "H5 Bird Flu Kills Endangered Australian Sea Lion",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFAtblJVNTRsSzlpQWlYVGQxbTZCTEk1SEhMTlVGNVBVc3lsVVp1UnBsVzRXMVEyNGowandhYThzSVl4SlAwOEdxQk1CdE13VHExdE9xbU01S3Y1bk40RF9mQXpPRzVteFozZTduRHBnRVE5VnQzdjBienlB?oc=5"
+      },
+      {
+        "date": "2026-09-13",
         "outlet": "Nine.com.au",
-        "title": "Second bird flu case confirmed in Sydney",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNWlJCQVEzc2Zuams0VnlSM2Z1MVg5aHp3WGNfMmRqQ3FzXzFGVDNHdmM0SzRTdEJhNkl1dlBBTGl6cTFHOEZ2Uy1kb1I2M0Q0cG9iWmVHRnhLUU56ckptM2xmSWN6UG5jVXRFcXhMWjMyYVl0NjU1X2UzUE01b0pRMzF1UEpxWjh2amp1LWJKak1GQTBYZ0ktc3hMNlpfR3hQVDFndVdBbzRBcFp0UmpfM2hB?oc=5"
+        "title": "First endangered sea lion dies from bird flu",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNSUJyclpkVng3T1Ytc1NqUnhZcmdLTGQtQ2VaWHQxSzdpTFFGLWE5OFhvUk8yeC1oOURfblhDOUhScmFkcVBQaFhLenFnX3hrSlN5UVR5ZXRwZE95bDZ6Y0hESDlYVWZHU3NKTW0zX0VUT1lkOF9qOWNzLWN0WTU5dGN6ZEZDaVUwSlpOSXhNbGJ4VUg5dGJqN0dMd2FVV3E2Y3pzVlloNEdwVGtPQ1RKQkZaWGNoWXM?oc=5"
       },
       {
-        "date": "2026-09-11",
-        "outlet": "The Nightly",
-        "title": "Dead whale fuels bird flu panic on popular Aussie beach",
-        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPbHpxbFNlaEFncHI1c3VQcndyMEhTLXlueUQ2WVo5SXNMVEF6SHlzOXp5UDVjMnVMckU1UDRUdHhQelpzWjRqc0d6LU9Gc2xOSlJlcXFQYmlKZHBqZjkySzUtZjFyZ0g3Yjd4djI2X1NvRnlaZE90aG1KQlpST29jZ21Ua0dXY3lwM0o1d3lUNTRLdDI0bDMyNTdtMmJZSVB6TEI4U2twa0d0ZTJyOUZLNUx2RWVkZDFRNzZiYXJDUHlaUmtzaXhNSHNaWWRsdGNzeExKQS15Vk1TM2VJcHc?oc=5"
+        "date": "2026-09-13",
+        "outlet": "The Guardian",
+        "title": "First H5 bird flu death of endangered Australian sea lion recorded amid fears for small population",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQOWRaNjg1TWlWV01tU2xsYXJaMXdwamhRejBpYTdvTmJ1ZlRCZlJuQU82NENmYTFOSFhEZGJuLUM3UmljaWt6dUg5bGdVazBJTXhGX0lCZ1FpMzk0WDF3YVotZURBSTYyS3VIVmZOS2RFb2lfa0pnSFM1Q191YUFYQXkwWW56SkNCeVdfLUtpR09TY1Z3Qjdwc2hNOGNFc0JqZE1teVJOMkRQQkJpakl5ZzBaWFdEcFNVSmlxeER5S1Bqb2FjWmtZ?oc=5"
       },
       {
-        "date": "2026-09-11",
-        "outlet": "NSW Government",
-        "title": "Five additional H5 bird flu events in NSW",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQOVMyRTRVeExiUDM3ZVgzYk5aY2FOX0NfSGlXYko0UmtvUWozMEhFVk9hUy1mcXlWN2FBNG9SZko1blFCNWpELVZ4MEpVU0NEcVBQdlhLTVFhdnlvZlF1UjNzc3h6NUJnRWFRU2s0N3RtbDJvNWd0TVRMcEpOdm9uOUltOWs3dEtLSFE?oc=5"
+        "date": "2026-09-13",
+        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
+        "title": "SA records first bird flu case in sea lion, environment minister says",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPQmtGNVNkU1A3TTVTTTJhd3pvWUd3eVZVeU1zWHphWGhIOGZ3djFsdWNwTHJQT2gtYU5EN0ZZY0QwRFNVMWljTUMxS3lCUEMyTEpQZllqZkgyYTc0MHBJeHRVcWREdlhFcnhQODUzSlZhWXhiR3Vib2Y1Q1Vic19nVUhLaWlaRDBDaWQ4YW1qOE9NbHdRRW0zYWlTWjU0b0FBV19HV1hCQzBJTTFGdkE?oc=5"
       },
       {
-        "date": "2026-09-11",
+        "date": "2026-09-13",
         "outlet": "News.com.au",
-        "title": "New details emerge on whale death",
-        "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxQNlZ3bG9kZVBHdEVfb0lXSjV6S2M2dTJtN3NjSnA2WmQzZFNGM3p2Qi11M0FKUjZmRDhhM2ZKMFR3Q3Y1Wjl1aGt1OExZZkpOeFAyZ2NVUFcwbEZXbEpFREN6TE51N3BGR0JiVlpWWnNqMnUwNmdyQ1U2Nnl4dzZLSzVXYzNEVnFfcWNrN1Z0dURLWlV6emwxT09pb2FHZEV2SG5VYU55RmJ4SjRLcVg0ZFdnTlZmV3VLb1ZEaG5fbExMeUhpMi15MnZOekgtNG92OEYtWEhRSldTenJNRWlHM2hleEk4RVZUWmI3WUJPT0p4cW9QeDlVVk1nZTYwMHZyS3lsVjZjRGHSAY4CQVVfeXFMT3dGRzF6QWJpR0d3ek5xVW94X2RQYzl4YXdYdFdYR0FLa3prVld0bFpxWlVpelk5cUxKOUx0WFR6SG50Q25nZG9HZUtpM0E1cE9ZekMtSGFTOE50X1B1ZjdEMWptNlVDM2k5eU5idkt3amZxYjRTUk9hZGlMTmM0YXJKa00tMDJmbFJrakJGMG1UYUh0QldIVFBzVDRPZDh3M3ZNU3hwMnd3N3dyYXBVYkM4UTZQNFJJZ19sc2VOY2NsQmZpbHlPbVp6YnZJREwzcjVjdzI5alBLX2RHWVVHRkN0YVd0alRzMV9tM3RySXVyUk9Ndm1xWDVXWUY1MVU0eWxpUV9rYWFnWE5qdWt3?oc=5"
+        "title": "State confirms first bird flu case in sea lion",
+        "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQai01ekxzakRUWTVucWtxMElPSG4tVW1XLVRONnF5bnVvVHNHOGJNaG9UTE5YdDZEY0xMQlkzUDZ6SGV4eWFaaVVSX3Y2YU5KZmhsSXpIZWNsYnhjUG5ROE1mek0xLVBIQktLMThfQ3dya3ZYdnA0Z2VaOHFqaWRWaUFwaWpPQ05FTkVGQmNPamNqZ28ydUI4Q0hZMFRNaHA4N3FnSGdoQWhXSVpHN04ydUx2YU1RRjJBQ3BXTFNMOU1ibFl2UllHdFhJM3RKdzN2aUNXaTNhSXFXa04zSEtrLVp0cGQxSVZRWnBSWk1EVGNsMnVGdGY4ZXBlQjJKZlQ5RWsyNW1Zc9IBjAJBVV95cUxQSk9la0lMVl91T0VfdFR0eGtRZTZoZTlZandMNERLUkJLWUdYaDUwUDdDM1Y0YnBzQjR0WFQ0c0o1dDhUQTAxRGQ1dFRkVkVaSFZpcTF3bXdSMHp3MWdYVnJLWkpqTWhRT293MklKX202dUVhTWhIMG5paURuTTgtWTNqVDZNUTRJeEJqanBJTWdzakhKZlQ5Zmg2ZkdLdE5fd2lvOWUwMG5aLU5aSUFrWHZRODRUbmtWRGtQY0ZXeDNzaVJjbTJCcnFmcmxLSEtVNG8zbVR4MTlkMUFWWmxZTlUxVFVCMGY0dHAwaF9jX3Nxb2tpNWlOamF1OUZTUmNpWF9ISDFrd0JXN3VJ?oc=5"
       },
       {
-        "date": "2026-09-11",
-        "outlet": "Mirage News",
-        "title": "Island Restoration Boosts Seabird Resilience",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOSHU0TWQwZ2ZqRElyVklCRjB1c2hqOWdmZEl6SVZwNmF4NlFzZGRKZURLUkpYSWhEVU9JQ1V4b2dzMFR2bDVoNy0yV0xLNzJMbVppQlFtYlgyeTBOOV9MdGxRVEZuUU5mTWZ6ei12NWtSNlBtcDlVS2NLUElOTHdxUGJuS0VHc1E?oc=5"
+        "date": "2026-09-13",
+        "outlet": "UA.NEWS",
+        "title": "Australia records first Australian sea lion death from H5 bird flu",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPMjNPSUpKWXdmTXM4REw4VGRCbk1rUENKdnVTbmk3X3FjWjF1XzVQQk9kUmFoRzNweE4yX004b3JwQ0pVQ0RIZzRhNGNaTTBkalBMZXRNYVNoWVJzYXFtZ1dyZkNQdmRld0xzSm1VckJ2aUVvSXBOWEVQZkwzcXR2WkRyalFpWWl3OUFSZWNmdVFGcUNXUW8zblhGS2FPNERLanJV?oc=5"
       },
       {
-        "date": "2026-09-10",
-        "outlet": "realestate.com.au",
-        "title": "Bird flu reaches suburban streets in troubling new shift",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUm1FdUZma05uVS1kQ0pVY1FWNmw1MEVQUDhyY2NrdTNmWkpzZi1QeFlUMnpOZEU2ZlpzUy1LUnBpcm9WZURHbzI2cXhGWWdubm8yLU1SeU9OX1FfZjVmQlhiOVhHMlZ6VXo3Wnh4SW1RY1lxYU01WncyRml2dUNyOUswaTA0bGFPLVp6b3B6cHJxMVNrOGRr?oc=5"
+        "date": "2026-09-13",
+        "outlet": "Michael West Media",
+        "title": "First case of bird flu in endangered sea lion",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0tVEh2UFhjaTZKOEd6Ri1tZnE2SmN5a1NzZXR6RkVTZnBWVHVQQTJSSnY0MzNxcERma01GTkY3a21VVUxRd0s3cm5Sd3o2M2dFMWxEcVljbzQtQ2pBeW1wT055SXJYU2xRYkgyM2RtZk5jb0lGM0RDN3RhdXZvUQ?oc=5"
       },
       {
-        "date": "2026-09-10",
-        "outlet": "glamadelaide.com.au",
-        "title": "Adelaide Zoo’s Little Penguins and Pelicans set for bird flu vaccinations",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQVUFOS2hSY1NhZkFzLUIwckpWcDEwc3Byb0JETV9Sc0xBUzRMNG9vMHZxeERvMFVmY0dWbTlRZEZtVkN0bkZ5di1Qalc2VXhmLWJLVWxqeVFVUXNRWkhKcEhoRzJLNzRnTWJ0Z1dNTEI2VkU0eHB3MWN2RTZaMmo0eWFfNXBQVy0yd0ZNZW9ieVNkUVFySm4yRTBkS3FoSmQwYkVN?oc=5"
+        "date": "2026-09-13",
+        "outlet": "Kyabram Free Press",
+        "title": "| Kyabram Free Press",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQT25KaGJlandvc05zV3VZN0pEekdUbUwwVzBrMzZQdHNWckdvbV9yaE1tTDJDMkNQdklzdDA0OE1yN2ZjRFlWZkN2U3l6dkpSd2dRVXBCWjI2SUxRVjRNZ1JrVEFRRUtkbFVvMjFtd2d5UVBjR2p4TzZ3cWZRb2NkMXh2QmhlWTlGSHZiTWFuQQ?oc=5"
       },
       {
-        "date": "2026-09-10",
-        "outlet": "foodmarket.com",
-        "title": "New Wildlife Hospital to Bolster Western Australia's Bird Flu Response",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNS1N2TF9YMVIwZ1pFR1ZBZXBDRGFGdkZUZWp6RnF5UFBMSjFienNQMl9hMFNxOUM3OC1CRzJETlM2TG1tSmV6ZTJfNW0yTkFiYzRqcTVwQ0JDOWU2VXpGM0daSUJFQTBsaWRucUdvUmo0V3ZlNjA5Qk1YWEstLUc2OFQ1RzhMemxWVnhjMk1pcUVfMmswR2hVS182VUhsY3IzYnk3RkdpTndpakl3YUs1dWpsMA?oc=5"
+        "date": "2026-09-13",
+        "outlet": "UA.NEWS",
+        "title": "Bird flu H5 confirmed in sea lion in South Australia",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTTRrenkzRDZVc3B3VFJfTHQ5ajctWWZZLTRtT2t0TkNBeXNaY0VaSzUyNnlhQVNqb2oyWlI2ek1LdXJvN3pMRk96QzQzVDhNYS1YZk9KczRZbzVySUhIMzFwMUNOZGtuaDM4bGdaMjNHQ2hUWG9zblFPMUhzc0t2cXY1UVg4WlZ6SlZCQXVBaERIc3FrSlZ4Vw?oc=5"
       },
       {
-        "date": "2026-09-10",
-        "outlet": "streamlinefeed.co.ke",
-        "title": "South Australia Tests Juvenile Whale Carcass for Bird Flu",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOcU9RTGR2TUhkbTlaNmZXTjlVVklkUHp0NlJrZXprQXF6M0M2c1ZNZl9OczEzazJJSlZVbThPUnd2SlFFZ05aNW9kczlEbm1ERmt6NjNsaHZqby03NnVGNjlaaEhvU05MalpnVU5paUlLclFjcEkzN2czdEdKemVmYXk3OEVFMmJ6VXJmYkptTUVKRzZEM1E?oc=5"
-      },
-      {
-        "date": "2026-09-10",
-        "outlet": "Nine.com.au",
-        "title": "Young whale to be tested for bird flu after washing up on South Australian beach",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNckE3bldCeVMzZ0pubkx0ZmVLT2JQWHBJTmVuNWNnQ2tsdzU4S1ZhdzR5eHQtbGVmenlZQWV4ekVxRm9TZW94SHBPQW1fZzdCOFg0ZDR4QkFKa1AzWVB4eGw4YWR0NXhuY2xQLWVNSXRWOFA4SFdNZHJFUE5XSzl4RWRTRGtlMzRIM0RDclVFdy1ra29UQXVQRnE0cWZTcG5vN3JZSmM0YWJka0NELWc5M1RQZUJOaFFRdUFhTnBlMWVZaEljUF9JcXVNWQ?oc=5"
-      },
-      {
-        "date": "2026-09-10",
-        "outlet": "Australian Rural & Regional News",
-        "title": "New wildlife hospital to bolster Western Australia’s bird flu response: Swinbourn, Jarvis",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSVB3eEdUQUxSTDlqdWc5SE5YVUpXOFlzY200UkJqT0lNZjlwTlppTGJhTW5VVFpDU2pFTG1yQXRSdmdkN0xSeGZJN3ZBQ3dXQjljY1BPU1l2ZEVTNlhuS2dQYXpsc3VfWHg2cHUyN20yeVZ1MFkwTi1iZzNoeUNBNWpuVnpCb2lfWTA0RTRKdUhYYVYtTzV2cDhkQ3k1VGF0b3dDcVdIZVUwWVRMMGxLT0pBTnFtdw?oc=5"
+        "date": "2026-09-12",
+        "outlet": "inkl",
+        "title": "First case of bird flu in endangered Australian sea lion confirmed – as it happened",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQOTlwVjd3b1JQODd0NkFNZEVBQTVVQmFtLUd0a0VkS3pmRUdMWlpUR3VERGFJNmNqNDB6MHpoa0d4THJkbmpMMk1CX2dSU3lnNldueEhHTEdpWXd0dUlFOE5oLXZiY2YwdERpUHRaZWFsUUFiRW5rVkhfQjJUenc2WklpTkVRODdHZUVPS0MzZXllSVlFWF90cmZVeFBRa1ZxUEplNnRwekE3T2FDZmxLTjhrUklLTm1OTEtXLTd3?oc=5"
       }
     ],
     "headlines_window_days": 14,
@@ -849,12 +849,12 @@
     "gaps": []
   },
   "totals": {
-    "total_events": 2698,
+    "total_events": 2672,
     "human_cases": 9,
     "poultry_events": 148,
     "poultry_birds_affected": 0,
     "dairy_events": 15,
-    "wild_bird_events": 2519,
+    "wild_bird_events": 2493,
     "mammal_events": 7,
     "countries_affected": 32,
     "us_states_affected": 47,
@@ -862,7 +862,7 @@
   },
   "by_category": {
     "poultry": 148,
-    "wild_bird": 2519,
+    "wild_bird": 2493,
     "mammal": 7,
     "dairy": 15,
     "human": 9
@@ -874,23 +874,23 @@
     "Denmark": 3,
     "Australia": 99,
     "New Zealand": 3,
-    "Netherlands": 26,
     "Vietnam": 56,
+    "Netherlands": 26,
     "Chile": 3,
     "the United Kingdom of Great Britain and Northern Ireland": 3,
     "Sweden": 2,
     "Finland": 2,
+    "United States": 2359,
     "Portugal": 1,
-    "United States": 2384,
     "China, Taiwan Province of": 2,
     "Brazil": 3,
     "Germany": 18,
+    "Peru": 33,
     "Honduras": 5,
-    "Peru": 34,
     "Poland": 2,
     "Austria": 1,
-    "Togo": 5,
     "Ecuador": 1,
+    "Togo": 5,
     "Mexico": 4,
     "Nepal": 17,
     "Philippines": 1,
@@ -902,8 +902,8 @@
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2698,
-    "United States": 2384,
+    "Global": 2672,
+    "United States": 2359,
     "Australia": 99
   },
   "sources": [
@@ -914,7 +914,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 98,
-      "note": "fao(Australia) 2024-01-01..2026-09-12: 99 rows -> 98 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-09-13: 99 rows -> 98 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -922,8 +922,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 313,
-      "note": "fao(all) 2026-06-14..2026-09-12: 314 rows -> 313 records (1 skipped)"
+      "records": 312,
+      "note": "fao(all) 2026-06-15..2026-09-13: 313 rows -> 312 records (1 skipped)"
     },
     {
       "key": "us-wild-birds",
@@ -931,8 +931,8 @@
       "region": "United States",
       "homepage": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/wild-bird-surveillance-dashboard",
       "status": "live",
-      "records": 2354,
-      "note": "usda wild-bird: 2354 features -> 2354 records (H5/H7, 365d)"
+      "records": 2329,
+      "note": "usda wild-bird: 2329 features -> 2329 records (H5/H7, 365d)"
     }
   ],
   "context_sources": [
