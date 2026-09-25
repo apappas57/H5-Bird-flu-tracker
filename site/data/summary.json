@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T11:41:37.275Z",
+  "generated_at": "2026-09-25T11:47:32.904Z",
   "latest_event": "2026-09-14",
   "mode": "live",
   "mode_note": null,
@@ -60,7 +60,7 @@
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 96,
+    "days_since_first_detection": 97,
     "latest_detection": "2026-08-23"
   },
   "eras": {
@@ -168,7 +168,7 @@
       "au_h5n1_2026": 78,
       "au_h7_poultry_2024_2025": 20,
       "au_human_2024": 1,
-      "global_h5_panzootic": 1935,
+      "global_h5_panzootic": 1930,
       "other_subtype": 37,
       "subtype_unstated": 205
     }
@@ -598,7 +598,7 @@
     "wild_bird_detections": 78,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 96,
+    "days_since_first_detection": 97,
     "human_cases_au": 1
   },
   "human_context": {
@@ -712,7 +712,7 @@
     "notes": [],
     "from_last_good": true,
     "last_good_fetched_at": "2026-08-01T02:26:35.539Z",
-    "last_good_age_days": 54
+    "last_good_age_days": 55
   },
   "official_gap": {
     "behind": false,
@@ -760,16 +760,10 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 64 headlines, detection signal in 1 (SA); no coverage gaps detected",
+    "note": "google news 14d: 52 headlines, detection signal in 1 (SA); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 40,
     "headlines": [
-      {
-        "date": "2026-09-24",
-        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
-        "title": "Dead humpback whale tested for bird flu after washing up on beach",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQbXNkTWZDWExQVFBuQTlTOGtSS1hkSU1wTzFWVzZubE1wMFV4T1pJT2JZbVRsMGFkV0tia1NiOVBNcnBJa1pZbW0tcXdPUkFkeVB2QnpQLUY2S253QU96QTcxdFFYU1owanVjaWhHcE1NQ1BwVExSVEE5SFB4S2toVlRCa1BudDhtZDNZN1JNamJTOTgxUThR?oc=5"
-      },
       {
         "date": "2026-09-24",
         "outlet": "Mirage News",
@@ -778,7 +772,7 @@
       },
       {
         "date": "2026-09-24",
-        "outlet": "weeklytimesnow.com.au",
+        "outlet": "The Weekly Times",
         "title": "Vic delays poultry welfare rules amid bird flu",
         "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNV1czUEw2YmZTd1o0NUstbHR4UnNwZ19FN1k5U25BdkJ6ZVRORnl6Y1BZQm9MakhGUjlVazRVY3dwbF9obUZPc3FIYVB1aTJkRFA2R3dMR05PYi0yNDNfQ0NNVUZTOUp0UExoeFpubkhwU1l4M0IxWlh3dElXVW9fY0V3VXlhSVlPUlRvQlIxcDVrS1prRE00Y1dHRVRRTlhxT3paOWtYZ2dOMG1fQXUxTnpVSVdWNTZUMWdJb2lVZkFwYjdFSmdEbUJqRXdUbWlqV3AyZ1lvZWdTTjZWSlpxb1FxZXlNaFNKQUJaeFBxS2p6WUZJbUQyZjZlbXk?oc=5"
       },
@@ -796,9 +790,15 @@
       },
       {
         "date": "2026-09-22",
-        "outlet": "South Sydney Herald",
+        "outlet": "southsydneyherald.com.au",
         "title": "Australia braces for sea lion mortalities amid bird flu outbreak",
         "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNUU56Y3Z2MFozWTktMkp3RnZQMnFwN3BCY0J3MUNZYlBsU3lYMUIzdGcxdXdqelVhWXJ4N1hpSkVJWWo4WU5aOTI4ejBKajNuQldTZmhwbGF3TkE2eGxfX0dHdzJYNUtieFlGQ0lacUZNaTZaNWpNNnhyRkw1Nl9zUG1iY2NMZVBCSUVrV0lZemtXUS10eWVHMUswYkRDcEk?oc=5"
+      },
+      {
+        "date": "2026-09-22",
+        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
+        "title": "Dead humpback whale tested for bird flu after washing up on beach",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQbXNkTWZDWExQVFBuQTlTOGtSS1hkSU1wTzFWVzZubE1wMFV4T1pJT2JZbVRsMGFkV0tia1NiOVBNcnBJa1pZbW0tcXdPUkFkeVB2QnpQLUY2S253QU96QTcxdFFYU1owanVjaWhHcE1NQ1BwVExSVEE5SFB4S2toVlRCa1BudDhtZDNZN1JNamJTOTgxUThR?oc=5"
       },
       {
         "date": "2026-09-22",
@@ -811,6 +811,12 @@
         "outlet": "aapnews.aap.com.au",
         "title": "'Devastation' fears as bird flu found in four sea lions",
         "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNcjhCV0F3dU5jcTh5WnMyWXpKNWpYSmQ0bkpJZ0poakpLNW1QczlNbE1jV29EQzFRNm1MaUQxTkx2Z2RHeXJ4MWhHVEk3dE1DclZMR3BLeEJoUzg3T3FXY2JIU0dHRHVlSGwyTTVPZ0d0WGxkSk9XV3lueUoxNG1sX1Q3MFEtZWpWOGNXZlhn?oc=5"
+      },
+      {
+        "date": "2026-09-21",
+        "outlet": "Australasian Leisure Management Magazine",
+        "title": "Wild Little Penguins vaccinated at Manly as NSW prepares for bird flu",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNNkwzZ3ByaU1ud2o4a3lrdXVDeXBGaWpJOHRXWTdDSGN0NWp3WF9EX3BUampUZ2poSHRPWkQ4cVlxMkl3MlhRaWcwdEt2X1JPSFZ6UEpTVWc5V3lYWjR2OWE0bE9oN1I3Mi1kVUIybG9MRm9xcXNXUF9oMGpnUjZDZ2ZmejN3Q2ctb0VVaWxTNHBhOFdiRm96UUhkOVFOSHBFcGtqVFp5UQ?oc=5"
       },
       {
         "date": "2026-09-21",
@@ -829,12 +835,6 @@
         "outlet": "InDaily South Australia",
         "title": "Fourteen endangered sea lions found dead in SA waters",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNYmZfY29wS3N4MVloQ0hkSGtLaHJvR1VMb2xEZ25YZ196RUYxVW9JdExRUDktbFF6Sm0zVDBjaFJBRE1oQTZ5aW5Xa2xjMU94R0NxZ000Qk5pWUc5cUVKTEdFZ00ySk9VMi03LURVbUhkeXJGWmllX3dGYXEyZmxHcWdPMGxuX2kxR1dWNDFRZUdQc0g5TU0yaVctZS1MSFV5TU5jaTVlUjZFQQ?oc=5"
-      },
-      {
-        "date": "2026-09-21",
-        "outlet": "The Australian",
-        "title": "Killer disease hits endangered sea lions",
-        "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQMWNWUEg2dW1yYlNBZkJ4MlJUaWcybi1KZlJYTGltNDVIUExXdDZIX2VYb0VNbzJLeXFMekloUDlkUEtCcHpzWkYwSHlGMVFfQkg3cE9ZVlRWeHVyclFtNmRCTzU2MU9BdEpyYk9zMWdFVjlUN283NHVTa25QR3R1U2E0Yk5KTE5RUU1KTERRN2JLUFdLU1VuNjBWdi1tYVZ5T0NOa2xVczhqaWVrQ2ZSWHRlLWRmQVNGNHM5NnNvRDZQVmliN1J2QlBxX3hoUkxCcTRwbElKakZHVnJReDk2a05UR0NvNGhDcmRPeEs1bDB1Zw?oc=5"
       }
     ],
     "headlines_window_days": 14,
@@ -849,37 +849,37 @@
     "gaps": []
   },
   "totals": {
-    "total_events": 2276,
+    "total_events": 2271,
     "human_cases": 9,
-    "poultry_events": 145,
+    "poultry_events": 148,
     "poultry_birds_affected": 0,
     "dairy_events": 9,
-    "wild_bird_events": 2106,
+    "wild_bird_events": 2098,
     "mammal_events": 7,
     "countries_affected": 32,
     "us_states_affected": 47,
     "au_states_affected": 7
   },
   "by_category": {
-    "poultry": 145,
-    "wild_bird": 2106,
+    "poultry": 148,
+    "wild_bird": 2098,
     "mammal": 7,
     "dairy": 9,
     "human": 9
   },
   "by_country": {
-    "Argentina": 1,
     "Bulgaria": 2,
-    "Sweden": 4,
-    "Canada": 1,
+    "Argentina": 1,
+    "Peru": 39,
     "Vietnam": 50,
+    "Canada": 1,
+    "Sweden": 4,
     "France": 3,
     "the United Kingdom of Great Britain and Northern Ireland": 5,
     "Uruguay": 1,
     "Norway": 13,
-    "Peru": 35,
     "Chile": 3,
-    "United States": 1990,
+    "United States": 1985,
     "Denmark": 3,
     "Australia": 99,
     "New Zealand": 3,
@@ -889,21 +889,21 @@
     "China, Taiwan Province of": 1,
     "Brazil": 3,
     "Nigeria": 1,
-    "Germany": 6,
+    "Germany": 3,
     "Honduras": 3,
     "Poland": 2,
     "Austria": 1,
     "Togo": 5,
     "Ecuador": 1,
     "Mexico": 2,
-    "Nepal": 11,
+    "Nepal": 10,
     "Cambodia": 1,
     "China": 1,
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2276,
-    "United States": 1990,
+    "Global": 2271,
+    "United States": 1985,
     "Australia": 99
   },
   "sources": [
@@ -914,7 +914,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 98,
-      "note": "fao(Australia) 2024-01-01..2026-09-24: 99 rows -> 98 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-09-25: 99 rows -> 98 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -923,7 +923,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 279,
-      "note": "fao(all) 2026-06-26..2026-09-24: 291 rows -> 279 records (12 skipped)"
+      "note": "fao(all) 2026-06-27..2026-09-25: 289 rows -> 279 records (10 skipped)"
     },
     {
       "key": "us-wild-birds",
@@ -931,8 +931,8 @@
       "region": "United States",
       "homepage": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/wild-bird-surveillance-dashboard",
       "status": "live",
-      "records": 1962,
-      "note": "usda wild-bird: 1962 features -> 1962 records (H5/H7, 365d)"
+      "records": 1957,
+      "note": "usda wild-bird: 1957 features -> 1957 records (H5/H7, 365d)"
     }
   ],
   "context_sources": [
