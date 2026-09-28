@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T11:58:55.031Z",
+  "generated_at": "2026-09-28T13:49:21.372Z",
   "latest_event": "2026-09-14",
   "mode": "live",
   "mode_note": null,
@@ -60,7 +60,7 @@
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 99,
+    "days_since_first_detection": 100,
     "latest_detection": "2026-08-23"
   },
   "eras": {
@@ -168,9 +168,9 @@
       "au_h5n1_2026": 78,
       "au_h7_poultry_2024_2025": 20,
       "au_human_2024": 1,
-      "global_h5_panzootic": 1911,
+      "global_h5_panzootic": 1874,
       "other_subtype": 37,
-      "subtype_unstated": 207
+      "subtype_unstated": 202
     }
   },
   "au_eras": {
@@ -598,7 +598,7 @@
     "wild_bird_detections": 78,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 99,
+    "days_since_first_detection": 100,
     "human_cases_au": 1
   },
   "human_context": {
@@ -712,7 +712,7 @@
     "notes": [],
     "from_last_good": true,
     "last_good_fetched_at": "2026-08-01T02:26:35.539Z",
-    "last_good_age_days": 57
+    "last_good_age_days": 58
   },
   "official_gap": {
     "behind": false,
@@ -760,13 +760,31 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 48 headlines, detection signal in 1 (SA); no coverage gaps detected",
+    "note": "google news 14d: 44 headlines, detection signal in 0; no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 40,
     "headlines": [
       {
+        "date": "2026-09-28",
+        "outlet": "SBS",
+        "title": "Deadly bird flu threat looms large over Kangaroo Island",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObHdsVl9NcC1ZR2JNWEV5RFhpRU0yMU50SU9UN1RmQ1FvNGVNQjhlREZmd3kwZFlxQ3ZMTGRQUE5hSUtUVDllTWZkemlicnJvWkFGZXAwdHc4UGZNNXEtd3hfVF9Xci1sMEtsdW1hbl9MWUlSV2I2Ym1kd29CM0c0UWJ1UUY5SGlaQWhuNmxuRDJKMVUzRWI1S0FlOW9CcjFH?oc=5"
+      },
+      {
+        "date": "2026-09-28",
+        "outlet": "psnews.com.au",
+        "title": "Bird flu numbers keep adding up, sparking new government awareness efforts",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOUTJ6R21oUi04b0tvN1hqUEdkckZvMWlJeDlPTjJrVy1Gd0xWaENnNjRhVDJSZF90bmhhSGdicHMwTU5GVVBnYnp0Xy1kdGFJb1ZyTFB6azlaWGFwU2hkeWZ0dDlIWlBkWF9KbjhBcnlubHVkSWFGZEZHZ1VQQmNMU2xEMW13dkYtUkV0dzRrdm5uMkJKdTk0MGtkOERQaEVjQ29MNzl3?oc=5"
+      },
+      {
         "date": "2026-09-27",
-        "outlet": "thewest.com.au",
+        "outlet": "ausleisure.com.au",
+        "title": "Perth Royal Show provides platform for WA bird flu awareness campaign",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdVF2N2IxVGZLUG43S3B6MndEdWd3LW9rVGlwU0NIZDVqd3AtdG1UOXFSbG5paGhvaUlSdk0xdThxMjJvLWctMUNnUzZIR1RneE1TY2FxM1pGTmQwaVd0TXBQM0hNaUZtY1dMRU9BQVVOVzNRMG1XTUVleXEzY0dGRnBfa2Y0ZGNlRy1mOEdNc1BLODNzcWhIWlRIWHlpUHVLdEF0bGRMZw?oc=5"
+      },
+      {
+        "date": "2026-09-27",
+        "outlet": "The West Australian",
         "title": "H5 bird flu: New six-week awareness blitz as more than 650 outbreaks recorded nationwide",
         "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQUG9WME9CckhjUjNSU29qaVdESEc2WVhlRzJ5VFRvOEVCejRSTDNGa2duRE5JdFRNUE1zNWc3Q19xVkpNcWlQd3U4REZIZTJKOWZJeEFBWVY3dWxYSWtEQVVtakplb3M4QVFlOGtDZzZ2THh4c29hLTgxYkdxVFF4OWV1T09NbC1ybkJOUGZQRTF2R1VvV1lFcFF3Q09URDFpRTVUU0pDRnVVdk11eWpNYkhYTmkwQmVhejlOZWJMNmtiSE1qZXZqOHhTbXlEc2VmOVpabNIB1AFBVV95cUxQUG9WME9CckhjUjNSU29qaVdESEc2WVhlRzJ5VFRvOEVCejRSTDNGa2duRE5JdFRNUE1zNWc3Q19xVkpNcWlQd3U4REZIZTJKOWZJeEFBWVY3dWxYSWtEQVVtakplb3M4QVFlOGtDZzZ2THh4c29hLTgxYkdxVFF4OWV1T09NbC1ybkJOUGZQRTF2R1VvV1lFcFF3Q09URDFpRTVUU0pDRnVVdk11eWpNYkhYTmkwQmVhejlOZWJMNmtiSE1qZXZqOHhTbXlEc2VmOVpabA?oc=5"
       },
@@ -774,7 +792,7 @@
         "date": "2026-09-27",
         "outlet": "Oz Arab Media",
         "title": "Bird Flu Campaign Launches as Sea Lion Vaccine Sought",
-        "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPaEFtTzJXRnE3Z2c5UEpTdzRBazJNYWJJd2dMV0Y5ZmtNN2RoTHE4SDlsYk9UZDdkdG52clVEanRXUnFUdlAwTTI1cVdta3FtdjdJSjQybTNraDNZZURkelZ4U1BZbHF2WWxBeGV3eDY0dVpTZUNYOGlmTzh2TFVaVG5rczF1TjBXUVRiR3Fkekloc2l1ZzNIaDM1ZzVuOGxaaEZiWWpwUjBNbFh5XzN2TkhEQ21UdFlFV3FIbHh5NDQyV1RoLTNFZDAyaHI4QmFKbDlzYUhMU2dob05LNVlrUzVRbmx0b19iczhIMTc1dm5ZOEt0b09SNjNrczhLWXltZXc?oc=5"
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQUnIxRGRZUFJTSEd4elZ3WG1mOC1Rcl84eWExRVZrOWlvREdqdjE0dkdic2I5RExTQ2U4alRqcmR0bndscGc0TVVrY0lwdHQ4Z1ZGczRVUVp3cWh5U1BmTk85Y3U2RmxhM01KZmhBbDJNMFBMbGszOEo1RzI5cEdSSQ?oc=5"
       },
       {
         "date": "2026-09-27",
@@ -790,7 +808,7 @@
       },
       {
         "date": "2026-09-26",
-        "outlet": "coffscoast.newsofthearea.com.au",
+        "outlet": "Coffs Coast News Of The Area",
         "title": "Lethal H5 bird flu detected on Coffs Coast beach",
         "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSmRjWm1ZVF9MLThxbEVFVjZfWUZ5RWkzVE4xU0JTaG91dDF5RHA1UzJVRjQ5SURrZ0JXbG9sMzlXeURBdWx0QjhyRzQ5QXRtWHRibTJlQlJFSTF4cVhsQzdRTDd3eVZjUWplLUtzZUxBOEFaZGJSeGNyMGhNTFlpQko0OURXVjI4ZG16Tzk2Zktndw?oc=5"
       },
@@ -808,7 +826,7 @@
       },
       {
         "date": "2026-09-26",
-        "outlet": "miragenews.com",
+        "outlet": "Mirage News",
         "title": "Bird Flu Awareness Campaign Launches at Perth Royal Show",
         "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQTERfVHNBU3lRVmJoU0dqdlRjMnhXLW9FTVNmSXcxVk95dUxwOGtjSU1sNENMWkFtZ05sLWZIa3hSMEtYRUc5SUdLSFM0Nkc5ZHg1bVYzenc1SER6S1B4YjN3OHhRZ0R4WlVVbzg5ZVdzVmhjaXNOUzloNnd3LVNsaEQyaWtFVmlH?oc=5"
       },
@@ -817,24 +835,6 @@
         "outlet": "kendranewsaustralia.com.au",
         "title": "H5N1 bird flu detected in Victoria’s wild birds as residents urged to stay alert",
         "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPZWxBUE9kS0k5bGdPbkxYaG5DVVhCYkcyY3gtMXdhYWxjU2dOamplVzJjSDVLdk5hQWExSUxpakxRNDBkVFNvTzZFT1dYN3hHeXpndGZBdVM2Z3JrMmZzR1ZOSlg0cHJpVGxxVW02WHRicmN2SVlzNTJQQmsyM3RnMFZjUkw4QlJpU0dvcmxJMG1NWG1UNVU2eE11SElQNGZUUlNkQVZBZElOWFYxbWU2ZTVqY2JJZw?oc=5"
-      },
-      {
-        "date": "2026-09-25",
-        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
-        "title": "Caged egg rule change delayed in Victoria due to spread of bird flu",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQX041MUlXZ0MxakVZRmkza2VERUhpWV9VV0FwLUFyYUFlb1BwZk5qWXhqcktVRTdzY0tEYVFyWWRhS0NVQTNDcWRhTEVUbDBNam5nS1NRT0VjdS1KeXZJXzFBaV81allteVVFT3dJc0VmaVlxQUVYeFVxWEYwZWJGTGFnR0daZ0c5bUlwUTZ4WXlXN3FyWmhEd3RfUXo?oc=5"
-      },
-      {
-        "date": "2026-09-25",
-        "outlet": "Australian Rural & Regional News",
-        "title": "Latest H5 bird flu developments: Animal Health Australia",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOV1g4c3lTSlV1czlJemE5U0ZTc0ZwWVRMR3hFVV92X3R3SEttNzg4QzFFOElrbnFoQmtlenpmd1lJOWJ3dWtwd0pMbFdiLU5HYXJnSUg2VmVOSnMzd1NtYUNTNnZZdUx4UUI2TnR4ckRuYUFCeGdBaWI4OFNiRkhaMXhhNFowQ1ZrRnhsaw?oc=5"
-      },
-      {
-        "date": "2026-09-24",
-        "outlet": "miragenews.com",
-        "title": "Here's 'tea' On Protecting WA Seabirds",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE53M1FoVEEwXzQ4dnVFYXIxYzUtaFFrYUZDTmpHYm5MOVl3cS15NzlGMUNkV0p6Wk1IYjVhd2U3VlJ4dFNrTEFRNEVncW9mVGlaRm1QRWN4bkpyNTdidlhEblBwazBWc0JZVXRrNmJJcHQ1NWVmMlZLWjRnbw?oc=5"
       }
     ],
     "headlines_window_days": 14,
@@ -849,52 +849,52 @@
     "gaps": []
   },
   "totals": {
-    "total_events": 2254,
+    "total_events": 2212,
     "human_cases": 9,
-    "poultry_events": 151,
+    "poultry_events": 148,
     "poultry_birds_affected": 0,
-    "dairy_events": 9,
-    "wild_bird_events": 2078,
+    "dairy_events": 8,
+    "wild_bird_events": 2040,
     "mammal_events": 7,
     "countries_affected": 32,
-    "us_states_affected": 47,
+    "us_states_affected": 46,
     "au_states_affected": 7
   },
   "by_category": {
-    "poultry": 151,
-    "wild_bird": 2078,
+    "poultry": 148,
+    "wild_bird": 2040,
     "mammal": 7,
-    "dairy": 9,
+    "dairy": 8,
     "human": 9
   },
   "by_country": {
     "Argentina": 1,
     "Bulgaria": 2,
     "Peru": 39,
-    "Vietnam": 47,
-    "Sweden": 4,
+    "Vietnam": 46,
     "Canada": 1,
-    "United States": 1974,
+    "Sweden": 4,
+    "United States": 1936,
     "France": 3,
     "the United Kingdom of Great Britain and Northern Ireland": 5,
-    "Uruguay": 1,
     "Norway": 13,
+    "Uruguay": 1,
     "Chile": 3,
     "Denmark": 3,
     "Australia": 99,
     "New Zealand": 3,
-    "Netherlands": 20,
+    "Netherlands": 19,
     "Finland": 2,
     "Portugal": 1,
     "China, Taiwan Province of": 1,
     "Brazil": 3,
     "Nigeria": 1,
-    "Germany": 3,
+    "Germany": 1,
     "Honduras": 3,
     "Poland": 2,
     "Austria": 1,
-    "Togo": 5,
     "Ecuador": 1,
+    "Togo": 5,
     "Mexico": 2,
     "Nepal": 8,
     "Cambodia": 1,
@@ -902,8 +902,8 @@
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2254,
-    "United States": 1974,
+    "Global": 2212,
+    "United States": 1936,
     "Australia": 99
   },
   "sources": [
@@ -914,7 +914,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 98,
-      "note": "fao(Australia) 2024-01-01..2026-09-27: 99 rows -> 98 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-09-28: 99 rows -> 98 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -922,8 +922,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 280,
-      "note": "fao(all) 2026-06-29..2026-09-27: 290 rows -> 280 records (10 skipped)"
+      "records": 275,
+      "note": "fao(all) 2026-06-30..2026-09-28: 285 rows -> 275 records (10 skipped)"
     },
     {
       "key": "us-wild-birds",
@@ -931,8 +931,8 @@
       "region": "United States",
       "homepage": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/wild-bird-surveillance-dashboard",
       "status": "live",
-      "records": 1938,
-      "note": "usda wild-bird: 1938 features -> 1938 records (H5/H7, 365d)"
+      "records": 1901,
+      "note": "usda wild-bird: 1901 features -> 1901 records (H5/H7, 365d)"
     }
   ],
   "context_sources": [
