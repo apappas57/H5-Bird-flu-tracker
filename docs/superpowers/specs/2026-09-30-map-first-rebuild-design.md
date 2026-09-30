@@ -421,11 +421,14 @@ drawer uses a generic seabird silhouette derived from the tern, labelled as such
   forked tail and a black cap read as a filled ink shape; the skua is heavy and broad-winged with white
   wing flashes; the giant petrel has a long tube-nose bill and long straight wings; the silver gull is
   compact with rounded wings. A birder should recognise each at a glance.
-- Budgets: 3,000 triangles or fewer per species, one mesh, one material, one armature with a bone chain
-  per wing (or three shape keys: glide, down, up). A 24-frame flap cycle at 24 fps, exported as the
-  animation `flap`, and a static pose `glide`.
+- Budgets: 3,000 triangles or fewer per species (working target about 1,400 so a skinned GLB fits its
+  size budget), one mesh, two named materials (`bird_white` for the body, `bird_ink` for filled ink
+  shapes such as the tern's cap and the skua's wing band; the runtime keeps that distinction), one
+  armature with a three-bone chain per wing. A 24-frame flap cycle at 24 fps, exported as the
+  animation `flap`; the rest pose is the glide, so a model playing nothing is already gliding.
 - Asset budgets: GLB 60 KB or less each; WebM loop 150 KB or less; APNG 300 KB or less; PNG still 40 KB
-  or less. All bird assets together under 1 MB, all lazy.
+  or less. These are per-asset ceilings, not a sum: the binding figure is that all bird assets
+  together stay under 1 MB, all lazy.
 
 ### 6.4 Runtime
 
