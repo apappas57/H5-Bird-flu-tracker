@@ -758,7 +758,7 @@ Also, at the end of `flight()`, after loading the manifest, set `manifestSync = 
 
 - [ ] **Step 5: Test, bundle, commit**
 
-Run: `node --test birds-src/test/ && npm run bundle && npm test`
+Run: `node --test birds-src/test/*.test.mjs && npm run bundle && npm test`
 Expected: all birds tests pass, bundle within budget, pipeline tests unaffected.
 
 ```bash
