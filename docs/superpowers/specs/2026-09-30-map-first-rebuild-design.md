@@ -345,8 +345,10 @@ the date of the data on screen. A fetch failure in the browser shows the same ba
 
 ### 5.4 Identity and visuals
 
-- Kept: white paper, ink, one carmine, Source Code Pro. Carmine means the live outbreak and nothing
-  else. Birds are ink only.
+- Kept: white paper, ink, one carmine, Source Code Pro. Carmine means alarm and nothing else: the
+  current-era detection marks, and the freshness line or banner when the data on screen is stale or
+  restored (stale data shown as current is the failure this rebuild exists to fix, so that state may
+  not be quiet). Birds are ink only. Reversing the second use is one CSS class.
 - Marks: current-era official events are carmine squares sized by precision as in 3.3; WOAH records are
   ink rings; resolved H7 records are grey; world records are small ink dots.
 - The hero photograph is retired from the map page (the map is the hero). The tern photo and its
@@ -382,9 +384,10 @@ Adapt: `initMap` (full viewport), `buildControls` (filter bar), `renderLegend` a
 Drop from the map page: `renderSituation` (356-490), `historicalDiscloseHtml` (495-532),
 `renderOfficialGap` (541-650), `newsLeadHtml` (657-669), `renderOfficialStatement` (673-727),
 `renderListFoot` (1312-1322), `renderNews` (1353-1382), `renderSources` (1393-1444), and in
-`styles.css` the news and sources lists (1286-1361), the `.sb-*` and `.og-*` block (1407-1498) and
-the legacy aliases (1499-1515). Their facts become `/about` content generated from `summary.json`
-where they are data, and static copy where they are explanation.
+`styles.css` the news list (1285-1312), the `.sb-*` and `.og-*` block (1407-1498) and the legacy
+aliases (1499-1515). The `.source-*`, `.callout`, `.disclaimer` and `.footnote` rules that follow the
+news list are kept: `/about` and the footer strip use them. Their facts become `/about` content
+generated from `summary.json` where they are data, and static copy where they are explanation.
 
 Keep despite living among dropped neighbours: `dataSkew` (1454-1490) and the banner half of
 `renderMeta` (1492-1578) are correctness, not copy; `renderViewFigures` (1013-1062) becomes the
@@ -394,8 +397,12 @@ Lift into a shared `site/lib.js`: `$`, `esc`, `safeUrl`, `plural`, date formatti
 replacing the two that disagree today), and `citationsHtml` from `history.js` (the drawer needs a
 citation renderer and `app.js` has none). `history.js` and the new `about.js` import it; `app.js` too.
 
-One cleanup before the rebuild touches markers: `icons.js` has two builders for the same SVG
-(`mark()` at 206 is dead; `catMark()` at 278 rebuilds it to attach the `.icon` class). Collapse to one.
+One cleanup before the rebuild touches markers: there are two builders for the same SVG
+(`mark()` at `icons.js:206` is dead; `catMark()` at `app.js:278` rebuilds it to attach the `.icon`
+class). Collapse to one, in `icons.js`.
+
+The canonical host is `https://www.birdflutracker.org/` (the apex answers 308 to it). Every page's
+`canonical` and `og:url` use the `www` host; today they point at the apex, which is a defect.
 
 ## 6. Birds
 

@@ -71,9 +71,13 @@ Edit `package.json` so `scripts` reads:
     "build": "node pipeline/build.mjs",
     "verify": "node pipeline/build.mjs --verify",
     "serve": "node pipeline/serve.mjs",
-    "test": "node --test pipeline/test/"
+    "test": "node --test"
   },
 ```
+
+`node --test` with no paths uses Node's default discovery (`**/*.test.{js,mjs,cjs}` and `**/test/**`,
+excluding `node_modules`), so the `site/test/` and `birds-src/test/` suites that streams B and D add
+are picked up without anyone editing this line again.
 
 Confirm `.gitignore` contains `node_modules/` (add the line if it does not).
 

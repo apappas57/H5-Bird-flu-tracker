@@ -55,11 +55,11 @@
 
 Run: `cd ~/dev/h5-bird-flu-tracker && npm install --save-dev --save-exact three@0.186.1 esbuild@0.28.2 --no-audit --no-fund`
 
-Edit `package.json` `scripts` (keep the other scripts stream A added):
+Edit `package.json` `scripts` (keep the other scripts stream A added; do not touch `test`, whose
+`node --test` default discovery already finds `birds-src/test/`):
 
 ```json
-    "bundle": "esbuild birds-src/entry.mjs --bundle --format=esm --minify --target=es2020 --legal-comments=none --outfile=site/assets/three/birds.js",
-    "test": "node --test pipeline/test/ birds-src/test/"
+    "bundle": "esbuild birds-src/entry.mjs --bundle --format=esm --minify --target=es2020 --legal-comments=none --outfile=site/assets/three/birds.js"
 ```
 
 - [ ] **Step 2: Write the failing budget test**
