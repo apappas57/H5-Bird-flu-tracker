@@ -17,7 +17,7 @@ DRY_RUN=0
 log() { printf '[refresh] %s %s\n' "$(date '+%Y-%m-%dT%H:%M:%S%z')" "$*"; }
 fail() { log "FAIL: $*"; exit 1; }
 
-mkdir -p "$LOCK_DIR"
+mkdir -p "$LOCK_DIR" || fail "could not create lock dir $LOCK_DIR"
 if ! mkdir "$LOCK" 2>/dev/null; then
   # A lock older than 3 hours is a crashed run, not a running one.
   if [ -n "$(find "$LOCK" -maxdepth 0 -mmin +180 2>/dev/null)" ]; then
@@ -52,7 +52,7 @@ fi
 
 if [ "$DRY_RUN" = "1" ]; then
   log "dry run: would commit $(git status --porcelain -- site/data | wc -l | tr -d ' ') file(s)"
-  git checkout -q -- site/data
+  git checkout -q -- site/data || fail "dry-run cleanup failed"
   exit 0
 fi
 
