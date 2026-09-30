@@ -6,7 +6,7 @@
 
 **Architecture:** Three static pages served from `site/`, no framework and no bundler. `site/lib.js` is a classic script that publishes one object on `globalThis` and holds every shared helper plus the generated copy templates, so the sentences that carry a number and its basis are unit-tested rather than typed into three files. `site/app.js` keeps the hard-won Leaflet geometry, loaders and filter pipeline and is rewritten around the panel, the filter bar, the scrubber and the drawer. `site/about.js` renders the counting bases, sources, placement, eras and milestones from `summary.json`. `site/history.js` loses its private helpers to `lib.js` and changes in no other way.
 
-**Tech Stack:** HTML, CSS custom properties, ES2018 vanilla JS as classic scripts, vendored Leaflet 1.9, `node:test` for unit tests, Playwright CLI (`npx playwright screenshot`) for the Open Graph card, Vercel static hosting with `cleanUrls`.
+**Tech Stack:** HTML, CSS custom properties, ES2018 vanilla JS as classic scripts, vendored Leaflet 1.9, `node:test` for unit tests, `/sitecheck` as the multi-viewport QA gate, Playwright CLI for the Open Graph card and for the few behaviours the harness cannot judge, Vercel static hosting with `cleanUrls`.
 
 **Spec:** `docs/superpowers/specs/2026-09-30-map-first-rebuild-design.md` (this plan covers sections 5.1 to 5.6, the copy rules in 5.3, the two page-side items in 4.3, the OG card in 5.4, and the front-end half of section 7)
 
@@ -5283,40 +5283,154 @@ git commit -m "chore(site): copy pass across the three pages"
 
 ### Task 14: Verification
 
-**Primary gate: the `sitecheck` skill.** Before the manual checks below, run `/sitecheck` against the local server this task starts and against the Vercel preview URL. It captures every route at phone, tablet and desktop widths and machine-checks rendered-pixel text contrast, horizontal overflow with culprits, broken links and redirect chains, missing anchors, SEO basics, tap targets, console and network errors, axe-core, and a visual diff against the last good run, with a contact-sheet report. Fix everything it reports first. The manual list below then covers only what the harness cannot judge: scrubber counts, drawer focus handling, and the birds gates.
+`/sitecheck` is the gate. It is a deterministic multi-viewport harness that captures every route at 320, 390, 768, 1280 and 1440 and machine-checks rendered-pixel contrast, graphic visibility, horizontal overflow with culprits, broken links and redirect chains, missing anchors, SEO basics, tap targets, console and network errors, and axe-core, with a visual diff against the previous run and a contact-sheet report. It replaces the screenshot matrix and every by-hand check it can make better than a person can.
 
-Everything the front-end half of spec 7 asks for, run against the committed data and against the fixture, at the three widths.
+What it cannot judge is whether a number is the right number and whether an interaction behaves. That is what the short Playwright list at the end is for, and it is short on purpose.
+
+Two runs: the local preview server, and the Vercel preview deployment. Never the production domain: tight polling from this machine's IP trips Vercel's bot challenge and has caused false monitoring alarms before.
 
 **Files:**
-- Modify: none. This task changes nothing; it either passes or it sends work back to the task that owns the failure.
+- Create: `/private/tmp/claude-502/-Users-Alex/b0f31fd7-7716-4c2d-84bf-ffd2827f3a27/scratchpad/sitecheck.config.json` (scratchpad, not the repo: the repo root is outside this stream's allowlist)
+- Modify: only what a finding sends back to its owning task.
 
 **Interfaces:**
-- Consumes: every file this stream touched.
-- Produces: the pass or the list of failures, each attributed to the task that owns it.
+- Consumes: every file this stream touched; `body[data-ready]`, which Task 3's `boot` sets on both paths; the fixture preview server from Task 6 Step 8.
+- Consumes from stream E: the Vercel preview URL, and the protection bypass secret if the preview is protected.
+- Produces: the pass, or the finding list attributed per task, plus `report.html` for Alex.
 
-- [ ] **Step 1: Every JS file parses**
+- [ ] **Step 1: Every JS file parses, and the unit tests pass**
 
 ```bash
 cd /Users/Alex/dev/h5-bird-flu-tracker && for f in site/*.js site/test/*.mjs; do
   node --check "$f" && echo "ok   $f" || echo "FAIL $f";
-done
+done && node --test site/test/
 ```
-Expected: `ok` for every file. `node --check` on an `.mjs` in a `"type": "module"` repo checks it as a module, which is correct for the test file and for `birds.js` when stream D lands.
-
-- [ ] **Step 2: The unit tests**
-
-```bash
-cd /Users/Alex/dev/h5-bird-flu-tracker && node --test site/test/
-```
-Expected: all tests pass, 0 fail.
+Expected: `ok` for every file, and all unit tests pass with 0 fail.
 
 Then, once stream A has added the `test` script to `package.json`:
 ```bash
 cd /Users/Alex/dev/h5-bird-flu-tracker && npm test
 ```
-Expected: the same tests run, alongside stream A's pipeline tests. If `npm test` does not pick up `site/test/`, stream A's script is narrower than `node --test`; tell the parent, do not edit `package.json`.
+Expected: the same tests run alongside stream A's pipeline tests. If `npm test` does not pick up `site/test/`, stream A's script is narrower than a bare `node --test`; report it, do not edit `package.json`.
 
-- [ ] **Step 3: Every internal link resolves, and none of them redirects**
+- [ ] **Step 2: Start the preview server the harness will crawl**
+
+`npm run serve` is the wrong target for a link check: `pipeline/serve.mjs` does not implement `cleanUrls`, so it answers `/about` and `/history` with 404 and the harness would report three blockers that are properties of the dev server rather than of the site. Use the fixture preview server from Task 6 Step 8, which resolves extensionless paths the way Vercel does and serves the new-shape `summary.json`, so the harness measures the content the site will actually show rather than a page of "not published".
+
+```bash
+S=/private/tmp/claude-502/-Users-Alex/b0f31fd7-7716-4c2d-84bf-ffd2827f3a27/scratchpad
+rm -rf $S/preview && cp -R /Users/Alex/dev/h5-bird-flu-tracker/site $S/preview
+cp /Users/Alex/dev/h5-bird-flu-tracker/site/test/fixtures/summary.new.json $S/preview/data/summary.json
+node -e "
+const http=require('http'), fs=require('fs'), path=require('path'), root='$S/preview';
+const types={'.html':'text/html','.css':'text/css','.js':'text/javascript','.mjs':'text/javascript','.json':'application/json','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.xml':'application/xml','.geojson':'application/json'};
+http.createServer((q,r)=>{
+  let p=path.join(root, decodeURIComponent(q.url.split('?')[0]));
+  if (fs.existsSync(p) && fs.statSync(p).isDirectory()) p=path.join(p,'index.html');
+  if (!fs.existsSync(p) && fs.existsSync(p + '.html')) p = p + '.html';
+  if (!fs.existsSync(p)) { r.writeHead(404,{'content-type':'text/html'}); return r.end('<h1>404</h1>'); }
+  r.writeHead(200,{'content-type':types[path.extname(p)]||'application/octet-stream'});
+  r.end(fs.readFileSync(p));
+}).listen(8090, ()=>console.log('preview on http://localhost:8090'));
+" &
+sleep 1 && curl -s -o /dev/null -w "/ %{http_code}\n" http://localhost:8090/ && \
+curl -s -o /dev/null -w "/about %{http_code}\n" http://localhost:8090/about && \
+curl -s -o /dev/null -w "/history %{http_code}\n" http://localhost:8090/history && \
+curl -s -o /dev/null -w "/sitemap.xml %{http_code}\n" http://localhost:8090/sitemap.xml
+```
+Expected: four 200s. A 404 on `/about` or `/history` means the extensionless fallback is not working and the whole link check would be noise.
+
+- [ ] **Step 3: Write the harness config**
+
+```bash
+cat > /private/tmp/claude-502/-Users-Alex/b0f31fd7-7716-4c2d-84bf-ffd2827f3a27/scratchpad/sitecheck.config.json <<'JSON'
+{
+  "skipRoutes": ["/og", "/test/*", "/data/*", "/assets/*"],
+  "waitForSelector": "body[data-ready]",
+  "thresholds": { "diffPercent": 0.5 }
+}
+JSON
+```
+
+Three decisions, each with its reason:
+- `skipRoutes` excludes `/og`, which is a render target for the social card and not a page, and the data and asset trees, which are files rather than routes.
+- `waitForSelector` is `body[data-ready]`, which Task 3's `boot` sets to `true` on success and `failed` on a load error. Without it the harness photographs the panel reading "Loading the data" and measures the contrast of the wrong text.
+- No `ignore` rules. Do not pre-suppress a check before seeing what it says: two findings below are expected, and both deserve a decision rather than a silent exemption.
+
+- [ ] **Step 4: Run the harness against the local preview**
+
+```bash
+cd /private/tmp/claude-502/-Users-Alex/b0f31fd7-7716-4c2d-84bf-ffd2827f3a27/scratchpad && \
+sitecheck http://localhost:8090 --config ./sitecheck.config.json
+```
+
+The run lands in `~/Scratch/sitecheck/localhost-8090/<timestamp>/`. Exit code 1 means at least one blocker.
+
+Read it the cheap way, in this order:
+1. `summary.json`: `counts.bySeverity`, `counts.byCheck`, then `topIssues`, which is deduped across viewports and carries `route`, `viewports`, `selector`, `message`, `measured` against `threshold` and a `crop` path.
+2. Open only the crops of the issues you are about to act on. Do not open `screenshots/`.
+3. `issues.md` is the paste-ready list for the report in Step 9.
+
+**Two findings are expected. Neither is a bug in this stream, and each needs a decision rather than an ignore rule:**
+
+- **`contrast` on `.leaflet-control-attribution`.** Vendored Leaflet renders the OpenStreetMap credit at 10px in `--ink-2` on `rgba(255,255,255,0.88)` over greyed map tiles. The credit is a licence obligation so it cannot be removed, and the existing override at `site/styles.css:1257` already lightens its ground. If the harness measures it under 2:1, raise the plate to `rgba(255,255,255,0.95)` in that same rule. Do not ignore it: unreadable attribution is a licence problem as well as a contrast one.
+- **`seo`, noindex on `/og`** if the skip does not catch it. That one is correct behaviour and is reported as info, not a failure.
+
+Everything else in `topIssues` is a real finding. Attribute each to the task that owns it and fix it there:
+
+| check | owner |
+|---|---|
+| contrast, graphic | Task 4 (styles) or Task 5 (`/about` markup) |
+| overflow | Task 4 |
+| links, http, missing anchors | Task 3, 5 or 11, whichever page holds the bad href |
+| images, alt | Task 5 (the tern) or Task 12 (the card) |
+| tap | Task 4, the tap-target block |
+| seo, h1, title, description, canonical, og | Task 3, 5 or 11 |
+| console, requests | Task 6, 7, 8, 9 or 10, whichever emits the error |
+| axe | the task that wrote the markup |
+
+- [ ] **Step 5: Fix, then re-run against the baseline**
+
+```bash
+cd /private/tmp/claude-502/-Users-Alex/b0f31fd7-7716-4c2d-84bf-ffd2827f3a27/scratchpad && \
+sitecheck http://localhost:8090 --config ./sitecheck.config.json --baseline last --open
+```
+
+A fix is verified when the issue is gone from `topIssues` and `changedSinceBaseline` shows nothing new appeared. Repeat until `counts.bySeverity` has no blockers. `report.html` opens for the visual pass: rows are routes, columns are widths.
+
+Also run the Safari engine once, because the map page leans on `100dvh`, `display: contents` and `:has()`, and all three have WebKit histories:
+
+```bash
+cd /private/tmp/claude-502/-Users-Alex/b0f31fd7-7716-4c2d-84bf-ffd2827f3a27/scratchpad && \
+sitecheck http://localhost:8090 --config ./sitecheck.config.json --viewports phone,1440 --engine both
+```
+
+- [ ] **Step 6: Run the harness against the Vercel preview**
+
+The preview is the artifact Alex reviews on his phone (spec 7, spec 11 item 4), and it is the only place `cleanUrls`, the real CSP headers and the real caching apply. The local run cannot test any of those: `pipeline/serve.mjs` sends no CSP header, so an inline script or style that the production CSP would block passes locally in silence.
+
+```bash
+# If the preview is protected, the secret lives in Vercel > Settings > Deployment
+# Protection > Protection Bypass for Automation, vaulted once by stream E.
+BYPASS=$(python3 ~/.claude/scripts/gw-secrets.py show h5-bird-flu-tracker:VERCEL_AUTOMATION_BYPASS_SECRET 2>/dev/null)
+cd /private/tmp/claude-502/-Users-Alex/b0f31fd7-7716-4c2d-84bf-ffd2827f3a27/scratchpad && \
+if [ -n "$BYPASS" ]; then
+  sitecheck "$PREVIEW_URL" --config ./sitecheck.config.json --header "x-vercel-protection-bypass: $BYPASS"
+else
+  sitecheck "$PREVIEW_URL" --config ./sitecheck.config.json
+fi
+```
+
+Set `PREVIEW_URL` to the deployment URL the parent supplies. Expected differences from the local run, all of which are correct:
+- `/about.html` and `/history.html` answer 308 rather than 200. The `links` check reports a redirect chain only if a page links to one, which Task 13 Step 1 and Task 14 Step 7 both forbid, so a hit here is a real defect.
+- Previews are noindex by design; the harness reports that as info.
+- `/_vercel/insights/script.js` answers 200 once stream E has enabled Web Analytics, and 404 until then. A 404 there is stream E's, not a blocker for this stream, and Step 9 reports it.
+
+**This is the run that proves the CSP.** Check `counts.byCheck.console` and `counts.byCheck.requests` specifically: a blocked inline script or style surfaces there and nowhere else.
+
+- [ ] **Step 7: The two link checks the harness does not make**
+
+The harness crawls rendered pages. These two read the source, and catch a class of defect a crawl cannot: a link that resolves but costs a redirect, and an anchor emitted from JS rather than markup.
 
 ```bash
 cd /Users/Alex/dev/h5-bird-flu-tracker && node -e "
@@ -5344,77 +5458,77 @@ for (const [route, file] of Object.entries(pages)) {
     }
   }
 }
+// The same, for the hrefs app.js and about.js emit as strings.
+const js = fs.readFileSync('site/app.js','utf8') + fs.readFileSync('site/about.js','utf8');
+for (const m of js.matchAll(/href=\\\\\"(\/[^\\\\\"]*)/g)) {
+  const [path, hash] = m[1].split('#');
+  const target = path === '' ? '/' : path;
+  if (!(target in pages)) { console.error('js emits an unknown target: ' + m[1]); bad++; continue; }
+  if (hash && !anchors[target].has(hash)) { console.error('js emits a missing anchor: ' + m[1]); bad++; }
+}
 if (bad) process.exit(1);
-console.log('every internal link resolves to a real page and a real anchor');
+console.log('every internal link resolves to a real page and a real anchor, with no redirect hop');
 "
 ```
-Expected: `every internal link resolves to a real page and a real anchor`. Also check the links `app.js` and `about.js` emit:
-```bash
-cd /Users/Alex/dev/h5-bird-flu-tracker && grep -on 'href=\\"/[a-z#-]*' site/app.js site/about.js | sort -u
-```
-Expected: only `/about#counting`, `/about#freshness`, `/about#marks`, `/about#placement`, `/about#sources`, `/about#transmission`, and `/`. Every one of those anchors must have appeared in Task 5 Step 5's check.
+Expected: the success line.
 
-- [ ] **Step 4: The front-end checklist from spec 7, at 1280**
+- [ ] **Step 8: The checks a harness cannot make**
 
-With the fixture server from Task 6 Step 8 on 8090, work through this list by hand in `npx playwright open --viewport-size=1280,800 http://localhost:8090/index.html`. Tick each only when you have seen it.
+Everything below is either a claim about whether a number is the right number, or an interaction. Nothing here duplicates a sitecheck check: contrast, overflow, tap targets, links, anchors, SEO, console errors and axe are all Step 4's and are not repeated.
 
+Open `npx playwright open --viewport-size=1280,800 http://localhost:8090/index.html` and tick each only when seen.
+
+**The figures are the published figures** (sitecheck reads pixels, not meaning):
 - [ ] The panel's first figure equals `official_au.national_total` in the served `summary.json`, or `dataset_rows` when `dataset_matches_total` is false.
 - [ ] The panel's second figure equals `au_layers.official.jurisdictions`, and "Which ones" lists exactly `jurisdiction_list`.
 - [ ] The panel's third figure equals `au_layers.official.latest_sampled` and its locality.
-- [ ] Each of the three layer buttons changes the marker count, and the count shown on each button matches the layer it selects.
-- [ ] Each timeframe reduces the marker count, and "Since June 2026" restores it.
-- [ ] Each species chip reduces the marker count, and "All species" restores it.
-- [ ] The H7 toggle adds grey marks and adds the one-line note to the panel, and unticking it removes both.
-- [ ] At the right-hand end of the scrubber the record list count equals the layer count for the current filters.
-- [ ] Dragging the scrubber left reduces both the markers and the list count, together.
-- [ ] Play replays from the start and stops at the end, and dragging the slider stops it.
-- [ ] The drawer opens from a marker, and from a row of the record list.
-- [ ] The drawer closes on Escape from both, and focus returns to the row button or to the map.
-- [ ] A marker with several records at one placement opens the cluster list, and picking one opens that record.
-- [ ] Tab alone reaches: skip link, panel links, each layer button, the timeframe, each species chip, the H7 box, List records, the scrubber, Play, the map, the footer links. Nothing is reachable that is not visible.
-- [ ] The freshness line is not carmine when the fixture's run is fresh; swap the fixture's `generated_at` to three days ago and confirm it turns carmine and reads "Data last updated 3 days ago."
+- [ ] Each layer button's count matches the layer it selects.
 
-- [ ] **Step 5: The screenshot matrix**
+**The filters move the map** (spec 7: "each layer, timeframe and species chip changes the marker count as expected"):
+- [ ] Each of the three layer buttons changes the marker count.
+- [ ] Each timeframe reduces it, and "Since June 2026" restores it.
+- [ ] Each species chip reduces it, and "All species" restores it.
+- [ ] The H7 toggle adds grey marks and the one-line panel note, and unticking removes both.
 
-```bash
-S=/private/tmp/claude-502/-Users-Alex/b0f31fd7-7716-4c2d-84bf-ffd2827f3a27/scratchpad/matrix
-mkdir -p $S
-for w in 390 768 1280; do
-  for page in index about history; do
-    npx playwright screenshot --viewport-size=$w,844 --wait-for-timeout=3000 \
-      http://localhost:8090/$page.html $S/$page-$w.png
-  done
-done
-ls -la $S
-```
+**The scrubber counts what the map shows** (spec 7):
+- [ ] At the right-hand end of the track, the record list count equals the layer count for the current filters.
+- [ ] Dragging left reduces the markers and the list count together, and the date label follows.
+- [ ] Play replays from the start, stops at the end, and dragging the slider stops it.
+- [ ] Under reduced motion, Play is gone and the slider still works. Task 8 Step 5 automates this; confirm it passed.
 
-Review all nine against spec 5.2 and 5.4:
-- [ ] No horizontal scrollbar at any width on any page.
-- [ ] At 390 the map page's sheet never covers more than half the viewport height in its collapsed or half state.
-- [ ] At 390 `/about`'s three tables are stacked label blocks, not squeezed columns.
-- [ ] At 768 the filter bar wraps rather than overflowing, and the panel keeps its 320px.
-- [ ] At 1280 the panel, filter bar, scrubber and drawer each sit at their own corner with no overlap, and the OpenStreetMap credit is visible under the scrubber.
-- [ ] Carmine appears only on the map marks and, when stale, on the freshness line.
-- [ ] One typeface throughout, including the Leaflet zoom control and the attribution.
+**Drawer focus handling** (spec 7: "the drawer opens from a marker and from the list, and closes on Escape"):
+- [ ] Opens from a marker, and from a row of the record list.
+- [ ] Escape closes it from both, and focus returns to the row button or to the map, never to the body.
+- [ ] A placement holding several records opens the cluster list, and picking one opens that record.
+- [ ] Tab alone reaches, in order: skip link, panel heading link, About, History, each layer button, timeframe, each species chip, the H7 box, List records, the scrubber, Play, the map, the footer links. Nothing focusable is invisible.
 
-- [ ] **Step 6: Lighthouse mobile on the map page**
+**The freshness line's three states** (no harness can age data):
+- [ ] With the fixture's run fresh, the line is not carmine.
+- [ ] Set the fixture's `freshness.generated_at` to three days ago, reload: it reads "Data last updated 3 days ago." in carmine.
+- [ ] Set `official_au.as_at` to six days ago with a fresh run: it reads "Official figure from {date}; the department has not published since."
 
-Spec 5.5 sets the floor at performance 90.
+**The birds gates** (stream D):
+- [ ] With no `site/birds.js`, the page is complete, the drawer canvas stays hidden, and `sessionStorage` holds no `birds-flight`. Task 10 Steps 3 and 4 automate this; confirm both passed.
+- [ ] Once stream D has landed: the flight runs once and not again on reload in the same tab; under reduced motion there is no flight and the drawer shows the still; with WebGL disabled the drawer shows the APNG loop.
+
+- [ ] **Step 9: Performance, which sitecheck does not measure**
+
+Spec 5.5 sets Lighthouse mobile performance at 90 or better and the first load at 350 KB compressed.
 
 ```bash
 cd /Users/Alex/dev/h5-bird-flu-tracker && npx lighthouse http://localhost:8090/index.html \
-  --preset=desktop=false --form-factor=mobile --only-categories=performance,accessibility \
+  --form-factor=mobile --only-categories=performance \
   --output=json --output-path=/private/tmp/claude-502/-Users-Alex/b0f31fd7-7716-4c2d-84bf-ffd2827f3a27/scratchpad/lh.json \
   --chrome-flags="--headless" --quiet && \
 node -e "
 const r = require('/private/tmp/claude-502/-Users-Alex/b0f31fd7-7716-4c2d-84bf-ffd2827f3a27/scratchpad/lh.json');
 const perf = Math.round(r.categories.performance.score * 100);
-const a11y = Math.round(r.categories.accessibility.score * 100);
-console.log('performance', perf, '| accessibility', a11y);
+console.log('performance', perf);
 if (perf < 90) { console.error('BELOW THE SPEC FLOOR of 90'); process.exit(1); }
 "
 ```
-Expected: performance 90 or better. A local run scores differently from Vercel's, so treat a local pass as necessary and not sufficient; the preview deployment is the number that counts. If it is short, the first thing to check is the first-load budget from spec 5.5: Leaflet, `app.js`, `lib.js`, `icons.js`, `styles.css`, `summary.json` and `au.json` together must be under 350 KB compressed.
+
+Then the budget, which is the first thing to look at when the score is short:
 
 ```bash
 cd /Users/Alex/dev/h5-bird-flu-tracker && node -e "
@@ -5433,12 +5547,16 @@ if (total > 350 * 1024) { console.error('OVER the 350 KB first load budget'); pr
 "
 ```
 
-- [ ] **Step 7: The page survives the data it will actually be served**
+A local Lighthouse score is necessary and not sufficient: the preview deployment's number is the one that counts, so run it against `PREVIEW_URL` as well once Step 6 has passed.
 
-The single most important check in this task, because it is the one the old design failed. Load the map page against the **committed** `site/data`, which today has none of stream A's new keys:
+- [ ] **Step 10: The page survives the data it will actually be served**
+
+The single most important check in this task, because it is the one the old design failed, and the one sitecheck cannot make: the harness crawls the fixture, which has every key. This crawls the committed data, which has almost none of them.
 
 ```bash
-cd /Users/Alex/dev/h5-bird-flu-tracker && node -e "
+cd /Users/Alex/dev/h5-bird-flu-tracker && node pipeline/serve.mjs &
+sleep 1
+node -e "
 import('playwright').then(async ({ chromium }) => {
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 1280, height: 800 } });
@@ -5446,7 +5564,7 @@ import('playwright').then(async ({ chromium }) => {
   p.on('pageerror', (e) => errors.push(String(e)));
   p.on('console', (m) => { if (m.type() === 'error' && !/birds\.js|_vercel/.test(m.text())) errors.push(m.text()); });
   await p.goto('http://localhost:8080/index.html');
-  await p.waitForTimeout(4000);
+  await p.waitForSelector('body[data-ready]', { timeout: 15000 });
   const markers = await p.evaluate(() => document.querySelectorAll('#map .leaflet-marker-icon, #map path.leaflet-interactive').length);
   const headline = await p.textContent('#panelHeadline');
   const figures = await p.textContent('#panelFigures');
@@ -5463,16 +5581,22 @@ import('playwright').then(async ({ chromium }) => {
 ```
 Expected: `the page is honest against data that predates the new pipeline`. The words `undefined`, `NaN` and `null` must appear nowhere a reader can see.
 
-- [ ] **Step 8: Report**
+- [ ] **Step 11: Report**
 
-Write the result to the parent as a list, not a file. For each of the fourteen tasks: passed, or the exact check that failed and the file and line that owns it. Name explicitly:
+Return a list to the parent, not a file. For each of the fourteen tasks: passed, or the exact check that failed with the file and line that owns it.
+
+Include, from the harness:
+- the run directories for both sitecheck runs, so the parent can open `report.html`
+- `counts.bySeverity` for each run, and any blocker that was accepted rather than fixed, with the reason
+- whether the Safari engine run found anything the Chromium run did not
+
+Name these four explicitly, because each belongs to another stream and the parent needs to know which are still open:
 - whether `npm test` picked up `site/test/` (stream A's script)
 - whether `site/assets/birds/greater-crested-tern.png` had landed for the OG card (stream C)
 - whether `site/birds.js` had landed for the two integration points (stream D)
-- whether Web Analytics was enabled, which is the only reason `/_vercel/insights/script.js` would still 404 (stream E, and Alex's item 1 in spec 11)
+- whether `/_vercel/insights/script.js` answered 200 on the preview, which is the only thing that tells you Web Analytics is on (stream E, and Alex's item 1 in spec 11)
 
-Do not mark the stream complete while any of those four is outstanding: they are other streams' work, and the report is how the parent knows which.
-
+Do not mark the stream complete while any of those four is outstanding.
 ---
 
 ## What this plan does not cover
@@ -5480,7 +5604,9 @@ Do not mark the stream complete while any of those four is outstanding: they are
 Named so the parent can see the seams.
 
 - **Streams A, C, D and E.** Every dependency on them is in an Interfaces block, and Task 14 Step 8 reports on each.
-- **`pipeline/serve.mjs` does not implement `cleanUrls`.** Tasks 6, 9 and 14 use a small fixture server in the scratchpad that does, which is also how the new-shape data is served without touching `site/data`. The one-line fix to `serve.mjs` belongs to stream A.
+- **`pipeline/serve.mjs` does not implement `cleanUrls`.** Tasks 6, 9 and 14 use a small fixture server in the scratchpad that does, which is also how the new-shape data is served without touching `site/data`. It matters most in Task 14: pointed at `npm run serve`, the harness would report `/about` and `/history` as 404 blockers that are properties of the dev server rather than of the site. The one-line fix to `serve.mjs` belongs to stream A, and would let the harness run against `npm run serve` directly.
+- **`sitecheck.config.json` lives in the scratchpad, not the repo.** The harness reads it from the cwd or from `--config`, and the repo root is outside this stream's allowlist. If the config turns out to be worth keeping, adding it at the repo root is a one-line ask to the parent rather than something this stream does on its own.
+- **Performance.** `/sitecheck` does not measure it. Lighthouse and the 350 KB first-load budget are Task 14 Step 9, run separately.
 - **`package.json`'s `test` script.** Stream A's file. Every test step here runs `node --test` directly.
 - **Search Console and the DNS TXT record.** Spec 4.3 and 11 item 5, stream E. This stream produces `sitemap.xml`; submitting it is stream E's.
 - **The `www` versus apex decision.** Verified live on 30 Sep 2026: the apex 308s to `www`, so this stream uses `www` everywhere. If stream E ever moves the canonical host, six files change: three `<link rel="canonical">`, three `og:url` and `sitemap.xml`.
