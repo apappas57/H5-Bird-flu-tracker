@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T06:44:17.712Z",
+  "generated_at": "2026-10-01T09:45:02.122Z",
   "latest_event": "2026-09-22",
   "mode": "live",
   "mode_note": null,
@@ -613,15 +613,15 @@
   },
   "official_au": {
     "ok": true,
-    "fetched_at": "2026-09-30T11:12:12.706Z",
+    "fetched_at": "2026-10-01T09:45:13.727Z",
     "national_total": 231,
     "national_total_phrasing": "confirmed or presumed positive",
     "national_total_source": "updates",
     "by_state": null,
     "by_state_total": null,
     "by_state_matches_national": null,
-    "as_at_text": "4.00pm AEST, 29 September 2026",
-    "as_at_date": "2026-09-29",
+    "as_at_text": "4.00pm AEST, 30 September 2026",
+    "as_at_date": "2026-09-30",
     "latest_update": {
       "date": "2026-09-11",
       "date_text": "11 September 2026",
@@ -706,10 +706,7 @@
       }
     ],
     "errors": [],
-    "notes": [],
-    "from_last_good": true,
-    "last_good_fetched_at": "2026-09-30T11:12:12.706Z",
-    "last_good_age_days": 0
+    "notes": []
   },
   "official_gap": {
     "behind": false,
@@ -743,13 +740,13 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 50 headlines, detection signal in 0; no coverage gaps detected",
+    "note": "google news 14d: 53 headlines, detection signal in 0; no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 40,
     "headlines": [
       {
         "date": "2026-09-29",
-        "outlet": "Daily Cargo News",
+        "outlet": "thedcn.com.au",
         "title": "BIOSECURITY: Bug attack - Australia under threat from land, sea and air",
         "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPbzg4eWkwS3p3ZnlkbDZleWk0Q0Fsa2RfR25sTnNCeS1IRjl6VjByZC1BeGFTdmd5d0dDejJpbEpYa2RoZjNwYklDZk9KQ1c4b1NuZVlMalFSSW0zakZ2S2xSbkFCczJIbDlfV2J4eDRGMFJGOERlNklHRFRCRWxSMHVibEt1b19BLVNobFJTekRLd1RnQzZEdTBTREh3Y0I4bTlnaTBhNmxna0ZSOEJr0gGvAUFVX3lxTE9vODh5aTBLendmeWRsNmV5aTRDQWxrZF9HbmxOc0J5LUhGOXpWMHJkLUF4YVN2Z3l3R0N6MmlsSlhrZGhmM3BiSUNmT0pDVzhvU25lWUxqUVJJbTNqRnZLbFJuQUJzMkhsOV9XYnh4NEYwUkY4RGU2SUdEVEJFbFIwdWJsS3VvX0EtU2hsUlN6REt3VGdDNkR1MFNESHdjQjhtOWdpMGE2bGdrRlI4Qms?oc=5"
       },
@@ -758,6 +755,12 @@
         "outlet": "SMH.com.au",
         "title": "Poultry fanciers’ show dreams fail to hatch after bird flu scare",
         "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPZDFTS2JPckpLMEdsRHJkRTZxR1lLQk9sdGdtOXd6bThGUF9YMVJoNjhxb21hVE9xdGtyWTMyV0RkaDRPekl5a1ZSSXdnSlozcjExNkQ5dEliVmlZN3VaNlNwTXVZZFlMYk9DLXFNLU0wWFZCdFlMVWhSaDNTc0RmOUh0cHVRcGdoaUU3OUlnVlNmNTdKZnUzTWt1T0ZKT3NDdkh3c0xQR21LLVJfXzBaNll2R1NSeThqYy1fUFVGaGRRTVE?oc=5"
+      },
+      {
+        "date": "2026-09-29",
+        "outlet": "DD News",
+        "title": "New Zealand detects first H5N1 bird flu case, starts vaccination of endangered species",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNbFlBdXNEaWtGVjJDbUtyT1dtS2ZFZFNkcHJITmVrYS1KbTNxSFpPODdwX2U3TWEwSXd5RlVCSWViTWJ6MWNDcDVPX19VcS05Z01yTU1lTDFFbEp2el82Z2tTUnFyYlMtX2pqRFI1eHR6R2pQaWU4d2lwbVBLTUtZaExIWDhoRXNqd1hhdlFZNlVoVFdGTTQxVlNQd1dhZXFYRUwwQWthRXo2bG42NEVwMg?oc=5"
       },
       {
         "date": "2026-09-29",
@@ -773,6 +776,12 @@
       },
       {
         "date": "2026-09-28",
+        "outlet": "UNSW Sydney",
+        "title": "2026 annual waterbird survey will also track H5N1",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPYl9hazlVbWhmbGo3b3pUdG5kZUZlTWFUdTllM3BnS0dVWFNqR0NEbzZQWkNYTjQyNHNCWVdNMFBlWEpEcmwtSnlJWkRWZXIxY3RNTDExNm9jSjg1UU9qOXRxUHZWa3lpMU85SU10TWlhQ2NOb0NZUXgteUo1ZlBFV09NUzF0OF9OYlNpX09VUXVxaHpKbEpfZnpLSQ?oc=5"
+      },
+      {
+        "date": "2026-09-28",
         "outlet": "SBS",
         "title": "Deadly bird flu threat looms large over Kangaroo Island",
         "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObHdsVl9NcC1ZR2JNWEV5RFhpRU0yMU50SU9UN1RmQ1FvNGVNQjhlREZmd3kwZFlxQ3ZMTGRQUE5hSUtUVDllTWZkemlicnJvWkFGZXAwdHc4UGZNNXEtd3hfVF9Xci1sMEtsdW1hbl9MWUlSV2I2Ym1kd29CM0c0UWJ1UUY5SGlaQWhuNmxuRDJKMVUzRWI1S0FlOW9CcjFH?oc=5"
@@ -785,39 +794,27 @@
       },
       {
         "date": "2026-09-27",
-        "outlet": "ausleisure.com.au",
+        "outlet": "Australasian Leisure Management Magazine",
         "title": "Perth Royal Show provides platform for WA bird flu awareness campaign",
         "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdVF2N2IxVGZLUG43S3B6MndEdWd3LW9rVGlwU0NIZDVqd3AtdG1UOXFSbG5paGhvaUlSdk0xdThxMjJvLWctMUNnUzZIR1RneE1TY2FxM1pGTmQwaVd0TXBQM0hNaUZtY1dMRU9BQVVOVzNRMG1XTUVleXEzY0dGRnBfa2Y0ZGNlRy1mOEdNc1BLODNzcWhIWlRIWHlpUHVLdEF0bGRMZw?oc=5"
       },
       {
         "date": "2026-09-27",
-        "outlet": "The West Australian",
+        "outlet": "thewest.com.au",
         "title": "H5 bird flu: New six-week awareness blitz as more than 650 outbreaks recorded nationwide",
         "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPeEx2UGhuSnl5RkFNM2Z1ZlJ1YUV0SmRWZ0d3SFI1TkwxTzllT1kzQWlXdmUtREZSbnp4OW5qQWVwSGZVNzEzVUc3SENxQ1pKZHhJT3UyYVhxajExS3ptQUFBekgyWWdNTEJHRDk3UGtKUzBJNV9US3Y0N0NfWVFnMmhJUVctSXpYTG82N1VMYmg0ejQ2X05mTzJWazJWWjNOb0l0LVlBbXh0YkI0bkphQlhOSlB0aGJrbTFTUWY4OVNTQ1M4QjBOUE5yOExZME3SAdQBQVVfeXFMUFBvVjBPQnJIY1IzUlNvamlXREhHNllYZUcyeVRUbzhFQno0UkwzRmtnbkROSXRUTVBNczVnN0NfcVZKTXFpUHd1OERGSGUySjlmSXhBQVlWN3VsWElrREFVbWpKZW9zOEFRZThrQ2c2dkx4eHNvYS04MWJHcVRReDlldU9PTWwtcm5CTlBmUEUxdkdVb1dZRXBRd0NPVEQxaUU1VFNKQ0Z1VXZNdXlqTWJIWE5pMEJlYXo5TmViTDZrYkhNamV2ajh4U215RHNlZjlaWmw?oc=5"
       },
       {
         "date": "2026-09-27",
-        "outlet": "Oz Arab Media",
+        "outlet": "ozarab.media",
         "title": "Bird Flu Campaign Launches as Sea Lion Vaccine Sought",
         "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQUnIxRGRZUFJTSEd4elZ3WG1mOC1Rcl84eWExRVZrOWlvREdqdjE0dkdic2I5RExTQ2U4alRqcmR0bndscGc0TVVrY0lwdHQ4Z1ZGczRVUVp3cWh5U1BmTk85Y3U2RmxhM01KZmhBbDJNMFBMbGszOEo1RzI5cEdSSQ?oc=5"
       },
       {
         "date": "2026-09-27",
-        "outlet": "UA.NEWS",
+        "outlet": "ua.news",
         "title": "Australia launches bird flu campaign, ABC News Australia",
         "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOZHpyRlZneVpuUzg2cFYwLXhTcjFrR3ctOGpFcGVFZ21sOWZnS2U1ZjFjMDlPYmdNdWdXajRlTUhjRWNTNmlYQnZSdkc3WUZTMWtmX2FhMWw1c19MeUlEZU1fMFVUSktJM2t4dWtqelU5d01QN3dUMEhfb1g5OVJGT0JCYlBxMWdvQXBPbjJPQV9DTzlGV09YVnlxamFsc2Nl?oc=5"
-      },
-      {
-        "date": "2026-09-27",
-        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
-        "title": "Pressure grows to import experimental sea lion vaccine as bird flu campaign launches",
-        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9OMndTMktraG9LU0NzVjRaQXZrb2lwTEVraHNCVDAtWlJWV3E3eVRpc3dlTF9YU2Q1MUt1S3B3Y0lmT2Jxb0NSWDliWjV2Q3gyQjRyUG54MEdxMkl1X0s1eWpPeDZ4RUJVOXFtZ2JPSFBfaWMt?oc=5"
-      },
-      {
-        "date": "2026-09-26",
-        "outlet": "Coffs Coast News Of The Area",
-        "title": "Lethal H5 bird flu detected on Coffs Coast beach",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSmRjWm1ZVF9MLThxbEVFVjZfWUZ5RWkzVE4xU0JTaG91dDF5RHA1UzJVRjQ5SURrZ0JXbG9sMzlXeURBdWx0QjhyRzQ5QXRtWHRibTJlQlJFSTF4cVhsQzdRTDd3eVZjUWplLUtzZUxBOEFaZGJSeGNyMGhNTFlpQko0OURXVjI4ZG16Tzk2Zktndw?oc=5"
       }
     ],
     "headlines_window_days": 14,
@@ -858,16 +855,16 @@
     "Bulgaria": 2,
     "Netherlands": 18,
     "Suriname": 1,
-    "Peru": 37,
-    "Sweden": 4,
     "Vietnam": 44,
     "Canada": 1,
+    "Sweden": 4,
+    "Peru": 37,
     "United States": 1903,
     "France": 3,
     "the United Kingdom of Great Britain and Northern Ireland": 5,
     "Uruguay": 1,
-    "Chile": 3,
     "Indonesia": 4,
+    "Chile": 3,
     "New Zealand": 3,
     "Finland": 2,
     "Portugal": 1,
