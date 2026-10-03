@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T06:46:40.959Z",
+  "generated_at": "2026-10-03T09:45:01.721Z",
   "latest_event": "2026-09-24",
   "mode": "live",
   "mode_note": null,
@@ -613,15 +613,15 @@
   },
   "official_au": {
     "ok": true,
-    "fetched_at": "2026-10-02T09:45:20.254Z",
+    "fetched_at": "2026-10-03T09:45:12.165Z",
     "national_total": 231,
     "national_total_phrasing": "confirmed or presumed positive",
     "national_total_source": "updates",
     "by_state": null,
     "by_state_total": null,
     "by_state_matches_national": null,
-    "as_at_text": "4.00pm AEST, 1 October 2026",
-    "as_at_date": "2026-10-01",
+    "as_at_text": "4.00pm AEST, 2 October 2026",
+    "as_at_date": "2026-10-02",
     "latest_update": {
       "date": "2026-09-11",
       "date_text": "11 September 2026",
@@ -706,10 +706,7 @@
       }
     ],
     "errors": [],
-    "notes": [],
-    "from_last_good": true,
-    "last_good_fetched_at": "2026-10-02T09:45:20.254Z",
-    "last_good_age_days": 0
+    "notes": []
   },
   "official_gap": {
     "behind": false,
@@ -790,6 +787,12 @@
         "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPQl9NdldnSHZrbEE2Mk5MdGlOMDRLWkJaNl9QN015a1dsWThpblc2RXZuOXVsa0E2Y2hPc0ZvWGtuMWFtc2xFazBTaDlBRnprb0VOSUt6YlVtOGg5aVFFZVVxbnpKa295aFk0bVMzS2dVQkstLUY1TE1RUldHb0M0SmgzSXN5SDRFVEE?oc=5"
       },
       {
+        "date": "2026-10-01",
+        "outlet": "The Conversation",
+        "title": "Birds are building nests with our rubbish. Can we offer them something better?",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNbnQxQnQ5a1NURExtNnVHMXJ2S1JxaDJjOXlJXzhYVFZ4OFUzaHItdkplajBkekd5Q0dMakluZ0Y5cVNxQVh0a2lSRElPSUh4V0xseUMyNVc4TENfYWNQV2ptTWNoWjFZbi1pTXRMOUo5NjQyN1BPN2VzbjFlenFLamFpSmxBU3FkQV9nVldHU0pxaWFvQkVYYXJwck1sR2ZtdURjU2Z2UE5KXy04a1pWdQ?oc=5"
+      },
+      {
         "date": "2026-09-30",
         "outlet": "Daily Cargo News",
         "title": "BIOSECURITY: Bug attack - Australia under threat from land, sea and air",
@@ -797,7 +800,7 @@
       },
       {
         "date": "2026-09-29",
-        "outlet": "ddnews.gov.in",
+        "outlet": "DD News",
         "title": "New Zealand detects first H5N1 bird flu case, starts vaccination of endangered species",
         "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNbFlBdXNEaWtGVjJDbUtyT1dtS2ZFZFNkcHJITmVrYS1KbTNxSFpPODdwX2U3TWEwSXd5RlVCSWViTWJ6MWNDcDVPX19VcS05Z01yTU1lTDFFbEp2el82Z2tTUnFyYlMtX2pqRFI1eHR6R2pQaWU4d2lwbVBLTUtZaExIWDhoRXNqd1hhdlFZNlVoVFdGTTQxVlNQd1dhZXFYRUwwQWthRXo2bG42NEVwMg?oc=5"
       },
@@ -812,12 +815,6 @@
         "outlet": "Glam Adelaide",
         "title": "Orange-bellied parrots among 150 Cleland birds now fully vaccinated against bird flu",
         "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOSDh1N0ZEZ2xHekhhVkY0X3cxSWxOd21mYVl2SGhTeEp4c09wZm4xQmR3XzJZbHRURS1wRHA3WTNZLXRKRGc4VFJTeUlleHZGdUR0TUpNVEFzUEI2QU1NNE94MThiRFItQ09UT0hTZVduaTF0Z0labnRwZlA2NUJpZTlYQTZKc1NIS0VMZ0FfWEllQW1odEltVTFId3U0Rl9ZejhwR2YtcU9VZmh5WFZ2LUNnbw?oc=5"
-      },
-      {
-        "date": "2026-09-28",
-        "outlet": "WATTPoultry.com",
-        "title": "HPAI returns to Alberta poultry",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOa016QllwbDhlTzF3Q1A3VE82SDBrQ0dGUy0zcTIzU0tfR25xeTliVGh5bVp5dmEzcWduZ3NOMHVpZnhlOE1XWF9qVzRldjM3eUY2ME92UTB1cTVHTVRqZVB1eU9WZVE2Nnlnalp5d2xBU1BWVlBNb2tRZ3ByQlB3cEVxM1dCaHNxbTEwUnlsa25oVHFsRE9JR1FKeTM0ZEVSbVBQaThSOXktZ3VYeWdHQTNYUkNJbTA?oc=5"
       }
     ],
     "headlines_window_days": 14,
