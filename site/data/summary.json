@@ -1,24 +1,23 @@
 {
-  "generated_at": "2026-10-05T08:45:01.539Z",
-  "latest_event": "2026-09-22",
-  "mode": "partial",
-  "mode_note": "The Australian layer of this build is not current. The automated feed that carries Australian detections returned nothing on this run, so the Australian detections shown are the last set that did arrive.",
+  "generated_at": "2026-10-06T06:43:38.610Z",
+  "latest_event": "2026-09-28",
+  "mode": "live",
+  "mode_note": null,
   "data_coverage": {
     "australia": {
-      "status": "restored_from_last_good",
-      "live_records": 0,
-      "restored_records": 411,
+      "status": "live",
+      "live_records": 410,
+      "restored_records": 0,
       "published_records": 411,
       "published_current_era": 390,
-      "note": "No Australian record reached this build from the automated feeds, so the Australian detections shown are the last set that did, from the previous successful run. They are not confirmed as current, and any detection notified since then is missing."
+      "note": null
     },
     "sources_live": [
+      "fao-au",
+      "fao-world",
       "us-wild-birds"
     ],
-    "sources_failed": [
-      "fao-au",
-      "fao-world"
-    ]
+    "sources_failed": []
   },
   "au": {
     "total": 411,
@@ -34,8 +33,8 @@
     "h5n1_state_list": [
       "New South Wales",
       "South Australia",
-      "Tasmania",
       "Victoria",
+      "Tasmania",
       "Queensland",
       "Western Australia"
     ],
@@ -43,8 +42,8 @@
     "states": [
       "New South Wales",
       "South Australia",
-      "Tasmania",
       "Victoria",
+      "Tasmania",
       "Queensland",
       "Western Australia",
       "Australian Capital Territory"
@@ -55,13 +54,13 @@
     "current_era_state_list": [
       "New South Wales",
       "South Australia",
-      "Tasmania",
       "Victoria",
+      "Tasmania",
       "Queensland",
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 107,
+    "days_since_first_detection": 108,
     "latest_detection": "2026-09-22"
   },
   "eras": {
@@ -169,8 +168,9 @@
       "au_h5n1_2026": 390,
       "au_h7_poultry_2024_2025": 20,
       "au_human_2024": 1,
-      "global_h5_panzootic": 1797,
-      "other_subtype": 37
+      "global_h5_panzootic": 1792,
+      "other_subtype": 37,
+      "subtype_unstated": 190
     }
   },
   "au_eras": {
@@ -180,8 +180,8 @@
     "current_state_list": [
       "New South Wales",
       "South Australia",
-      "Tasmania",
       "Victoria",
+      "Tasmania",
       "Queensland",
       "Western Australia"
     ],
@@ -201,16 +201,16 @@
         },
         "confidence": {
           "confirmed": 1,
-          "presumptive": 2,
-          "unstated": 387
+          "presumptive": 1,
+          "unstated": 388
         },
         "first_date": "2026-06-15",
         "last_date": "2026-09-22",
         "state_counts": {
           "New South Wales": 51,
           "South Australia": 179,
-          "Tasmania": 32,
           "Victoria": 117,
+          "Tasmania": 32,
           "Queensland": 2,
           "Western Australia": 9
         },
@@ -347,35 +347,6 @@
         "historical_records": 0,
         "sentence": "179 current H5N1 detections."
       },
-      "Tasmania": {
-        "state": "Tasmania",
-        "state_code": "TAS",
-        "eras": [
-          {
-            "era": "au_h5n1_2026",
-            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
-            "short_label": "Current H5N1 incursion",
-            "strain": "H5N1 clade 2.3.4.4b",
-            "status": "ongoing",
-            "current": true,
-            "records": 32,
-            "phrase": "32 current H5N1 detections",
-            "categories": {
-              "wild_bird": 32
-            },
-            "confidence": {
-              "confirmed": 0,
-              "presumptive": 0,
-              "unstated": 32
-            },
-            "first_date": "2026-08-14",
-            "last_date": "2026-09-22"
-          }
-        ],
-        "current_records": 32,
-        "historical_records": 0,
-        "sentence": "32 current H5N1 detections."
-      },
       "Victoria": {
         "state": "Victoria",
         "state_code": "VIC",
@@ -395,8 +366,8 @@
             },
             "confidence": {
               "confirmed": 0,
-              "presumptive": 2,
-              "unstated": 115
+              "presumptive": 1,
+              "unstated": 116
             },
             "first_date": "2026-07-28",
             "last_date": "2026-09-22"
@@ -445,6 +416,35 @@
         "current_records": 117,
         "historical_records": 13,
         "sentence": "117 current H5N1 detections. 12 resolved H7 poultry outbreaks, 2024 to 2025. 1 unrelated travel-acquired human case, 2024."
+      },
+      "Tasmania": {
+        "state": "Tasmania",
+        "state_code": "TAS",
+        "eras": [
+          {
+            "era": "au_h5n1_2026",
+            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
+            "short_label": "Current H5N1 incursion",
+            "strain": "H5N1 clade 2.3.4.4b",
+            "status": "ongoing",
+            "current": true,
+            "records": 32,
+            "phrase": "32 current H5N1 detections",
+            "categories": {
+              "wild_bird": 32
+            },
+            "confidence": {
+              "confirmed": 0,
+              "presumptive": 0,
+              "unstated": 32
+            },
+            "first_date": "2026-08-14",
+            "last_date": "2026-09-22"
+          }
+        ],
+        "current_records": 32,
+        "historical_records": 0,
+        "sentence": "32 current H5N1 detections."
       },
       "Queensland": {
         "state": "Queensland",
@@ -601,7 +601,7 @@
     "wild_bird_detections": 375,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 107,
+    "days_since_first_detection": 108,
     "human_cases_au": 1
   },
   "human_context": {
@@ -706,7 +706,10 @@
       }
     ],
     "errors": [],
-    "notes": []
+    "notes": [],
+    "from_last_good": true,
+    "last_good_fetched_at": "2026-10-05T08:46:07.206Z",
+    "last_good_age_days": 0
   },
   "official_gap": {
     "behind": false,
@@ -726,8 +729,8 @@
     "mapped_states": [
       "New South Wales",
       "South Australia",
-      "Tasmania",
       "Victoria",
+      "Tasmania",
       "Queensland",
       "Western Australia"
     ],
@@ -740,15 +743,33 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 50 headlines, detection signal in 0; no coverage gaps detected",
+    "note": "google news 14d: 52 headlines, detection signal in 0; no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 40,
     "headlines": [
       {
+        "date": "2026-10-06",
+        "outlet": "Mirage News",
+        "title": "Bird Flu Vaccination Program Expands To Penguin Island",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNdjVLdGZDMmZOLUVhZXBpZWFOWGczMHBneVhZX1I4YlR3VTJLNnR4WGYzTEMzU0NBNk1NUXE5SmUtWFo5MDNDTmNYOXJrRHVPamsxWGo3SGJvNmd2aTFuUEkwMkE2QnFKOWxXSXoxVThDdVM4Y3NycTZqUWktODgtSm5feVJPODIyY3JR?oc=5"
+      },
+      {
         "date": "2026-10-05",
-        "outlet": "Kyabram Free Press",
+        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
+        "title": "Bird flu adds to fears for threatened species at proposed wind farm site",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOWkthcDBvR0JYNm9NcTJzT2pjMEhuNXdTcUxmbEZ2U2VzaHFjYmRqVS1SRFBGV1B6dEJEbDRCZk5vcmlrR0xzZmtyR3dRMkxLdlU2dm9qYUsxSHNvNXhrRUVaVy1WLUlFZU4xNDhKelJqUTlNRi1rMEJKN3ZUNHFTOWs1bnRGNnRKVDU5RVR4RUVZNHRNTXNOTzYyY2Z3djN1Z2Y2M1FFRHI?oc=5"
+      },
+      {
+        "date": "2026-10-05",
+        "outlet": "City of Norwood Payneham & St Peters",
+        "title": "H5 Bird flu information",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBlRXNoQ0d1RG1aLXNaVVpuTk42NkFvbzRkd0VpMmJjczVvTUFaUGhKOHBqemJudzdVT1o4bmM5NjV6TnJtVl8wQnBMQ2FBNWNLcTFnbjA4Ni1UNXFGN0ZFb3JIM2VvbUFfem1nVVNjbllMd3FSUi1DQW5GYw?oc=5"
+      },
+      {
+        "date": "2026-10-05",
+        "outlet": "countrynews.com.au",
         "title": "New bird flu campaign to run nationally",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNc2dUYjNtdHdVb290S3NuZ1ZVZjYtck1EbEhUR1FjZDBhVlZyZDRyN3VQZVVsSGE4ZVNWQnpQOVFMYjVjbTEtWEh1MnRLTk0xdkxrWVpuV1RabUU5ZGJFd3IwVDYzRFlXQWVpcE5pdXN0R2VBbE00MnRvR1JULUlBcFF0dFp1NHFPWHc?oc=5"
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOYkR5ZHBGOHkzWHJ6V3BfanBqQTV5VGRwOGQ4X19jYkpUMjF1TWFnVnMzNVdtLUdYOXhnbHRzU0xwQ3JIb3ZkeEhqM0NxUmszMVU5aFVnSkw3YkFOX1ZxRUNkdmYwZ09nZEFEczVHdVI5ZGo0ekUxcnRiTEdFQjlqX2N5ZkxvYmN3dVE?oc=5"
       },
       {
         "date": "2026-10-05",
@@ -761,6 +782,12 @@
         "outlet": "The Times of India",
         "title": "Australia funds more than $1 million to remove invasive weeds from a small island; the goal is to rebuild",
         "url": "https://news.google.com/rss/articles/CBMiugJBVV95cUxOdWZaRU11d1B3STE1R0pDWWk3bjN3SGsxUkowZ2ptVGt0MEg2ME5nd1JFdDNoTEN0RjIyWHVZbUhjMXhmSjE3M085X1ZqQXF3VnRKNFBVdWUzWGFlaFZsQXJUUUtldGdCSjQ0WHNvZHk3ZkpwbmJfd2dqb216c1hvTjZRTC1CQ09hWXZpMktDYnNYRHJEOXNnUnlKcGgxYTZBdTB6WDVVMWt2eDZBRkg1aDk4U1dXSVpja21Velc4bWZxMEJVRmVGTGV0bUZPbTB4WmFndkNZbTl5X3JpMll1bmxaOTRoMV9KZUtQeFdpUVB1SEFYVTNyVUZWZ1daS2hHMGVtLUZwam5jZUlYcEVEU2VKUVdGYkZvaWZUNW40c3h3eHU0ZjV6WElNczJPQ2hnWE5QSW1uRHc3QdIBvwJBVV95cUxOVkFsY25sLV9DN3hVSFNDR203VEhTVU9oQ0dTYlY2Ry1JZS11SFUySnR2TGVHNFVSZzNjblNyeGQ3Snp0NHRFVDFMeHFMT2cxLWs5MVBnbFRDWnczbUVuWjJIZFJrYmoyN2htMTdHeHpNek5lYnpLV3ZzTmQzVzRtMFpWekg3MDAxOWpfTFRCbkpNaXo2UDM0bHgyS2VqMHFHclg2NkRITjlmS2VxanV2MWdYSmMtak9zcTdIYzJxMENqOWhwV0puU2IxTjNBLU9QTlZsTHlWd01ncG9nRndneTZoMF9UMFFiQmtsQkx2RTJQaHRxMlVEMjB1aDNoMWdKYmxSSkhDR0xVSVowSmYxQmhyaG1kODN1RGRnY2JSS01xSkpRdVFtVV9IYXJNNFRneWhYQ2hrTDBRV1YzZnlj?oc=5"
+      },
+      {
+        "date": "2026-10-04",
+        "outlet": "The Weekly Times",
+        "title": "Dead shark washes up on busy SA beach",
+        "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQcGlwMTlWNlF6Q1UtVUt2TU5ROV9XSVdpM1ZNaEQ3UmtiX1B0V080eFF5N3VjODZ5LTJMLUk3NHluZUN0OWkwblozUmdqZEtkTDRlQ01wZGNvUGR0UUNtbnJKSkpPZ1JudFZZeGwtRm91bDhBNFQwc0Y3dWh0UERvVGNKQVFCQlB0RTN3UWlLLTdBcmVDODJqeHlIdjJXakVhdXBhTWlsRFZjQ1ctTDNkcTRMYmpTLVlHYUdUbU9XRktyek1oWEV5a05iNmFvLXRxRlRDVWpRRmNEY1YwWno2RzVYQ1dET2tOMDAySGlrMENWMHVINGhaRlNPTQ?oc=5"
       },
       {
         "date": "2026-10-03",
@@ -776,12 +803,6 @@
       },
       {
         "date": "2026-10-02",
-        "outlet": "Nature World News",
-        "title": "Second Bird Reported With H5N1 at Nicosia's Athalassa Park as Cyprus Expert Calls Human Risk Very Limited",
-        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOX3V2bWVNOGRucEtUblRlZWh3ZlNXM2pmN0ZxalJJdWIzeXJXdGtTVkFmdmNuMWxRMktjS0RoYmJ0V1dKa3dpQUNvNlhCaFl6ODBRR1AyU2pnTGwzeEdiX3lVZlBCZktHeGdxbVE3NmdCUG5LZnc0TnNxZkZkbFpIb2p4OFFTXzBTNnhVZVJKQlZGcmswd2RHTkJ2a0NSdVE4aVEyVWprT0pRS3RRQ29mOXpZSUVEeDJ0NldwbXVlU2VSb3hSVE5PU3RxOXg5Z08wdE9USk5IalNhSXhyRFpOa1VWZE5FZzdh?oc=5"
-      },
-      {
-        "date": "2026-10-02",
         "outlet": "WATTPoultry.com",
         "title": "Stable avian flu season reported in Asia-Pacific region",
         "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNZ21qSk5uT2VwZnpDck1jckdWdk11Tk5Qa3RvWkpWcmU1VTJnay02X1pPR2xiNlJUV3V0elF2TFFSdjE1aWlqdWVrZ2hTLVNUSmZHMUNtUEdfVEFuWldfeVpvYjNiRkljZTJLbmh5MTZEdEFPNFBfcnExUDJOS2Q2YUlqMU9tcElwSFZrWmhSVE1zYlBDbGp2N01HVENHQ2p5MDRpN3dNUEtzR2FSTTg1b09IeEdMM2pFSjVaLXJiU2hjSUZPTEVhZ3R1U2YxS0pEcjN5OVZR?oc=5"
@@ -790,74 +811,84 @@
         "date": "2026-10-02",
         "outlet": "The Sunday Guardian",
         "title": "H5N1 Virus Outbreak: 59 Dead Birds Found in Australia’s Popular Lake Weeroona; Tests Underway to Probe Potential Bird Flu Link",
-        "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQT0xyYlpFM3FVSjNQQ19GcWJ0eU55bUtHMXVodlZvOURVajNqZDBqM05ZT0VqWk56aDNJaGh6WEFPVThJZ0NZSzdIajlCOEpJOFFUWE04Y2trNWZ5dnF6RTBTWnF5UVN3dmhxTWVYR2QxYkFkUmJuVFdNa3VPbUJNY3FvcmQteWhxTzFZTHcxOHNzS0p0SHRvV0JJZnZuYTQxTXJ4cUVkcFZHNFlUNm1HRUNlLWxPRHc4bnNKazA4WEh3SDVZOHZzN3E4ZC1zUXJqRUpKWVBJekxMVzdjUTRhakZCUmdmOTJzUkRXUllfSmNiNEV0Y1dBVXlSeDQtRHdTRkHSAYICQVVfeXFMUE9McmJaRTNxVUozUENfRnFidHlOeW1LRzF1aHZWbzlEVWozamQwajNOWU9FalpOemgzSWhoelhBT1U4SWdDWUs3SGo5QjhKSThRVFhNOGNrazVmeXZxekUwU1pxeVFTd3ZocU1lWEdkMWJBZFJiblRXTWt1T21CTWNxb3JkLXlocU8xWUx3MThzc0tKdEh0b1dCSWZ2bmE0MU1yeHFFZHBWRzRZVDZtR0VDZS1sT0R3OG5zSmswOFhId0g1WTh2czdxOGQtc1FyakVKSllQSXpMTFc3Y1E0YWpGQlJnZjkyc1JEV1JZX0pjYjRFdGNXQVV5Ung0LUR3U0ZB?oc=5"
+        "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQM1NkMmtjQkF3N2RyQ3RhRXlmNGZ6MGRQb3BjV3RwZENpNDNad2FqekozMHUwYVZDYVowc0NXdlcxWnV4RGVzY2tqNDBmcmJ4Y1NOd1h1V3N2cDMtWkdSZFh3d0lsMXpYZVEzQUxRR2I4djZNanRnQ1hNT1JXbWlvVklmMWpfYlhSNFZQSF9WS0I5R3hBZEZWVU1JZHE3VDY5Y2JUM2F1aTE2ZTBTdjI4eUlFN2FhM21QMTIzLVdqa0xQUWRsN3Npa2s1dWhIRktOWTVyeWc0UzZLQ0dRUTM4SWtfRVNUYmdKMlVmb0xMZmw5ZEo2eE5sYy0tSkHSAYICQVVfeXFMUE9McmJaRTNxVUozUENfRnFidHlOeW1LRzF1aHZWbzlEVWozamQwajNOWU9FalpOemgzSWhoelhBT1U4SWdDWUs3SGo5QjhKSThRVFhNOGNrazVmeXZxekUwU1pxeVFTd3ZocU1lWEdkMWJBZFJiblRXTWt1T21CTWNxb3JkLXlocU8xWUx3MThzc0tKdEh0b1dCSWZ2bmE0MU1yeHFFZHBWRzRZVDZtR0VDZS1sT0R3OG5zSmswOFhId0g1WTh2czdxOGQtc1FyakVKSllQSXpMTFc3Y1E0YWpGQlJnZjkyc1JEV1JZX0pjYjRFdGNXQVV5Ung0LUR3U0ZB?oc=5"
       },
       {
         "date": "2026-10-02",
-        "outlet": "The Australian",
-        "title": "Bird flu fears after mass bird deaths",
-        "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxObWprZlFCX2lJZS10b2x5ZDcyc3pZN1BGOUktWkM2WlVnd1duZG5acEdSaERJMHUwcEgyUFp3LW9MWEZxSFBlZTJkQ2JGaTlxUlA1QUVYTmZpbUl3anNseFV6cmxySmRCMGdnT3ZPVHIwc0hZWDJIeXdfN1pIa3hLWkw0eUxnNGEtUFhUdFdfVDNjOUJwSzI2M1JjMU5qWGFMaDNybVM4aTZadDBqNkNldXVkcXByRWNBRlAxUVVmVkpsY0p0NUNTWDgtSUNaVXdlNDhRTm5sOVZOUXg1MXVlb3c2amdWQ1dYQmFaSGp4QW1YODNzUkhUUU1uZmt4VEZXMzQ0NTIzaXVMNDNV?oc=5"
-      },
-      {
-        "date": "2026-10-02",
-        "outlet": "Maribyrnong & Hobsons Bay | Star Weekly",
-        "title": "Bird flu found in Hobsons Bay",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQNmdwVlA4SXRqb19TNGNsejdwbXJQUk8ycDg4bTBLMnEzYUxZbmpKdXJvbjJjaGZtU05Pbk9SQ3hjb3hDMlJkdXRXQnA1dERZN3ZCb0doOEpEd2h3Vlp4MHR3YmdZN1pwb0JfWGczTmlLeWs4TkQyQWh3S0k0eFkxZVprNnpXM3J6MG1Z?oc=5"
-      },
-      {
-        "date": "2026-10-02",
-        "outlet": "news24.com.au",
-        "title": "Mass deaths of bin chickens at Victoria park spark bird flu concerns",
-        "url": "https://news.google.com/rss/articles/CBMinAJBVV95cUxOSC1mSk9QNjZwUXpDN2FMeFNEYkJfX1RRODBncVlueHBkdzI2VUVkT05rc19ZamQxZ1Y3SmpaNVFEcFpvVGFJOTBvNGFzb0I4WWRtUVN1VUQtcG14VC1CTTBwcFN2S2QxV19sTXZ2bkRoZnFfU0ZtaWYtRGhfQzhMYXV5VDJ4MXlRUll5ZW5GVkprWDh3aUE5UG5OUkZqU1l1dkJiUmdxMk9MVTZjd3R2OU8wQlJYNFI4OUF2Y0JBbkR4cWthMno1eXB6X1U3QURPcVdvd0piSk5hUDZVVVZUR3NXYmhGN2JmNEloZGw0Smp3VF95Wi1pdWNudG54by1OcDJzSEFXVXNCTGlBbnlaa1NSb2pucG9GdExRbNIBogJBVV95cUxQQ0FINkFnenRISGJuX2ViS3VtVVBOTHBVYjFCNG93ZkFmXzhHYXVadWVZRHZ0bzhQcTctVk04cUJzd0pwTFZlZ2lwSHowSXpGSlM3a1V0bFY3XzctTENZVmpNQ2p6Xy1FWTlJWkR4bEJLVkdyVERZMFk3Y0w5amxtUUVsY2xZckNBMUtZcVNabTZTV21TMEdJMEl5cEVzZUFucy1lTnkxSDZkano3ZDRqSktmNlhWd3g1amhvOEY2RXhwbkxHLTBJOVpVeGxaRS1RWWx5ZGs0UURIYjNtUEJCdEdGajJwam9xa0NCUTg4eUd6bTg3VHZOb19ZNWY1bVY4QjlseW1ZdHNKN3BqZC14VnhqQmdRMlBPNDUzY3VxTzRkQQ?oc=5"
-      },
-      {
-        "date": "2026-10-02",
-        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
-        "title": "Bird flu tests underway after 59 ibises found dead in Bendigo",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQM21XQVpJcXlxSERCOGNrUGNkbUxhMmNFQ3hvQWZ5Z3d6ajVOU0ZZXzk2bkZfV2pSREtSRUxkUFBVMTZacU1FRUZ2djgza3FTOG9kOUVUOXVOWGxlaXJ1OUhIZXYwSDVacGFrRGZ6WDBNdTR4eGdNMUhBRWthU3F5ZzdDSEtIVXFSR0NBOVpBMjZxMTN6cUo0VWlPMA?oc=5"
+        "outlet": "News.com.au",
+        "title": "Bird flu fears after mass ibis deaths",
+        "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxOdFhzbWZvUWYwWlV2amZLYWY5LVZlemJ2Mm52NDZZbkFOOERsOGJFSmpZQTdfNTNrOTZuNmZ0MTI2R0tVMFlCbHBiSzl3M3llMW1hbDRlZllRTVdpOEVJLUVjYVdqYmJYMEZTS04yWm9QbFp6bVdBaTd4eEdZVl9kM3Awak9fUWYtS0JOamxzaXpta05WVXlQOVFpNlBiRExsaEpINWdFQXpPbmVwRUlhc3ZzdUZMdGZIUTdKR1B4ZU15ZU41YTZnNWdvbVdUemR4S2lLWVFHVDUxSG42cE1GcHpmVEwwSGI2SDFoc3hoelI1UUE5bkMtVUs1cmNzZ1pTZGJiT0J0ZmdkbWJzZGhrQ1Vn0gGXAkFVX3lxTE11LXI3dTJkZ21kZ0QyQWJFYXdRVF9MNHk4MDBvdzNHU2lzeEtucmczcE13Y1o4dC1sc3poVDZ0YTNwU3cyRmR5YzBKRC0xVlNBaDFrT3MzY3BSSDdzaWU2SU1hWWhLSFNMbFloTV9HZjY3WDR2Sy1KU1hETENUb3hMZU11amQzX3F5NjB4cTdRaWU0V1M0VmZpTVd4NmNPVzRvLTFXSFd4dHp2Z29TVFoxSWUyams1Nng0Q0hUSE5tWTJoNXJkbzVScURVLU9DeFB2aFFpQVhCcWo4T1o0VHZoNzZnN2d4Q2VyLVJCSldDZ1ZRWnNCQ2RaTG1kTXVFVHYtUmpGa1R0NkM0SG9HaEVPdkhRV2ROOA?oc=5"
       }
     ],
     "headlines_window_days": 14,
     "mapped_by_state": {
       "New South Wales": 51,
       "South Australia": 179,
-      "Tasmania": 32,
       "Victoria": 117,
+      "Tasmania": 32,
       "Queensland": 2,
       "Western Australia": 9
     },
     "gaps": []
   },
   "totals": {
-    "total_events": 2245,
+    "total_events": 2430,
     "human_cases": 9,
-    "poultry_events": 20,
+    "poultry_events": 137,
     "poultry_birds_affected": 0,
-    "dairy_events": 0,
-    "wild_bird_events": 2200,
-    "mammal_events": 16,
-    "countries_affected": 7,
+    "dairy_events": 4,
+    "wild_bird_events": 2257,
+    "mammal_events": 23,
+    "countries_affected": 34,
     "us_states_affected": 46,
     "au_states_affected": 7
   },
   "by_category": {
-    "wild_bird": 2200,
-    "mammal": 16,
-    "poultry": 20,
+    "wild_bird": 2257,
+    "poultry": 137,
+    "mammal": 23,
+    "dairy": 4,
     "human": 9
   },
   "by_country": {
+    "Norway": 17,
+    "Denmark": 5,
+    "Germany": 2,
     "Australia": 411,
-    "United States": 1829,
-    "Cambodia": 1,
+    "Cambodia": 2,
+    "the United Kingdom of Great Britain and Northern Ireland": 6,
+    "Sweden": 5,
+    "Canada": 4,
+    "Argentina": 1,
+    "United States": 1854,
+    "Bulgaria": 2,
+    "Netherlands": 15,
+    "Vietnam": 43,
+    "Suriname": 1,
+    "Peru": 29,
+    "France": 3,
+    "Uruguay": 1,
+    "Chile": 3,
+    "Indonesia": 4,
+    "New Zealand": 3,
+    "Finland": 2,
+    "Portugal": 1,
+    "China, Taiwan Province of": 1,
+    "Brazil": 3,
+    "Nigeria": 1,
+    "Philippines": 1,
+    "Honduras": 2,
+    "Poland": 1,
+    "Austria": 1,
+    "Ecuador": 1,
+    "Togo": 1,
+    "Mexico": 2,
     "China": 1,
-    "Mexico": 1,
-    "Vietnam": 1,
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2245,
-    "United States": 1829,
+    "Global": 2430,
+    "United States": 1854,
     "Australia": 411
   },
   "sources": [
@@ -866,18 +897,18 @@
       "name": "FAO EMPRES-i+: Australia (WOAH/WAHIS)",
       "region": "Australia",
       "homepage": "https://empres-i.apps.fao.org/",
-      "status": "error",
-      "records": 0,
-      "note": "This operation was aborted"
+      "status": "live",
+      "records": 410,
+      "note": "fao(Australia) 2024-01-01..2026-10-06: 411 rows -> 410 records (1 skipped)"
     },
     {
       "key": "fao-world",
       "name": "FAO EMPRES-i+: global context",
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
-      "status": "error",
-      "records": 0,
-      "note": "HTTP 502 for https://api.data.apps.fao.org/api/v2/bigquery?sql_url=https://data.apps.fao.org/catalog/dataset/96641600-b15c-493e-8e8d-6c22f145a960/resource/2fc21534-05da-4c58-b773-93a0f28bd1f6/download/avian-influenza-parameterized-query.sql&start_date=2026-07-07&end_date=2026-10-05&diagnosis_status=all&animal_type=all&disease=Influenza%20-%20Avian&country=all"
+      "status": "live",
+      "records": 570,
+      "note": "fao(all) 2026-07-08..2026-10-06: 577 rows -> 570 records (7 skipped)"
     },
     {
       "key": "us-wild-birds",
@@ -885,8 +916,8 @@
       "region": "United States",
       "homepage": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/wild-bird-surveillance-dashboard",
       "status": "live",
-      "records": 1824,
-      "note": "usda wild-bird: 1824 features -> 1824 records (H5/H7, 365d)"
+      "records": 1819,
+      "note": "usda wild-bird: 1819 features -> 1819 records (H5/H7, 365d)"
     }
   ],
   "context_sources": [
