@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T06:42:36.803Z",
+  "generated_at": "2026-10-07T08:45:02.087Z",
   "latest_event": "2026-09-28",
   "mode": "live",
   "mode_note": null,
@@ -613,15 +613,15 @@
   },
   "official_au": {
     "ok": true,
-    "fetched_at": "2026-10-06T08:45:15.431Z",
+    "fetched_at": "2026-10-07T08:45:12.387Z",
     "national_total": 231,
     "national_total_phrasing": "confirmed or presumed positive",
     "national_total_source": "updates",
     "by_state": null,
     "by_state_total": null,
     "by_state_matches_national": null,
-    "as_at_text": "4pm AEST, 5 October 2026",
-    "as_at_date": "2026-10-05",
+    "as_at_text": "4pm AEST, 6 October 2026",
+    "as_at_date": "2026-10-06",
     "latest_update": {
       "date": "2026-09-11",
       "date_text": "11 September 2026",
@@ -706,10 +706,7 @@
       }
     ],
     "errors": [],
-    "notes": [],
-    "from_last_good": true,
-    "last_good_fetched_at": "2026-10-06T08:45:15.431Z",
-    "last_good_age_days": 0
+    "notes": []
   },
   "official_gap": {
     "behind": false,
@@ -743,7 +740,7 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 53 headlines, detection signal in 0; no coverage gaps detected",
+    "note": "google news 14d: 50 headlines, detection signal in 0; no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 40,
     "headlines": [
