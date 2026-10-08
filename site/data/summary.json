@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T06:44:57.039Z",
+  "generated_at": "2026-10-08T08:45:01.883Z",
   "latest_event": "2026-10-05",
   "mode": "live",
   "mode_note": null,
@@ -32,8 +32,8 @@
     "h5n1_states": 6,
     "h5n1_state_list": [
       "New South Wales",
-      "Victoria",
       "South Australia",
+      "Victoria",
       "Tasmania",
       "Queensland",
       "Western Australia"
@@ -41,8 +41,8 @@
     "states_affected": 7,
     "states": [
       "New South Wales",
-      "Victoria",
       "South Australia",
+      "Victoria",
       "Tasmania",
       "Queensland",
       "Western Australia",
@@ -53,8 +53,8 @@
     "current_era_states": 6,
     "current_era_state_list": [
       "New South Wales",
-      "Victoria",
       "South Australia",
+      "Victoria",
       "Tasmania",
       "Queensland",
       "Western Australia"
@@ -179,8 +179,8 @@
     "current_states": 6,
     "current_state_list": [
       "New South Wales",
-      "Victoria",
       "South Australia",
+      "Victoria",
       "Tasmania",
       "Queensland",
       "Western Australia"
@@ -208,8 +208,8 @@
         "last_date": "2026-09-22",
         "state_counts": {
           "New South Wales": 51,
-          "Victoria": 117,
           "South Australia": 179,
+          "Victoria": 117,
           "Tasmania": 32,
           "Queensland": 2,
           "Western Australia": 9
@@ -317,6 +317,36 @@
         "historical_records": 6,
         "sentence": "51 current H5N1 detections. 6 resolved H7 poultry outbreaks, 2024 to 2025."
       },
+      "South Australia": {
+        "state": "South Australia",
+        "state_code": "SA",
+        "eras": [
+          {
+            "era": "au_h5n1_2026",
+            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
+            "short_label": "Current H5N1 incursion",
+            "strain": "H5N1 clade 2.3.4.4b",
+            "status": "ongoing",
+            "current": true,
+            "records": 179,
+            "phrase": "179 current H5N1 detections",
+            "categories": {
+              "wild_bird": 169,
+              "mammal": 10
+            },
+            "confidence": {
+              "confirmed": 0,
+              "presumptive": 0,
+              "unstated": 179
+            },
+            "first_date": "2026-06-19",
+            "last_date": "2026-09-22"
+          }
+        ],
+        "current_records": 179,
+        "historical_records": 0,
+        "sentence": "179 current H5N1 detections."
+      },
       "Victoria": {
         "state": "Victoria",
         "state_code": "VIC",
@@ -386,36 +416,6 @@
         "current_records": 117,
         "historical_records": 13,
         "sentence": "117 current H5N1 detections. 12 resolved H7 poultry outbreaks, 2024 to 2025. 1 unrelated travel-acquired human case, 2024."
-      },
-      "South Australia": {
-        "state": "South Australia",
-        "state_code": "SA",
-        "eras": [
-          {
-            "era": "au_h5n1_2026",
-            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
-            "short_label": "Current H5N1 incursion",
-            "strain": "H5N1 clade 2.3.4.4b",
-            "status": "ongoing",
-            "current": true,
-            "records": 179,
-            "phrase": "179 current H5N1 detections",
-            "categories": {
-              "wild_bird": 169,
-              "mammal": 10
-            },
-            "confidence": {
-              "confirmed": 0,
-              "presumptive": 0,
-              "unstated": 179
-            },
-            "first_date": "2026-06-19",
-            "last_date": "2026-09-22"
-          }
-        ],
-        "current_records": 179,
-        "historical_records": 0,
-        "sentence": "179 current H5N1 detections."
       },
       "Tasmania": {
         "state": "Tasmania",
@@ -613,15 +613,15 @@
   },
   "official_au": {
     "ok": true,
-    "fetched_at": "2026-10-07T08:45:12.387Z",
+    "fetched_at": "2026-10-08T08:45:11.856Z",
     "national_total": 231,
     "national_total_phrasing": "confirmed or presumed positive",
     "national_total_source": "updates",
     "by_state": null,
     "by_state_total": null,
     "by_state_matches_national": null,
-    "as_at_text": "4pm AEST, 6 October 2026",
-    "as_at_date": "2026-10-06",
+    "as_at_text": "4pm AEST, 7 October 2026",
+    "as_at_date": "2026-10-07",
     "latest_update": {
       "date": "2026-09-11",
       "date_text": "11 September 2026",
@@ -706,10 +706,7 @@
       }
     ],
     "errors": [],
-    "notes": [],
-    "from_last_good": true,
-    "last_good_fetched_at": "2026-10-07T08:45:12.387Z",
-    "last_good_age_days": 0
+    "notes": []
   },
   "official_gap": {
     "behind": false,
@@ -728,8 +725,8 @@
     "official_states": [],
     "mapped_states": [
       "New South Wales",
-      "Victoria",
       "South Australia",
+      "Victoria",
       "Tasmania",
       "Queensland",
       "Western Australia"
@@ -743,10 +740,22 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 53 headlines, detection signal in 0; no coverage gaps detected",
+    "note": "google news 14d: 52 headlines, detection signal in 0; no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 40,
     "headlines": [
+      {
+        "date": "2026-10-08",
+        "outlet": "The Good Men Project",
+        "title": "How Vaccination Is Helping Protect South Australia’s Threatened Birds",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNclJMSThabEY1bnp0amhNcWpESml3ZXAwSE1jeXVXQldrWXVJTTJKRVhZNllHOHZ0R19VdzRDX0d1c1ZGUGdTYmxWblp0SThHbGxPSzNLaWdkbV9nX1lFT01FZjlmV0xaOFpQVF8xNE4zazVXdWZKUDNXOEwwbGJ2aDBWTEcydWlSU2FrY25IcEN5akdPRFNUYlppa0wyVXdEOHV1M0JNdjVNckFta0ZaZDAyaw?oc=5"
+      },
+      {
+        "date": "2026-10-08",
+        "outlet": "Glam Adelaide",
+        "title": "SA’s next H5 bird flu forum is at Mitcham on Monday, with registration essential",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPOUo5Q2x3TXA3eVZFSTdSYmhVaGNDY2VhWXlSYTl1UThhME9MaEZiMXZaclNKdzZycTV3d1dtRExGVmRRZkVyQWs1WEVlOGRaREVCbWM1bllZbnNsVzhIbFZEYXdGVG5ic2U5MnhxU3ByNzJ3Y29fZ2Y5MUI2a3g2UVgwcUphWWZ3a0RPWTFoNk1XYUdkUkR3c2Q2SFFfeG92Rk1WcHBFcmRjY2s?oc=5"
+      },
       {
         "date": "2026-10-08",
         "outlet": "The Victor Harbor Times",
@@ -791,9 +800,9 @@
       },
       {
         "date": "2026-10-07",
-        "outlet": "91.7 The Wave",
+        "outlet": "97.3 Coast FM",
         "title": "Bird flu vaccinations begin on little penguins at Penguin Island",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxONlVOQ3lTVGVmYkxOZmdhcTliRzhmejl5eXpvc1ozMi1uTm4yb1VGakJ1QlVjRnVkaVh3Tkd5RllWVGtYZndxeFg2Mlo4YnF4b1lwU0Z4NWd3Y1F3c1kxbldtdlFaMHdTM1AxZ19ja3VOLXg2N29nYVRNT3BxNk1ZNVZwYk1vbGRqb19nUDJTVmx6aWdUd3FIQXprYnhZTTNCdjA1YW9kczZ1aHFvLThCRg?oc=5"
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQdHh2ckI4M0FQVjJyZjZEeldDTzVmalhVVVVOQVBtdFlibUt0elBTb1FQY3pJb2xFbGZaZWdGbU5JdWVRX2w1Mi1LTlJJamU4dHp3YXQ3UW8wSlB5MjBkWkNkeERNYVRVcXU4WklqRURJVDBRNWpMVFdpN3RRMEI4U2o3TU81Y0dSRXJVR0l1ZnBBcjhVaFBvVmllVTFPczdYRmRzcDAtNzY5VWN1cUJN?oc=5"
       },
       {
         "date": "2026-10-06",
@@ -806,25 +815,13 @@
         "outlet": "The Courier | Ballarat, VIC",
         "title": "Council staff trained to respond if bird flu threatens 'treasured wildlife'",
         "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPQmFnbERLeGVJUklXRHd2aXV3MUM0UjdRenJPellwbkk2ekpSU0NWd2k0R1ZubGxLVmJyM2FQbTNlMXFrXzJmTU5BNWdpYnd6c0lwbTBobmtnMlhwLThoQTFLdGlzQTZrQzQ1YWtxV2pmMS12TFhPWUstZmxxcGMzTmZXcWVmbzhVd1ZyQ3ZWTkgtQmdlNEVKck1QWm5sZ01XbDRQT2ZQbw?oc=5"
-      },
-      {
-        "date": "2026-10-06",
-        "outlet": "Nature World News",
-        "title": "Ibis Deaths at Bendigo's Lake Weeroona Climb to 79 as Victoria Works to Rule Out H5 Bird Flu",
-        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNemllSVpXTVdjWlNmQnd1RkRYeWVDZXVtU2lBNmkxLTRJMFhTYW9tV2hRS1VZVkJFMkQ2VXdobTFuRC1vbWhyc1FBOFJMbmJKSC1SWXNBbUFlcFZ4V2k5S1dhLURtaHBzbGFaeWtVblZlUlhVNlEzZnd5dGtrUE91U2ZnQjZWcmRaa2xaUXg1cjZZdjRwT2MyWXhIdENtNUFsbmM4NHROTUlJWS1ndDF6eG84VnRsSng1N3RtTy11MWd3S2F5cnpXSjRNU2dqMHp3dmZsU3Vn?oc=5"
-      },
-      {
-        "date": "2026-10-06",
-        "outlet": "The West Australian",
-        "title": "WA’s little penguins to be vaccinated as bird flu fears rise",
-        "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOdFFQYUxrZUdidjVyUk5MOXZtZUpnckh0aHJBQXQ3UGZqV3VMVGpVN05PWnFOT2dKYkZxMkY3SlRjd3BVeWZNbGJ5anBBeFNCdllUTkJ2eDBZTHdySndmSWoyTTV3Y1ZCZVdrRU1jVlprNXYxOWlUNGp4VHg0Y0NIWk5aSzFCYUhiRHRMV3A3RTVjNk9HN2RVbHRRRlNGZ3YwRTdtMFlwdkJ6SjhCa3FwOUZJLW9Fdzl6X1BPUjZWMDJzQ0wxWV9taUx6R3lfRHAtTWMyYUhwMVZaMmNSTDNqZjd6aGlhbV9LSkVFb1pWYkk2OTl0dklmYUxn?oc=5"
       }
     ],
     "headlines_window_days": 14,
     "mapped_by_state": {
       "New South Wales": 51,
-      "Victoria": 117,
       "South Australia": 179,
+      "Victoria": 117,
       "Tasmania": 32,
       "Queensland": 2,
       "Western Australia": 9
