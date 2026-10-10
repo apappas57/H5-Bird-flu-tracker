@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T06:40:17.571Z",
+  "generated_at": "2026-10-10T08:45:04.565Z",
   "version": 1,
   "curated_updated": "2026-08-12",
   "entries_order": "ascending by sort_date, oldest first",
@@ -827,14 +827,14 @@
     },
     {
       "id": "au-official-position",
-      "sort_date": "2026-10-07",
-      "date_display": "4pm AEST, 7 October 2026",
+      "sort_date": "2026-10-09",
+      "date_display": "4pm AEST, 9 October 2026",
       "date_precision": "day",
       "title": "Where the official national count stands",
       "category": "australia",
       "scope": "australia",
       "certainty": "established",
-      "body": "As at 4pm AEST, 7 October 2026, the Australian Government reported 231 confirmed or presumed positive detections of H5 bird flu in Australia. This site individually maps 394 current detections, which is not a subset of that tally: the two figures are different measurements, and each can hold an event the other does not yet. The mapped points follow WOAH notification, which lags by about a fortnight, and the official count follows the Commonwealth's own updates. Both are published rather than reconciled into one.",
+      "body": "As at 4pm AEST, 9 October 2026, the Australian Government reported 231 confirmed or presumed positive detections of H5 bird flu in Australia. This site individually maps 394 current detections, which is not a subset of that tally: the two figures are different measurements, and each can hold an event the other does not yet. The mapped points follow WOAH notification, which lags by about a fortnight, and the official count follows the Commonwealth's own updates. Both are published rather than reconciled into one.",
       "citations": [
         {
           "publisher": "Australian Government Department of Agriculture, Fisheries and Forestry",
