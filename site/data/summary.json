@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T07:01:03.335Z",
+  "generated_at": "2026-10-12T08:45:01.643Z",
   "latest_event": "2026-10-05",
   "mode": "live",
   "mode_note": null,
@@ -613,7 +613,7 @@
   },
   "official_au": {
     "ok": true,
-    "fetched_at": "2026-10-10T08:45:17.402Z",
+    "fetched_at": "2026-10-12T08:45:10.827Z",
     "national_total": 231,
     "national_total_phrasing": "confirmed or presumed positive",
     "national_total_source": "updates",
@@ -706,10 +706,7 @@
       }
     ],
     "errors": [],
-    "notes": [],
-    "from_last_good": true,
-    "last_good_fetched_at": "2026-10-10T08:45:17.402Z",
-    "last_good_age_days": 1
+    "notes": []
   },
   "official_gap": {
     "behind": false,
@@ -767,6 +764,12 @@
       },
       {
         "date": "2026-10-10",
+        "outlet": "Unisba Media",
+        "title": "The Cheapest Way To Eat Healthy In Australia In 2026 (ALDI Prices Inside) Olivia Munn (IEOqvxYylZ)",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPUVQ2clZxTVFYbzNjRlI3bm5paTc2OXZsbUt2WUZkQWhDMWJhNEZrRkl2ZTE0ZFZxbDJJbm1IcmVSTlR6ZDRIZWFTelpRaGlJc180c29UWkJxNU5xM0pSV0phZHprUEpFc2FHNFZpYjVBM2Jqa1pSM2pJdTBWOXpsWXN3?oc=5"
+      },
+      {
+        "date": "2026-10-10",
         "outlet": "The Standard | Warrnambool, VIC",
         "title": "Bird flu detected in more south-west towns, move to vaccinate penguins",
         "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQQkZWWS0ybEpmQnRTSHRtekR3cUVWRzJuMFNXR2tJT055b1FOSlhlVVNPbC04X2xIVUU4bEZDSUhkZUxrUVBleDZyR3FJSTluTE5jUGhvbUtOQVd3MElNN3lZbUROcVhmQnZwenQtQ1FnZFhGQ2M2SVJPd0VxLTdaWThURzRJSmVUejNYOVg2TDJQMWw5WnpHUDlUQ0FEUTVfUlJNb0d4eVo?oc=5"
@@ -806,12 +809,6 @@
         "outlet": "https://en.edairynews.com/",
         "title": "USDA Confirms Avian Influenza In Two Washington Dairy Herds",
         "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNbm5sRWJDVVlEQXl1V19TRkZiMGYxRUJ3VUxQcVRhUzJVdWJUU2x5RXYyYkl3TFZBZzBpWUw0SThSTEpoWW5mMWZUNzVBS1VCamRhMndjRldxZl9KR2thUTNVWnRpMzBsNGZWcmpRS2NqUDNNUTZEWXh2Uzk1Nlk3MVNfQV84QVNZTXRFMzA4NA?oc=5"
-      },
-      {
-        "date": "2026-10-08",
-        "outlet": "The Good Men Project",
-        "title": "How Vaccination Is Helping Protect South Australia’s Threatened Birds",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNclJMSThabEY1bnp0amhNcWpESml3ZXAwSE1jeXVXQldrWXVJTTJKRVhZNllHOHZ0R19VdzRDX0d1c1ZGUGdTYmxWblp0SThHbGxPSzNLaWdkbV9nX1lFT01FZjlmV0xaOFpQVF8xNE4zazVXdWZKUDNXOEwwbGJ2aDBWTEcydWlSU2FrY25IcEN5akdPRFNUYlppa0wyVXdEOHV1M0JNdjVNckFta0ZaZDAyaw?oc=5"
       },
       {
         "date": "2026-10-08",
