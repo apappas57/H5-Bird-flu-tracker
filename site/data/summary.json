@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T08:45:01.643Z",
+  "generated_at": "2026-10-13T06:47:41.349Z",
   "latest_event": "2026-10-05",
   "mode": "live",
   "mode_note": null,
@@ -60,7 +60,7 @@
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 114,
+    "days_since_first_detection": 115,
     "latest_detection": "2026-09-22"
   },
   "eras": {
@@ -170,7 +170,7 @@
       "au_human_2024": 1,
       "global_h5_panzootic": 1621,
       "other_subtype": 37,
-      "subtype_unstated": 179
+      "subtype_unstated": 175
     }
   },
   "au_eras": {
@@ -601,7 +601,7 @@
     "wild_bird_detections": 379,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 114,
+    "days_since_first_detection": 115,
     "human_cases_au": 1
   },
   "human_context": {
@@ -706,7 +706,10 @@
       }
     ],
     "errors": [],
-    "notes": []
+    "notes": [],
+    "from_last_good": true,
+    "last_good_fetched_at": "2026-10-12T08:45:10.827Z",
+    "last_good_age_days": 0
   },
   "official_gap": {
     "behind": false,
@@ -740,10 +743,28 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 52 headlines, detection signal in 0; no coverage gaps detected",
+    "note": "google news 14d: 55 headlines, detection signal in 0; no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 40,
     "headlines": [
+      {
+        "date": "2026-10-12",
+        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
+        "title": "South East SA local news briefing, October 13",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOWFBkb2RiUkx0SFRiN3BvbWtMWDRhMUY1a1BqLWwyOXBmQkg3QmtONEJzVWw3THYyaHNkS1hGbXZkT254ckExWHhScWU0emYxUThQNGlmWE5ENmpqWUE0elhMMnYwTlJsbEt1ZnZJMkFzclJkNElrU2Z0ZnBSQjhjUW92cjRDenRvdlE?oc=5"
+      },
+      {
+        "date": "2026-10-12",
+        "outlet": "Medical Economics",
+        "title": "CDC won’t publish report showing COVID-19 vaccine effectiveness; former pharmacy president sentenced in $33M compounded drug kickback scheme; mRNA bird flu vaccine hits late-stage testing – Morning Medical Update",
+        "url": "https://news.google.com/rss/articles/CBMi4wJBVV95cUxNM29aRW1XRmlsYWpGY01kTzkwU3dYYzVzTTN3amdOdklCSXlpMHVNS1BEZjc1OHFxYUZwRFhYd2FmOHlobWk4cXVYWTBOSWxkd3p2c3p3bTFDc3dvd1VqMnpvdXNLeXRGTW1iaEdfRl9rVDFZNUhKQWVZQ2o0dFJMZHo4RzlXSExmZzFQN2x2aXFmWXlBaExBalBUT3M5ZHk1TWdIVDNWSk9teW1HcE5QcmVNejZVTWpSVkhVMkdaQjFnNDNnN0YxMXFtSmZQNkNwNmREVDFxMDQtTGJSdmtTZ1k2RzdNaldoN29pOWQzVVl3bmVuV1RMeUNqUTRBWkJjR0Y2WTZyS2VmNi1zaDJjZDMtTXlGejIwTlFJMHpYREM0NUhRVU5HNE1pUkptZEpSZS1CWTQ3TFVtcUM4Y3M4bGt5OEpHWEdMd042UTVLTFVjUDFUemI1NE5Kb2tUWU5GRWVF?oc=5"
+      },
+      {
+        "date": "2026-10-12",
+        "outlet": "Bega District News",
+        "title": "Hit-and-run eagle soars again after historic bird flu jab and rehab",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPSHpKUnRtSzBVUl9hV2kzQ2U0a0lIa0xvOGNsZFJjMS1nV2FWMW5ncTJwZFlSd3AyLUxTTVloczd1NzhMNFRnRGU4RVhidjl0Ym9pNUdwclY4R1BwMkZHM29WcF9lbTcwVGJVOGpLVVlSMEVrZk5PdEFENFlUSGNieFZxb1RmOTFWWVJBcXJYemZDVGpqVEFtUmJhODlmV2ZKTGZDSzRHVFJZZw?oc=5"
+      },
       {
         "date": "2026-10-11",
         "outlet": "The Times of India",
@@ -769,22 +790,16 @@
         "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPUVQ2clZxTVFYbzNjRlI3bm5paTc2OXZsbUt2WUZkQWhDMWJhNEZrRkl2ZTE0ZFZxbDJJbm1IcmVSTlR6ZDRIZWFTelpRaGlJc180c29UWkJxNU5xM0pSV0phZHprUEpFc2FHNFZpYjVBM2Jqa1pSM2pJdTBWOXpsWXN3?oc=5"
       },
       {
-        "date": "2026-10-10",
-        "outlet": "The Standard | Warrnambool, VIC",
-        "title": "Bird flu detected in more south-west towns, move to vaccinate penguins",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQQkZWWS0ybEpmQnRTSHRtekR3cUVWRzJuMFNXR2tJT055b1FOSlhlVVNPbC04X2xIVUU4bEZDSUhkZUxrUVBleDZyR3FJSTluTE5jUGhvbUtOQVd3MElNN3lZbUROcVhmQnZwenQtQ1FnZFhGQ2M2SVJPd0VxLTdaWThURzRJSmVUejNYOVg2TDJQMWw5WnpHUDlUQ0FEUTVfUlJNb0d4eVo?oc=5"
-      },
-      {
-        "date": "2026-10-09",
-        "outlet": "DD News",
-        "title": "Australia confirms first H5N1 bird flu case in local mammal",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPeXJFZ3ZjMFNqT0UwbWxRSnBFb2s5Z3NBX3RoWkJkaUpGWlJpZ1k5UmtTQ1N5bkN6ZGF4Uzk5MUZ5YXQ1bEFzanJHVU9KVkZDd01FMmFmdEdwQ3dTYlVJbnBsal9KdTdwaUQ5VXJWWVNLU21RbW9KTXBfMDJSSl85dkJ4YUJqWjh3N0ZFT0hn?oc=5"
-      },
-      {
         "date": "2026-10-09",
         "outlet": "Agriland UK",
         "title": "Vigilance urged as first case of bird flu confirmed in Scotland",
         "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQT1BRV3Z0c0VDTlFPRk9LN0FRTVBiUWY3a0xscEp2aWtqcVZ4YzVTYVVKbDhVNVhaVnpmYUtmZlZNRkJzVkVydEdYUy1DVy0zSmh1THB3WERyMUxDMlE3eVVOQ1BnMTVVWTVlUFZ4bGhVMVBXM1NyN1BtWk9VdjdyTEFVTVU2YWJtZzliYXRjWlJCZXIxd2NmeWxmbXlBMm1QUXN2UXBvWQ?oc=5"
+      },
+      {
+        "date": "2026-10-09",
+        "outlet": "Yakima Herald-Republic",
+        "title": "Mulder claims two wickets as South Africa reduces Australia to 84-3 at lunch in 1st test",
+        "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxONGpvZzZhVVUwS2JCVGNGQlpTVXFYX0kxSk5UQmtHMHp4NUdESHJxejV5VkhQWWtkV3FvMy1ndFJfYkZCT0VjZFQtXzlCSDdVV3lxbDJUTzNXdndxNnRnalFWWHFzZVRrYTdHYlRuY0xQVTYxTlJMZWx3eDJ4aE5zOGVuLXk5YVFxblV5NWN3cDRFYnpWOGkwMUU4RjNDNHFTUkl5MUNoenc2WlRfWExRZDVvdjNuV3BDc0VCb193WTVERXRaVW5oSFBBVXhVbThtRGlzSlREaVF1VlRPNGxvSG1PZy1QbzNDY25nVlhYaGc1a0NnbmxtTXVSeHbSAYICQVVfeXFMUDZUc0ZtVXpxYlhwUWtBYUFqZGU3blYxM0tiRElxaFZ1Z3EzLUxpdGFGTHVLNGpqVTV5TTlnQ2w0cXhKR29yWFMzOXZBZHFkU2QyeFFmcWg4QS1wN0ZfRjRjN2VVQlIyRWhJTTFaR0swQlU3eXU3OFlHUjI4MUVId3JHVVROQlU2QU1RazFlTWZuZzRVb0JFQ2E3aTlURUFNNWpGcnlUZjdIdDRpaTU3Q2hHNHdKaHpBTFJTWkgydjB5R0JGM3o5aVp3TlJSVVBjd1JsX0RDX3ZSVXN4STg5ZHNWVWdhSmx5OE9pUnBlTDRpeXpJakRERDg0UWU4RFk4SnpB?oc=5"
       },
       {
         "date": "2026-10-09",
@@ -803,18 +818,6 @@
         "outlet": "Mirage News",
         "title": "Building Wildlife Resilience Against Bird Flu",
         "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNVFQ4SzhIR2pDLURwdVFMTEVRelNmMlI3M3VyV2hVSk9QQ1E2Y25md2twR1R3YllIdDAtMGlRRUs1em9zcEp3YTh2bF9QV0VxY0pYckl1RXZCdHFJUy0xOEtzRXRzN1NfTDFFQzQ0dU5Ec2h5Vkh1MVJLZkRueWdzNmt3WEk3Wkhj?oc=5"
-      },
-      {
-        "date": "2026-10-08",
-        "outlet": "https://en.edairynews.com/",
-        "title": "USDA Confirms Avian Influenza In Two Washington Dairy Herds",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNbm5sRWJDVVlEQXl1V19TRkZiMGYxRUJ3VUxQcVRhUzJVdWJUU2x5RXYyYkl3TFZBZzBpWUw0SThSTEpoWW5mMWZUNzVBS1VCamRhMndjRldxZl9KR2thUTNVWnRpMzBsNGZWcmpRS2NqUDNNUTZEWXh2Uzk1Nlk3MVNfQV84QVNZTXRFMzA4NA?oc=5"
-      },
-      {
-        "date": "2026-10-08",
-        "outlet": "Glam Adelaide",
-        "title": "SA’s next H5 bird flu forum is at Mitcham on Monday, with registration essential",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPOUo5Q2x3TXA3eVZFSTdSYmhVaGNDY2VhWXlSYTl1UThhME9MaEZiMXZaclNKdzZycTV3d1dtRExGVmRRZkVyQWs1WEVlOGRaREVCbWM1bllZbnNsVzhIbFZEYXdGVG5ic2U5MnhxU3ByNzJ3Y29fZ2Y5MUI2a3g2UVgwcUphWWZ3a0RPWTFoNk1XYUdkUkR3c2Q2SFFfeG92Rk1WcHBFcmRjY2s?oc=5"
       }
     ],
     "headlines_window_days": 14,
@@ -829,20 +832,20 @@
     "gaps": []
   },
   "totals": {
-    "total_events": 2252,
+    "total_events": 2248,
     "human_cases": 9,
-    "poultry_events": 130,
+    "poultry_events": 127,
     "poultry_birds_affected": 0,
     "dairy_events": 1,
-    "wild_bird_events": 2089,
+    "wild_bird_events": 2088,
     "mammal_events": 23,
     "countries_affected": 34,
     "us_states_affected": 45,
     "au_states_affected": 7
   },
   "by_category": {
-    "poultry": 130,
-    "wild_bird": 2089,
+    "poultry": 127,
+    "wild_bird": 2088,
     "mammal": 23,
     "dairy": 1,
     "human": 9
@@ -850,24 +853,24 @@
   "by_country": {
     "Bulgaria": 3,
     "the United Kingdom of Great Britain and Northern Ireland": 10,
-    "Brazil": 3,
     "Belgium": 2,
-    "Norway": 17,
+    "Brazil": 2,
     "Canada": 8,
-    "Chile": 4,
-    "Denmark": 4,
+    "Norway": 17,
+    "Chile": 3,
     "Germany": 3,
+    "Denmark": 4,
     "Cyprus": 1,
+    "Iceland": 7,
     "Australia": 415,
     "Cambodia": 2,
     "Sweden": 5,
-    "Iceland": 5,
     "United States": 1679,
     "Argentina": 1,
-    "Netherlands": 10,
+    "Netherlands": 9,
+    "Peru": 23,
+    "Vietnam": 33,
     "Suriname": 1,
-    "Vietnam": 34,
-    "Peru": 25,
     "France": 3,
     "Uruguay": 1,
     "Indonesia": 4,
@@ -884,7 +887,7 @@
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2252,
+    "Global": 2248,
     "United States": 1679,
     "Australia": 415
   },
@@ -896,7 +899,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 414,
-      "note": "fao(Australia) 2024-01-01..2026-10-12: 415 rows -> 414 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-10-13: 415 rows -> 414 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -904,8 +907,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 558,
-      "note": "fao(all) 2026-07-14..2026-10-12: 564 rows -> 558 records (6 skipped)"
+      "records": 554,
+      "note": "fao(all) 2026-07-15..2026-10-13: 560 rows -> 554 records (6 skipped)"
     },
     {
       "key": "us-wild-birds",
