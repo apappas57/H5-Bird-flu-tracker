@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T06:47:41.349Z",
+  "generated_at": "2026-10-13T08:45:02.666Z",
   "latest_event": "2026-10-05",
   "mode": "live",
   "mode_note": null,
@@ -613,15 +613,15 @@
   },
   "official_au": {
     "ok": true,
-    "fetched_at": "2026-10-12T08:45:10.827Z",
+    "fetched_at": "2026-10-13T08:45:12.302Z",
     "national_total": 231,
     "national_total_phrasing": "confirmed or presumed positive",
     "national_total_source": "updates",
     "by_state": null,
     "by_state_total": null,
     "by_state_matches_national": null,
-    "as_at_text": "4pm AEST, 9 October 2026",
-    "as_at_date": "2026-10-09",
+    "as_at_text": "4pm AEST, 12 October 2026",
+    "as_at_date": "2026-10-12",
     "latest_update": {
       "date": "2026-09-11",
       "date_text": "11 September 2026",
@@ -706,10 +706,7 @@
       }
     ],
     "errors": [],
-    "notes": [],
-    "from_last_good": true,
-    "last_good_fetched_at": "2026-10-12T08:45:10.827Z",
-    "last_good_age_days": 0
+    "notes": []
   },
   "official_gap": {
     "behind": false,
@@ -743,10 +740,16 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 55 headlines, detection signal in 0; no coverage gaps detected",
+    "note": "google news 14d: 50 headlines, detection signal in 0; no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 40,
     "headlines": [
+      {
+        "date": "2026-10-13",
+        "outlet": "SMH.com.au",
+        "title": "Big egg cartel: Major Australian suppliers accused of whipping up higher prices",
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQbVI0a29qV2VwTXVyMVcwUmp2TDhPWlJrbXItT1g5bWdJNzdyYkVYTHZGV05CQkJyS1pjRjF5cTFFUDV0Y3YwNWVOb1FPWnQwQXprOTl5SUswclRITHVtcm40cWhXVlg4aExPR3N3TDF3MklQUTdqUks4RjZ3YUxjdy1JcFQ1UFBta1I2MDFBNldlSDlUeUgxNHAtRUZCalZKLVE3eklVajJGd0VHZjJjZ0phbUtWTm5CdHdYVHREZ0NDeG85aWpVc0M0amE1ajRCYnE5Yg?oc=5"
+      },
       {
         "date": "2026-10-12",
         "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
@@ -812,12 +815,6 @@
         "outlet": "Pet Industry News",
         "title": "Livestock disease test wins $2m in federal backing",
         "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1wOUpQS29rakJmaVlodmdhTzU4Y2tzYk4xMGJSSVdhb2JKNmFQUmFKb2lKUHg1aVZ0Y1N6RmFEbG8tY1RhSEtNRjNwaDdfNEFyaFBpTlNESm9xVjg2TmVnUEtBV0RmSnlPRzhkY2tXMFZ2dmF3d3pkMkhqVU5uZw?oc=5"
-      },
-      {
-        "date": "2026-10-08",
-        "outlet": "Mirage News",
-        "title": "Building Wildlife Resilience Against Bird Flu",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNVFQ4SzhIR2pDLURwdVFMTEVRelNmMlI3M3VyV2hVSk9QQ1E2Y25md2twR1R3YllIdDAtMGlRRUs1em9zcEp3YTh2bF9QV0VxY0pYckl1RXZCdHFJUy0xOEtzRXRzN1NfTDFFQzQ0dU5Ec2h5Vkh1MVJLZkRueWdzNmt3WEk3Wkhj?oc=5"
       }
     ],
     "headlines_window_days": 14,
