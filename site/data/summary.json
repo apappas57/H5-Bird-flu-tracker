@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T06:40:06.316Z",
+  "generated_at": "2026-10-14T08:45:02.727Z",
   "latest_event": "2026-10-07",
   "mode": "live",
   "mode_note": null,
@@ -32,8 +32,8 @@
     "h5n1_states": 6,
     "h5n1_state_list": [
       "Victoria",
-      "South Australia",
       "Tasmania",
+      "South Australia",
       "New South Wales",
       "Queensland",
       "Western Australia"
@@ -41,8 +41,8 @@
     "states_affected": 7,
     "states": [
       "Victoria",
-      "South Australia",
       "Tasmania",
+      "South Australia",
       "New South Wales",
       "Queensland",
       "Western Australia",
@@ -53,8 +53,8 @@
     "current_era_states": 6,
     "current_era_state_list": [
       "Victoria",
-      "South Australia",
       "Tasmania",
+      "South Australia",
       "New South Wales",
       "Queensland",
       "Western Australia"
@@ -179,8 +179,8 @@
     "current_states": 6,
     "current_state_list": [
       "Victoria",
-      "South Australia",
       "Tasmania",
+      "South Australia",
       "New South Wales",
       "Queensland",
       "Western Australia"
@@ -208,8 +208,8 @@
         "last_date": "2026-09-22",
         "state_counts": {
           "Victoria": 122,
-          "South Australia": 179,
           "Tasmania": 35,
+          "South Australia": 179,
           "New South Wales": 47,
           "Queensland": 2,
           "Western Australia": 9
@@ -338,6 +338,35 @@
         "historical_records": 13,
         "sentence": "122 current H5N1 detections. 12 resolved H7 poultry outbreaks, 2024 to 2025. 1 unrelated travel-acquired human case, 2024."
       },
+      "Tasmania": {
+        "state": "Tasmania",
+        "state_code": "TAS",
+        "eras": [
+          {
+            "era": "au_h5n1_2026",
+            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
+            "short_label": "Current H5N1 incursion",
+            "strain": "H5N1 clade 2.3.4.4b",
+            "status": "ongoing",
+            "current": true,
+            "records": 35,
+            "phrase": "35 current H5N1 detections",
+            "categories": {
+              "wild_bird": 35
+            },
+            "confidence": {
+              "confirmed": 0,
+              "presumptive": 0,
+              "unstated": 35
+            },
+            "first_date": "2026-08-12",
+            "last_date": "2026-09-22"
+          }
+        ],
+        "current_records": 35,
+        "historical_records": 0,
+        "sentence": "35 current H5N1 detections."
+      },
       "South Australia": {
         "state": "South Australia",
         "state_code": "SA",
@@ -367,35 +396,6 @@
         "current_records": 179,
         "historical_records": 0,
         "sentence": "179 current H5N1 detections."
-      },
-      "Tasmania": {
-        "state": "Tasmania",
-        "state_code": "TAS",
-        "eras": [
-          {
-            "era": "au_h5n1_2026",
-            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
-            "short_label": "Current H5N1 incursion",
-            "strain": "H5N1 clade 2.3.4.4b",
-            "status": "ongoing",
-            "current": true,
-            "records": 35,
-            "phrase": "35 current H5N1 detections",
-            "categories": {
-              "wild_bird": 35
-            },
-            "confidence": {
-              "confirmed": 0,
-              "presumptive": 0,
-              "unstated": 35
-            },
-            "first_date": "2026-08-12",
-            "last_date": "2026-09-22"
-          }
-        ],
-        "current_records": 35,
-        "historical_records": 0,
-        "sentence": "35 current H5N1 detections."
       },
       "New South Wales": {
         "state": "New South Wales",
@@ -613,15 +613,15 @@
   },
   "official_au": {
     "ok": true,
-    "fetched_at": "2026-10-13T08:45:12.302Z",
+    "fetched_at": "2026-10-14T08:45:11.190Z",
     "national_total": 231,
     "national_total_phrasing": "confirmed or presumed positive",
     "national_total_source": "updates",
     "by_state": null,
     "by_state_total": null,
     "by_state_matches_national": null,
-    "as_at_text": "4pm AEST, 12 October 2026",
-    "as_at_date": "2026-10-12",
+    "as_at_text": "4pm AEST, 13 October 2026",
+    "as_at_date": "2026-10-13",
     "latest_update": {
       "date": "2026-09-11",
       "date_text": "11 September 2026",
@@ -706,10 +706,7 @@
       }
     ],
     "errors": [],
-    "notes": [],
-    "from_last_good": true,
-    "last_good_fetched_at": "2026-10-13T08:45:12.302Z",
-    "last_good_age_days": 0
+    "notes": []
   },
   "official_gap": {
     "behind": false,
@@ -728,8 +725,8 @@
     "official_states": [],
     "mapped_states": [
       "Victoria",
-      "South Australia",
       "Tasmania",
+      "South Australia",
       "New South Wales",
       "Queensland",
       "Western Australia"
@@ -743,15 +740,21 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 52 headlines, detection signal in 0; no coverage gaps detected",
+    "note": "google news 14d: 56 headlines, detection signal in 0; no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 40,
     "headlines": [
       {
         "date": "2026-10-14",
-        "outlet": "Meanjin",
-        "title": "Hope is the Thing with Feathers",
-        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE80UUdCeEVpWUlxQ2ljb0M2YWtJNFRCcWtMaWphRTVGUVJuNXdESHE1S3NCUl8yTU9zam9ralplNloxWjZ0aFktR3FlQ1ZHZk9jNlZrVVRSUWpLRHRkX1o4N1J3eVU5Uk1OZ3lDTVFGSQ?oc=5"
+        "outlet": "The Star",
+        "title": "Bird flu jabs for penguins",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNenAydXVZdUdMVXBsZnJvNXU2OUtTcG9ic0dMb2pPczZGZV9scE5sZ0hyUHB4ZVpWYWlCMk4xZTVyMkxrZHhXN01OdmhjT1N1VVdSdlgyN2FVa1pxaTlFbENMS25GZzhqYXJaWnNVYnFfZ21ORUlta2tYY2JQakFlZWd5c3p5UjBq?oc=5"
+      },
+      {
+        "date": "2026-10-14",
+        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
+        "title": "Albatross colony to be vaccinated by hand in fight against bird flu spread",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNR0lCNDN4Q1gtQkszR0psZmNudHpWMGJHN3h4QzlJSExUWGcyQkdNb0hhdG1DMXlJQmNTWWZGdXc5SWZjQlUyY1h1TUpFZmVldTBLekwtRFZwQnI0M2YwX3BZUEQ0QTRBQ1FWUVV4d1J3SW5oazBHbWdZaE9Ncm8xc3pVbE5peW4zY1o2MmFFSGpJaDlqRnZVdnZQRlo2N0xGUXdza0VrVlhsUnlfNGJJNkx3?oc=5"
       },
       {
         "date": "2026-10-14",
@@ -802,29 +805,23 @@
         "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNakNrdFljNE01R01JVF80Tl9Dc0hOOWNEOHhUUTNfNmwyWmVvS0VWT1IzUFMwMDBlSjhPSjA0OEtmczFkWmtmd2NCdFBGa3BhVDg0bWVmTF9id0NjOXVOWHdWTG9iTWdqdjFqUV9Vakp1X3g5OTVaZWVqOW15U29JSHAzY2J5VExqLVpjTmJ3NDg1dmxRT1FGcWNESWJhRnJxbE5qTzFfOU1SZUVHc3VtZTNmSE0zNDBCa2Y0?oc=5"
       },
       {
+        "date": "2026-10-13",
+        "outlet": "SMH.com.au",
+        "title": "Big egg cartel: Major Australian suppliers accused of whipping up higher prices",
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQbVI0a29qV2VwTXVyMVcwUmp2TDhPWlJrbXItT1g5bWdJNzdyYkVYTHZGV05CQkJyS1pjRjF5cTFFUDV0Y3YwNWVOb1FPWnQwQXprOTl5SUswclRITHVtcm40cWhXVlg4aExPR3N3TDF3MklQUTdqUks4RjZ3YUxjdy1JcFQ1UFBta1I2MDFBNldlSDlUeUgxNHAtRUZCalZKLVE3eklVajJGd0VHZjJjZ0phbUtWTm5CdHdYVHREZ0NDeG85aWpVc0M0amE1ajRCYnE5Yg?oc=5"
+      },
+      {
         "date": "2026-10-12",
         "outlet": "Western Australian Government",
         "title": "H5 avian influenza (bird flu) in Western Australia",
         "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPTHVpMmlzWWpSNXBjU3JhLWh3Rjh1Y3VsQW1YQlZOUFB2WmVPNGlFSDZ5LTR5RG5ISTRjUGhselhpcWJjbEtIb0N6UlpGSzQ5WHZtQmk3ZXJObk9KN2FNV3gtSFJHMEswRkk0VlQ1Q1lTcjdPOTBuWWU5V0RxNDZIY3J2WDIzLXZlcTlOcFNFenpYcmUwWFZkRTg0XzZmbVJqYmJqMXNyN0hXNzVfd1VLbXEzSHpHY2M1bGVDRlM0c0djYkFEU3Z1WW53c2VQMTVzdElXXw?oc=5"
-      },
-      {
-        "date": "2026-10-11",
-        "outlet": "The Times of India",
-        "title": "Recurrent bird flu in AP: Past genetic clues point to a complex cross-country history",
-        "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNUXVMRTliZmxUOGhISmhtWDY5OHZkZHZyRDRmdkd4V0p3WlBZMHY1WlN2NTJ6bl9RamR2VWhpVEhZTkhSVTRuVjFGWmdPUFVpS09vV2QxMUZYTHBaZklBNU1rUDNGNjE2djU4N0hKRHQwVEo0WXVMbUxJNWp4dy1Tamx3bHdDVVFGaXU1eF9mT081dm4xSW1iSTdzTEpZV1BDeGVvYkNWR2l3Y1JlSzFjbk1jS2poN1FrYTdLN09RbEJaVndDNFFvdHI4MUE5U3dCUVJMcDRVS1BwclVqVERsOXBnT0ZZNXFYbnEyODdIbG05dWhW0gH6AUFVX3lxTFBCYUtCaEZLbkQ2QjlwRjQyWVdwdDFUbV9tdkNaZjFyRlB2OE5VR05xU3VtMGlqNGlLWTV4UWlCeG5QSG9hY2tmd2pEeXFrVDltMVFqb01nMmxHX0JzcUlFY1RITWNyMHFySGFabFl4WkFxOUxxY2Vrd0FYRVJSQk52NFZkVzhmMExrNU4wcG43WWNlam5RSVdsYVVYVlgzdEpQbmY0WDhfMlRRZHlDaHVZbGRLQW5WUTJ2Smk1bDFmMXgxNVpTZl96YUh0UFZhZkRab01Od3d1MUxzdGNiT2R2OE1KNGE2STNiNkFaSVM4TndCaDFKdVpiWmc?oc=5"
-      },
-      {
-        "date": "2026-10-11",
-        "outlet": "The Canberra Times",
-        "title": "Bird flu strain was always expected to reach Australia",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQMko2NmNuUWotcWhhZlh0TjlSNUpBWDN1b25SZnd5TFI3UlVwZVJVQVVSbkgzQTVHYTZlZ2pxcHlUQWotT1A5TFRnRUhVaUZqd251UjlnU0FLeFU2ZGREZnp5enZwd1FlcnVDTm90cDRpT0NyYnhmMXNEV05heEdyRkI3NTNBRV9wY195V0ZQazkxeWJzXzhBUml6bm04QnhDUlJVag?oc=5"
       }
     ],
     "headlines_window_days": 14,
     "mapped_by_state": {
       "Victoria": 122,
-      "South Australia": 179,
       "Tasmania": 35,
+      "South Australia": 179,
       "New South Wales": 47,
       "Queensland": 2,
       "Western Australia": 9
@@ -854,20 +851,20 @@
     "Peru": 19,
     "Bulgaria": 3,
     "the United Kingdom of Great Britain and Northern Ireland": 10,
-    "Belgium": 2,
     "Brazil": 2,
+    "Belgium": 2,
     "Canada": 8,
     "Chile": 3,
-    "Germany": 3,
     "Denmark": 4,
-    "Cyprus": 1,
+    "Germany": 3,
     "China, Taiwan Province of": 2,
+    "Cyprus": 1,
     "Iceland": 7,
     "Australia": 415,
     "Cambodia": 2,
     "Sweden": 5,
-    "United States": 1677,
     "Argentina": 1,
+    "United States": 1677,
     "Netherlands": 9,
     "Suriname": 1,
     "Vietnam": 33,
