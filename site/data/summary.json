@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-14T08:45:02.727Z",
-  "latest_event": "2026-10-07",
+  "generated_at": "2026-10-15T06:39:56.948Z",
+  "latest_event": "2026-10-13",
   "mode": "live",
   "mode_note": null,
   "data_coverage": {
@@ -60,7 +60,7 @@
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 116,
+    "days_since_first_detection": 117,
     "latest_detection": "2026-09-22"
   },
   "eras": {
@@ -170,7 +170,7 @@
       "au_human_2024": 1,
       "global_h5_panzootic": 1621,
       "other_subtype": 37,
-      "subtype_unstated": 170
+      "subtype_unstated": 165
     }
   },
   "au_eras": {
@@ -601,7 +601,7 @@
     "wild_bird_detections": 379,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 116,
+    "days_since_first_detection": 117,
     "human_cases_au": 1
   },
   "human_context": {
@@ -706,7 +706,10 @@
       }
     ],
     "errors": [],
-    "notes": []
+    "notes": [],
+    "from_last_good": true,
+    "last_good_fetched_at": "2026-10-14T08:45:11.190Z",
+    "last_good_age_days": 0
   },
   "official_gap": {
     "behind": false,
@@ -740,10 +743,34 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 56 headlines, detection signal in 0; no coverage gaps detected",
+    "note": "google news 14d: 55 headlines, detection signal in 1 (TAS); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 40,
     "headlines": [
+      {
+        "date": "2026-10-15",
+        "outlet": "UA.NEWS",
+        "title": "H5 detected in seal and gull samples on Macquarie Island",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQUzFCZnAwRWVXNW9KWEFOY3AyYXpWVUtycEIzc1d5MGNRVlNBamp5UkRKMW5jd3RBR0d0c3NhVXAzaVBVNU82NjJ1X0kzOENydUYxd1ZiMnJqZnVqNGp0LVFqZ0tZRl91VUNwVXdDd2s3WGJabGJmRUpzdE9pUmR6R1hZTTBPY0R6SFhPRG1Tb0JhcDZWNHpQMWtDM0pUckRkTS14cFpCVk42dExPSldiRQ?oc=5"
+      },
+      {
+        "date": "2026-10-15",
+        "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
+        "title": "Bird flu detected in seal, bird samples taken from remote southern island",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQRVY2cVRaNUhqeXZuZ01veTROam0zamJvU3BJNFBVR0R0WXZqM0R3SnMtUmR1ZDV4T2JaMHRrWmxuUlRnWTlmUS00R3F6aF9fbmVIUnZtQXMwMS1LNU1Zb3dPNnB4eWhnQXB6QUxCQkpOVGkybjJHZUpxZW02THU1cWV1YWNnb0FfWGp4RGtSWUtvQzFzazZXQTI2VlBneE9zZFJoeWZsZnFUemM?oc=5"
+      },
+      {
+        "date": "2026-10-15",
+        "outlet": "The Mercury",
+        "title": "Bird flu detected in Tasmanian elephant seal",
+        "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQMDQwbElKVHlTZWtDMDFJdlhjTG5hekNFLXY5WWQ5em1LQkthN1JQcHhLREpFeUg2eFhIRmpXNzJ3UWRhNXUzbmpfVF9MT3FuOHYyNjBOc2JqN21NSXZma1ZmMDBYXzV4X3Fjb0h2aTFGSjZhaXdPSEFiX0paOXg4aTNkbzFBUnJRdHJVZDZTSUhVWmItRmdDYkh5RG40R09UQ2ZlamNIMFFmckRVVUxLcllaX3R6S09oZWpnNVFsaFl6djBuVU5QeHBIeXZWU2gwMUIwUFgyZFN4dlRUOHhxd3VHZ2o2emRyRk1xSktpOWcwRGl5cERiclpnUQ?oc=5"
+      },
+      {
+        "date": "2026-10-14",
+        "outlet": "Medical Economics",
+        "title": "CDC won’t publish report showing COVID-19 vaccine effectiveness; former pharmacy president sentenced in $33M compounded drug kickback scheme; mRNA bird flu vaccine hits late-stage testing – Morning Medical Update",
+        "url": "https://news.google.com/rss/articles/CBMi4wJBVV95cUxNM29aRW1XRmlsYWpGY01kTzkwU3dYYzVzTTN3amdOdklCSXlpMHVNS1BEZjc1OHFxYUZwRFhYd2FmOHlobWk4cXVYWTBOSWxkd3p2c3p3bTFDc3dvd1VqMnpvdXNLeXRGTW1iaEdfRl9rVDFZNUhKQWVZQ2o0dFJMZHo4RzlXSExmZzFQN2x2aXFmWXlBaExBalBUT3M5ZHk1TWdIVDNWSk9teW1HcE5QcmVNejZVTWpSVkhVMkdaQjFnNDNnN0YxMXFtSmZQNkNwNmREVDFxMDQtTGJSdmtTZ1k2RzdNaldoN29pOWQzVVl3bmVuV1RMeUNqUTRBWkJjR0Y2WTZyS2VmNi1zaDJjZDMtTXlGejIwTlFJMHpYREM0NUhRVU5HNE1pUkptZEpSZS1CWTQ3TFVtcUM4Y3M4bGt5OEpHWEdMd042UTVLTFVjUDFUemI1NE5Kb2tUWU5GRWVF?oc=5"
+      },
       {
         "date": "2026-10-14",
         "outlet": "The Star",
@@ -758,6 +785,12 @@
       },
       {
         "date": "2026-10-14",
+        "outlet": "Meanjin",
+        "title": "Hope is the Thing with Feathers",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE80UUdCeEVpWUlxQ2ljb0M2YWtJNFRCcWtMaWphRTVGUVJuNXdESHE1S3NCUl8yTU9zam9ralplNloxWjZ0aFktR3FlQ1ZHZk9jNlZrVVRSUWpLRHRkX1o4N1J3eVU5Uk1OZ3lDTVFGSQ?oc=5"
+      },
+      {
+        "date": "2026-10-14",
         "outlet": "Tasmania Talks",
         "title": "Bird flu count rises, Shy Albatross vaccinated in world first",
         "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNQmtZTHpVeEsydFZjSlZmWU0tMjM4TEhLUnVkSTk2X2JZNUhkYWZ1NTZtalAzMXZoMS1QZFRERFFYdTRnNFU0ZWwtYVpzWWd3bjJLZDZOanpRc2FmeWlHd0JYY2ZqWGhSM2dydk84LU92aXVOX2FwNkV0Vkt4MGR4M2JVdjl4NTlfbDJkUXBNWHFKRmYzNTFLRFBfR3Q?oc=5"
@@ -769,10 +802,10 @@
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQNEVZT3VwZElXcGdrMlVzd1R3ZGZESDhHYkwyTE9XTzF3amNZTXhkQ0dZcDlTLTRVRmtLQVR3S3FhaE5fTExlLWVkeTVqRVNVWjEtdkNpTWlINV91NmpndGh6dmMtNTh4ZjYxM1JWRVAxaDVnNmlUOTVIV01Qd2hHWjktQkx1N1pNTEV6U25hTGVJUXZYUmJMZFo1X2FYTFBiTjNBb3JCTU9SREE?oc=5"
       },
       {
-        "date": "2026-10-14",
-        "outlet": "Medical Economics",
-        "title": "CDC won’t publish report showing COVID-19 vaccine effectiveness; former pharmacy president sentenced in $33M compounded drug kickback scheme; mRNA bird flu vaccine hits late-stage testing – Morning Medical Update",
-        "url": "https://news.google.com/rss/articles/CBMi4wJBVV95cUxNM29aRW1XRmlsYWpGY01kTzkwU3dYYzVzTTN3amdOdklCSXlpMHVNS1BEZjc1OHFxYUZwRFhYd2FmOHlobWk4cXVYWTBOSWxkd3p2c3p3bTFDc3dvd1VqMnpvdXNLeXRGTW1iaEdfRl9rVDFZNUhKQWVZQ2o0dFJMZHo4RzlXSExmZzFQN2x2aXFmWXlBaExBalBUT3M5ZHk1TWdIVDNWSk9teW1HcE5QcmVNejZVTWpSVkhVMkdaQjFnNDNnN0YxMXFtSmZQNkNwNmREVDFxMDQtTGJSdmtTZ1k2RzdNaldoN29pOWQzVVl3bmVuV1RMeUNqUTRBWkJjR0Y2WTZyS2VmNi1zaDJjZDMtTXlGejIwTlFJMHpYREM0NUhRVU5HNE1pUkptZEpSZS1CWTQ3TFVtcUM4Y3M4bGt5OEpHWEdMd042UTVLTFVjUDFUemI1NE5Kb2tUWU5GRWVF?oc=5"
+        "date": "2026-10-13",
+        "outlet": "Scimex",
+        "title": "Penguins in times of cholera: Antarctic mass mortality linked to bacterial outbreak",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQV1dsMWtNNXV3N211bEJjVEdvaFNaVnA5cXZWcVNlaG5oaFBDRnljeXJUNEgtTV9fWTcwMGdfemdQU3NTQzB1NHRuYjJGN1kycDhrWi1Ienp2c1E2bzFhQVBKVDUySEtVNU9iVzNtZTBIVVJMU3laMThCemZNVllzX045Z2UzNFBCakFaRThyZ3pvcnQ4N09xWGk1X3hHU3ZvZkpGLS1uUTRNaDgxcFhCQl9iOVc?oc=5"
       },
       {
         "date": "2026-10-13",
@@ -785,36 +818,6 @@
         "outlet": "The Islander",
         "title": "Bird flu webinar tonight for pet owners as state response continues",
         "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPOWlxLXZxbXB5Z1pDWFJXeWM5SFpJb3E2T1ExMTF4WDhIbTJ1cXF1ZWVRbUNqd3doR3JRcENvU0N5SU5Mb2hsNmxibVBYby1BME52UVEwaFN3akZzM3dVazNtMkJuRmpKU2xDM1NDdENSRHRTRnF1T2J4TkVYODVqVmp6Y2JUcXNhLXM0c0dVZHBtZE1TN2NQQjlaR2JOUER6M3F4YjRoZEtEMlAtdndrWlVfUnhtcmNk?oc=5"
-      },
-      {
-        "date": "2026-10-13",
-        "outlet": "Bol News",
-        "title": "Australia Crushes South Africa in 1st Test",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQU0lCWnktcGdTdFg5OFVfc2NoQmpaTjNYVENUNXJSNE1Nek5SOXZFZUNERWo3SmUzcmI3eGRpNkJqSWt3OWU4aDREX2JHTzNVMUZjUk9VOHVhdE1OMkFyajZuUGJXRUFEMXZZUjRHTUcteXd4NWN0S1RXOEtrMlF6VnNFZDVGQ0NOTjJWY1hn?oc=5"
-      },
-      {
-        "date": "2026-10-13",
-        "outlet": "https://en.edairynews.com/",
-        "title": "Canadian Dairy Processors Urge Farmgate Alignment As Consumer Protein Demand Surges",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPQnJwVFc0ZEFjcEJfY3ozOEdzQ0hyVHI5SW9NbUkwTUxVWElhczZTSUFGS1BMZjNRVmZ3WVRDSFlGNzJXYVhJMjlqa3N5dzBzc282X2ZtTHVpTl9EWHp2blRGRGJzRnE5emZHS0x4RWh1VTJaazhwWHU1S0JpQlFfYk5ISnB3Z1JOUzg0VWFwQUNGQzVzOWk3QnE3bmFvVVcwWmYtblM1NXYtbmo4dXZn?oc=5"
-      },
-      {
-        "date": "2026-10-13",
-        "outlet": "https://en.edairynews.com/",
-        "title": "Washington Confirms First Bird Flu Cases In Dairy Cattle, Quarantines Two Yakima County Farms",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNakNrdFljNE01R01JVF80Tl9Dc0hOOWNEOHhUUTNfNmwyWmVvS0VWT1IzUFMwMDBlSjhPSjA0OEtmczFkWmtmd2NCdFBGa3BhVDg0bWVmTF9id0NjOXVOWHdWTG9iTWdqdjFqUV9Vakp1X3g5OTVaZWVqOW15U29JSHAzY2J5VExqLVpjTmJ3NDg1dmxRT1FGcWNESWJhRnJxbE5qTzFfOU1SZUVHc3VtZTNmSE0zNDBCa2Y0?oc=5"
-      },
-      {
-        "date": "2026-10-13",
-        "outlet": "SMH.com.au",
-        "title": "Big egg cartel: Major Australian suppliers accused of whipping up higher prices",
-        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQbVI0a29qV2VwTXVyMVcwUmp2TDhPWlJrbXItT1g5bWdJNzdyYkVYTHZGV05CQkJyS1pjRjF5cTFFUDV0Y3YwNWVOb1FPWnQwQXprOTl5SUswclRITHVtcm40cWhXVlg4aExPR3N3TDF3MklQUTdqUks4RjZ3YUxjdy1JcFQ1UFBta1I2MDFBNldlSDlUeUgxNHAtRUZCalZKLVE3eklVajJGd0VHZjJjZ0phbUtWTm5CdHdYVHREZ0NDeG85aWpVc0M0amE1ajRCYnE5Yg?oc=5"
-      },
-      {
-        "date": "2026-10-12",
-        "outlet": "Western Australian Government",
-        "title": "H5 avian influenza (bird flu) in Western Australia",
-        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPTHVpMmlzWWpSNXBjU3JhLWh3Rjh1Y3VsQW1YQlZOUFB2WmVPNGlFSDZ5LTR5RG5ISTRjUGhselhpcWJjbEtIb0N6UlpGSzQ5WHZtQmk3ZXJObk9KN2FNV3gtSFJHMEswRkk0VlQ1Q1lTcjdPOTBuWWU5V0RxNDZIY3J2WDIzLXZlcTlOcFNFenpYcmUwWFZkRTg0XzZmbVJqYmJqMXNyN0hXNzVfd1VLbXEzSHpHY2M1bGVDRlM0c0djYkFEU3Z1WW53c2VQMTVzdElXXw?oc=5"
       }
     ],
     "headlines_window_days": 14,
@@ -829,45 +832,47 @@
     "gaps": []
   },
   "totals": {
-    "total_events": 2243,
+    "total_events": 2238,
     "human_cases": 9,
-    "poultry_events": 124,
+    "poultry_events": 121,
     "poultry_birds_affected": 0,
     "dairy_events": 0,
-    "wild_bird_events": 2088,
-    "mammal_events": 22,
-    "countries_affected": 33,
+    "wild_bird_events": 2087,
+    "mammal_events": 21,
+    "countries_affected": 35,
     "us_states_affected": 45,
     "au_states_affected": 7
   },
   "by_category": {
-    "wild_bird": 2088,
-    "poultry": 124,
-    "mammal": 22,
+    "poultry": 121,
+    "wild_bird": 2087,
+    "mammal": 21,
     "human": 9
   },
   "by_country": {
-    "Norway": 18,
-    "Peru": 19,
+    "Puerto Rico": 2,
+    "Serbia": 1,
+    "Norway": 17,
     "Bulgaria": 3,
+    "Peru": 16,
     "the United Kingdom of Great Britain and Northern Ireland": 10,
     "Brazil": 2,
     "Belgium": 2,
     "Canada": 8,
     "Chile": 3,
     "Denmark": 4,
-    "Germany": 3,
+    "Germany": 2,
     "China, Taiwan Province of": 2,
     "Cyprus": 1,
     "Iceland": 7,
     "Australia": 415,
-    "Cambodia": 2,
     "Sweden": 5,
+    "Cambodia": 2,
+    "United States": 1676,
     "Argentina": 1,
-    "United States": 1677,
-    "Netherlands": 9,
+    "Netherlands": 8,
     "Suriname": 1,
-    "Vietnam": 33,
+    "Vietnam": 32,
     "France": 3,
     "Uruguay": 1,
     "Indonesia": 4,
@@ -882,8 +887,8 @@
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2243,
-    "United States": 1677,
+    "Global": 2238,
+    "United States": 1676,
     "Australia": 415
   },
   "sources": [
@@ -894,7 +899,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 414,
-      "note": "fao(Australia) 2024-01-01..2026-10-14: 415 rows -> 414 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-10-15: 415 rows -> 414 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -902,8 +907,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 549,
-      "note": "fao(all) 2026-07-16..2026-10-14: 555 rows -> 549 records (6 skipped)"
+      "records": 543,
+      "note": "fao(all) 2026-07-17..2026-10-15: 549 rows -> 543 records (6 skipped)"
     },
     {
       "key": "us-wild-birds",
