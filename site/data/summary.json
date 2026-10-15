@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T06:39:56.948Z",
+  "generated_at": "2026-10-15T08:45:02.843Z",
   "latest_event": "2026-10-13",
   "mode": "live",
   "mode_note": null,
@@ -613,15 +613,15 @@
   },
   "official_au": {
     "ok": true,
-    "fetched_at": "2026-10-14T08:45:11.190Z",
+    "fetched_at": "2026-10-15T08:45:12.077Z",
     "national_total": 231,
     "national_total_phrasing": "confirmed or presumed positive",
     "national_total_source": "updates",
     "by_state": null,
     "by_state_total": null,
     "by_state_matches_national": null,
-    "as_at_text": "4pm AEST, 13 October 2026",
-    "as_at_date": "2026-10-13",
+    "as_at_text": "4pm AEST, 14 October 2026",
+    "as_at_date": "2026-10-14",
     "latest_update": {
       "date": "2026-09-11",
       "date_text": "11 September 2026",
@@ -706,10 +706,7 @@
       }
     ],
     "errors": [],
-    "notes": [],
-    "from_last_good": true,
-    "last_good_fetched_at": "2026-10-14T08:45:11.190Z",
-    "last_good_age_days": 0
+    "notes": []
   },
   "official_gap": {
     "behind": false,
@@ -743,15 +740,33 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 55 headlines, detection signal in 1 (TAS); no coverage gaps detected",
+    "note": "google news 14d: 48 headlines, detection signal in 1 (TAS); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 40,
     "headlines": [
       {
         "date": "2026-10-15",
-        "outlet": "UA.NEWS",
-        "title": "H5 detected in seal and gull samples on Macquarie Island",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQUzFCZnAwRWVXNW9KWEFOY3AyYXpWVUtycEIzc1d5MGNRVlNBamp5UkRKMW5jd3RBR0d0c3NhVXAzaVBVNU82NjJ1X0kzOENydUYxd1ZiMnJqZnVqNGp0LVFqZ0tZRl91VUNwVXdDd2s3WGJabGJmRUpzdE9pUmR6R1hZTTBPY0R6SFhPRG1Tb0JhcDZWNHpQMWtDM0pUckRkTS14cFpCVk42dExPSldiRQ?oc=5"
+        "outlet": "African Farming",
+        "title": "H5N1 bird flu reaches the last untouched continent – a ‘chilling reminder’ about biosecurity",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOenVZNV94QTh6VTVwblJObG5RaGRuaFRXX0ZKNVdXMkw5T2g5Z3lCYXlldHE1NFJ4N1NpSGVkRl9UWU0wREtHak83S0ZhSDhmLWM2NnVscWhoUzk1UmJ0aE16bTRCc2NvLWUwWkNYblYyY1k5dUR5eXpKRHg1TkUyN0F5Z1FTTWNFV3VhMlp1R3ZsY2ZlZFhfZzRNa1JFeWpQZUFEekdjTlhfWWcxWlEwNGo4cTNrVXl4OTRBaTB1WEZLakU?oc=5"
+      },
+      {
+        "date": "2026-10-15",
+        "outlet": "https://streamlinefeed.co.ke/",
+        "title": "H5 Bird Flu Detected in Marine Mammal on Remote Macquarie Island",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOdFRtY0w4T1RvcUk5cEdOUmV2OENBbEctS2R0QVZUcjJvcHhkNXE2bUx3LUtJNW9LQnIwWmp0ZnZWZTdpVVpBcEFEd2I3elZqSXNVcTU3RUtqRHBWMjRqcG5SVkY0dXBOX1RLeUlEeXN5VFlHakFHWUZ5VERRdTVVNHNkOFZNM3hEb19tamlTMXZzcGZrSGRwMDAwTjlpN2s?oc=5"
+      },
+      {
+        "date": "2026-10-15",
+        "outlet": "Riverine Herald",
+        "title": "| Riverine Herald",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPemhobGlyeWxqMkYwT2RZbzFVcXBfN014QVFkSE9QSzN6M0wwQkROTHl4V00tZWk4X2tmLWlrUEY5X0ZaVV9tQnJ3UU0xd05VV3ZwcG94c0Y5R2pwbVVFdkZEeTFBaG5nYmxwY0h5TERsSVc1WGk0S2dCdko2S1NobGM3QWhVN3JhNkx0R1laYlF0aU82a2tDcGVyTXhJbDll?oc=5"
+      },
+      {
+        "date": "2026-10-15",
+        "outlet": "Yahoo News Australia",
+        "title": "First bird flu detection on remote sub-Antarctic island",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1Od1hmSW9pN05hUVU0VmtvbVVqd2VBUm9oazMwaTZ3WWpMUmU4djNrNlYxQjVkNElYRGFTYUZqT3FGRGx0bGotZURuaGw2RGE1LWZHdFFqdDdlLVVfYUlGRW12dVctYWlqeGFNWUxCdG1IVjhjcEpyNEM2V1M?oc=5"
       },
       {
         "date": "2026-10-15",
@@ -766,10 +781,10 @@
         "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQMDQwbElKVHlTZWtDMDFJdlhjTG5hekNFLXY5WWQ5em1LQkthN1JQcHhLREpFeUg2eFhIRmpXNzJ3UWRhNXUzbmpfVF9MT3FuOHYyNjBOc2JqN21NSXZma1ZmMDBYXzV4X3Fjb0h2aTFGSjZhaXdPSEFiX0paOXg4aTNkbzFBUnJRdHJVZDZTSUhVWmItRmdDYkh5RG40R09UQ2ZlamNIMFFmckRVVUxLcllaX3R6S09oZWpnNVFsaFl6djBuVU5QeHBIeXZWU2gwMUIwUFgyZFN4dlRUOHhxd3VHZ2o2emRyRk1xSktpOWcwRGl5cERiclpnUQ?oc=5"
       },
       {
-        "date": "2026-10-14",
-        "outlet": "Medical Economics",
-        "title": "CDC won’t publish report showing COVID-19 vaccine effectiveness; former pharmacy president sentenced in $33M compounded drug kickback scheme; mRNA bird flu vaccine hits late-stage testing – Morning Medical Update",
-        "url": "https://news.google.com/rss/articles/CBMi4wJBVV95cUxNM29aRW1XRmlsYWpGY01kTzkwU3dYYzVzTTN3amdOdklCSXlpMHVNS1BEZjc1OHFxYUZwRFhYd2FmOHlobWk4cXVYWTBOSWxkd3p2c3p3bTFDc3dvd1VqMnpvdXNLeXRGTW1iaEdfRl9rVDFZNUhKQWVZQ2o0dFJMZHo4RzlXSExmZzFQN2x2aXFmWXlBaExBalBUT3M5ZHk1TWdIVDNWSk9teW1HcE5QcmVNejZVTWpSVkhVMkdaQjFnNDNnN0YxMXFtSmZQNkNwNmREVDFxMDQtTGJSdmtTZ1k2RzdNaldoN29pOWQzVVl3bmVuV1RMeUNqUTRBWkJjR0Y2WTZyS2VmNi1zaDJjZDMtTXlGejIwTlFJMHpYREM0NUhRVU5HNE1pUkptZEpSZS1CWTQ3TFVtcUM4Y3M4bGt5OEpHWEdMd042UTVLTFVjUDFUemI1NE5Kb2tUWU5GRWVF?oc=5"
+        "date": "2026-10-15",
+        "outlet": "Pulse Tasmania",
+        "title": "Bird flu found in elephant seal on Macquarie Island",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPSUp5S01VWEtsUWp0WGJaQXdteEpBcWozbmFnX0FSb0hmaUowdl8xV2t3VW5TYzN6MVRTTTNNQ1lCT2lSaG5rbk82RklBa1djR012TjlRd3J2bUR4N01JNEhDZTZ1MWVZUjl0RXVHWmtMMlR4Sm9PeFNaeEthclcwZG5mM1dGWWE0eGwtQjZTNA?oc=5"
       },
       {
         "date": "2026-10-14",
@@ -800,24 +815,6 @@
         "outlet": "Pulse Tasmania",
         "title": "Shy albatross vaccinated against bird flu in world-first Tasmanian trial",
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQNEVZT3VwZElXcGdrMlVzd1R3ZGZESDhHYkwyTE9XTzF3amNZTXhkQ0dZcDlTLTRVRmtLQVR3S3FhaE5fTExlLWVkeTVqRVNVWjEtdkNpTWlINV91NmpndGh6dmMtNTh4ZjYxM1JWRVAxaDVnNmlUOTVIV01Qd2hHWjktQkx1N1pNTEV6U25hTGVJUXZYUmJMZFo1X2FYTFBiTjNBb3JCTU9SREE?oc=5"
-      },
-      {
-        "date": "2026-10-13",
-        "outlet": "Scimex",
-        "title": "Penguins in times of cholera: Antarctic mass mortality linked to bacterial outbreak",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQV1dsMWtNNXV3N211bEJjVEdvaFNaVnA5cXZWcVNlaG5oaFBDRnljeXJUNEgtTV9fWTcwMGdfemdQU3NTQzB1NHRuYjJGN1kycDhrWi1Ienp2c1E2bzFhQVBKVDUySEtVNU9iVzNtZTBIVVJMU3laMThCemZNVllzX045Z2UzNFBCakFaRThyZ3pvcnQ4N09xWGk1X3hHU3ZvZkpGLS1uUTRNaDgxcFhCQl9iOVc?oc=5"
-      },
-      {
-        "date": "2026-10-13",
-        "outlet": "Fassifern Guardian",
-        "title": "Wildlife, pets, bird flu risk",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1kUVBhdmVtSE1wS1dOa3hFRkFITHUtR0VPbHJwcGhpTU9SV0o5YjZDWEFHeWo3LTAzZWRyZU41bkF6d19PMDVUTF9EeXBWbEF1SUVXWTVRSmxPdWNiLS05d20wX2NkcDBXdktBT2hJVkMwUWtaRUlDLXlLUHZfZw?oc=5"
-      },
-      {
-        "date": "2026-10-13",
-        "outlet": "The Islander",
-        "title": "Bird flu webinar tonight for pet owners as state response continues",
-        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPOWlxLXZxbXB5Z1pDWFJXeWM5SFpJb3E2T1ExMTF4WDhIbTJ1cXF1ZWVRbUNqd3doR3JRcENvU0N5SU5Mb2hsNmxibVBYby1BME52UVEwaFN3akZzM3dVazNtMkJuRmpKU2xDM1NDdENSRHRTRnF1T2J4TkVYODVqVmp6Y2JUcXNhLXM0c0dVZHBtZE1TN2NQQjlaR2JOUER6M3F4YjRoZEtEMlAtdndrWlVfUnhtcmNk?oc=5"
       }
     ],
     "headlines_window_days": 14,
