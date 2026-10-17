@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T06:35:43.492Z",
+  "generated_at": "2026-10-17T08:45:07.229Z",
   "latest_event": "2026-10-13",
   "mode": "live",
   "mode_note": null,
@@ -613,15 +613,15 @@
   },
   "official_au": {
     "ok": true,
-    "fetched_at": "2026-10-16T08:45:11.293Z",
+    "fetched_at": "2026-10-17T08:45:16.741Z",
     "national_total": 231,
     "national_total_phrasing": "confirmed or presumed positive",
     "national_total_source": "updates",
     "by_state": null,
     "by_state_total": null,
     "by_state_matches_national": null,
-    "as_at_text": "4pm AEST, 15 October 2026",
-    "as_at_date": "2026-10-15",
+    "as_at_text": "4pm AEST, 16 October 2026",
+    "as_at_date": "2026-10-16",
     "latest_update": {
       "date": "2026-10-16",
       "date_text": "16 October 2026",
@@ -706,10 +706,7 @@
       }
     ],
     "errors": [],
-    "notes": [],
-    "from_last_good": true,
-    "last_good_fetched_at": "2026-10-16T08:45:11.293Z",
-    "last_good_age_days": 0
+    "notes": []
   },
   "official_gap": {
     "behind": false,
@@ -743,10 +740,16 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 37 headlines, detection signal in 1 (TAS); no coverage gaps detected",
+    "note": "google news 14d: 31 headlines, detection signal in 1 (TAS); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
-    "headlines_checked": 37,
+    "headlines_checked": 31,
     "headlines": [
+      {
+        "date": "2026-10-17",
+        "outlet": "Herald Sun",
+        "title": "Deadly bird flu hits Macquarie Island wildlife",
+        "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQNEppOVVPZmpMLTcwb3VGRk8zTDJDR0xtQWdIZ3p6LUFuV1VVTGtqTFAxR3JXX29CdWJIbUMwS0ZURkQwTzVURldLRU5PYl9ybTlzQ1E0Zi16aTkwNkVnckNMTHhSN2JrQ2w1YVlBbkdhaFMxb2ZzSUJCTFdEdEk4aW9idmM3U1ZQMzgwR20zTUozdWdHMlJxb050Tnp0SWFsZE1KdnlVSmlaNHlKSERQZEN6Y183bDFycWF6MEZHSm4zTkVMU2ZJeC1UMmFoLWFIWWlPZnV6ckRybnZkcGdPS1dmODFMM3pyRmRJV3BkdGhGZw?oc=5"
+      },
       {
         "date": "2026-10-17",
         "outlet": "Mezha.net",
@@ -776,12 +779,6 @@
         "outlet": "RNZ",
         "title": "Lockdown lifted for Australian chickens despite bird flu spreading",
         "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPMEl5SFlmYnFsVm5aY2FrcTVYODFZX2ZLRHNqcEdONTFhbFozMzUzbzI4TlFYMjJwWnJsV1lUcnNkMW9kdEh6Vko4VTQ3czVERGFZaHNUU0FOMWk1ZzFwcEdTNWFYRkFiaFJvT2Vobkh3SHc3ZS1KS0xyV2VhQ1YwQ2M3T0Q0Unh2LUdha05TSzBaSV9SbDJNdmVUNEZ6eTQ1NWx0aG02bDdhbkdaeFR3SGl2aDdVMDNFa3pSNk1VenFmOTQ5UlJaMHpmNW9MVUJrZHc?oc=5"
-      },
-      {
-        "date": "2026-10-16",
-        "outlet": "Sentinel-Times",
-        "title": "Poultry housing controls lifted by Chief Vet but crisis not over",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNQmotczBCRFFhWkVXckNMbWQwMzdBX1pJN1EwRUp4bnlnQ0hrU3k4NmhQWEhfQXlSdTJleF9uOFR0Mzl6eENNYmtSNEQ4VVV3VHpBVy0xS05GRVp6LVBoQmFmOGstd2FBYkxrWTJiV3RTTTdxeUpFT0pyeE83UUxacmdYdDNOdVlzMEpGcXRKSFJaX3M?oc=5"
       },
       {
         "date": "2026-10-16",
@@ -815,9 +812,9 @@
       },
       {
         "date": "2026-10-15",
-        "outlet": "African Farming",
-        "title": "H5N1 bird flu reaches the last untouched continent – a ‘chilling reminder’ about biosecurity",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOenVZNV94QTh6VTVwblJObG5RaGRuaFRXX0ZKNVdXMkw5T2g5Z3lCYXlldHE1NFJ4N1NpSGVkRl9UWU0wREtHak83S0ZhSDhmLWM2NnVscWhoUzk1UmJ0aE16bTRCc2NvLWUwWkNYblYyY1k5dUR5eXpKRHg1TkUyN0F5Z1FTTWNFV3VhMlp1R3ZsY2ZlZFhfZzRNa1JFeWpQZUFEekdjTlhfWWcxWlEwNGo4cTNrVXl4OTRBaTB1WEZLakU?oc=5"
+        "outlet": "Yahoo News Australia",
+        "title": "First bird flu detection on remote sub-Antarctic island",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1Od1hmSW9pN05hUVU0VmtvbVVqd2VBUm9oazMwaTZ3WWpMUmU4djNrNlYxQjVkNElYRGFTYUZqT3FGRGx0bGotZURuaGw2RGE1LWZHdFFqdDdlLVVfYUlGRW12dVctYWlqeGFNWUxCdG1IVjhjcEpyNEM2V1M?oc=5"
       }
     ],
     "headlines_window_days": 14,
