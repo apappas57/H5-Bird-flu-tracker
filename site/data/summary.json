@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T08:45:02.514Z",
+  "generated_at": "2026-10-17T06:35:43.492Z",
   "latest_event": "2026-10-13",
   "mode": "live",
   "mode_note": null,
@@ -31,19 +31,19 @@
     "h5n1_wild_detections": 394,
     "h5n1_states": 6,
     "h5n1_state_list": [
-      "Tasmania",
-      "South Australia",
       "Victoria",
+      "Tasmania",
       "New South Wales",
+      "South Australia",
       "Queensland",
       "Western Australia"
     ],
     "states_affected": 7,
     "states": [
-      "Tasmania",
-      "South Australia",
       "Victoria",
+      "Tasmania",
       "New South Wales",
+      "South Australia",
       "Queensland",
       "Western Australia",
       "Australian Capital Territory"
@@ -52,15 +52,15 @@
     "current_era_detections": 394,
     "current_era_states": 6,
     "current_era_state_list": [
-      "Tasmania",
-      "South Australia",
       "Victoria",
+      "Tasmania",
       "New South Wales",
+      "South Australia",
       "Queensland",
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 118,
+    "days_since_first_detection": 119,
     "latest_detection": "2026-09-22"
   },
   "eras": {
@@ -168,9 +168,9 @@
       "au_h5n1_2026": 394,
       "au_h7_poultry_2024_2025": 20,
       "au_human_2024": 1,
-      "global_h5_panzootic": 1620,
+      "global_h5_panzootic": 1615,
       "other_subtype": 37,
-      "subtype_unstated": 166
+      "subtype_unstated": 163
     }
   },
   "au_eras": {
@@ -178,10 +178,10 @@
     "current_records": 394,
     "current_states": 6,
     "current_state_list": [
-      "Tasmania",
-      "South Australia",
       "Victoria",
+      "Tasmania",
       "New South Wales",
+      "South Australia",
       "Queensland",
       "Western Australia"
     ],
@@ -207,10 +207,10 @@
         "first_date": "2026-06-15",
         "last_date": "2026-09-22",
         "state_counts": {
-          "Tasmania": 35,
-          "South Australia": 179,
           "Victoria": 122,
+          "Tasmania": 35,
           "New South Wales": 47,
+          "South Australia": 179,
           "Queensland": 2,
           "Western Australia": 9
         },
@@ -268,65 +268,6 @@
       }
     ],
     "by_state": {
-      "Tasmania": {
-        "state": "Tasmania",
-        "state_code": "TAS",
-        "eras": [
-          {
-            "era": "au_h5n1_2026",
-            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
-            "short_label": "Current H5N1 incursion",
-            "strain": "H5N1 clade 2.3.4.4b",
-            "status": "ongoing",
-            "current": true,
-            "records": 35,
-            "phrase": "35 current H5N1 detections",
-            "categories": {
-              "wild_bird": 35
-            },
-            "confidence": {
-              "confirmed": 0,
-              "presumptive": 0,
-              "unstated": 35
-            },
-            "first_date": "2026-08-12",
-            "last_date": "2026-09-22"
-          }
-        ],
-        "current_records": 35,
-        "historical_records": 0,
-        "sentence": "35 current H5N1 detections."
-      },
-      "South Australia": {
-        "state": "South Australia",
-        "state_code": "SA",
-        "eras": [
-          {
-            "era": "au_h5n1_2026",
-            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
-            "short_label": "Current H5N1 incursion",
-            "strain": "H5N1 clade 2.3.4.4b",
-            "status": "ongoing",
-            "current": true,
-            "records": 179,
-            "phrase": "179 current H5N1 detections",
-            "categories": {
-              "wild_bird": 169,
-              "mammal": 10
-            },
-            "confidence": {
-              "confirmed": 0,
-              "presumptive": 0,
-              "unstated": 179
-            },
-            "first_date": "2026-06-19",
-            "last_date": "2026-09-22"
-          }
-        ],
-        "current_records": 179,
-        "historical_records": 0,
-        "sentence": "179 current H5N1 detections."
-      },
       "Victoria": {
         "state": "Victoria",
         "state_code": "VIC",
@@ -397,6 +338,35 @@
         "historical_records": 13,
         "sentence": "122 current H5N1 detections. 12 resolved H7 poultry outbreaks, 2024 to 2025. 1 unrelated travel-acquired human case, 2024."
       },
+      "Tasmania": {
+        "state": "Tasmania",
+        "state_code": "TAS",
+        "eras": [
+          {
+            "era": "au_h5n1_2026",
+            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
+            "short_label": "Current H5N1 incursion",
+            "strain": "H5N1 clade 2.3.4.4b",
+            "status": "ongoing",
+            "current": true,
+            "records": 35,
+            "phrase": "35 current H5N1 detections",
+            "categories": {
+              "wild_bird": 35
+            },
+            "confidence": {
+              "confirmed": 0,
+              "presumptive": 0,
+              "unstated": 35
+            },
+            "first_date": "2026-08-12",
+            "last_date": "2026-09-22"
+          }
+        ],
+        "current_records": 35,
+        "historical_records": 0,
+        "sentence": "35 current H5N1 detections."
+      },
       "New South Wales": {
         "state": "New South Wales",
         "state_code": "NSW",
@@ -445,6 +415,36 @@
         "current_records": 47,
         "historical_records": 6,
         "sentence": "47 current H5N1 detections. 6 resolved H7 poultry outbreaks, 2024 to 2025."
+      },
+      "South Australia": {
+        "state": "South Australia",
+        "state_code": "SA",
+        "eras": [
+          {
+            "era": "au_h5n1_2026",
+            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
+            "short_label": "Current H5N1 incursion",
+            "strain": "H5N1 clade 2.3.4.4b",
+            "status": "ongoing",
+            "current": true,
+            "records": 179,
+            "phrase": "179 current H5N1 detections",
+            "categories": {
+              "wild_bird": 169,
+              "mammal": 10
+            },
+            "confidence": {
+              "confirmed": 0,
+              "presumptive": 0,
+              "unstated": 179
+            },
+            "first_date": "2026-06-19",
+            "last_date": "2026-09-22"
+          }
+        ],
+        "current_records": 179,
+        "historical_records": 0,
+        "sentence": "179 current H5N1 detections."
       },
       "Queensland": {
         "state": "Queensland",
@@ -601,7 +601,7 @@
     "wild_bird_detections": 379,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 118,
+    "days_since_first_detection": 119,
     "human_cases_au": 1
   },
   "human_context": {
@@ -706,7 +706,10 @@
       }
     ],
     "errors": [],
-    "notes": []
+    "notes": [],
+    "from_last_good": true,
+    "last_good_fetched_at": "2026-10-16T08:45:11.293Z",
+    "last_good_age_days": 0
   },
   "official_gap": {
     "behind": false,
@@ -724,10 +727,10 @@
     "by_state_reconciles": null,
     "official_states": [],
     "mapped_states": [
-      "Tasmania",
-      "South Australia",
       "Victoria",
+      "Tasmania",
       "New South Wales",
+      "South Australia",
       "Queensland",
       "Western Australia"
     ],
@@ -740,10 +743,28 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 45 headlines, detection signal in 1 (TAS); no coverage gaps detected",
+    "note": "google news 14d: 37 headlines, detection signal in 1 (TAS); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
-    "headlines_checked": 40,
+    "headlines_checked": 37,
     "headlines": [
+      {
+        "date": "2026-10-17",
+        "outlet": "Mezha.net",
+        "title": "Australia confirms first H5N1 bird flu case on Macquarie Island",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPVHgyaWd0SGhHZlRaRENCdWEwNTJwZ09VUWpJU3loY2RRX1Z1b05mbkU5T3ZyVU5wVFRHd0RIb2RtMlk3NXE5ejVhLWk2RzA3VVNxNjJIeUJ6cklkUnA3X00zTDNHalhxVmcwMmx4czhseUtmb3RTTE1hSGNjMDVDZUpFaXpNaEctdmZz?oc=5"
+      },
+      {
+        "date": "2026-10-17",
+        "outlet": "Internazionale",
+        "title": "Australia confirms first H5N1 bird flu case on sub-Antarctic Macquarie Island",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNLWpma1A0aFVYc1JVa25aeFlNRTFHc2RwN2gzRHZqY2ljOU1wNlJNMVl0MjRNYlRKUVFNNmNveExLaTVOSWxtQnNiOWRzYnluNm8zSkNmYnZMaUN2aVFSLW5BOFBLcl9SdnBVaEhUOFFTZFg0M3BlU2RteU5DZkNsNzhKUnc0ajdaemdqS2JLSWFlR1dHOGdubUJORFAzWlU1T3lxVUExVGQzT2pkTFZUNXN5dlV2QjI0Wl82dDBVVXFCR3hvbGZzOHdvQUR0VENSdnBWaV94cTI?oc=5"
+      },
+      {
+        "date": "2026-10-17",
+        "outlet": "Nine.com.au",
+        "title": "Deadly bird flu reaches remote Australian wildlife sanctuary",
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOQVFFQUZyTnZTY3VyWjJQa3VGQVhhQ3dwX1NJajZtZ3VPYmVFSGhKUm16d0NBVVROU1VveExDREluRHNsWWdEMThadmt6TmpweHo4cDhCbXd4RkFlTG5HLXRUcUZ6R1ZjNHFPTk11NW9KaUxmWDRwTkVsRjNUWFNZajFnTllGbER6bnBxTlBKUjNiSlRsdmhKcFVjQVNFV01oQzBRRlpZcnBJVFRKbFEzNnc5bDliZU1Za2J1VldBZjREMEtaTmpISFpGRUp3U1k?oc=5"
+      },
       {
         "date": "2026-10-16",
         "outlet": "The Australian",
@@ -752,15 +773,15 @@
       },
       {
         "date": "2026-10-16",
-        "outlet": "Sentinel-Times",
-        "title": "Poultry housing controls lifted by Chief Vet but crisis not over",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNQmotczBCRFFhWkVXckNMbWQwMzdBX1pJN1EwRUp4bnlnQ0hrU3k4NmhQWEhfQXlSdTJleF9uOFR0Mzl6eENNYmtSNEQ4VVV3VHpBVy0xS05GRVp6LVBoQmFmOGstd2FBYkxrWTJiV3RTTTdxeUpFT0pyeE83UUxacmdYdDNOdVlzMEpGcXRKSFJaX3M?oc=5"
+        "outlet": "RNZ",
+        "title": "Lockdown lifted for Australian chickens despite bird flu spreading",
+        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPMEl5SFlmYnFsVm5aY2FrcTVYODFZX2ZLRHNqcEdONTFhbFozMzUzbzI4TlFYMjJwWnJsV1lUcnNkMW9kdEh6Vko4VTQ3czVERGFZaHNUU0FOMWk1ZzFwcEdTNWFYRkFiaFJvT2Vobkh3SHc3ZS1KS0xyV2VhQ1YwQ2M3T0Q0Unh2LUdha05TSzBaSV9SbDJNdmVUNEZ6eTQ1NWx0aG02bDdhbkdaeFR3SGl2aDdVMDNFa3pSNk1VenFmOTQ5UlJaMHpmNW9MVUJrZHc?oc=5"
       },
       {
         "date": "2026-10-16",
-        "outlet": "Oz Arab Media",
-        "title": "Victoria Lifts Poultry Lockdown Despite Wildlife Bird Flu",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPcnRmQW9DYi1kVFNvUlRCMVNORlFzY3hWTHh5dHE3aG50RVhLcENyaEZ1RW1nbTkyMEtkU2U3VTVSQVo2cFVKVUZvY29COUswVUJtOFhmMEpXR3FUdFg0aFhZM3BSc3RPWkFaZTJydVktaDZmYVdyU1FxN3Q2MVpvSkI1RmFTQQ?oc=5"
+        "outlet": "Sentinel-Times",
+        "title": "Poultry housing controls lifted by Chief Vet but crisis not over",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNQmotczBCRFFhWkVXckNMbWQwMzdBX1pJN1EwRUp4bnlnQ0hrU3k4NmhQWEhfQXlSdTJleF9uOFR0Mzl6eENNYmtSNEQ4VVV3VHpBVy0xS05GRVp6LVBoQmFmOGstd2FBYkxrWTJiV3RTTTdxeUpFT0pyeE83UUxacmdYdDNOdVlzMEpGcXRKSFJaX3M?oc=5"
       },
       {
         "date": "2026-10-16",
@@ -773,12 +794,6 @@
         "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
         "title": "Chickens allowed free range again in Victoria as bird flu lockdown ends",
         "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNaHY0ZklVNjFqUk5yeFBoLWhDQURtbmV2ZjF3MkJscUYtSHBfaDViYTl6T0x5OVBoVFdabVNvaFNFX0Q0cjA3STNxaXNXbXFwM0lhRzU3WVA2TEh1UjF1bk9SY3hRQnpZX3JOUjhNaERiNXRsQUFrRjI2M0djUWNxdFJkMEtmU0UwMzdXLWxvZXlPeDZJV1k1M3dGTXFPdjV3Vmww?oc=5"
-      },
-      {
-        "date": "2026-10-15",
-        "outlet": "The Standard | Warrnambool, VIC",
-        "title": "'Helpless': meet the citizen scientist tracking coastal bird flu effects",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNOWo1UTR3Unc4dTV1Sm1ydFZOYXYtTnRVc1VJX2VIMEZPcXpERzVBRFI4LWZFY3p2TTU2MjUtWlZqTmN6U1M3Z0wyaDhoZWVkNFROeXdwdFpWR1dISE5hXzNRejZ5UHpNaUh1Vks5SEp3c1VOeTRQZVR4dDIzUHdHOXVwa3pULVZteGpwQXNmaVp5bWhLaVdFOFYtQlVZT3htSGluNg?oc=5"
       },
       {
         "date": "2026-10-15",
@@ -803,46 +818,34 @@
         "outlet": "African Farming",
         "title": "H5N1 bird flu reaches the last untouched continent – a ‘chilling reminder’ about biosecurity",
         "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOenVZNV94QTh6VTVwblJObG5RaGRuaFRXX0ZKNVdXMkw5T2g5Z3lCYXlldHE1NFJ4N1NpSGVkRl9UWU0wREtHak83S0ZhSDhmLWM2NnVscWhoUzk1UmJ0aE16bTRCc2NvLWUwWkNYblYyY1k5dUR5eXpKRHg1TkUyN0F5Z1FTTWNFV3VhMlp1R3ZsY2ZlZFhfZzRNa1JFeWpQZUFEekdjTlhfWWcxWlEwNGo4cTNrVXl4OTRBaTB1WEZLakU?oc=5"
-      },
-      {
-        "date": "2026-10-15",
-        "outlet": "https://streamlinefeed.co.ke/",
-        "title": "H5 Bird Flu Detected in Marine Mammal on Remote Macquarie Island",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOdFRtY0w4T1RvcUk5cEdOUmV2OENBbEctS2R0QVZUcjJvcHhkNXE2bUx3LUtJNW9LQnIwWmp0ZnZWZTdpVVpBcEFEd2I3elZqSXNVcTU3RUtqRHBWMjRqcG5SVkY0dXBOX1RLeUlEeXN5VFlHakFHWUZ5VERRdTVVNHNkOFZNM3hEb19tamlTMXZzcGZrSGRwMDAwTjlpN2s?oc=5"
-      },
-      {
-        "date": "2026-10-15",
-        "outlet": "Yahoo News Australia",
-        "title": "First bird flu detection on remote sub-Antarctic island",
-        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1Od1hmSW9pN05hUVU0VmtvbVVqd2VBUm9oazMwaTZ3WWpMUmU4djNrNlYxQjVkNElYRGFTYUZqT3FGRGx0bGotZURuaGw2RGE1LWZHdFFqdDdlLVVfYUlGRW12dVctYWlqeGFNWUxCdG1IVjhjcEpyNEM2V1M?oc=5"
       }
     ],
     "headlines_window_days": 14,
     "mapped_by_state": {
-      "Tasmania": 35,
-      "South Australia": 179,
       "Victoria": 122,
+      "Tasmania": 35,
       "New South Wales": 47,
+      "South Australia": 179,
       "Queensland": 2,
       "Western Australia": 9
     },
     "gaps": []
   },
   "totals": {
-    "total_events": 2238,
+    "total_events": 2230,
     "human_cases": 9,
-    "poultry_events": 121,
+    "poultry_events": 119,
     "poultry_birds_affected": 0,
     "dairy_events": 0,
-    "wild_bird_events": 2087,
+    "wild_bird_events": 2081,
     "mammal_events": 21,
     "countries_affected": 35,
     "us_states_affected": 45,
     "au_states_affected": 7
   },
   "by_category": {
-    "poultry": 121,
-    "wild_bird": 2087,
+    "poultry": 119,
+    "wild_bird": 2081,
     "mammal": 21,
     "human": 9
   },
@@ -851,25 +854,25 @@
     "Serbia": 1,
     "Norway": 17,
     "Bulgaria": 3,
-    "Peru": 16,
-    "the United Kingdom of Great Britain and Northern Ireland": 10,
+    "Peru": 15,
+    "the United Kingdom of Great Britain and Northern Ireland": 9,
     "Belgium": 2,
     "Brazil": 2,
     "Canada": 8,
     "Chile": 3,
-    "Germany": 2,
     "Denmark": 4,
+    "Germany": 2,
     "China, Taiwan Province of": 2,
     "Cyprus": 1,
     "Iceland": 8,
     "Australia": 415,
-    "Sweden": 5,
     "Cambodia": 2,
-    "United States": 1675,
+    "Sweden": 5,
     "Argentina": 1,
+    "United States": 1670,
     "Netherlands": 8,
     "Suriname": 1,
-    "Vietnam": 32,
+    "Vietnam": 31,
     "France": 3,
     "Uruguay": 1,
     "Indonesia": 4,
@@ -884,8 +887,8 @@
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2238,
-    "United States": 1675,
+    "Global": 2230,
+    "United States": 1670,
     "Australia": 415
   },
   "sources": [
@@ -896,7 +899,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 414,
-      "note": "fao(Australia) 2024-01-01..2026-10-16: 415 rows -> 414 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-10-17: 415 rows -> 414 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -904,8 +907,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 544,
-      "note": "fao(all) 2026-07-18..2026-10-16: 550 rows -> 544 records (6 skipped)"
+      "records": 541,
+      "note": "fao(all) 2026-07-19..2026-10-17: 547 rows -> 541 records (6 skipped)"
     },
     {
       "key": "us-wild-birds",
@@ -913,8 +916,8 @@
       "region": "United States",
       "homepage": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/wild-bird-surveillance-dashboard",
       "status": "live",
-      "records": 1647,
-      "note": "usda wild-bird: 1647 features -> 1647 records (H5/H7, 365d)"
+      "records": 1642,
+      "note": "usda wild-bird: 1642 features -> 1642 records (H5/H7, 365d)"
     }
   ],
   "context_sources": [
