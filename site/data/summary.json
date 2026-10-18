@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T06:35:40.349Z",
+  "generated_at": "2026-10-18T08:45:02.854Z",
   "latest_event": "2026-10-13",
   "mode": "live",
   "mode_note": null,
@@ -613,7 +613,7 @@
   },
   "official_au": {
     "ok": true,
-    "fetched_at": "2026-10-17T08:45:16.741Z",
+    "fetched_at": "2026-10-18T08:45:11.387Z",
     "national_total": 231,
     "national_total_phrasing": "confirmed or presumed positive",
     "national_total_source": "updates",
@@ -706,10 +706,7 @@
       }
     ],
     "errors": [],
-    "notes": [],
-    "from_last_good": true,
-    "last_good_fetched_at": "2026-10-17T08:45:16.741Z",
-    "last_good_age_days": 0
+    "notes": []
   },
   "official_gap": {
     "behind": false,
@@ -743,9 +740,9 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 30 headlines, detection signal in 0; no coverage gaps detected",
+    "note": "google news 14d: 29 headlines, detection signal in 1 (TAS); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
-    "headlines_checked": 30,
+    "headlines_checked": 29,
     "headlines": [
       {
         "date": "2026-10-17",
@@ -809,15 +806,15 @@
       },
       {
         "date": "2026-10-15",
-        "outlet": "The Sunday Guardian",
-        "title": "H5 Bird Flu Alert: Elephant Seal and Kelp Gull in Australia’s Macquarie Island Test Positive for Virus, Sparking Fears – Check Symptoms, Treatment & More",
-        "url": "https://news.google.com/rss/articles/CBMinwJBVV95cUxQX0FCRlZCeDFWdk5XZ3lzbG9IRDZzZ2VRbFBlWjFZZ216X01FNGswYVJWZXVlY04wODVjdGJlSld3N2RyY1V0NEI4T3V1cGNJcHRKUS1fS0hWMFdnelhnWlVRV3Y3aXN2bkJoZUJpMlU3WEg4QWpTWjFvRjdKRWZ6SmFzTERjb0EtREVyalhDaGFoWWZjY1RJSWFIVkpLMFJkUU1fQi1WMnJPLVpsOUFKN2hud1FMSlhGcE5HNmxBOUtKSUFKWWlFZXlYelBWYUprSENVNWN1aW1iU1oycS1NYUlOUHMzZjlEQUFBbUdJRmJ4ZzhRWVRjenhJQWxSM1d0NDVubHVMc1h4eHZQcVlsemFRSldWbDFFV3ZVY29TUdIBnwJBVV95cUxQX0FCRlZCeDFWdk5XZ3lzbG9IRDZzZ2VRbFBlWjFZZ216X01FNGswYVJWZXVlY04wODVjdGJlSld3N2RyY1V0NEI4T3V1cGNJcHRKUS1fS0hWMFdnelhnWlVRV3Y3aXN2bkJoZUJpMlU3WEg4QWpTWjFvRjdKRWZ6SmFzTERjb0EtREVyalhDaGFoWWZjY1RJSWFIVkpLMFJkUU1fQi1WMnJPLVpsOUFKN2hud1FMSlhGcE5HNmxBOUtKSUFKWWlFZXlYelBWYUprSENVNWN1aW1iU1oycS1NYUlOUHMzZjlEQUFBbUdJRmJ4ZzhRWVRjenhJQWxSM1d0NDVubHVMc1h4eHZQcVlsemFRSldWbDFFV3ZVY29TUQ?oc=5"
+        "outlet": "The Mercury",
+        "title": "Bird flu detected in Tasmanian elephant seal",
+        "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQMDQwbElKVHlTZWtDMDFJdlhjTG5hekNFLXY5WWQ5em1LQkthN1JQcHhLREpFeUg2eFhIRmpXNzJ3UWRhNXUzbmpfVF9MT3FuOHYyNjBOc2JqN21NSXZma1ZmMDBYXzV4X3Fjb0h2aTFGSjZhaXdPSEFiX0paOXg4aTNkbzFBUnJRdHJVZDZTSUhVWmItRmdDYkh5RG40R09UQ2ZlamNIMFFmckRVVUxLcllaX3R6S09oZWpnNVFsaFl6djBuVU5QeHBIeXZWU2gwMUIwUFgyZFN4dlRUOHhxd3VHZ2o2emRyRk1xSktpOWcwRGl5cERiclpnUQ?oc=5"
       },
       {
         "date": "2026-10-15",
-        "outlet": "Avian Flu Diary",
-        "title": "Australia: H5 Bird Flu Reported on Macquarie Island",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNNDN2QUViM0dGSVhKbmZ1LVFDbHZENm5kcWtGRWNmal9uUTFoRDEwelh0N2R2NDRuc0JGQzRpVXdDWW9qdVFhS1BfSEJMTnp1cXZpZ0tIajk5aklELU85UlJSQk5vWVN6b1lvTzJuVHNXVl9meE02RVlBb05zYVVEQlRlMA?oc=5"
+        "outlet": "The Sunday Guardian",
+        "title": "H5 Bird Flu Alert: Elephant Seal and Kelp Gull in Australia’s Macquarie Island Test Positive for Virus, Sparking Fears – Check Symptoms, Treatment & More",
+        "url": "https://news.google.com/rss/articles/CBMinwJBVV95cUxQX0FCRlZCeDFWdk5XZ3lzbG9IRDZzZ2VRbFBlWjFZZ216X01FNGswYVJWZXVlY04wODVjdGJlSld3N2RyY1V0NEI4T3V1cGNJcHRKUS1fS0hWMFdnelhnWlVRV3Y3aXN2bkJoZUJpMlU3WEg4QWpTWjFvRjdKRWZ6SmFzTERjb0EtREVyalhDaGFoWWZjY1RJSWFIVkpLMFJkUU1fQi1WMnJPLVpsOUFKN2hud1FMSlhGcE5HNmxBOUtKSUFKWWlFZXlYelBWYUprSENVNWN1aW1iU1oycS1NYUlOUHMzZjlEQUFBbUdJRmJ4ZzhRWVRjenhJQWxSM1d0NDVubHVMc1h4eHZQcVlsemFRSldWbDFFV3ZVY29TUdIBnwJBVV95cUxQX0FCRlZCeDFWdk5XZ3lzbG9IRDZzZ2VRbFBlWjFZZ216X01FNGswYVJWZXVlY04wODVjdGJlSld3N2RyY1V0NEI4T3V1cGNJcHRKUS1fS0hWMFdnelhnWlVRV3Y3aXN2bkJoZUJpMlU3WEg4QWpTWjFvRjdKRWZ6SmFzTERjb0EtREVyalhDaGFoWWZjY1RJSWFIVkpLMFJkUU1fQi1WMnJPLVpsOUFKN2hud1FMSlhGcE5HNmxBOUtKSUFKWWlFZXlYelBWYUprSENVNWN1aW1iU1oycS1NYUlOUHMzZjlEQUFBbUdJRmJ4ZzhRWVRjenhJQWxSM1d0NDVubHVMc1h4eHZQcVlsemFRSldWbDFFV3ZVY29TUQ?oc=5"
       }
     ],
     "headlines_window_days": 14,
