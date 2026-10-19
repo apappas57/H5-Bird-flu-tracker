@@ -1,5 +1,5 @@
 {
-  "total": 2221,
+  "total": 2158,
   "default_region": "au",
   "regions": {
     "au": {
@@ -16,7 +16,7 @@
       ]
     },
     "us": {
-      "count": 1663,
+      "count": 1602,
       "bounds": [
         [
           26.645700000000033,
@@ -29,7 +29,7 @@
       ]
     },
     "row": {
-      "count": 143,
+      "count": 141,
       "bounds": [
         [
           -77.17,
