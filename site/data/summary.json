@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T06:39:25.339Z",
+  "generated_at": "2026-10-20T08:45:03.654Z",
   "latest_event": "2026-10-15",
   "mode": "live",
   "mode_note": null,
@@ -32,8 +32,8 @@
     "h5n1_states": 6,
     "h5n1_state_list": [
       "Victoria",
-      "New South Wales",
       "Tasmania",
+      "New South Wales",
       "South Australia",
       "Queensland",
       "Western Australia"
@@ -41,8 +41,8 @@
     "states_affected": 7,
     "states": [
       "Victoria",
-      "New South Wales",
       "Tasmania",
+      "New South Wales",
       "South Australia",
       "Queensland",
       "Western Australia",
@@ -53,8 +53,8 @@
     "current_era_states": 6,
     "current_era_state_list": [
       "Victoria",
-      "New South Wales",
       "Tasmania",
+      "New South Wales",
       "South Australia",
       "Queensland",
       "Western Australia"
@@ -179,8 +179,8 @@
     "current_states": 6,
     "current_state_list": [
       "Victoria",
-      "New South Wales",
       "Tasmania",
+      "New South Wales",
       "South Australia",
       "Queensland",
       "Western Australia"
@@ -208,8 +208,8 @@
         "last_date": "2026-09-22",
         "state_counts": {
           "Victoria": 122,
-          "New South Wales": 47,
           "Tasmania": 35,
+          "New South Wales": 47,
           "South Australia": 179,
           "Queensland": 2,
           "Western Australia": 9
@@ -338,6 +338,35 @@
         "historical_records": 13,
         "sentence": "122 current H5N1 detections. 12 resolved H7 poultry outbreaks, 2024 to 2025. 1 unrelated travel-acquired human case, 2024."
       },
+      "Tasmania": {
+        "state": "Tasmania",
+        "state_code": "TAS",
+        "eras": [
+          {
+            "era": "au_h5n1_2026",
+            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
+            "short_label": "Current H5N1 incursion",
+            "strain": "H5N1 clade 2.3.4.4b",
+            "status": "ongoing",
+            "current": true,
+            "records": 35,
+            "phrase": "35 current H5N1 detections",
+            "categories": {
+              "wild_bird": 35
+            },
+            "confidence": {
+              "confirmed": 0,
+              "presumptive": 0,
+              "unstated": 35
+            },
+            "first_date": "2026-08-12",
+            "last_date": "2026-09-22"
+          }
+        ],
+        "current_records": 35,
+        "historical_records": 0,
+        "sentence": "35 current H5N1 detections."
+      },
       "New South Wales": {
         "state": "New South Wales",
         "state_code": "NSW",
@@ -386,35 +415,6 @@
         "current_records": 47,
         "historical_records": 6,
         "sentence": "47 current H5N1 detections. 6 resolved H7 poultry outbreaks, 2024 to 2025."
-      },
-      "Tasmania": {
-        "state": "Tasmania",
-        "state_code": "TAS",
-        "eras": [
-          {
-            "era": "au_h5n1_2026",
-            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
-            "short_label": "Current H5N1 incursion",
-            "strain": "H5N1 clade 2.3.4.4b",
-            "status": "ongoing",
-            "current": true,
-            "records": 35,
-            "phrase": "35 current H5N1 detections",
-            "categories": {
-              "wild_bird": 35
-            },
-            "confidence": {
-              "confirmed": 0,
-              "presumptive": 0,
-              "unstated": 35
-            },
-            "first_date": "2026-08-12",
-            "last_date": "2026-09-22"
-          }
-        ],
-        "current_records": 35,
-        "historical_records": 0,
-        "sentence": "35 current H5N1 detections."
       },
       "South Australia": {
         "state": "South Australia",
@@ -613,15 +613,15 @@
   },
   "official_au": {
     "ok": true,
-    "fetched_at": "2026-10-19T08:45:12.674Z",
+    "fetched_at": "2026-10-20T08:45:14.100Z",
     "national_total": 231,
     "national_total_phrasing": "confirmed or presumed positive",
     "national_total_source": "updates",
     "by_state": null,
     "by_state_total": null,
     "by_state_matches_national": null,
-    "as_at_text": "4pm AEST, 16 October 2026",
-    "as_at_date": "2026-10-16",
+    "as_at_text": "4pm AEST, 19 October 2026",
+    "as_at_date": "2026-10-19",
     "latest_update": {
       "date": "2026-10-16",
       "date_text": "16 October 2026",
@@ -706,10 +706,7 @@
       }
     ],
     "errors": [],
-    "notes": [],
-    "from_last_good": true,
-    "last_good_fetched_at": "2026-10-19T08:45:12.674Z",
-    "last_good_age_days": 0
+    "notes": []
   },
   "official_gap": {
     "behind": false,
@@ -728,8 +725,8 @@
     "official_states": [],
     "mapped_states": [
       "Victoria",
-      "New South Wales",
       "Tasmania",
+      "New South Wales",
       "South Australia",
       "Queensland",
       "Western Australia"
@@ -743,9 +740,9 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 33 headlines, detection signal in 1 (TAS); no coverage gaps detected",
+    "note": "google news 14d: 34 headlines, detection signal in 1 (TAS); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
-    "headlines_checked": 33,
+    "headlines_checked": 34,
     "headlines": [
       {
         "date": "2026-10-19",
@@ -823,8 +820,8 @@
     "headlines_window_days": 14,
     "mapped_by_state": {
       "Victoria": 122,
-      "New South Wales": 47,
       "Tasmania": 35,
+      "New South Wales": 47,
       "South Australia": 179,
       "Queensland": 2,
       "Western Australia": 9
@@ -853,20 +850,20 @@
   "by_country": {
     "Bulgaria": 4,
     "Puerto Rico": 2,
-    "Denmark": 5,
     "Vietnam": 30,
-    "United States": 1602,
+    "Denmark": 5,
     "Serbia": 1,
+    "United States": 1602,
     "Norway": 15,
     "Peru": 14,
     "the United Kingdom of Great Britain and Northern Ireland": 9,
-    "Belgium": 2,
     "Brazil": 2,
+    "Belgium": 2,
     "Canada": 9,
     "Chile": 3,
     "Germany": 2,
-    "Cyprus": 1,
     "China, Taiwan Province of": 2,
+    "Cyprus": 1,
     "Iceland": 8,
     "Australia": 415,
     "Cambodia": 2,
