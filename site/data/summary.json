@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T06:40:15.553Z",
+  "generated_at": "2026-10-22T08:45:03.424Z",
   "latest_event": "2026-10-15",
   "mode": "live",
   "mode_note": null,
@@ -31,19 +31,19 @@
     "h5n1_wild_detections": 394,
     "h5n1_states": 6,
     "h5n1_state_list": [
-      "South Australia",
-      "Tasmania",
       "Victoria",
       "New South Wales",
+      "South Australia",
+      "Tasmania",
       "Queensland",
       "Western Australia"
     ],
     "states_affected": 7,
     "states": [
-      "South Australia",
-      "Tasmania",
       "Victoria",
       "New South Wales",
+      "South Australia",
+      "Tasmania",
       "Queensland",
       "Western Australia",
       "Australian Capital Territory"
@@ -52,10 +52,10 @@
     "current_era_detections": 394,
     "current_era_states": 6,
     "current_era_state_list": [
-      "South Australia",
-      "Tasmania",
       "Victoria",
       "New South Wales",
+      "South Australia",
+      "Tasmania",
       "Queensland",
       "Western Australia"
     ],
@@ -178,10 +178,10 @@
     "current_records": 394,
     "current_states": 6,
     "current_state_list": [
-      "South Australia",
-      "Tasmania",
       "Victoria",
       "New South Wales",
+      "South Australia",
+      "Tasmania",
       "Queensland",
       "Western Australia"
     ],
@@ -207,10 +207,10 @@
         "first_date": "2026-06-15",
         "last_date": "2026-09-22",
         "state_counts": {
-          "South Australia": 179,
-          "Tasmania": 35,
           "Victoria": 122,
           "New South Wales": 47,
+          "South Australia": 179,
+          "Tasmania": 35,
           "Queensland": 2,
           "Western Australia": 9
         },
@@ -268,65 +268,6 @@
       }
     ],
     "by_state": {
-      "South Australia": {
-        "state": "South Australia",
-        "state_code": "SA",
-        "eras": [
-          {
-            "era": "au_h5n1_2026",
-            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
-            "short_label": "Current H5N1 incursion",
-            "strain": "H5N1 clade 2.3.4.4b",
-            "status": "ongoing",
-            "current": true,
-            "records": 179,
-            "phrase": "179 current H5N1 detections",
-            "categories": {
-              "wild_bird": 169,
-              "mammal": 10
-            },
-            "confidence": {
-              "confirmed": 0,
-              "presumptive": 0,
-              "unstated": 179
-            },
-            "first_date": "2026-06-19",
-            "last_date": "2026-09-22"
-          }
-        ],
-        "current_records": 179,
-        "historical_records": 0,
-        "sentence": "179 current H5N1 detections."
-      },
-      "Tasmania": {
-        "state": "Tasmania",
-        "state_code": "TAS",
-        "eras": [
-          {
-            "era": "au_h5n1_2026",
-            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
-            "short_label": "Current H5N1 incursion",
-            "strain": "H5N1 clade 2.3.4.4b",
-            "status": "ongoing",
-            "current": true,
-            "records": 35,
-            "phrase": "35 current H5N1 detections",
-            "categories": {
-              "wild_bird": 35
-            },
-            "confidence": {
-              "confirmed": 0,
-              "presumptive": 0,
-              "unstated": 35
-            },
-            "first_date": "2026-08-12",
-            "last_date": "2026-09-22"
-          }
-        ],
-        "current_records": 35,
-        "historical_records": 0,
-        "sentence": "35 current H5N1 detections."
-      },
       "Victoria": {
         "state": "Victoria",
         "state_code": "VIC",
@@ -445,6 +386,65 @@
         "current_records": 47,
         "historical_records": 6,
         "sentence": "47 current H5N1 detections. 6 resolved H7 poultry outbreaks, 2024 to 2025."
+      },
+      "South Australia": {
+        "state": "South Australia",
+        "state_code": "SA",
+        "eras": [
+          {
+            "era": "au_h5n1_2026",
+            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
+            "short_label": "Current H5N1 incursion",
+            "strain": "H5N1 clade 2.3.4.4b",
+            "status": "ongoing",
+            "current": true,
+            "records": 179,
+            "phrase": "179 current H5N1 detections",
+            "categories": {
+              "wild_bird": 169,
+              "mammal": 10
+            },
+            "confidence": {
+              "confirmed": 0,
+              "presumptive": 0,
+              "unstated": 179
+            },
+            "first_date": "2026-06-19",
+            "last_date": "2026-09-22"
+          }
+        ],
+        "current_records": 179,
+        "historical_records": 0,
+        "sentence": "179 current H5N1 detections."
+      },
+      "Tasmania": {
+        "state": "Tasmania",
+        "state_code": "TAS",
+        "eras": [
+          {
+            "era": "au_h5n1_2026",
+            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
+            "short_label": "Current H5N1 incursion",
+            "strain": "H5N1 clade 2.3.4.4b",
+            "status": "ongoing",
+            "current": true,
+            "records": 35,
+            "phrase": "35 current H5N1 detections",
+            "categories": {
+              "wild_bird": 35
+            },
+            "confidence": {
+              "confirmed": 0,
+              "presumptive": 0,
+              "unstated": 35
+            },
+            "first_date": "2026-08-12",
+            "last_date": "2026-09-22"
+          }
+        ],
+        "current_records": 35,
+        "historical_records": 0,
+        "sentence": "35 current H5N1 detections."
       },
       "Queensland": {
         "state": "Queensland",
@@ -613,15 +613,15 @@
   },
   "official_au": {
     "ok": true,
-    "fetched_at": "2026-10-21T09:12:48.356Z",
+    "fetched_at": "2026-10-22T08:45:11.178Z",
     "national_total": 231,
     "national_total_phrasing": "confirmed or presumed positive",
     "national_total_source": "updates",
     "by_state": null,
     "by_state_total": null,
     "by_state_matches_national": null,
-    "as_at_text": "4pm AEST, 20 October 2026",
-    "as_at_date": "2026-10-20",
+    "as_at_text": "4pm AEST, 21 October 2026",
+    "as_at_date": "2026-10-21",
     "latest_update": {
       "date": "2026-10-16",
       "date_text": "16 October 2026",
@@ -706,10 +706,7 @@
       }
     ],
     "errors": [],
-    "notes": [],
-    "from_last_good": true,
-    "last_good_fetched_at": "2026-10-21T09:12:48.356Z",
-    "last_good_age_days": 0
+    "notes": []
   },
   "official_gap": {
     "behind": false,
@@ -727,10 +724,10 @@
     "by_state_reconciles": null,
     "official_states": [],
     "mapped_states": [
-      "South Australia",
-      "Tasmania",
       "Victoria",
       "New South Wales",
+      "South Australia",
+      "Tasmania",
       "Queensland",
       "Western Australia"
     ],
@@ -747,6 +744,12 @@
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
     "headlines_checked": 34,
     "headlines": [
+      {
+        "date": "2026-10-22",
+        "outlet": "Mirage News",
+        "title": "Helping Petrels Lay 'Goulden' Eggs",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFB3S1FMQjdqbEMtZENmUHBLUV9ENG51M3VNS2RoUFFqVkpYRUIxLXd3THRLN080S0Ywb1B0QmE2MGpRallYalVJdWF5T1AwNXpvRnpFQlFCb2wyS0NIamtBTnZCdThDUlRmbl9UcDhsejZsSmdTN3BN?oc=5"
+      },
       {
         "date": "2026-10-21",
         "outlet": "Yahoo News Australia",
@@ -785,12 +788,6 @@
       },
       {
         "date": "2026-10-17",
-        "outlet": "Gulf Times",
-        "title": "Australia confirms first case of H5N1 bird flu on sub-Antarctic Macquarie Island | Gulf Times",
-        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPYUlOSlE3S0FGUFhKR2ZxREVsYjN1c19QNTZTYXpBUWJ6OFFKcHROd0JyTWNHUnVvQzlyUjJfTUswRTJiVVJQNkU0M1JZZzB1SGNzT2RYZzZDbXRMYlpyVkI4d0hsQTBWSkNXSjZOU1NWbWVia2RwQlFTeUx0S1E1UmR1N2s4dzFXM0ZOS1JVMEpNczRNdFRyVGt5NklyUTFBNGdFVXlrR25IUnRDMF9CT0tFdzlheExGa1cwUmdROElIRkp5Y0tDeDF4RnJGbGNyX2xkblJjWdIB1wFBVV95cUxPYUlOSlE3S0FGUFhKR2ZxREVsYjN1c19QNTZTYXpBUWJ6OFFKcHROd0JyTWNHUnVvQzlyUjJfTUswRTJiVVJQNkU0M1JZZzB1SGNzT2RYZzZDbXRMYlpyVkI4d0hsQTBWSkNXSjZOU1NWbWVia2RwQlFTeUx0S1E1UmR1N2s4dzFXM0ZOS1JVMEpNczRNdFRyVGt5NklyUTFBNGdFVXlrR25IUnRDMF9CT0tFdzlheExGa1cwUmdROElIRkp5Y0tDeDF4RnJGbGNyX2xkblJjWQ?oc=5"
-      },
-      {
-        "date": "2026-10-17",
         "outlet": "www.nationpathindia.com",
         "title": "Australia Confirms H5 Bird Flu in Elephant Seal and Kelp Gull on Macquarie Island",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQSWNyeU9jWTBzVlVpZVk0bERFS0l2OXUyQU1oSVBxU1BlY19lX2VEV3pxSFA5VDc4R08xYzU5b1lJNG5rX0NtcnBudGQ2dWxLekhXcmNsRlluR3ZfT1dQU3hkTU5BeTc5VkpMNWV1OGJjcktnMzJvVm9yN0QyVWRDcHE1dlE5SEk?oc=5"
@@ -822,10 +819,10 @@
     ],
     "headlines_window_days": 14,
     "mapped_by_state": {
-      "South Australia": 179,
-      "Tasmania": 35,
       "Victoria": 122,
       "New South Wales": 47,
+      "South Australia": 179,
+      "Tasmania": 35,
       "Queensland": 2,
       "Western Australia": 9
     },
@@ -855,15 +852,15 @@
     "Bulgaria": 4,
     "Denmark": 7,
     "Puerto Rico": 2,
-    "Albania": 1,
     "Vietnam": 28,
+    "Albania": 1,
     "United States": 1584,
     "Serbia": 1,
     "Norway": 15,
     "Netherlands": 9,
     "Peru": 13,
-    "Belgium": 2,
     "Brazil": 2,
+    "Belgium": 2,
     "Canada": 9,
     "Chile": 3,
     "Germany": 2,
@@ -871,8 +868,8 @@
     "China, Taiwan Province of": 2,
     "Iceland": 8,
     "Australia": 415,
-    "Cambodia": 2,
     "Sweden": 5,
+    "Cambodia": 2,
     "Argentina": 1,
     "Suriname": 1,
     "France": 3,
