@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-22T08:45:03.424Z",
-  "latest_event": "2026-10-15",
+  "generated_at": "2026-10-23T06:40:17.892Z",
+  "latest_event": "2026-10-19",
   "mode": "live",
   "mode_note": null,
   "data_coverage": {
@@ -60,7 +60,7 @@
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 124,
+    "days_since_first_detection": 125,
     "latest_detection": "2026-09-22"
   },
   "eras": {
@@ -168,9 +168,9 @@
       "au_h5n1_2026": 394,
       "au_h7_poultry_2024_2025": 20,
       "au_human_2024": 1,
-      "global_h5_panzootic": 1510,
+      "global_h5_panzootic": 1481,
       "other_subtype": 37,
-      "subtype_unstated": 182
+      "subtype_unstated": 191
     }
   },
   "au_eras": {
@@ -601,7 +601,7 @@
     "wild_bird_detections": 379,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 124,
+    "days_since_first_detection": 125,
     "human_cases_au": 1
   },
   "human_context": {
@@ -706,7 +706,10 @@
       }
     ],
     "errors": [],
-    "notes": []
+    "notes": [],
+    "from_last_good": true,
+    "last_good_fetched_at": "2026-10-22T08:45:11.178Z",
+    "last_good_age_days": 0
   },
   "official_gap": {
     "behind": false,
@@ -740,10 +743,22 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 34 headlines, detection signal in 1 (TAS); no coverage gaps detected",
+    "note": "google news 14d: 39 headlines, detection signal in 1 (TAS); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
-    "headlines_checked": 34,
+    "headlines_checked": 39,
     "headlines": [
+      {
+        "date": "2026-10-23",
+        "outlet": "Mirage News",
+        "title": "South West Opens First Dedicated Wildlife Hospital",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQUGEyNGJfTWNwRlp1QjkyRUtEa05kZy1fQXZnRm56T2ZLS2Y2UHUtVjBUcFRBQWZEb005ZjdjdEhjMlgwYS00SGszTFl4UWhjVGkyaXhNZW92LWZXWnFtUFlWcDd0dlNrNVQ0dFNORUpQcXB6eDZjVlFRM3NOazN4bnAxbw?oc=5"
+      },
+      {
+        "date": "2026-10-23",
+        "outlet": "SBS",
+        "title": "Why Australians are being urged to spend 20 minutes outside",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQWV9KejZrcU11WTh5TjFFSng2LV9kUUM3UVBsUjlocGZ6b3lYOTd0UlFWVjczUXhWeTZzMjNTWEJkaVgtUk9hV002ejMwSS1lNHJWY3E0WTVRbGlDLWNOODZCbEJDTE01TVVaaWE0SER3RkVjN05qcUdrZDhXWlplRmk1RnJ1RHhoZU9pem5QcUQybXJOaXl3a1ByQQ?oc=5"
+      },
       {
         "date": "2026-10-22",
         "outlet": "Mirage News",
@@ -794,12 +809,6 @@
       },
       {
         "date": "2026-10-17",
-        "outlet": "The Express Tribune",
-        "title": "Australia confirms first H5N1 bird flu case on sub-Antarctic Macquarie Island",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPYkh5STdlNko3WV83MGRwRUJUVlZfQ2Z4OVRxaE81M2dXQi0xSnBJZ3MxeHJ6MW5OYkJlc1dvMGRHRy1OdnEtZ0NiN2ttUDBBZVdxNTVxclJSZW1JMHY0WE84TUJYcGd2OW91SEoyb0phY0duWllaYm1PQUNXOVFRLS1aSldqLTlaUnV2YTJ5aVpQTjl5Qjc3Y3lkVlIxM0puYkt3ZmdXSGZzQjNVQWNNM1kzMkvSAbwBQVVfeXFMTU1XZmh0X2l0VWFvaWJMQm5QcmJsY1BlelZKa2FCVG1EWi1XTG1yNzlPWHhRNTdZbUJjUldUZGRYdm96X0NrS0w4N1l1RUREcExVX2ZtRV9mM0RGSTNzQXVGckJpQ3IzT2xVd0FCeGZFcXpESzhvLW9pWVF2VlRyY2VUN0Y0TUp0Y1VBcGRDMXBlbG0tazVvT2dzWjVWTmdMa1lva3RlNWpuTFo5VlMwbFBwSFZIbUx1bkFrSEc?oc=5"
-      },
-      {
-        "date": "2026-10-17",
         "outlet": "News of Bahrain",
         "title": "Australia has confirmed the first detection of H5 bird flu on the remo",
         "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBWSGRFV1VRQjRtdWRTWWxIQmR2QVc2ck54ZkEwdGxHdFpVWlJ6S0ZOTWh1R05nRS14QVE3eHZ3Z1FJNUs2QTRGRnJzVmc0VjZxdU5CS1AyM1dwM28zQ0xBbmlqenZQOFduZDF2dDNxc2FPQUJYS3RkZ2JDRQ?oc=5"
@@ -809,12 +818,6 @@
         "outlet": "The Australian",
         "title": "Deadly bird flu hits Macquarie Island wildlife",
         "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPRlVCZktBNm1RbkRQYWNDbEk1UVlyUWVITkNIc19QazFnTnd1N1JlckNwajR3WG12MmVkNURFOXdIdWpTWF9LRjNzcTlKZGdfVGJzTm92YzZfZkJJaXJmUnN6ZnpLQlVMdnRXUExwNkZ4U1VYdVhmVXZ6czVYalZHaGdtZVZXRkE5OE1PVEFlNE4zZXdTMXZCQ2JUbHJxYVpzZlFWNVdHUlc0aTlOSDlaQWswa1RITmVQMWxUUGdWZkNGd2V0dndQLVNEdmxjOXBuRFlMMkNDcDhwczVZNi1zYzJteGVhaTJWaklBNzhNTjk?oc=5"
-      },
-      {
-        "date": "2026-10-17",
-        "outlet": "Mezha.net",
-        "title": "Australia confirms first H5N1 bird flu case on Macquarie Island",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPVHgyaWd0SGhHZlRaRENCdWEwNTJwZ09VUWpJU3loY2RRX1Z1b05mbkU5T3ZyVU5wVFRHd0RIb2RtMlk3NXE5ejVhLWk2RzA3VVNxNjJIeUJ6cklkUnA3X00zTDNHalhxVmcwMmx4czhseUtmb3RTTE1hSGNjMDVDZUpFaXpNaEctdmZz?oc=5"
       }
     ],
     "headlines_window_days": 14,
@@ -829,47 +832,50 @@
     "gaps": []
   },
   "totals": {
-    "total_events": 2144,
+    "total_events": 2124,
     "human_cases": 9,
-    "poultry_events": 127,
+    "poultry_events": 133,
     "poultry_birds_affected": 0,
     "dairy_events": 10,
-    "wild_bird_events": 1977,
-    "mammal_events": 21,
-    "countries_affected": 35,
+    "wild_bird_events": 1950,
+    "mammal_events": 22,
+    "countries_affected": 38,
     "us_states_affected": 45,
     "au_states_affected": 7
   },
   "by_category": {
-    "poultry": 127,
-    "wild_bird": 1977,
+    "poultry": 133,
+    "wild_bird": 1950,
     "dairy": 10,
-    "mammal": 21,
+    "mammal": 22,
     "human": 9
   },
   "by_country": {
+    "China, Taiwan Province of": 3,
+    "Norway": 16,
     "the United Kingdom of Great Britain and Northern Ireland": 10,
     "Bulgaria": 4,
     "Denmark": 7,
     "Puerto Rico": 2,
-    "Vietnam": 28,
+    "South Korea": 1,
     "Albania": 1,
-    "United States": 1584,
+    "Vietnam": 28,
     "Serbia": 1,
-    "Norway": 15,
+    "United States": 1555,
+    "Canada": 13,
     "Netherlands": 9,
     "Peru": 13,
-    "Brazil": 2,
+    "India": 1,
     "Belgium": 2,
-    "Canada": 9,
+    "Brazil": 2,
     "Chile": 3,
     "Germany": 2,
     "Cyprus": 1,
-    "China, Taiwan Province of": 2,
     "Iceland": 8,
     "Australia": 415,
     "Sweden": 5,
     "Cambodia": 2,
+    "Svalbard and Jan Mayen Islands": 1,
     "Argentina": 1,
     "Suriname": 1,
     "France": 3,
@@ -885,8 +891,8 @@
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2144,
-    "United States": 1584,
+    "Global": 2124,
+    "United States": 1555,
     "Australia": 415
   },
   "sources": [
@@ -897,7 +903,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 414,
-      "note": "fao(Australia) 2024-01-01..2026-10-22: 415 rows -> 414 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-10-23: 415 rows -> 414 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -905,8 +911,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 557,
-      "note": "fao(all) 2026-07-24..2026-10-22: 564 rows -> 557 records (7 skipped)"
+      "records": 563,
+      "note": "fao(all) 2026-07-25..2026-10-23: 570 rows -> 563 records (7 skipped)"
     },
     {
       "key": "us-wild-birds",
@@ -914,8 +920,8 @@
       "region": "United States",
       "homepage": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/wild-bird-surveillance-dashboard",
       "status": "live",
-      "records": 1537,
-      "note": "usda wild-bird: 1537 features -> 1537 records (H5/H7, 365d)"
+      "records": 1508,
+      "note": "usda wild-bird: 1508 features -> 1508 records (H5/H7, 365d)"
     }
   ],
   "context_sources": [
