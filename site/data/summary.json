@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T06:36:23.947Z",
+  "generated_at": "2026-10-24T08:45:03.280Z",
   "latest_event": "2026-10-19",
   "mode": "live",
   "mode_note": null,
@@ -31,19 +31,19 @@
     "h5n1_wild_detections": 394,
     "h5n1_states": 6,
     "h5n1_state_list": [
-      "South Australia",
       "New South Wales",
-      "Victoria",
+      "South Australia",
       "Tasmania",
+      "Victoria",
       "Queensland",
       "Western Australia"
     ],
     "states_affected": 7,
     "states": [
-      "South Australia",
       "New South Wales",
-      "Victoria",
+      "South Australia",
       "Tasmania",
+      "Victoria",
       "Queensland",
       "Western Australia",
       "Australian Capital Territory"
@@ -52,10 +52,10 @@
     "current_era_detections": 394,
     "current_era_states": 6,
     "current_era_state_list": [
-      "South Australia",
       "New South Wales",
-      "Victoria",
+      "South Australia",
       "Tasmania",
+      "Victoria",
       "Queensland",
       "Western Australia"
     ],
@@ -178,10 +178,10 @@
     "current_records": 394,
     "current_states": 6,
     "current_state_list": [
-      "South Australia",
       "New South Wales",
-      "Victoria",
+      "South Australia",
       "Tasmania",
+      "Victoria",
       "Queensland",
       "Western Australia"
     ],
@@ -207,10 +207,10 @@
         "first_date": "2026-06-15",
         "last_date": "2026-09-22",
         "state_counts": {
-          "South Australia": 179,
           "New South Wales": 47,
-          "Victoria": 122,
+          "South Australia": 179,
           "Tasmania": 35,
+          "Victoria": 122,
           "Queensland": 2,
           "Western Australia": 9
         },
@@ -268,36 +268,6 @@
       }
     ],
     "by_state": {
-      "South Australia": {
-        "state": "South Australia",
-        "state_code": "SA",
-        "eras": [
-          {
-            "era": "au_h5n1_2026",
-            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
-            "short_label": "Current H5N1 incursion",
-            "strain": "H5N1 clade 2.3.4.4b",
-            "status": "ongoing",
-            "current": true,
-            "records": 179,
-            "phrase": "179 current H5N1 detections",
-            "categories": {
-              "wild_bird": 169,
-              "mammal": 10
-            },
-            "confidence": {
-              "confirmed": 0,
-              "presumptive": 0,
-              "unstated": 179
-            },
-            "first_date": "2026-06-19",
-            "last_date": "2026-09-22"
-          }
-        ],
-        "current_records": 179,
-        "historical_records": 0,
-        "sentence": "179 current H5N1 detections."
-      },
       "New South Wales": {
         "state": "New South Wales",
         "state_code": "NSW",
@@ -346,6 +316,65 @@
         "current_records": 47,
         "historical_records": 6,
         "sentence": "47 current H5N1 detections. 6 resolved H7 poultry outbreaks, 2024 to 2025."
+      },
+      "South Australia": {
+        "state": "South Australia",
+        "state_code": "SA",
+        "eras": [
+          {
+            "era": "au_h5n1_2026",
+            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
+            "short_label": "Current H5N1 incursion",
+            "strain": "H5N1 clade 2.3.4.4b",
+            "status": "ongoing",
+            "current": true,
+            "records": 179,
+            "phrase": "179 current H5N1 detections",
+            "categories": {
+              "wild_bird": 169,
+              "mammal": 10
+            },
+            "confidence": {
+              "confirmed": 0,
+              "presumptive": 0,
+              "unstated": 179
+            },
+            "first_date": "2026-06-19",
+            "last_date": "2026-09-22"
+          }
+        ],
+        "current_records": 179,
+        "historical_records": 0,
+        "sentence": "179 current H5N1 detections."
+      },
+      "Tasmania": {
+        "state": "Tasmania",
+        "state_code": "TAS",
+        "eras": [
+          {
+            "era": "au_h5n1_2026",
+            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
+            "short_label": "Current H5N1 incursion",
+            "strain": "H5N1 clade 2.3.4.4b",
+            "status": "ongoing",
+            "current": true,
+            "records": 35,
+            "phrase": "35 current H5N1 detections",
+            "categories": {
+              "wild_bird": 35
+            },
+            "confidence": {
+              "confirmed": 0,
+              "presumptive": 0,
+              "unstated": 35
+            },
+            "first_date": "2026-08-12",
+            "last_date": "2026-09-22"
+          }
+        ],
+        "current_records": 35,
+        "historical_records": 0,
+        "sentence": "35 current H5N1 detections."
       },
       "Victoria": {
         "state": "Victoria",
@@ -416,35 +445,6 @@
         "current_records": 122,
         "historical_records": 13,
         "sentence": "122 current H5N1 detections. 12 resolved H7 poultry outbreaks, 2024 to 2025. 1 unrelated travel-acquired human case, 2024."
-      },
-      "Tasmania": {
-        "state": "Tasmania",
-        "state_code": "TAS",
-        "eras": [
-          {
-            "era": "au_h5n1_2026",
-            "label": "Current H5N1 incursion, clade 2.3.4.4b, from June 2026",
-            "short_label": "Current H5N1 incursion",
-            "strain": "H5N1 clade 2.3.4.4b",
-            "status": "ongoing",
-            "current": true,
-            "records": 35,
-            "phrase": "35 current H5N1 detections",
-            "categories": {
-              "wild_bird": 35
-            },
-            "confidence": {
-              "confirmed": 0,
-              "presumptive": 0,
-              "unstated": 35
-            },
-            "first_date": "2026-08-12",
-            "last_date": "2026-09-22"
-          }
-        ],
-        "current_records": 35,
-        "historical_records": 0,
-        "sentence": "35 current H5N1 detections."
       },
       "Queensland": {
         "state": "Queensland",
@@ -613,15 +613,15 @@
   },
   "official_au": {
     "ok": true,
-    "fetched_at": "2026-10-23T08:45:11.754Z",
+    "fetched_at": "2026-10-24T08:45:11.164Z",
     "national_total": 231,
     "national_total_phrasing": "confirmed or presumed positive",
     "national_total_source": "updates",
     "by_state": null,
     "by_state_total": null,
     "by_state_matches_national": null,
-    "as_at_text": "4pm AEST, 22 October 2026",
-    "as_at_date": "2026-10-22",
+    "as_at_text": "4pm AEST, 23 October 2026",
+    "as_at_date": "2026-10-23",
     "latest_update": {
       "date": "2026-10-16",
       "date_text": "16 October 2026",
@@ -706,10 +706,7 @@
       }
     ],
     "errors": [],
-    "notes": [],
-    "from_last_good": true,
-    "last_good_fetched_at": "2026-10-23T08:45:11.754Z",
-    "last_good_age_days": 0
+    "notes": []
   },
   "official_gap": {
     "behind": false,
@@ -727,10 +724,10 @@
     "by_state_reconciles": null,
     "official_states": [],
     "mapped_states": [
-      "South Australia",
       "New South Wales",
-      "Victoria",
+      "South Australia",
       "Tasmania",
+      "Victoria",
       "Queensland",
       "Western Australia"
     ],
@@ -743,9 +740,9 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 40 headlines, detection signal in 1 (TAS); no coverage gaps detected",
+    "note": "google news 14d: 38 headlines, detection signal in 1 (TAS); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
-    "headlines_checked": 40,
+    "headlines_checked": 38,
     "headlines": [
       {
         "date": "2026-10-24",
@@ -764,12 +761,6 @@
         "outlet": "Mirage News",
         "title": "South West Opens First Dedicated Wildlife Hospital",
         "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQUGEyNGJfTWNwRlp1QjkyRUtEa05kZy1fQXZnRm56T2ZLS2Y2UHUtVjBUcFRBQWZEb005ZjdjdEhjMlgwYS00SGszTFl4UWhjVGkyaXhNZW92LWZXWnFtUFlWcDd0dlNrNVQ0dFNORUpQcXB6eDZjVlFRM3NOazN4bnAxbw?oc=5"
-      },
-      {
-        "date": "2026-10-23",
-        "outlet": "SBS",
-        "title": "Why Australians are being urged to spend 20 minutes outside",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQWV9KejZrcU11WTh5TjFFSng2LV9kUUM3UVBsUjlocGZ6b3lYOTd0UlFWVjczUXhWeTZzMjNTWEJkaVgtUk9hV002ejMwSS1lNHJWY3E0WTVRbGlDLWNOODZCbEJDTE01TVVaaWE0SER3RkVjN05qcUdrZDhXWlplRmk1RnJ1RHhoZU9pem5QcUQybXJOaXl3a1ByQQ?oc=5"
       },
       {
         "date": "2026-10-22",
@@ -818,14 +809,20 @@
         "outlet": "The Weekly Times",
         "title": "‘More money’: farmers free hens despite flu risk",
         "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOZ2RRbS1kTmNvVExFMTV1OWxPZlZzNnZSQ0d1cFkydnV3R2tqdWF1aHN2NGszeTJWZ0dFb2t1eVoxOUhpZzNoS2p3UUstUnRMNzE2Y0hjd3BxMnBfWldGS1ZoaHJpdElSUlBpR3BhbGM2NkMxdFd4ZXdzWFhIUFhVR3ZDcFEtcVRsZ0w5UlZjNnJFWkZfUjlyT09MOUJIb3ktTzNEWm93a01yNzAzVE9UZm1Oc0FNNjB1QmJPb0pRVEpILWZFUmtkNF9IU1dZaU80QzBYZEw4dFhjQkhvSXZNMkQtQ3B5MUZYNHppSXV0dV9KRFZZY2dR?oc=5"
+      },
+      {
+        "date": "2026-10-17",
+        "outlet": "www.nationpathindia.com",
+        "title": "Australia Confirms H5 Bird Flu in Elephant Seal and Kelp Gull on Macquarie Island",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQSWNyeU9jWTBzVlVpZVk0bERFS0l2OXUyQU1oSVBxU1BlY19lX2VEV3pxSFA5VDc4R08xYzU5b1lJNG5rX0NtcnBudGQ2dWxLekhXcmNsRlluR3ZfT1dQU3hkTU5BeTc5VkpMNWV1OGJjcktnMzJvVm9yN0QyVWRDcHE1dlE5SEk?oc=5"
       }
     ],
     "headlines_window_days": 14,
     "mapped_by_state": {
-      "South Australia": 179,
       "New South Wales": 47,
-      "Victoria": 122,
+      "South Australia": 179,
       "Tasmania": 35,
+      "Victoria": 122,
       "Queensland": 2,
       "Western Australia": 9
     },
@@ -853,15 +850,15 @@
   "by_country": {
     "China, Taiwan Province of": 3,
     "Latvia": 4,
+    "Bulgaria": 4,
     "Norway": 16,
     "the United Kingdom of Great Britain and Northern Ireland": 10,
-    "Bulgaria": 4,
     "Denmark": 7,
-    "Belgium": 3,
     "Puerto Rico": 2,
+    "Belgium": 3,
     "South Korea": 1,
-    "Albania": 1,
     "Vietnam": 28,
+    "Albania": 1,
     "Serbia": 1,
     "United States": 1547,
     "Canada": 13,
@@ -874,8 +871,8 @@
     "Cyprus": 1,
     "Iceland": 8,
     "Australia": 415,
-    "Sweden": 5,
     "Cambodia": 2,
+    "Sweden": 5,
     "Svalbard and Jan Mayen Islands": 1,
     "Argentina": 1,
     "Suriname": 1,
