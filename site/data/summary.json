@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T08:45:02.712Z",
+  "generated_at": "2026-10-26T06:52:17.987Z",
   "latest_event": "2026-10-19",
   "mode": "live",
   "mode_note": null,
@@ -60,7 +60,7 @@
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 127,
+    "days_since_first_detection": 128,
     "latest_detection": "2026-09-22"
   },
   "eras": {
@@ -168,9 +168,9 @@
       "au_h5n1_2026": 394,
       "au_h7_poultry_2024_2025": 20,
       "au_human_2024": 1,
-      "global_h5_panzootic": 1468,
+      "global_h5_panzootic": 1430,
       "other_subtype": 37,
-      "subtype_unstated": 195
+      "subtype_unstated": 188
     }
   },
   "au_eras": {
@@ -601,7 +601,7 @@
     "wild_bird_detections": 379,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 127,
+    "days_since_first_detection": 128,
     "human_cases_au": 1
   },
   "human_context": {
@@ -706,7 +706,10 @@
       }
     ],
     "errors": [],
-    "notes": []
+    "notes": [],
+    "from_last_good": true,
+    "last_good_fetched_at": "2026-10-25T08:45:11.424Z",
+    "last_good_age_days": 0
   },
   "official_gap": {
     "behind": false,
@@ -740,16 +743,10 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 41 headlines, detection signal in 1 (TAS); no coverage gaps detected",
+    "note": "google news 14d: 39 headlines, detection signal in 1 (TAS); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
-    "headlines_checked": 40,
+    "headlines_checked": 39,
     "headlines": [
-      {
-        "date": "2026-10-24",
-        "outlet": "Dubbo Photo News",
-        "title": "Injured magpie highlights threat from bird flu locally",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNWjhXa1JCV3plbUxkUEVya2pGamhYMWJvaDRwUC1iRDgyR0JEZzQ4WklHMm80X0twY1VGenlfckVYV3ZzV0tLVDBGellOUkxjQTVvZktrdGVScWpDclE0MFZOcG01Vk0zQ3ZlbnVMTS1jTnFMYW1VYXVQSV9HREdyOVotR2NiRy1YY1lXdkxSajFUaTNrUzJqdldHYmVFS1ZkTkh6Wg?oc=5"
-      },
       {
         "date": "2026-10-24",
         "outlet": "The Mandarin",
@@ -764,15 +761,15 @@
       },
       {
         "date": "2026-10-23",
-        "outlet": "Mirage News",
-        "title": "South West Opens First Dedicated Wildlife Hospital",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQUGEyNGJfTWNwRlp1QjkyRUtEa05kZy1fQXZnRm56T2ZLS2Y2UHUtVjBUcFRBQWZEb005ZjdjdEhjMlgwYS00SGszTFl4UWhjVGkyaXhNZW92LWZXWnFtUFlWcDd0dlNrNVQ0dFNORUpQcXB6eDZjVlFRM3NOazN4bnAxbw?oc=5"
+        "outlet": "Ministry for Primary Industries | MPI",
+        "title": "Avian influenza, HPAI, bird flu, risk to NZ | MPI",
+        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPSlcwenRJRHgwYkVwVGkxQkVKbUJFVnhfYlRSVmZlNXFmbkJ5RHVienljMTF2Ui1DNXJxbTBIMXk5dlVzMHlwWktNZFlSaG5vV1pUZUt0ejRqcndZLXg3SGFUM0czYjVOQXRQY3drTTZGbXc1TWhDUUpSamQtNkJ0d3d4b1dWV3FaZ1pDWktQZjZTVmg3RkE5V1paUHF3bmtUNFBNeTRfUmtkZmFlQ2RnT2JUWlQ1R1ZNc0EwdHhWY2cyTFZlVTdHc1ZDODdWT0o3M0gtMk0xNTViQkVPYWlMTjAxM2Z5VVkyYTVyeEhHN00?oc=5"
       },
       {
         "date": "2026-10-23",
-        "outlet": "SBS",
-        "title": "Why Australians are being urged to spend 20 minutes outside",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQWV9KejZrcU11WTh5TjFFSng2LV9kUUM3UVBsUjlocGZ6b3lYOTd0UlFWVjczUXhWeTZzMjNTWEJkaVgtUk9hV002ejMwSS1lNHJWY3E0WTVRbGlDLWNOODZCbEJDTE01TVVaaWE0SER3RkVjN05qcUdrZDhXWlplRmk1RnJ1RHhoZU9pem5QcUQybXJOaXl3a1ByQQ?oc=5"
+        "outlet": "Mirage News",
+        "title": "South West Opens First Dedicated Wildlife Hospital",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQUGEyNGJfTWNwRlp1QjkyRUtEa05kZy1fQXZnRm56T2ZLS2Y2UHUtVjBUcFRBQWZEb005ZjdjdEhjMlgwYS00SGszTFl4UWhjVGkyaXhNZW92LWZXWnFtUFlWcDd0dlNrNVQ0dFNORUpQcXB6eDZjVlFRM3NOazN4bnAxbw?oc=5"
       },
       {
         "date": "2026-10-22",
@@ -815,6 +812,12 @@
         "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
         "title": "Expeditioners questioned decision to evacuate Macquarie Island over bird flu risk",
         "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQNVZxLWh2c3c0cTBTTEdsWkxFblAyelEwQ19Xa2R3em1ocHBvV0lVWkEtSVo2a2tHTnpXS05uenhaTzRLQlR6ZmxodnFjR3p5aUpGVzZTdDYyUy1DUHN4S0tuTS1BWmdYeWl2NWxmdjNzeDNNTnRCYW10VDJDYWVILUFrc1NpdGlic3A3NkRLdzh4X3otVEJ6cEEydUNUTE1ENnFBUHlGN005VE82RUc0?oc=5"
+      },
+      {
+        "date": "2026-10-19",
+        "outlet": "Vietnam.vn",
+        "title": "Highly pathogenic avian influenza: What you need to know about the risk of transmission to humans.",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNMWR6dkd3N3JfS3FKdWNhZnhsaFhsSTVXNE5QRENCbGNRb1gzMFQ1Uk16ZHJxY0RxYTFxYnJlN29qbjBObVNFWURxeUloN3NvanVpN1VxLWV6ZXFqZ0Y2NUFnYVhqS2ZuNmpLeEhSVlpKNVhLVEhJNG81ZEJURDZGS2RNemFiSjFBUmxWdHBwWW45aDE3THVoajhscw?oc=5"
       }
     ],
     "headlines_window_days": 14,
@@ -829,20 +832,20 @@
     "gaps": []
   },
   "totals": {
-    "total_events": 2115,
+    "total_events": 2070,
     "human_cases": 9,
-    "poultry_events": 133,
+    "poultry_events": 126,
     "poultry_birds_affected": 0,
     "dairy_events": 10,
-    "wild_bird_events": 1941,
+    "wild_bird_events": 1903,
     "mammal_events": 22,
     "countries_affected": 39,
     "us_states_affected": 45,
     "au_states_affected": 7
   },
   "by_category": {
-    "poultry": 133,
-    "wild_bird": 1941,
+    "poultry": 126,
+    "wild_bird": 1903,
     "dairy": 10,
     "mammal": 22,
     "human": 9
@@ -850,17 +853,17 @@
   "by_country": {
     "China, Taiwan Province of": 3,
     "Latvia": 4,
+    "Norway": 16,
     "the United Kingdom of Great Britain and Northern Ireland": 10,
     "Bulgaria": 4,
-    "Norway": 16,
     "Denmark": 7,
     "Puerto Rico": 2,
     "Belgium": 3,
     "South Korea": 1,
-    "Vietnam": 28,
     "Albania": 1,
-    "United States": 1542,
+    "Vietnam": 21,
     "Serbia": 1,
+    "United States": 1504,
     "Canada": 13,
     "Netherlands": 8,
     "Peru": 13,
@@ -889,8 +892,8 @@
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2115,
-    "United States": 1542,
+    "Global": 2070,
+    "United States": 1504,
     "Australia": 415
   },
   "sources": [
@@ -901,7 +904,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 414,
-      "note": "fao(Australia) 2024-01-01..2026-10-25: 415 rows -> 414 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-10-26: 415 rows -> 414 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -909,8 +912,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 566,
-      "note": "fao(all) 2026-07-27..2026-10-25: 573 rows -> 566 records (7 skipped)"
+      "records": 559,
+      "note": "fao(all) 2026-07-28..2026-10-26: 566 rows -> 559 records (7 skipped)"
     },
     {
       "key": "us-wild-birds",
@@ -918,8 +921,8 @@
       "region": "United States",
       "homepage": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/wild-bird-surveillance-dashboard",
       "status": "live",
-      "records": 1495,
-      "note": "usda wild-bird: 1495 features -> 1495 records (H5/H7, 365d)"
+      "records": 1457,
+      "note": "usda wild-bird: 1457 features -> 1457 records (H5/H7, 365d)"
     }
   ],
   "context_sources": [
