@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T06:33:38.937Z",
+  "generated_at": "2026-11-03T06:26:30.849Z",
   "latest_event": "2026-10-27",
   "mode": "live",
   "mode_note": null,
@@ -60,7 +60,7 @@
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 135,
+    "days_since_first_detection": 136,
     "latest_detection": "2026-09-22"
   },
   "eras": {
@@ -168,9 +168,9 @@
       "au_h5n1_2026": 394,
       "au_h7_poultry_2024_2025": 20,
       "au_human_2024": 1,
-      "global_h5_panzootic": 1351,
+      "global_h5_panzootic": 1348,
       "other_subtype": 37,
-      "subtype_unstated": 232
+      "subtype_unstated": 230
     }
   },
   "au_eras": {
@@ -601,7 +601,7 @@
     "wild_bird_detections": 379,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 135,
+    "days_since_first_detection": 136,
     "human_cases_au": 1
   },
   "human_context": {
@@ -709,7 +709,7 @@
     "notes": [],
     "from_last_good": true,
     "last_good_fetched_at": "2026-10-29T08:45:10.913Z",
-    "last_good_age_days": 3
+    "last_good_age_days": 4
   },
   "official_gap": {
     "behind": false,
@@ -743,10 +743,46 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 39 headlines, detection signal in 1 (SA); no coverage gaps detected",
+    "note": "google news 14d: 30 headlines, detection signal in 1 (SA); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
-    "headlines_checked": 39,
+    "headlines_checked": 30,
     "headlines": [
+      {
+        "date": "2026-11-03",
+        "outlet": "Bendigo Advertiser",
+        "title": "'Not going away': how Hazeldenes is tackling bird flu risks as it expands",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQdjlWTzRrSEVzYWp2WEc1WnFDWG9ocERWQnRraHNjY0ZQek9WOXNQQm1KY0x4MmQ3dUhPT29acWRreUIxUHdrSW10cjJSRDNfb1o2dWw5cTQ4c0VIejVVallXd210VlRSb1FpbG5XWmcxWEJ1eGpnQmliSEdqVHN5d3BrdDlkTUlzdTA4SFB1bW50bDRidDJkODg5MWxBTVJUTWZtbXpjNTZyY0J6Mk80cmNR?oc=5"
+      },
+      {
+        "date": "2026-11-03",
+        "outlet": "The National Tribune",
+        "title": "Strong Biosecurity Prioritised This One Health Day",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOcERFcm5aZF9la2hlSUpUSDJSb0lBVktmZVZYODIydE5WM1htYlJ0QTZkcE95X205NFpjc3dLYzg5S0dhUmlXUVlnUVk4bElweVNRN3hWSk9qVS1GZkxmOUM1WDNtSGExNmhWdHVydEhGdk9QeHg0Mjk4VURWVmVNbDd2NGlVajJHNFlCdGhWOA?oc=5"
+      },
+      {
+        "date": "2026-11-02",
+        "outlet": "CBC",
+        "title": "U.S. records 1st human bird flu death since last year",
+        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9uX01pNm1CbllLZlZYSjZ4d01SaUdJelloUnZsak5TQmxmZlZSZTgtX25XY3ZvS205eDZiU0VWM3hUNkhZN0xLbkFxcFdsWURpVl9pRE90QU9oZHRwWnJtVlg2S1JWbkNKVy04LWtSUFpMQQ?oc=5"
+      },
+      {
+        "date": "2026-11-02",
+        "outlet": "The Independent",
+        "title": "First US bird flu death of the year reported in Washington",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQTzAtT1ZpcGwwajdXUDNGc2IwTllFV1lMR01fNTEyTnRUZmltMk9ZTjFSWmZuY00zSG9rTG1nZjFFZTdrSmRCM05hQmRQcmplaTlvMjllN0Y1T01YQ0N2d3I5TWxEWEhraVVzUlc4Tm0tVVFBZzE4ME00aF9waUw3NllMVUE2b1QxQ2kyRUFkcHVkczFIZWU0LUdQNVFXUQ?oc=5"
+      },
+      {
+        "date": "2026-11-02",
+        "outlet": "Bol News",
+        "title": "Bird flu outbreak spreads across US poultry farms, infects 1.32m birds",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQUGtFTVBMWVBLX3dESlZ2MUFORUt2WEgtS2hDdVBkXzVET1pBNWZHQWxYeWRmNE9Dc3lZaWlkSEgxVnpmdDI4Y2l5LUQzTGJTOVVFblhMMXhxZGUtclQyWjZBRldIXzg5WlVlbGNpSUJ1dGVXTUc0cFlQTHAtVWJWQk96WWdQVkdlcFpnMTVuOHN3XzBiOERMelZzTHpWcktm?oc=5"
+      },
+      {
+        "date": "2026-11-02",
+        "outlet": "Nature",
+        "title": "Evidence of widespread sequencing errors in global avian influenza study",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1FNnVvZENCQ1ViOFJYRURZYm00UmVaRmNtMVR4dmxSQXF6VUVFdnJOVm5IQmRVT2JBRDBmSVlONzRxcTZRN2VPeC05LTFhaFd0Zk5URXZaOEdlTmJvc1c4?oc=5"
+      },
       {
         "date": "2026-11-01",
         "outlet": "Tempo.co English",
@@ -782,42 +818,6 @@
         "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
         "title": "Dead dolphin tests positive for H5 bird flu",
         "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPTFpJWE9PQlh5bGJhLXU0S0RwUmV6dUI2amIyRm96OTE1dTgwTlQ1QXBzTGtSblF4VU9ZcTZKUjZHNV9lMDM3cFdTY2JGNlVOU0VMWmdsUzBtUnJhVUxTU1RpQ2hpbEFGZmV3RWxEX295czlCNlJUMlZOU0tIQkVWVjRGak9jenZNQ08wSHR3ZFZnb01MT1FWM3dyYzhRVVVycVg0?oc=5"
-      },
-      {
-        "date": "2026-10-30",
-        "outlet": "https://en.edairynews.com/",
-        "title": "USDA Allocates $165.5M For Dairy Purchases To Support Producers And Domestic Food Aid",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWVdfd3Y4ZGpQX0ZLRG9EOXQwMzJ2ak9DelBaZjJOM0hNVld6RHNLa0NMSkxZS2xLQVE4VTNwbmtidXBQaW9tUExSZGtObW1wM1p5T2NYbnV5VV9DZi1Bb3JKck43d09zZWJMU21Ca0hkMTNCSkJjY1Blc3R5VTB3Qnc3M0t1QTRfYmhCVXNxZldJZ2pRMlR3TXhUTFFyRVQwY3l4VnVjU0tSZFRwcU9IQQ?oc=5"
-      },
-      {
-        "date": "2026-10-30",
-        "outlet": "https://en.edairynews.com/",
-        "title": "Bird Flu Outbreak Surges Across Washington Dairy Herds As H5N1 Spreads To 27 Farms",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPcEoteEl6RjJHM1FZejNVNHhlRWxPNGxTcENVQWEyUVlVSWU4RHM0WW0zX1B4a2hSYW5IZ19ub3NERGxZR1FuYnN0cjRMWnVKNGFqUW04dU1zRHhaRlAxZFctZExLQlMwd1hYYjY4LXFvNy1VT2tKVEJzU2xmLTA1UkZZNXNIbnJsZDJUa2JoeFp5cllueXRvYzI0V01VNFZEOVhGMnQ1VjdHSXd4UEE?oc=5"
-      },
-      {
-        "date": "2026-10-30",
-        "outlet": "Yahoo News Australia",
-        "title": "Woolworths sign reveals little-known detail about eggs Aussies pay a premium for",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVnhSWkdYV29aS1ZGdWhUYllGemhpclVLankyLUc3WHFuS3o4SDRnTEJ1aldkLUY0M0ZPODhKRGJGVGtTMUdPSFpaSXR2TG90ZzBhMkwtWlduaXp4aUp4QW5xMDBCRW1EQ3BfNFZyZjVIU3V2UFVhdWlSeHY2M1FhcXJmamlMNERDWGFoSHNTYWR6NVdXbXE2LUtickk1OWVJWDNsakVEc0ZoMkNneGZlTng5WkNPN09aQnQydklB?oc=5"
-      },
-      {
-        "date": "2026-10-30",
-        "outlet": "National Indigenous Times",
-        "title": "Rat-free zone: Traditional Owners lead drone defence in western Torres Strait",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQYUVTWHRlclRtZXJVN3lnNE4yRGwwWW5aZEwxRjQ0VTMtMFg1Sm0wdjh5UHR5QmNETjNrVkI5Yk9CUlFwcWN3eHBUQW9xSmdLbTR6WG1xaWVZRTNVVTE4N1ZkczdHWWthUEFSZmhobVU0X3QxR1ZsbFA0eWFHTXp4M0I2RzhIaXpUTWlQQWZPbmgtQXVnOUZtZlVybGIya1VpUGxkYzNyT0x5QmhfQ2Q2Mm5B?oc=5"
-      },
-      {
-        "date": "2026-10-30",
-        "outlet": "Western Australian Government",
-        "title": "H5 avian influenza (bird flu) in Western Australia",
-        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPTHVpMmlzWWpSNXBjU3JhLWh3Rjh1Y3VsQW1YQlZOUFB2WmVPNGlFSDZ5LTR5RG5ISTRjUGhselhpcWJjbEtIb0N6UlpGSzQ5WHZtQmk3ZXJObk9KN2FNV3gtSFJHMEswRkk0VlQ1Q1lTcjdPOTBuWWU5V0RxNDZIY3J2WDIzLXZlcTlOcFNFenpYcmUwWFZkRTg0XzZmbVJqYmJqMXNyN0hXNzVfd1VLbXEzSHpHY2M1bGVDRlM0c0djYkFEU3Z1WW53c2VQMTVzdElXXw?oc=5"
-      },
-      {
-        "date": "2026-10-29",
-        "outlet": "NPR",
-        "title": "What killed 500-plus penguins? How scientists solved the mystery",
-        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBvVE5lTFRoR3N4TGFzT0hTbGU1ZGZkcnE2RC1ZWU81SU91bHZydXNLNFVCUWs5b1F5dFJVbVFkVXUxSWFrWGJVajZUOC1QbnhqekdJZTdCbDY?oc=5"
       }
     ],
     "headlines_window_days": 14,
@@ -832,28 +832,28 @@
     "gaps": []
   },
   "totals": {
-    "total_events": 2035,
+    "total_events": 2030,
     "human_cases": 9,
     "poultry_events": 149,
     "poultry_birds_affected": 0,
     "dairy_events": 9,
-    "wild_bird_events": 1846,
-    "mammal_events": 22,
+    "wild_bird_events": 1842,
+    "mammal_events": 21,
     "countries_affected": 41,
     "us_states_affected": 45,
     "au_states_affected": 7
   },
   "by_category": {
     "poultry": 149,
-    "wild_bird": 1846,
+    "wild_bird": 1842,
     "dairy": 9,
-    "mammal": 22,
+    "mammal": 21,
     "human": 9
   },
   "by_country": {
     "Netherlands": 12,
-    "Lithuania": 1,
     "the United Kingdom of Great Britain and Northern Ireland": 14,
+    "Lithuania": 1,
     "Denmark": 21,
     "Germany": 3,
     "Italy": 3,
@@ -862,24 +862,24 @@
     "China, Taiwan Province of": 3,
     "Estonia": 1,
     "Latvia": 4,
-    "Bulgaria": 4,
     "Norway": 16,
+    "Bulgaria": 4,
     "Peru": 25,
-    "Puerto Rico": 4,
-    "United States": 1433,
     "China": 2,
+    "Puerto Rico": 4,
+    "United States": 1430,
     "South Korea": 1,
     "Canada": 16,
     "Albania": 1,
     "Vietnam": 15,
     "Serbia": 1,
     "India": 1,
-    "Brazil": 2,
+    "Brazil": 1,
     "Chile": 3,
     "Cyprus": 1,
     "Iceland": 8,
     "Australia": 415,
-    "Sweden": 4,
+    "Sweden": 3,
     "Cambodia": 2,
     "Svalbard and Jan Mayen Islands": 1,
     "Argentina": 1,
@@ -894,8 +894,8 @@
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2035,
-    "United States": 1433,
+    "Global": 2030,
+    "United States": 1430,
     "Australia": 415
   },
   "sources": [
@@ -906,7 +906,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 414,
-      "note": "fao(Australia) 2024-01-01..2026-11-02: 415 rows -> 414 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-11-03: 415 rows -> 414 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -914,8 +914,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 558,
-      "note": "fao(all) 2026-08-04..2026-11-02: 564 rows -> 558 records (6 skipped)"
+      "records": 554,
+      "note": "fao(all) 2026-08-05..2026-11-03: 560 rows -> 554 records (6 skipped)"
     },
     {
       "key": "us-wild-birds",
@@ -923,8 +923,8 @@
       "region": "United States",
       "homepage": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/wild-bird-surveillance-dashboard",
       "status": "live",
-      "records": 1378,
-      "note": "usda wild-bird: 1378 features -> 1378 records (H5/H7, 365d)"
+      "records": 1375,
+      "note": "usda wild-bird: 1375 features -> 1375 records (H5/H7, 365d)"
     }
   ],
   "context_sources": [
