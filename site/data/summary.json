@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T06:24:09.155Z",
+  "generated_at": "2026-11-09T06:33:41.960Z",
   "latest_event": "2026-11-04",
   "mode": "live",
   "mode_note": null,
@@ -60,7 +60,7 @@
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 141,
+    "days_since_first_detection": 142,
     "latest_detection": "2026-09-22"
   },
   "eras": {
@@ -168,9 +168,9 @@
       "au_h5n1_2026": 394,
       "au_h7_poultry_2024_2025": 20,
       "au_human_2024": 1,
-      "global_h5_panzootic": 1313,
+      "global_h5_panzootic": 1236,
       "other_subtype": 37,
-      "subtype_unstated": 276
+      "subtype_unstated": 272
     }
   },
   "au_eras": {
@@ -601,7 +601,7 @@
     "wild_bird_detections": 379,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 141,
+    "days_since_first_detection": 142,
     "human_cases_au": 1
   },
   "human_context": {
@@ -709,7 +709,7 @@
     "notes": [],
     "from_last_good": true,
     "last_good_fetched_at": "2026-10-29T08:45:10.913Z",
-    "last_good_age_days": 9
+    "last_good_age_days": 10
   },
   "official_gap": {
     "behind": false,
@@ -743,10 +743,22 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 22 headlines, detection signal in 1 (SA); no coverage gaps detected",
+    "note": "google news 14d: 24 headlines, detection signal in 1 (SA); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
-    "headlines_checked": 22,
+    "headlines_checked": 24,
     "headlines": [
+      {
+        "date": "2026-11-09",
+        "outlet": "Mirage News",
+        "title": "2026 Australian Biosecurity Awards: Environmental Biosecurity",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFA1QnIwb2xILUxGVnpySS1mX09aUlRUNTdlVHJtTkh1Mk9ibjFiQ1lIT3E4X0lpUzNOdGlLS1BtcS03Vy1La2hwbzlCWnM4djM2cGtwSmo1RVJFNC1LQ0hEd2gtT1Zad240T3ZhdkdNMzM2dFhOX3h6c3dn?oc=5"
+      },
+      {
+        "date": "2026-11-08",
+        "outlet": "The New Daily",
+        "title": "What happened to bird flu? Experts warn the dire risks aren’t over",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPaGFMMHUwbkp6d1QzTGxQVTYxSGpvZWt2TS16Y0hRekdZYjhUMXZSc056alh1T1RZcHlhaXVOX1VYSDFUU0R1Z1FQMkhteF9ZZHI1a0lNS0w0d1Z4cUMyVmYtQkNsVllYZjB6d1JkUV9GWXZtbm83LUtfbUg1WEFRUXJKNmx4VTc0V0ZTUFl6bw?oc=5"
+      },
       {
         "date": "2026-11-08",
         "outlet": "JournalArta",
@@ -758,12 +770,6 @@
         "outlet": "The West Australian",
         "title": "Experts fear Aussie animals risk extinction over bird flu",
         "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQM0VBTWJRRm5ZTURzcThvNXQ0R240WUJWeVlQOXB0WlFXTFRhamZjdTBkNU9jUTdpTkJmZERUajhLWTQwU29JUHRSZGJ6UmFWVEZfVG5tbnFaUHJvZ3o5SE1wcW40Q3JRaHN0VW5ETlJFSkZrekY5WFhlTmo5VHhHTnVjTFZZY1B5UnVtT3NhZzFFQnUxcWdJQ3pQa3VqdHVQVjRTRndDSlpTNFR5Sjh6aGNMa2tJd3ZyVFBudVNBUElXbndMSDZXZGZmQlRlN2U1M2t6U01RT0xKZTF0NHZaeW51cV9aVGo5?oc=5"
-      },
-      {
-        "date": "2026-11-08",
-        "outlet": "Region Canberra",
-        "title": "Australia plans to lift a ban on imported parrots, but does that spell disaster for Canberra's cockatoos?",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNb0dHRjF3YlhaVnJwSzlNZE5JcUZ1UC1JSmVKQ25xdVBlMmdpTmM2d3p5azJlNDhhYW1Da3pZblotdHVEQmxNdEVEd2NXMGRjVnJnaUlZeG1oaHpWVmp5Ym1MRDhkQkJ4RVZnSFpnUGlRRjhYU2JidUxyemhPVjZGOFVNdzFQeGNTY2pqVkRkWlN2NDd3ZHZFVkt3MWNmRGxVVzdmZVBXbnliRi1zOERFazcxX2JQTU1HV242amg3UUZBNHRXQ0ZTNkEtbnpXZw?oc=5"
       },
       {
         "date": "2026-11-07",
@@ -812,12 +818,6 @@
         "outlet": "The Independent",
         "title": "First US bird flu death of the year reported in Washington",
         "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQTzAtT1ZpcGwwajdXUDNGc2IwTllFV1lMR01fNTEyTnRUZmltMk9ZTjFSWmZuY00zSG9rTG1nZjFFZTdrSmRCM05hQmRQcmplaTlvMjllN0Y1T01YQ0N2d3I5TWxEWEhraVVzUlc4Tm0tVVFBZzE4ME00aF9waUw3NllMVUE2b1QxQ2kyRUFkcHVkczFIZWU0LUdQNVFXUQ?oc=5"
-      },
-      {
-        "date": "2026-11-02",
-        "outlet": "Nature",
-        "title": "Evidence of widespread sequencing errors in global avian influenza study",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1FNnVvZENCQ1ViOFJYRURZYm00UmVaRmNtMVR4dmxSQXF6VUVFdnJOVm5IQmRVT2JBRDBmSVlONzRxcTZRN2VPeC05LTFhaFd0Zk5URXZaOEdlTmJvc1c4?oc=5"
       }
     ],
     "headlines_window_days": 14,
@@ -832,22 +832,22 @@
     "gaps": []
   },
   "totals": {
-    "total_events": 2041,
+    "total_events": 1960,
     "human_cases": 9,
-    "poultry_events": 152,
+    "poultry_events": 150,
     "poultry_birds_affected": 0,
     "dairy_events": 9,
-    "wild_bird_events": 1851,
-    "mammal_events": 20,
-    "countries_affected": 44,
+    "wild_bird_events": 1773,
+    "mammal_events": 19,
+    "countries_affected": 43,
     "us_states_affected": 45,
     "au_states_affected": 7
   },
   "by_category": {
-    "poultry": 152,
-    "wild_bird": 1851,
+    "poultry": 150,
+    "wild_bird": 1773,
     "dairy": 9,
-    "mammal": 20,
+    "mammal": 19,
     "human": 9
   },
   "by_country": {
@@ -859,17 +859,17 @@
     "Mexico": 2,
     "Lithuania": 1,
     "Netherlands": 39,
-    "Denmark": 21,
     "Belgium": 9,
-    "Hungary": 4,
+    "Denmark": 21,
     "Italy": 3,
+    "Hungary": 4,
     "Romania": 2,
     "China, Taiwan Province of": 2,
     "Estonia": 2,
     "Latvia": 4,
-    "Bulgaria": 4,
     "Peru": 23,
-    "United States": 1393,
+    "Bulgaria": 4,
+    "United States": 1313,
     "Puerto Rico": 4,
     "China": 2,
     "South Korea": 2,
@@ -883,8 +883,8 @@
     "Cyprus": 1,
     "Iceland": 8,
     "Australia": 415,
-    "Cambodia": 2,
     "Sweden": 3,
+    "Cambodia": 2,
     "Svalbard and Jan Mayen Islands": 1,
     "Argentina": 1,
     "Suriname": 1,
@@ -893,12 +893,11 @@
     "Indonesia": 1,
     "New Zealand": 1,
     "Finland": 1,
-    "Portugal": 1,
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2041,
-    "United States": 1393,
+    "Global": 1960,
+    "United States": 1313,
     "Australia": 415
   },
   "sources": [
@@ -909,7 +908,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 414,
-      "note": "fao(Australia) 2024-01-01..2026-11-08: 415 rows -> 414 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-11-09: 415 rows -> 414 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -917,8 +916,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 599,
-      "note": "fao(all) 2026-08-10..2026-11-08: 607 rows -> 599 records (8 skipped)"
+      "records": 595,
+      "note": "fao(all) 2026-08-11..2026-11-09: 603 rows -> 595 records (8 skipped)"
     },
     {
       "key": "us-wild-birds",
@@ -926,8 +925,8 @@
       "region": "United States",
       "homepage": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/wild-bird-surveillance-dashboard",
       "status": "live",
-      "records": 1340,
-      "note": "usda wild-bird: 1340 features -> 1340 records (H5/H7, 365d)"
+      "records": 1263,
+      "note": "usda wild-bird: 1263 features -> 1263 records (H5/H7, 365d)"
     }
   ],
   "context_sources": [
