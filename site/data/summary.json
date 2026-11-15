@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T06:24:01.529Z",
+  "generated_at": "2026-11-15T06:24:52.670Z",
   "latest_event": "2026-11-11",
   "mode": "live",
   "mode_note": null,
@@ -60,7 +60,7 @@
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 147,
+    "days_since_first_detection": 148,
     "latest_detection": "2026-09-22"
   },
   "eras": {
@@ -168,9 +168,9 @@
       "au_h5n1_2026": 394,
       "au_h7_poultry_2024_2025": 20,
       "au_human_2024": 1,
-      "global_h5_panzootic": 1200,
+      "global_h5_panzootic": 1149,
       "other_subtype": 37,
-      "subtype_unstated": 379
+      "subtype_unstated": 378
     }
   },
   "au_eras": {
@@ -601,7 +601,7 @@
     "wild_bird_detections": 379,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 147,
+    "days_since_first_detection": 148,
     "human_cases_au": 1
   },
   "human_context": {
@@ -709,7 +709,7 @@
     "notes": [],
     "from_last_good": true,
     "last_good_fetched_at": "2026-10-29T08:45:10.913Z",
-    "last_good_age_days": 15
+    "last_good_age_days": 16
   },
   "official_gap": {
     "behind": false,
@@ -743,9 +743,9 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 22 headlines, detection signal in 1 (SA); no coverage gaps detected",
+    "note": "google news 14d: 20 headlines, detection signal in 1 (SA); no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
-    "headlines_checked": 22,
+    "headlines_checked": 20,
     "headlines": [
       {
         "date": "2026-11-13",
@@ -767,9 +767,9 @@
       },
       {
         "date": "2026-11-13",
-        "outlet": "countrynews.com.au",
+        "outlet": "Corowa Free Press",
         "title": "Bird flu numbers ease",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9rdHZCaUdSY0hBSHV2Mk5nbVR2YlUyTElJQzkyanpwelB3RXdiVkFQSTUwVEZBSHo3RVdyMHdJTGk3eE45SXVkUEtseVFMNGh4NDh0QW9tN1lQUl80LTdvSk5zYkE5cDJJamh1ZTA4Rks?oc=5"
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBNMlpGRnFRSXFkVnFvNWxGV0ZFSWlBZ0oyY21tdHBhQTRrUG9QdHpUY1lOZU5FaE42dThYQTJYdWtVVzJrWHNBT3FUZHA0c2dwNUpHMEJraHU4SmlaVnR2bUJCRkFkYUpKTl8wZ1o3RFpfdDhKdnc?oc=5"
       },
       {
         "date": "2026-11-12",
@@ -797,9 +797,9 @@
       },
       {
         "date": "2026-11-10",
-        "outlet": "AOL.com",
+        "outlet": "A-Z Animals",
         "title": "Australia Logged 734 Bird Flu Events, But Won’t Say How Many Died",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9telBMVzY4bjJmSE1NX0k1TzZKRWlpOEszYi0wMEw1RmtOSnRiVlhWb3dkb3lScUNUU3lLMElvVGxEZjhMbXhPNGZoUVZsZURzWmU2WXZQTDdkWlNvdE04UDVYYW1EUXNkT21IY0cybFFRMGp6R0NpM2FnYUk0QQ?oc=5"
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPOVgxUElqZDA2b2QwampWbjBqY2NGbmdKUS1QWkVXTEIwTGtSTWxFRmlqUENBV2tYOUc5a0JYMFNyOGJNb3BIWURXUGRjT0xxNVVjaGtWb0xWRmk1RmlKbkZCNFg5ME1fV2RZMm0zblVHNnhXSlpsOFRGYmxfUXRWUm5LcG1GVC16aTN4TndKblZ0ZzN5UUZvaw?oc=5"
       },
       {
         "date": "2026-11-10",
@@ -832,48 +832,48 @@
     "gaps": []
   },
   "totals": {
-    "total_events": 2031,
+    "total_events": 1979,
     "human_cases": 9,
-    "poultry_events": 183,
+    "poultry_events": 182,
     "poultry_birds_affected": 0,
     "dairy_events": 7,
-    "wild_bird_events": 1813,
+    "wild_bird_events": 1762,
     "mammal_events": 19,
     "countries_affected": 45,
     "us_states_affected": 44,
     "au_states_affected": 7
   },
   "by_category": {
-    "wild_bird": 1813,
-    "poultry": 183,
+    "poultry": 182,
+    "wild_bird": 1762,
     "mammal": 19,
     "dairy": 7,
     "human": 9
   },
   "by_country": {
-    "Austria": 7,
     "Germany": 35,
+    "Austria": 7,
     "Japan": 4,
     "Netherlands": 57,
     "Norway": 17,
-    "South Korea": 12,
     "Peru": 27,
+    "South Korea": 12,
     "Colombia": 1,
     "Democratic People's Republic of Korea": 1,
     "Estonia": 3,
     "Lithuania": 4,
-    "Sweden": 6,
     "Finland": 4,
+    "Sweden": 6,
     "the United Kingdom of Great Britain and Northern Ireland": 22,
     "Mexico": 2,
-    "China, Taiwan Province of": 4,
     "Canada": 20,
+    "China, Taiwan Province of": 4,
     "Italy": 8,
-    "Denmark": 21,
     "Belgium": 9,
+    "Denmark": 21,
     "Hungary": 4,
+    "United States": 1233,
     "Romania": 2,
-    "United States": 1285,
     "Iceland": 10,
     "India": 4,
     "Latvia": 4,
@@ -898,8 +898,8 @@
     "Antarctica": 1
   },
   "regions": {
-    "Global": 2031,
-    "United States": 1285,
+    "Global": 1979,
+    "United States": 1233,
     "Australia": 415
   },
   "sources": [
@@ -910,7 +910,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 414,
-      "note": "fao(Australia) 2024-01-01..2026-11-14: 415 rows -> 414 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-11-15: 415 rows -> 414 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -918,8 +918,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 693,
-      "note": "fao(all) 2026-08-16..2026-11-14: 707 rows -> 693 records (14 skipped)"
+      "records": 691,
+      "note": "fao(all) 2026-08-17..2026-11-15: 705 rows -> 691 records (14 skipped)"
     },
     {
       "key": "us-wild-birds",
@@ -927,8 +927,8 @@
       "region": "United States",
       "homepage": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/wild-bird-surveillance-dashboard",
       "status": "live",
-      "records": 1227,
-      "note": "usda wild-bird: 1227 features -> 1227 records (H5/H7, 365d)"
+      "records": 1176,
+      "note": "usda wild-bird: 1176 features -> 1176 records (H5/H7, 365d)"
     }
   ],
   "context_sources": [
