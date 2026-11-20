@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-19T06:28:08.780Z",
-  "latest_event": "2026-11-13",
+  "generated_at": "2026-11-20T06:27:24.781Z",
+  "latest_event": "2026-11-16",
   "mode": "live",
   "mode_note": null,
   "data_coverage": {
@@ -60,7 +60,7 @@
       "Western Australia"
     ],
     "first_detection_date": "2026-06-20",
-    "days_since_first_detection": 152,
+    "days_since_first_detection": 153,
     "latest_detection": "2026-09-22"
   },
   "eras": {
@@ -168,9 +168,9 @@
       "au_h5n1_2026": 394,
       "au_h7_poultry_2024_2025": 20,
       "au_human_2024": 1,
-      "global_h5_panzootic": 1057,
+      "global_h5_panzootic": 1045,
       "other_subtype": 37,
-      "subtype_unstated": 468
+      "subtype_unstated": 496
     }
   },
   "au_eras": {
@@ -601,7 +601,7 @@
     "wild_bird_detections": 379,
     "poultry_detections": 20,
     "states_affected": 7,
-    "days_since_first_detection": 152,
+    "days_since_first_detection": 153,
     "human_cases_au": 1
   },
   "human_context": {
@@ -709,7 +709,7 @@
     "notes": [],
     "from_last_good": true,
     "last_good_fetched_at": "2026-10-29T08:45:10.913Z",
-    "last_good_age_days": 20
+    "last_good_age_days": 21
   },
   "official_gap": {
     "behind": false,
@@ -743,10 +743,28 @@
     "name": "Google News (Australia): early-signal gap detector",
     "homepage": "https://news.google.com/",
     "ok": true,
-    "note": "google news 14d: 22 headlines, detection signal in 0; no coverage gaps detected",
+    "note": "google news 14d: 24 headlines, detection signal in 0; no coverage gaps detected",
     "disclaimer": "Reported in the media and not yet in our mapped data. A lead awaiting official confirmation, not a confirmed detection.",
-    "headlines_checked": 22,
+    "headlines_checked": 24,
     "headlines": [
+      {
+        "date": "2026-11-19",
+        "outlet": "Wisevoter",
+        "title": "Egg and Chicken Prices Could Jump if Bird Flu Hits Farms",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQYVdtYTNuaDh1dVZRUWExS0VSUUhrY2N3RjN5VE10NHlZVjl1QnY4blc3blVhb0ozTy1ucFNRTldadkdvVENycEVuUmhERjBKUS1kT285QXFTNnFzMzBhNmpCRndNOHJ3N2ZxNDVJVnVZX3VyMGdEbmY4cnhEN1BQN3FsVm85Mk40VHFv?oc=5"
+      },
+      {
+        "date": "2026-11-19",
+        "outlet": "Yahoo Finance UK",
+        "title": "A $4.30 carton of eggs could cost $7.50 if bird flu hits Australia's poultry farms",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9FMXp5QVIwekM1UC10ek5WaHhodU84NjJ3YlJXWDQtaUpIWFJ0T19CWjlrSkdHQlJvMXFEZGpDcWpwYUREWGhBUnBNd3JBWUF3dEVjU0ZmRXhnMU9IUFNaUHVOTzBSc3JWOW92eG83UFdZOWJGMkYySGQ1OA?oc=5"
+      },
+      {
+        "date": "2026-11-19",
+        "outlet": "Yahoo News Australia",
+        "title": "Restrictions in place after another bird flu case",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOdUtfV19tY3dyN2xabDhFdXBFMG84cHhmSHdVZ0QzRzFPaGY4SzJoYm9yUGZLczAxR2pzNldmcmNuYjY1aUJlZkxTcDdYYXhXeERlRlVRbW1LR2RsNndZTUlVazh0Q2REQW1kbUQ3c0ZLbjFRU2pMeWJUMEk5VW5hRlF3?oc=5"
+      },
       {
         "date": "2026-11-18",
         "outlet": "CSIRO",
@@ -800,24 +818,6 @@
         "outlet": "ABC News & Headlines – Australian Broadcasting Corporation",
         "title": "Bird experts cover 38,000km looking for signs of H5 bird flu",
         "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPRFVIcnB5bmpKVVNVcG5UYzRqOEJGOE1UY0xUYl9UUG5taDhieEVQaUZSZXhIQmk0d3IydHp5ZmRIamJvWlJ1ZVhJbWNjbXNvMXo0NkNMc1JrU1NEODU4cUJUSlVoeGtDcWk2aW9ZVGNxazVsQXR1dGZ2ZV8yR19KUmRQWGhfbDNVREQwSlZVVXY4Nnk3NS0tbnRpVTFpRktxR0VN?oc=5"
-      },
-      {
-        "date": "2026-11-13",
-        "outlet": "Yahoo News Australia",
-        "title": "Bird flu cases confirmed as housing order begins",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBCWXFuLWw2Y2p4TV9CME04R2gwd3d4a09uQWtsQ3JMRzgyY1lxOVZNZGJxbV92M21qOUlocVMyOVBZZ1VSMUhTTTRlNC1iTEJsLWxTU0Z4eC1MQ2VXcFcybUF3X2J0UlhnbFRjdlM0QzY1eER0Slk5ZHNWTHhCdw?oc=5"
-      },
-      {
-        "date": "2026-11-13",
-        "outlet": "The Australian",
-        "title": "Chicken, egg prices ‘to soar’ in H5N1 bird flu outbreak: EY report",
-        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQTWs0amNxcGFBLTBYbkI2aWN5MmUxSkRxSlB6RXk3Z2lNNVIyR3hBV09rb3JsV1BXdms5RE5hOHVjTWR4cFhIdGV6MjlPNEVjeUkxdmZQeXYyeml0ZEZfb0swZTZfZFFIalFkanFhN1o2YTNoWVBYcEFCN055MEFSWUtrb3N5cW5zRUZ0X3RyLXh3dFgxMUlXMGdxd3REU0NSY2hhZVVyc3V5RDl6NXF5aDBXN29NMTdGX1A0T25ReVlLVUQ5SENsRmV0cmFOMlRQdDlmd1VsQTNqUzJkUWVZ?oc=5"
-      },
-      {
-        "date": "2026-11-12",
-        "outlet": "The Mercury",
-        "title": "Minister confirms bird flu spread slow",
-        "url": "https://news.google.com/rss/articles/CBMipwJBVV95cUxPUGVUYXdvV1NPdHBWZzZjWFBYQ0F5T0pPNVBvOUdETGs3XzVaN25Jb2RNLWo0aXZobUx5S09YenBCU1FMcmtjbDBuWVhHNE5pMU5tQTFOQTRJVWZxTzZhUVpjVkQ2cFNnaDhNMGcwemlIV2lsRFhCcHA3TTlCUFZQUUtQb1NqbTluSGVzWXAtMmRJYk9LSVZiTlU4bFRDTVFGYzYxdGVqNG1NM0hoeDZ4d0t0dGNubEFhZmNMSHpOZHdyMHhqMXBTRUJXNlZ6cVZMWkIwYVJZQVlHUWlkakZwemNheC0zeFdKTzg4NVJIemE0X18xbnZ0QjRLZzN6MkVqVVNSU3JDUFppbG95SnplY3V6d0hyUTZJU1VJVUlhY1BXZWxTb19j?oc=5"
       }
     ],
     "headlines_window_days": 14,
@@ -832,52 +832,52 @@
     "gaps": []
   },
   "totals": {
-    "total_events": 1977,
+    "total_events": 1993,
     "human_cases": 9,
-    "poultry_events": 208,
+    "poultry_events": 214,
     "poultry_birds_affected": 0,
     "dairy_events": 15,
-    "wild_bird_events": 1726,
-    "mammal_events": 19,
-    "countries_affected": 48,
+    "wild_bird_events": 1733,
+    "mammal_events": 22,
+    "countries_affected": 47,
     "us_states_affected": 44,
     "au_states_affected": 7
   },
   "by_category": {
-    "poultry": 208,
+    "poultry": 214,
     "dairy": 15,
-    "wild_bird": 1726,
-    "mammal": 19,
+    "wild_bird": 1733,
+    "mammal": 22,
     "human": 9
   },
   "by_country": {
-    "Norway": 20,
-    "Netherlands": 83,
-    "United States": 1155,
+    "Netherlands": 88,
+    "Norway": 22,
+    "Colombia": 4,
+    "United States": 1143,
+    "Belgium": 26,
+    "Germany": 39,
+    "China, Hong Kong Special Administrative Region": 1,
+    "the United Kingdom of Great Britain and Northern Ireland": 47,
     "Austria": 7,
     "Japan": 4,
-    "the United Kingdom of Great Britain and Northern Ireland": 45,
-    "China, Hong Kong Special Administrative Region": 1,
-    "Germany": 38,
     "Italy": 15,
     "Latvia": 5,
-    "Peru": 27,
     "South Korea": 12,
-    "Belgium": 16,
-    "Colombia": 1,
-    "Estonia": 3,
+    "Peru": 26,
     "Democratic People's Republic of Korea": 1,
+    "Estonia": 3,
     "Lithuania": 4,
     "Sweden": 5,
-    "France": 6,
     "Finland": 4,
+    "France": 6,
     "Indonesia": 5,
-    "Canada": 19,
-    "Mexico": 2,
     "China, Taiwan Province of": 5,
+    "Mexico": 2,
+    "Canada": 19,
     "Spain": 1,
+    "Denmark": 27,
     "Poland": 1,
-    "Denmark": 20,
     "Hungary": 4,
     "Romania": 2,
     "Iceland": 10,
@@ -897,12 +897,11 @@
     "Argentina": 1,
     "Suriname": 1,
     "Uruguay": 1,
-    "New Zealand": 1,
     "Antarctica": 1
   },
   "regions": {
-    "Global": 1977,
-    "United States": 1155,
+    "Global": 1993,
+    "United States": 1143,
     "Australia": 415
   },
   "sources": [
@@ -913,7 +912,7 @@
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
       "records": 414,
-      "note": "fao(Australia) 2024-01-01..2026-11-19: 415 rows -> 414 records (1 skipped)"
+      "note": "fao(Australia) 2024-01-01..2026-11-20: 415 rows -> 414 records (1 skipped)"
     },
     {
       "key": "fao-world",
@@ -921,8 +920,8 @@
       "region": "Global",
       "homepage": "https://empres-i.apps.fao.org/",
       "status": "live",
-      "records": 776,
-      "note": "fao(all) 2026-08-21..2026-11-19: 790 rows -> 776 records (14 skipped)"
+      "records": 804,
+      "note": "fao(all) 2026-08-22..2026-11-20: 818 rows -> 804 records (14 skipped)"
     },
     {
       "key": "us-wild-birds",
@@ -930,8 +929,8 @@
       "region": "United States",
       "homepage": "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza/wild-bird-surveillance-dashboard",
       "status": "live",
-      "records": 1084,
-      "note": "usda wild-bird: 1084 features -> 1084 records (H5/H7, 365d)"
+      "records": 1072,
+      "note": "usda wild-bird: 1072 features -> 1072 records (H5/H7, 365d)"
     }
   ],
   "context_sources": [
