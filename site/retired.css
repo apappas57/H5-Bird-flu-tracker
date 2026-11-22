@@ -1,0 +1,35 @@
+/* Retirement notice (22 Nov 2026). Uses the tokens and base type in styles.css.
+   A separate file because the CSP is style-src 'self' (no inline styles). */
+
+.retired {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  padding-block: clamp(40px, 9vw, 96px) clamp(24px, 5vw, 48px);
+}
+
+.retired__status {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+/* The one action on the page: ink button, not the red (red means a live outbreak). */
+.retired__link {
+  display: inline-block;
+  padding: 12px 18px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+  text-decoration: none;
+}
+.retired__link:hover,
+.retired__link:focus-visible {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.retired__note { color: var(--ink-2); font-size: 0.875rem; }
